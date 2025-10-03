@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'smmTitle' => 'SMM Xidməti',
+    'smm1' => 'SMM xidməti (Sosial Media Marketing)',
+    'smm2' => 'Sosial mediya vasitəsilə marketinqdir. SMM xidməti sosial media, əsasəndə sosial şəbəkələrdən təbii trafikin cəlb edilməsi, brendin və produktun reklamı üçün istifadə olunan internet marketinq mexanizmidir. Sosial şəbəkələrin artan rolu SMM xidməti daha da vacib, praktik və onlayn marketinqin vazkeçilməz bir hissəsi edir.',
+    'smm3' => 'Sosial mediya (social media) marketinqində önəmli rolu kontent oynayır, hansını ki artıq istifadəçilər bölüşərək populyarlaşdırır. Kontent aktual və cəlbedici olmalıdır. SMM xidməti lazımi auditoriya seçimində çox faydalıdır. Marketinqdən əlavə, bu mexanizm KİV tərəfindəndə istifadə olunur. SMM xidmətinin praktikliyi onun pulsuz olan böyük reklam potensialıdır. Bu potensial sosial şəbəkələrin (social network) hesabına yaranır. Ən populyar və iri sosial şəbəkə Facebook 1.2 mldr. çox insanı birləşdirir, bu isə reklam üçün çöx əlverişli şərait yaradır. Digər populyar şəbəkələrin sırasına Twitter, Badoo, İnstagram, Google+, Vkontakte və sarələri daxildir. 10-dan çox sosial şəbəkə 100 mln. çox istifadəçiyə sahibdir.',
+    'smm4' => 'SMM xidməti növbəti platformalarda aktiv istifadə olunur:',
+    'smm5' => 'Sosial şəbəkələr: Facebook, Google+, Vkontakte.',
+    'smm6' => 'Profesional sosial şəbəkələr: Linkedİn.',
+    'smm7' => 'Bloqlar: Twitter, LiveJournal.',
+    'smm8' => 'Video və foto bloqlar: YouTube, Instagram, Pinterest',
+    'smm9' => 'SMM xidməti sosial şəbəklərdə saytın səhifəsinin yaxud qrupunun yaradılması, reklamın, laykların alınması, digər qruplarda reklamın yerləşdirilməsi və sarə mexanizimlər daxildir. SMM iki cür istifadə edilir: passiv və aktiv.',
+    'smm10' => 'Passiv SMM xidməti informasiya paylaşmaq və toplamaqda istifadə olunur. Həmçinin bura istifadəçinin fikri və bazarın analizi daxildir. Aktiv SMM xidməti isə, passivdən əlavə olaraq, istifadəçilə birbaşa əlaqə qurulmasıdır.',
+    'smm11' => 'SMM xidmətinin əsas instrumentləri:',
+    'smm12' => 'Kompaniyanın/brendin qrupunun yaradılması',
+    'smm13' => 'Facebook da Fan Page yaradılması',
+    'smm14' => 'Şəxsi sosial şəbəkənin yaradılması',
+    'smm15' => 'Korporotiv bloqun yaradılması',
+    'smm16' => 'Videobloqun yaradılması',
+    'smm17' => 'Memlərin yaradılması və aktiv yayılması',
+    'smm18' => 'İstifadəçi ilə daimi kontakt və s.',
+    'smm19' => 'Google 10 əsas təbii axtarış amillərindən yeddisi sosial media əsaslıdır. Bu isə o deməkdir ki, əgər brend sosial mediyada yoxdursa yaxud aktiv deyilsə Google axtarış nəticələrində o az görsənəcək. Bir çox kompaniyalar Facebook, Twitter, YouTube və Instagramdan daha çox istifadə edir. Bu onlara daha böyük audiensiyaya çıxış imkanı verir, və çox az resurs hesabına.',
+    'smm20' => ' Sosial medianın inkişafı, SMM aktiv istifadəsi və artan rolu, SMO yaranmasına səbəb oldu. SMO, ingilis dilindən Sosial Media Optimization, yəni Sosial mediya optimizasiyası kimi tərcümə olunur. SMO sosial mediyadan sayta təbii trafikin cəlb edilməsi üçün istifadə olunan mexanizimlərin cəmidir. SMO və SEO demək olarki eyni mexanizmdir, yeganə fərq onların istifadə edildiyi sahələrdir. SEO axtarış sisteminə yönəldilmiş proses olduğu halda, SMO ancaq sosial mediyanı, onun istifadəçilərini əhatə edir.',
+];

@@ -1,0 +1,17 @@
+<?php
+
+return [
+    'questions' => 'Frequently Asked Questions',
+    'howmuch' => 'How much does a website cost?',
+    'howmuchd' => 'The cost of site development can be different. It is difficult to say the standard price. The price depends on the structure, design, functions, etc. D. Site. depends on. After receiving information about you from the site we created during the phone call, it is possible to contact you at an approximate price. In this case, the prices are considered to be as high as possible to avoid the subsequent increase in price, which creates a negative impression on the buyer. However, the exact price can be stated after the detailed discussion. Discounts on general costs are possible only after mutual discussion.',
+    'afterdevelop' => 'What form of technical support is provided after the site is developed?',
+    'afterdevelopd' => 'If your site is hosted by us, we will add any problems, minor additions or corrections to your site for free. If you regularly add to your site, then a flat fee may be set by agreement.',
+    'sitecontent' => 'Can you create site content?',
+    'sitecontentd' => 'Yes. In some cases, information about the site is provided by the customer. Developing professional content for a website requires special attention, time and skills. When site content is entrusted to us, our content managers try to get as much information from you as possible about your business, conduct detailed market research, prepare text in accordance with lexical and spelling rules, and images in accordance with the designer\'s recommendations.',
+    'promote' => 'How do I promote a site after it has been developed?',
+    'promoted' => 'The site is designed in accordance with the requirements and guidelines of Google and other search engines. However, in order for a site to quickly and consistently appear in the forefront of search engines, you need to use SEO services or Google advertising.',
+    'difference' => 'What is the difference between SEO and Google ads?',
+    'differenced' => 'You have the opportunity to take advantage of each online channel to one degree or another. The type of business determines which channel you decide to invest in the most. Knowing the type of business helps determine the target audience, which in turn helps determine which platform it is most accessible on. Every channel like SEO, SEA (Search Engine Advertising), Facebook, YouTube, Instagram can help your business. to a certain degree. Depending on the type of business and your goals, one of these channels and platforms may be more effective than the other. However, it is very rare for any of them to be completely unnecessary.',
+    'visitor' => 'How can I control my site visitors?',
+    'visitord' => 'Promoting your site on various platforms will naturally increase the number of visitors to your site. You will be able to observe this effect on incoming letters and calls. However, you can get more accurate information by posting analytical instruments on your website. In this case, you can have the monthly and daily number of site visitors, demographic information of visitors, from which channel they came to your site, as well as information about all actions on your site.',
+];

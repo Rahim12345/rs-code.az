@@ -1,0 +1,17 @@
+<?php
+
+return [
+    'questions' => 'Ən çox verilən suallar',
+    'howmuch' => 'Veb sayt hazırlanmasının qiyməti neçədir? ',
+    'howmuchd' => 'Saytın hazırlanmasının qiyməti müxtəlif ola bilər. Standart qiymət demək çətindir. Qiymət saytın strukturundan, dizaynından, funksiyalarından və s. asılıdır. Telefon əlaqəsi zamanı sizdən yaradılacaq sayt haqqında məlumat aldıqdan sonra sizə təxmini qiymət demək mümkün ola bilər. Bu zaman sonradan qiymət artımı və bunun müştəridə neqativ fikir yaratması halından qaçmaq üçün qiymətlər mümkün qədər yüksək deyilir. Lakin daha dəqiq qiyməti görüşüb ətraflı müzakirədən sonra demək mümkündür. Ümumi qiymətə endirimi də ancaq qarşılıqlı müzakirədən sonra etmək olar.',
+    'afterdevelop' => 'Saytın hazırlanmasından sonra texniki dəstək hansı formada göstərilir?',
+    'afterdevelopd' => 'Əgər saytınızın hostinqi tərəfimizdən təmin edilərsə, saytınızda yaranan problemləri və ya kiçik əlavə və ya düzəlişləri ödənişsiz həyata keçiririk. Əgər siz saytınıza mütəmadi olaraq əlavələr edirsinizsə, bu zaman razılaşma əsasında müəyyən sabit ödəniş təyin edilə bilər.',
+    'sitecontent' => 'Saytın kontentini siz yarada bilərsinizmi?',
+    'sitecontentd' => 'Bəli. Bəzi hallarda saytın məlumatları müştəri tərəfindən təmin edilir. Saytın professional məzmununun hazırlanması xüsusi diqqət, vaxt və qabiliyyət tələb edir. Saytın kontenti bizə həvalə olunduğu zaman Kontent menecerlərimiz sizdən biznesiniz haqqında mümkün qədər məlumat almağa çalışır, ətraflı bazar araşdırması edir, leksik və orfoqrafiq qaydalara uyğun mətn və dizaynerlə birgə mətnə uyğun şəkillər hazırlayır.',
+    'promote' => 'Sayt hazırlandıqdan sonra onu necə önə çıxara bilərəm?  ',
+    'promoted' => 'Sayt hazırlanarkən Google və digər axtarış sistemlərinin tələb və qaydalarına uyğun hazırlanır. Lakin saytın tez bir zamanda və qalıcı olaraq axtarış sistemlərində ön sıralarda görünməsi üçün SEO xidmətindən və ya Google reklamlarından istifadə olunmalıdır.',
+    'difference' => 'SEO və Google reklamlarının fərqi nədir?',
+    'differenced' => 'Sizin hər bir onlayn kanaldan müəyyən qədər faydalanmaq imkanınız var. Hansı kanala daha çox investisiya qoymaq qərarını sizin biznesinizin növü müəyyən edir.  Biznesin növünü bilmək hədəf kütləsini müəyyənləşdirməyə kömək edir,  bu isə öz növbəsində həmin kütlənin hansı platformada daha çox mövcud olmasının müəyyən edilməsinə şərait yaradır.SEO, SEA (Search Engine Advertising), Facebook, YouTube, Instagram kimi kanalların hər biri biznesinizə müəyyən qədər kömək edə bilər. Biznesinizin növünə və sizin məqsədlərinizə əsasən bu kanal və platformaların biri digərindən daha effektli ola bilər. Lakin hər hansı birinin tamamilə lazımsız olması çox nadir hallarda baş verir.',
+    'visitor' => 'Sayt ziyarətçilərimə necə nəzarət edə bilərəm?',
+    'visitord' => 'Saytın müxtəlif platformalarda önə çəkilməsi sizin sayt ziyarətçilərinizi təbii olaraq artıracaq. Bu effektivliyi sizə gələn email və zənglərdən də müşahidə edə biləcəksiniz. Lakin daha dəqiq məlumatı saytınıza analitik qurğuların yerləşdirilməsi ilə əldə edə bilərsiniz. Bu zaman siz sayt ziyarətçilərinin aylıq və gündəlik saylarını, ziyarətçilərin demoqrafiq məlumatlarını, onların hansı kanaldan sizin saytınıza gəldiklərini, habelə saytınızdakı bütün fəaliyyətləri haqqında məlumata sahib ola bilərsiniz.',
+];

@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteRule ^(.*)$ public/$1 [L]
+
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELOW HOTLINKID:1sGWnFVJlG
+
+
+
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?rahimsuleymanov.com/.*$  [R=301,L]    [NC]
+
+ RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [L,R=301]
+
+  # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+    
+    AddHandler application/x-httpd-php81 .php
+
+RewriteRule .*\.(exe)$ http://rahimsuleymanov.com [R,NC]
+# DO NOT REMOVE THIS LINE AND THE LINES ABOVE 1sGWnFVJlG:HOTLINKID
+ServerSignature Off
+
+</IfModule>

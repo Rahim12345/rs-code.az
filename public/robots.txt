@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin/
+Allow: /admin/dashboard/
+
+Sitemap: https://crr.az/sitemap.xml

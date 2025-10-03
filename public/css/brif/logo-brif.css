@@ -1,0 +1,102 @@
+ .card-body {
+    /*background-color: #efeff0;*/
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+.orta{
+    margin-top: 4.5em;
+}
+.sign {
+    float: right; /* Выравнивание по правому краю */
+
+}
+.sign figcaption {
+    text-align: center;
+    padding: 5px;
+    background: #006633; /* Цвет фона */
+    color: #fff;
+    margin: 0 auto 5px; /* Отступы вокруг абзаца */
+}
+.myli {
+    width: 144.11px;
+    display: inline-block;
+}
+input[type="checkbox"][id^="myCheckbox"] {
+    display: none;
+}
+label  {
+    padding: 10px;
+    display: block;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+}
+
+  .labels {
+    text-align: left !important;
+}
+
+ label:before {
+    background-color: white;
+    color: white;
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    border: 1px solid grey;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    text-align: left !important;
+    line-height: 25px;
+    transition-duration: 0.4s;
+    transform: scale(0);
+}
+ label img {
+     width: 100%;
+     transition-duration: 0.2s;
+     transform-origin: 50% 50%;
+ }
+ :checked + label {
+    width: 160px;
+    height: 211px;
+    border: 3px solid #ddd;
+}
+:checked + label:before {
+    content: "✓";
+    text-align: center !important;
+    background-color: #006633;
+    transform: scale(1.25);
+}
+ :checked + label .card {
+     transform: scale(0.8);
+     /* box-shadow: 0 0 5px #333; */
+     z-index: -1;
+ }
+ label{
+    font-family: 'Montserrat', sans-serif !important;
+    color:#006633 !important;
+    font-weight: 600;
+    font-size: 14px !important;
+    white-space: normal !important;
+}
+
+.borderr
+{
+    width: 30%; margin: 6px auto !important; background: #00000000; padding: 7px;
+    font-size: 14px; color: #555; text-shadow: 0px 2px 3px #fff;
+    -moz-border-radius: 10px;
+    text-align: center;
+    color: #006633;
+    border-bottom: 1px solid;
+    transition: border-color #555 !important;
+}
+
+.borderr:hover
+{
+    border-color: #b97c12;
+}

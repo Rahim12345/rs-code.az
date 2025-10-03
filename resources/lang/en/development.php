@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'veb' => 'Website Development',
+    'muasir' => 'Today, Internet is one of the mostly used communication and sharing tools among people. Organizations, private enterprises, companies communicate with their customers and offer their services through the Internet.',
+    'teskilat' => 'Why should an organization or company have a website?Websites are regarded as one of the main indicators of brand and prestige of the organization or the company. The person who gets information about your company for the first time will do a search on the Internet. Then your functional website with an attractive design will create a positive impression. The presence of your website will help you to build confidence in people. It is important that you have a website for branding. It shows that you are a prestigious organization or company. You can exchange information faster with people you serve online. The Internet is a broader and cheaper advertising tool for you. That is why your website will attract more customers.',
+    'xidmet' => 'Website development service includes:',
+    'modern' => 'Modern looking and fast website;',
+    'responsive' => 'Responsive design (computer, tablet and mobile versions);',
+    'domen' => 'Buying domain;',
+    'performans' => 'High-performance hosting (server) package',
+    'ssl' => 'Providing a website with SSL (security) certificate;',
+    'email' => 'Providing professional business email addresses related to domain',
+    'google' => 'Signing up for Google and other search engines;',
+    'daxil' => 'Developing websites in accordance with internal SEO;',
+    'dizayn' => 'Making your website design appropriate to your wishes.',
+    'merhele' => 'Stages of website development',
+    'first' => '1. Collection and analysis of data for ',
+    'firstp' => 'At the initial stage of website development, all necessary and unneeded information is identified. Competitors’ websites are analyzed. Functions that you want to have on the website are mentioned.',
+    'second' => '2. Preparation of technical task',
+    'secondp' => 'The technical task for website development is written in details and all materials (photo, video, document) required are handled. Website development is discussed by our team and an appropriate technology is chosen.',
+    'thrid' => '3. Website administration',
+    'thridp' => 'Admin paned is developed to make websites easily managed by our customers. You can access the administration panel by phone and tablet as well. With this panel, you can add, edit and delete materials.',
+    'four' => '4. Web design',
+    'fourp' => 'After carefully reviewing the above mentioned issues, the home page and other pages are started to be prepared. The model of pages with real content, photos and company logo in accordance with corporate color is prepared and visually placed. Use this stage to make changes. After that, we will submit you various models and prototypes for your approval at different stages of the process. Making changes in the next stages will take more effort and time. Therefore, at this stage, you should carefully consider everything.',
+    'five' => '5. Project completion and submitting',
+    'fivep' => 'At this stage, all materials are placed on the website and pages are prepared. All the algorithms in the website are tested for security problems that may arise. Finally, the website is made ready to be used by everyone.',
+];

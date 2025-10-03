@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'smmTitle' => 'SMM Service',
+    'smm1' => 'SMM Service (Sosial Media Marketing)',
+    'smm2' => 'It is marketing through social media. SMM service is an internet marketing mechanism used to attract natural traffic from social media, mainly social networks, and to promote the brand and product. The growing role of social networks makes EMS services even more important, practical and an integral part of online marketing.',
+    'smm3' => 'Content plays an important role in social media marketing, which is already shared and popularized by users. The content must be relevant and attractive. The SMM service is very useful in selecting the right audience. In addition to marketing, this mechanism is used by the media. The practicality of the SMM service is its great advertising potential, which is free. This potential is created by social networks. The most popular and largest social network Facebook is 1.2 billion. It unites a lot of people, which creates a very favorable environment for advertising. Other popular networks include Twitter, Badoo, Instagram, Google+, Vkontakte and others. More than 10 social networks has many users.',
+    'smm4' => 'SMM service is actively used on the following platforms:',
+    'smm5' => 'Social networks: Facebook, Google+, Vkontakte.',
+    'smm6' => 'Professional social networks: LinkedIn.',
+    'smm7' => 'Blogs: Twitter, LiveJournal.',
+    'smm8' => 'Video and photo blogs: YouTube, Instagram, Pinterest',
+    'smm9' => 'The MM service includes the creation of a page or group of the site on social networks, the acquisition of advertisements, likes, the placement of advertisements in other groups and other mechanisms. SMM is used in two ways: passive and active.',
+    'smm10' => 'Passive SMM service is used to share and collect information. It also includes user feedback and market analysis. Active SMM service, in addition to passive, is a direct connection to the user.',
+    'smm11' => 'The main tools of the SMM service:',
+    'smm12' => 'Creating a company / brand group',
+    'smm13' => 'Creating a Fan Page on Facebook',
+    'smm14' => 'Creating a personal social network',
+    'smm15' => 'Creating a corporate blog',
+    'smm16' => 'Creating a video blog',
+    'smm17' => 'Creation and active distribution of memes',
+    'smm18' => 'Constant contact with the user, etc.',
+    'smm19' => 'Seven of Google\'s top 10 natural search factors are social media based. This means that if the brand does not exist on social media or is not active, it will be less visible in Google search results. Many companies use Facebook, Twitter, YouTube and Instagram more. This gives them access to a larger audience, and at a much lower resource cost.',
+    'smm20' => ' The development of social media, the active use and growing role of SMM, led to the emergence of SMO. SMO translates from English as Social Media Optimization. SMO is a set of mechanisms used to attract natural traffic from social media to the site. SMO and SEO are almost the same mechanism, the only difference is the areas in which they are used. While SEO is a search engine-focused process, SMO only covers social media and its users.',
+];
