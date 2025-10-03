@@ -40,6 +40,8 @@
     <meta property="og:description" content="Veb Saytların Hazırlanması, SEO Xidməti, SMM Xidməti, Hostinq xidmətləri, Google Reklamları, Facebook və İnstagram Reklamları, Loqo Hazırlanması, Qrafiki xidmətlər">
     <meta property="og:site_name" content="{{ config('app.name') }}">
 
+
+
     <meta name="facebook-domain-verification" content="s59utpbwg5gn9yu7ln6cuyx5bbqm0f" />
 
     <link rel="canonical" href="{{ config('app.url') }}">
@@ -50,7 +52,7 @@
     <link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/main.css?v='.time()) }}"/>
 
-    <meta name="google-site-verification" content="ln3IrZzK8hjysaLc6dF9oIe0-A6JeErr5CF66jhUmwA" />
+    <meta name="google-site-verification" content="VUYowyHre6ewr9gpY1xcdfhkeZS4_JMKO52DzOTko1w" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
