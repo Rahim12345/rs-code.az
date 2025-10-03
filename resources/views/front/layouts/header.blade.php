@@ -56,6 +56,11 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
 
     <link rel="stylesheet" href="{{ asset('css/brif/brifs.css') }}">
+    <script>
+        function openModal() {
+            document.getElementById('id01').style.display = 'block';
+        }
+    </script>
 </head>
 
 <body>

@@ -420,6 +420,7 @@ a:hover, span:hover {
     text-align: right;
     font-weight: bold;
     position: relative;
+    padding-right: 30px;
 }
 
 .lang .selected-lang {
@@ -613,6 +614,8 @@ a:hover, span:hover {
         transform: scale(1);
     }
 }
+
+/*section1end*/
 
 .modal1 {
     display: none;
@@ -9742,4 +9745,8 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     float: right;
     position: inherit;
+}
+
+button, a {
+    cursor: pointer !important;
 }

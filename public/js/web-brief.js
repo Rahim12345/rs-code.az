@@ -1,6 +1,5 @@
 $(".logos").click(function()
 {
-
     $(".logos").prop("checked", false);
     $(this).prop("checked", true);
 });
