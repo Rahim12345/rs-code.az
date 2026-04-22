@@ -16,6 +16,7 @@
     <meta name="google-site-verification" content="VUYowyHre6ewr9gpY1xcdfhkeZS4_JMKO52DzOTko1w">
     <title>@yield('title', 'RS Code') — Brendinq & Rəqəmsal Agentlik</title>
     <meta name="description" content="@yield('description', 'RS Code — Azərbaycanın aparıcı dizayn, veb sayt və brendinq agentliyi.')">
+    <link rel="canonical" href="@yield('canonical', 'https://rs-code.az' . strtok(request()->getRequestUri(), '?'))">
     <link rel="icon" type="image/png" href="{{ asset('img/132.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

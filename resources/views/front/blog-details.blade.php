@@ -12,6 +12,7 @@
 @endphp
 @section('title', $title . ' | RS Code Blog')
 @section('description', strip_tags(Str::limit($review, 160)))
+@section('canonical', 'https://rs-code.az/blog-details/' . ($blog->slug_az ?? $blog->slug_en ?? $blog->id))
 
 @section('content')
 

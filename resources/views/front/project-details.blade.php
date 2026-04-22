@@ -1,6 +1,7 @@
 @extends('front.layouts.master')
 @section('title', ($project->{'name_'.session('lang','az')} ?? $project->name) . ' | RS Code')
 @section('description', $project->{'description_'.session('lang','az')} ?? $project->description_az ?? '')
+@section('canonical', 'https://rs-code.az/project-details/' . ($project->slug_az ?? $project->slug))
 
 @section('content')
 @php
