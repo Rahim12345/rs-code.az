@@ -13,6 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="google-site-verification" content="VUYowyHre6ewr9gpY1xcdfhkeZS4_JMKO52DzOTko1w">
     <title>@yield('title', 'RS Code') — Brendinq & Rəqəmsal Agentlik</title>
     <meta name="description" content="@yield('description', 'RS Code — Azərbaycanın aparıcı dizayn, veb sayt və brendinq agentliyi.')">
     <link rel="icon" type="image/png" href="{{ asset('img/132.png') }}">
