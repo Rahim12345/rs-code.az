@@ -16,7 +16,7 @@ class IndexController extends Controller
         $data['partners'] = DB::table('partners')->get();
         $data['blogs']    = DB::table('blogs')->orderByDesc('id')->limit(6)->get();
         $data['comments'] = DB::table('comments')->get();
-        $data['projects'] = Project::where('home',1)->orderBy('order_no','asc')->limit(3)->get();
+        $data['projects'] = Project::with('images')->where('home',1)->orderBy('order_no','asc')->limit(3)->get();
         $data['services'] = Service::where('on_home',1)->orderBy('order_no','asc')->get();
         $data['team']     = Team::orderBy('order_no','asc')->get();
         return view('front.index', $data);

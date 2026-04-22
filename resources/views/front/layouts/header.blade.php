@@ -22,37 +22,24 @@
                     ];
                     $nu = $navUrls[$lang] ?? $navUrls['az'];
                     $navItems = [
-                        ['url' => '/',            'label' => __('index.main'),     'seg' => ''],
-                        ['url' => $nu['about'],   'label' => __('index.about'),    'seg' => 'about'],
-                        ['url' => $nu['portfolio'],'label' => __('index.projects'),'seg' => 'portfolio'],
-                        ['url' => $nu['blogs'],   'label' => __('index.blog'),     'seg' => 'blogs'],
-                        ['url' => $nu['faq'],     'label' => __('index.faq'),      'seg' => 'faq'],
-                        ['url' => $nu['contact'], 'label' => __('index.contact'),  'seg' => 'contact'],
+                        ['url' => '/',             'label' => __('index.main'),     'seg' => ''],
+                        // Xidmətlər dropdown comes here (rendered separately below)
+                        ['url' => $nu['portfolio'],'label' => __('index.projects'), 'seg' => 'portfolio'],
+                        ['url' => $nu['blogs'],    'label' => __('index.blog'),      'seg' => 'blogs'],
+                        ['url' => $nu['about'],    'label' => __('index.about'),     'seg' => 'about'],
+                        ['url' => $nu['contact'],  'label' => __('index.contact'),   'seg' => 'contact'],
                     ];
                 @endphp
 
-                @foreach($navItems as $item)
-                    @if($item['url'] !== '#')
-                        @php
-                            $seg1 = Request::segment(1);
-                            $active = $seg1 === $item['seg']
-                                || ($item['seg'] === 'about'     && in_array($seg1, ['about','haqqimizda','o-nas']))
-                                || ($item['seg'] === 'portfolio' && in_array($seg1, ['portfolio','isler','portfolio-ru']))
-                                || ($item['seg'] === 'blogs'     && in_array($seg1, ['blogs','bloqlar','blogi']))
-                                || ($item['seg'] === 'faq'       && in_array($seg1, ['faq','suallar','chasto-zadavaemye-voprosy']))
-                                || ($item['seg'] === 'contact'   && in_array($seg1, ['contact','elaqe','kontakty']));
-                        @endphp
-                        <a href="{{ $item['url'] }}"
-                           class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200
-                                  {{ $active
-                                      ? 'text-violet-400 bg-violet-500/10'
-                                      : 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60' }}">
-                            {{ $item['label'] }}
-                        </a>
-                    @endif
-                @endforeach
+                @php $seg1 = Request::segment(1); @endphp
 
-                {{-- Services dropdown --}}
+                {{-- Ana Səhifə --}}
+                <a href="/"
+                   class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 {{ $seg1 === '' ? 'text-violet-400 bg-violet-500/10' : 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60' }}">
+                    {{ __('index.main') }}
+                </a>
+
+                {{-- Xidmətlər dropdown — ikinci sırada --}}
                 <div class="relative" x-data="{ open: false }" @mouseenter="open=true" @mouseleave="open=false">
                     <button class="px-4 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 rounded-lg transition-all flex items-center gap-1">
                         {{ __('index.services') }}
@@ -110,6 +97,23 @@
                         </div>
                     </div>
                 </div>
+
+                {{-- Portfolio, Blog, Haqqımızda, Əlaqə --}}
+                @foreach($navItems as $item)
+                    @if($item['seg'] !== '')
+                        @php
+                            $active = ($item['seg'] === 'about'     && in_array($seg1, ['about','haqqimizda','o-nas']))
+                                   || ($item['seg'] === 'portfolio' && in_array($seg1, ['portfolio','isler','portfolio-ru']))
+                                   || ($item['seg'] === 'blogs'     && in_array($seg1, ['blogs','bloqlar','blogi']))
+                                   || ($item['seg'] === 'contact'   && in_array($seg1, ['contact','elaqe','kontakty']));
+                        @endphp
+                        <a href="{{ $item['url'] }}"
+                           class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200
+                                  {{ $active ? 'text-violet-400 bg-violet-500/10' : 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60' }}">
+                            {{ $item['label'] }}
+                        </a>
+                    @endif
+                @endforeach
             </nav>
 
             {{-- Right: Lang + CTA --}}

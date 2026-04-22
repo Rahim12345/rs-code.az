@@ -50,8 +50,8 @@
                     <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 </div>
                 <h3 class="font-semibold text-zinc-100 mb-2 text-sm">{{ $service->{'name_'.$lang} }}</h3>
-                <div class="flex items-center gap-1 text-violet-400 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity mt-3">
-                    {{ __('index.services_more') }} <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                <div class="flex items-center gap-1 text-violet-400 text-xs font-medium mt-3 group-hover:gap-2 transition-all">
+                    {{ __('index.services_more') }} <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </div>
             </a>
             @endforeach
@@ -78,8 +78,18 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             @foreach($projects as $project)
-            <a href="/project-details/{{ $project->slug }}" class="group relative overflow-hidden rounded-2xl aspect-[4/3] block">
-                <img src="{{ asset('images/projects/'.$project->photo1) }}" alt="{{ $project->name }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+            @php
+                $pSlug = $project->slug_az ?? $project->slug ?? $project->id;
+                $pImg  = $project->images->first()->photo ?? $project->photo1;
+            @endphp
+            <a href="/project-details/{{ $pSlug }}" class="group relative overflow-hidden rounded-2xl aspect-[4/3] block">
+                @if($pImg)
+                <img src="{{ asset('images/projects/'.$pImg) }}" alt="{{ $project->{'name_'.$lang} ?? $project->name }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy">
+                @else
+                <div class="w-full h-full bg-zinc-800 flex items-center justify-center">
+                    <svg class="w-12 h-12 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                </div>
+                @endif
                 <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300"></div>
                 <div class="absolute inset-0 p-6 flex flex-col justify-end translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
                     <span class="text-violet-400 text-xs font-semibold uppercase tracking-wider mb-1">{{ $project->kateqoriya }}</span>
@@ -172,13 +182,20 @@
                 <p class="text-zinc-400 text-sm leading-relaxed flex-1">"{{ $comment->{'comment_'.$lang} }}"</p>
                 <div class="flex items-center gap-3 pt-4 border-t border-zinc-800/50">
                     @php
-                        $photoSrc = str_starts_with($comment->photo, 'http') || str_starts_with($comment->photo, '/')
-                            ? $comment->photo
-                            : asset('images/comments/'.$comment->photo);
+                        $cName    = $comment->{'name_'.$lang} ?? '';
+                        $words    = preg_split('/\s+/', trim($cName));
+                        $initials = mb_strtoupper(
+                            mb_substr($words[0] ?? '', 0, 1) .
+                            mb_substr($words[1] ?? '', 0, 1)
+                        );
+                        $avatarColors = ['bg-violet-700','bg-indigo-700','bg-blue-700','bg-emerald-700','bg-amber-700','bg-rose-700'];
+                        $avatarBg     = $avatarColors[crc32($cName) % count($avatarColors)];
                     @endphp
-                    <img src="{{ $photoSrc }}" alt="{{ $comment->{'name_'.$lang} }}" class="w-10 h-10 rounded-full object-cover" loading="lazy">
+                    <div class="w-10 h-10 rounded-full {{ $avatarBg }} flex items-center justify-center shrink-0">
+                        <span class="text-white text-sm font-bold leading-none">{{ $initials }}</span>
+                    </div>
                     <div>
-                        <div class="text-zinc-200 font-medium text-sm">{{ $comment->{'name_'.$lang} }}</div>
+                        <div class="text-zinc-200 font-medium text-sm">{{ $cName }}</div>
                         <div class="text-zinc-600 text-xs">{{ __('index.reviews_role') }}</div>
                     </div>
                 </div>
@@ -204,7 +221,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($blogs->take(3) as $blog)
-            <a href="/blog-details/{{ \Illuminate\Support\Str::slug($blog->{'title_'.$lang}) }}" class="group bg-zinc-900/50 border border-zinc-800/60 rounded-2xl overflow-hidden hover:border-violet-700/30 transition-all hover:-translate-y-1 block">
+            <a href="/blog-details/{{ $blog->{'slug_'.$lang} ?? $blog->slug_az ?? $blog->id }}" class="group bg-zinc-900/50 border border-zinc-800/60 rounded-2xl overflow-hidden hover:border-violet-700/30 transition-all hover:-translate-y-1 block">
                 <div class="relative overflow-hidden h-48">
                     <img src="{{ str_starts_with($blog->photo, 'http') || str_starts_with($blog->photo, '/') ? $blog->photo : asset('images/blog/'.$blog->photo) }}" alt="{{ $blog->{'title_'.$lang} }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent"></div>

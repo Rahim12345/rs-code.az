@@ -10,7 +10,12 @@ class BlogDetailsController extends Controller
 {
     public function index($id)
     {
-        $blog = DB::table('blogs')->where('id', $id)->first();
+        $blog = DB::table('blogs')
+            ->where('id', $id)
+            ->orWhere('slug_az', $id)
+            ->orWhere('slug_en', $id)
+            ->orWhere('slug_ru', $id)
+            ->first();
 
         if (!$blog) {
             abort(404);
