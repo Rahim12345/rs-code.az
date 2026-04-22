@@ -24,10 +24,10 @@
             <a href="/contact" class="border border-zinc-700 hover:border-violet-600/50 text-zinc-300 hover:text-white font-semibold px-7 py-3.5 rounded-xl transition-all hover:bg-zinc-800/50">{{ __('index.hero_contact_btn') }}</a>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-xl mx-auto">
-            <div class="text-center"><div class="font-display font-black text-4xl text-white">150<span class="text-violet-400">+</span></div><div class="text-zinc-500 text-sm mt-1">{{ __('index.stat_clients') }}</div></div>
-            <div class="text-center"><div class="font-display font-black text-4xl text-white">6<span class="text-violet-400">+</span></div><div class="text-zinc-500 text-sm mt-1">{{ __('index.stat_experience') }}</div></div>
-            <div class="text-center"><div class="font-display font-black text-4xl text-white">500<span class="text-violet-400">+</span></div><div class="text-zinc-500 text-sm mt-1">{{ __('index.stat_projects') }}</div></div>
-            <div class="text-center"><div class="font-display font-black text-4xl text-white">20<span class="text-violet-400">+</span></div><div class="text-zinc-500 text-sm mt-1">{{ __('index.stat_experts') }}</div></div>
+            <div class="text-center"><div class="font-display font-black text-4xl text-white">150<span class="text-violet-400">+</span></div><div class="text-zinc-400 text-sm mt-1">{{ __('index.stat_clients') }}</div></div>
+            <div class="text-center"><div class="font-display font-black text-4xl text-white">6<span class="text-violet-400">+</span></div><div class="text-zinc-400 text-sm mt-1">{{ __('index.stat_experience') }}</div></div>
+            <div class="text-center"><div class="font-display font-black text-4xl text-white">500<span class="text-violet-400">+</span></div><div class="text-zinc-400 text-sm mt-1">{{ __('index.stat_projects') }}</div></div>
+            <div class="text-center"><div class="font-display font-black text-4xl text-white">20<span class="text-violet-400">+</span></div><div class="text-zinc-400 text-sm mt-1">{{ __('index.stat_experts') }}</div></div>
         </div>
     </div>
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-600">
@@ -57,7 +57,7 @@
             @endforeach
         </div>
         <div class="text-center mt-10">
-            <a href="/services" class="inline-flex items-center gap-2 text-zinc-500 hover:text-violet-400 text-sm transition-colors">
+            <a href="/services" class="inline-flex items-center gap-2 text-zinc-400 hover:text-violet-400 text-sm transition-colors">
                 {{ __('index.services_all') }} <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
         </div>
@@ -118,22 +118,22 @@
                 <div class="bg-zinc-900/60 border border-zinc-800/60 rounded-2xl p-6">
                     <div class="w-10 h-10 bg-violet-700/15 text-violet-400 rounded-xl flex items-center justify-center mb-4"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
                     <div class="font-display font-black text-3xl text-white mb-1">150+</div>
-                    <div class="text-zinc-500 text-sm">{{ __('index.stat_success_clients') }}</div>
+                    <div class="text-zinc-400 text-sm">{{ __('index.stat_success_clients') }}</div>
                 </div>
                 <div class="bg-zinc-900/60 border border-zinc-800/60 rounded-2xl p-6">
                     <div class="w-10 h-10 bg-amber-500/15 text-amber-400 rounded-xl flex items-center justify-center mb-4"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
                     <div class="font-display font-black text-3xl text-white mb-1">500+</div>
-                    <div class="text-zinc-500 text-sm">{{ __('index.stat_completed') }}</div>
+                    <div class="text-zinc-400 text-sm">{{ __('index.stat_completed') }}</div>
                 </div>
                 <div class="bg-zinc-900/60 border border-zinc-800/60 rounded-2xl p-6">
                     <div class="w-10 h-10 bg-emerald-500/15 text-emerald-400 rounded-xl flex items-center justify-center mb-4"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
                     <div class="font-display font-black text-3xl text-white mb-1">6+</div>
-                    <div class="text-zinc-500 text-sm">{{ __('index.stat_years') }}</div>
+                    <div class="text-zinc-400 text-sm">{{ __('index.stat_years') }}</div>
                 </div>
                 <div class="bg-zinc-900/60 border border-zinc-800/60 rounded-2xl p-6">
                     <div class="w-10 h-10 bg-sky-500/15 text-sky-400 rounded-xl flex items-center justify-center mb-4"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
                     <div class="font-display font-black text-3xl text-white mb-1">20+</div>
-                    <div class="text-zinc-500 text-sm">{{ __('index.stat_team') }}</div>
+                    <div class="text-zinc-400 text-sm">{{ __('index.stat_team') }}</div>
                 </div>
             </div>
         </div>
@@ -144,7 +144,7 @@
 @if($partners->count() > 0)
 <section class="py-16 border-y border-zinc-800/40">
     <div class="text-center mb-10">
-        <span class="text-zinc-500 text-xs font-medium uppercase tracking-[0.2em]">{{ __('index.partners_eyebrow') }}</span>
+        <span class="text-zinc-400 text-xs font-medium uppercase tracking-[0.2em]">{{ __('index.partners_eyebrow') }}</span>
     </div>
     <div class="overflow-hidden">
         <div class="flex animate-marquee gap-16 whitespace-nowrap">
@@ -227,9 +227,9 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent"></div>
                 </div>
                 <div class="p-5">
-                    <span class="text-zinc-500 text-xs">{{ $blog->{'date_'.$lang} }}</span>
+                    <span class="text-zinc-400 text-xs">{{ $blog->{'date_'.$lang} }}</span>
                     <h3 class="text-zinc-100 font-semibold text-base mt-2 mb-3 line-clamp-2 group-hover:text-violet-300 transition-colors">{{ $blog->{'title_'.$lang} }}</h3>
-                    <p class="text-zinc-500 text-sm line-clamp-2">{{ $blog->{'review_'.$lang} }}</p>
+                    <p class="text-zinc-400 text-sm line-clamp-2">{{ $blog->{'review_'.$lang} }}</p>
                     <div class="flex items-center gap-1 text-violet-400 text-xs font-medium mt-4">
                         {{ __('index.blog_read') }} <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                     </div>

@@ -161,9 +161,29 @@
     }
     @endverbatim
     </script>
+    {{-- Google Fonts — non-blocking (eliminates render-blocking penalty) --}}
+    {{-- preconnect to gstatic early so woff2 TLS handshake is already done when font CSS arrives --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preload" as="style"
+          href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" media="print" onload="this.media='all'"
+          href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&display=swap">
+    <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&display=swap">
+    </noscript>
+    {{-- Inline critical font-family so text renders immediately with system fallback --}}
+    <style>
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif }
+        .font-display, [style*="Bricolage"] { font-family: 'Bricolage Grotesque', 'Inter', system-ui, sans-serif }
+        /* Inline toast — replaces Toastr CDN */
+        .rs-toast{position:fixed;bottom:24px;right:24px;z-index:9999;padding:14px 20px;border-radius:12px;font-size:14px;font-weight:500;color:#fff;background:#3f3f46;box-shadow:0 8px 32px rgba(0,0,0,.45);opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s;max-width:360px;pointer-events:none}
+        .rs-toast.rs-show{opacity:1;transform:translateY(0)}
+        .rs-toast.rs-success{background:#16a34a}
+        .rs-toast.rs-error{background:#dc2626}
+    </style>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
 </head>
@@ -178,63 +198,93 @@
     {{-- Brif / Sifaris Modal --}}
     @include('front.includes.sifaris')
 
-    {{-- jQuery (brif modals üçün) --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
+    {{-- Brif modals — vanilla JS, no jQuery / Toastr CDN dependency --}}
     <script>
-    $(function(){
-        $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') } });
+    (function(){
+        var CSRF = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-        function submitBrif(btnId, formId, route) {
-            $(btnId).on('click', function(){
-                var $form = $('#' + formId);
+        // Lightweight toast — replaces Toastr
+        function showToast(msg, type) {
+            var t = document.createElement('div');
+            t.className = 'rs-toast rs-' + (type || 'success');
+            t.textContent = msg;
+            document.body.appendChild(t);
+            requestAnimationFrame(function(){ t.classList.add('rs-show'); });
+            setTimeout(function(){
+                t.classList.remove('rs-show');
+                setTimeout(function(){ t.remove(); }, 350);
+            }, 4000);
+        }
 
-                // Əvvəlki xətaları təmizlə
-                $form.find('.is-invalid').removeClass('is-invalid');
-                $form.find('[class$="-error"]').html('');
+        function submitBrif(btnSel, formId, route) {
+            var btn = document.querySelector(btnSel);
+            if (!btn) return;
+            btn.addEventListener('click', function(){
+                var form = document.getElementById(formId);
 
-                var data = new FormData(document.getElementById(formId));
-                $.ajax({ type:'POST', url:route, data:data, cache:false, processData:false, contentType:false,
-                    success: function(r){
-                        $('.modal-close').trigger('click');
-                        $form[0].reset();
-                        toastr.success(r.message);
-                    },
-                    error: function(e){
-                        if (!e.responseJSON || !e.responseJSON.errors) return;
+                // Clear previous errors (Phase 1 — reads before writes)
+                var invalids = form.querySelectorAll('.is-invalid');
+                var errEls   = form.querySelectorAll('[class$="-error"]');
+
+                // Phase 2 — batch writes
+                invalids.forEach(function(el){ el.classList.remove('is-invalid'); });
+                errEls.forEach(function(el){ el.innerHTML = ''; });
+
+                fetch(route, {
+                    method: 'POST',
+                    headers: { 'X-CSRF-TOKEN': CSRF },
+                    body: new FormData(form)
+                })
+                .then(function(res){
+                    return res.json().then(function(json){ return { ok: res.ok, json: json }; });
+                })
+                .then(function(r){
+                    if (r.ok) {
+                        var mc = document.querySelector('.modal-close');
+                        if (mc) mc.click();
+                        form.reset();
+                        showToast(r.json.message, 'success');
+                    } else {
+                        var errors = r.json.errors || {};
+                        // Phase 1: collect all field refs (reads only)
+                        var fieldMap = Object.keys(errors).map(function(fieldName){
+                            var messages = errors[fieldName];
+                            var msg   = Array.isArray(messages) ? messages[0] : messages;
+                            var field = form.querySelector('[name="' + fieldName + '"]')
+                                     || form.querySelector('[name="' + fieldName + '[]"]');
+                            return { fieldName: fieldName, msg: msg, field: field };
+                        });
+                        // Phase 2: batch DOM writes
                         var firstField = null;
-                        $.each(e.responseJSON.errors, function(fieldName, messages){
-                            var msg = Array.isArray(messages) ? messages[0] : messages;
-                            // Error mesajını göstər
-                            $form.find('.' + fieldName + '-error').html(msg);
-                            // Sahəni is-invalid et
-                            var $field = $form.find('[name="' + fieldName + '"]').first();
-                            if (!$field.length) {
-                                // array fields: name="fieldName[]"
-                                $field = $form.find('[name="' + fieldName + '[]"]').first();
-                            }
-                            if ($field.length) {
-                                $field.addClass('is-invalid');
-                                if (!firstField) firstField = $field;
+                        fieldMap.forEach(function(item){
+                            var errEl = form.querySelector('.' + item.fieldName + '-error');
+                            if (errEl) errEl.innerHTML = item.msg;
+                            if (item.field) {
+                                item.field.classList.add('is-invalid');
+                                if (!firstField) firstField = item.field;
                             }
                         });
-                        // İlk xətalı sahəyə fokuslan və scroll et
+                        // Phase 3: single layout read after all writes
                         if (firstField) {
-                            firstField[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-                            setTimeout(function(){ firstField.focus(); }, 350);
+                            requestAnimationFrame(function(){
+                                firstField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                setTimeout(function(){ firstField.focus(); }, 350);
+                            });
                         }
                     }
-                });
+                })
+                .catch(function(){});
             });
         }
-        submitBrif('#modalOneBtn',  'brifModalOne',  '{!! route('front.brif.modal.one')  !!}');
-        submitBrif('#modalTwoBtn',  'brifModalTwo',  '{!! route('front.brif.modal.two')  !!}');
-        submitBrif('#modalThreeBtn','brifModalThree','{!! route('front.brif.modal.three')!!}');
-        submitBrif('#modalFourBtn', 'brifModalFour', '{!! route('front.brif.modal.four') !!}');
-        submitBrif('#brifModalFivez','brifModalFive','{!! route('front.brif.modal.five') !!}');
-    });
+
+        document.addEventListener('DOMContentLoaded', function(){
+            submitBrif('#modalOneBtn',   'brifModalOne',   '{{ route("front.brif.modal.one") }}');
+            submitBrif('#modalTwoBtn',   'brifModalTwo',   '{{ route("front.brif.modal.two") }}');
+            submitBrif('#modalThreeBtn', 'brifModalThree', '{{ route("front.brif.modal.three") }}');
+            submitBrif('#modalFourBtn',  'brifModalFour',  '{{ route("front.brif.modal.four") }}');
+            submitBrif('#brifModalFivez','brifModalFive',  '{{ route("front.brif.modal.five") }}');
+        });
+    })();
     </script>
     @stack('scripts')
     <script>
@@ -255,7 +305,8 @@
                 abs = window.location.origin + (href.startsWith('/') ? href : '/' + href);
             }
 
-            var text = (a.innerText || a.getAttribute('aria-label') || '').trim().slice(0, 200);
+            // textContent instead of innerText — no layout recalculation (avoids forced reflow)
+            var text = (a.textContent || a.getAttribute('aria-label') || '').trim().replace(/\s+/g,' ').slice(0, 200);
 
             // Fire-and-forget beacon
             if (navigator.sendBeacon) {
