@@ -1,397 +1,183 @@
 @extends('back.layouts.master')
+@section('title', 'Məhsullar')
 
 @section('content')
-    <div class="content">
-        <div class="col-md-12">
-            <div class="card">
-                <a href="{{ route('product.create') }}" class="btn btn-primary">Məhsul əlavə et</a>
-                <div class="table-responsive">
-                    <table
-                        class="table table-vcenter table-mobile-md card-table" id="mehsullar">
-                        <thead>
-                        <tr>
-                            <th>Cover</th>
-                            <th>Servis</th>
-                            <th>Title(AZ)</th>
-                            <th>Title(EN)</th>
-                            <th>Title(RU)</th>
-                            <th>Sıra №</th>
-                            <th></th>
-                        </tr>
-                        </thead>
 
-                    </table>
-                </div>
+<div class="flex items-center justify-between mb-6">
+    <div>
+        <h1 class="text-xl font-bold text-gray-900">Məhsullar</h1>
+        <p class="text-sm text-gray-500 mt-0.5">{{ $products->total() }} məhsul tapıldı</p>
+    </div>
+    <a href="{{ route('product.create') }}" class="btn-primary">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+        Məhsul Əlavə Et
+    </a>
+</div>
+
+{{-- Filter bar --}}
+<form method="GET" action="{{ route('product.index') }}" class="mb-5">
+    <div class="bg-white rounded-xl border border-gray-200 p-4 flex flex-wrap items-end gap-3">
+        <div class="flex-1 min-w-48">
+            <label class="block text-xs font-semibold text-gray-500 mb-1.5">Axtarış</label>
+            <div class="relative">
+                <i class="fa fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                <input type="text" name="q" value="{{ request('q') }}"
+                       class="admin-input pl-9" placeholder="Başlıq, SKU...">
             </div>
         </div>
-
-        <div class="modal modal-blur fade" id="modal-danger" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="modal-status bg-danger"></div>
-                    <div class="modal-body text-center py-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9v2m0 4v.01" /><path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" /></svg>
-                        <h3>Silmək istiyirsən?</h3>
-                        <div class="text-muted">Əgər siz həqiqətən Sil düyməsinə vursanız məhsulu heç vaxt geri qaytara bilməyəcəksiniz</div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="w-100">
-                            <div class="row">
-                                <div class="col">
-                                    <a href="#" class="btn btn-white w-100" data-bs-dismiss="modal">
-                                        Ləğv et
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <form action="" method="POST" id="deleterForm">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger w-100" >Sil</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="w-48">
+            <label class="block text-xs font-semibold text-gray-500 mb-1.5">Xidmət</label>
+            <select name="service_id" class="admin-input">
+                <option value="">Hamısı</option>
+                @foreach($services as $s)
+                <option value="{{ $s->id }}" {{ request('service_id') == $s->id ? 'selected' : '' }}>{{ $s->name_az }}</option>
+                @endforeach
+            </select>
         </div>
-
-        <div class="modal modal-blur fade" id="modal-barcode" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
-                <div class="modal-content" id="non-printable">
-                    <button type="button" id="close-barcode" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="modal-status bg-danger"></div>
-                    <div class="modal-body text-center py-4 col-md-4 offset-4">
-                        <div style="text-align: center;" id="barcode-content"></div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="w-100">
-                            <div class="row">
-                                <div class="col">
-                                    <a href="javascript:void(0)" class="btn btn-white w-100" data-bs-dismiss="modal">
-                                        Ləğv et
-                                    </a>
-                                </div>
-                                <div class="col">
-                                    <button type="submit" id="print" class="btn btn-danger w-100" >Çap et</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="printable" style="width: 80px !important;">
-                    <!DOCTYPE html>
-                    <html lang="en">
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                        <title>Barcode</title>
-                    </head>
-                    <body>
-                    <div class="ticket">
-                        <table>
-                            <tbody>
-                            <tr>
-                                <td class="price" id="bar"></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    </body>
-                    </html>
-                </div>
-            </div>
+        <div class="w-36">
+            <label class="block text-xs font-semibold text-gray-500 mb-1.5">Status</label>
+            <select name="status" class="admin-input">
+                <option value="">Hamısı</option>
+                <option value="1" {{ request('status')==='1' ? 'selected' : '' }}>Aktiv</option>
+                <option value="0" {{ request('status')==='0' ? 'selected' : '' }}>Deaktiv</option>
+            </select>
+        </div>
+        <div class="flex gap-2">
+            <button type="submit" class="btn-primary">
+                <i class="fa fa-filter"></i> Filtrə et
+            </button>
+            @if(request()->hasAny(['q','service_id','status']))
+            <a href="{{ route('product.index') }}" class="px-4 py-2 text-sm text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                <i class="fa fa-times"></i> Sıfırla
+            </a>
+            @endif
         </div>
     </div>
+</form>
+
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <table class="admin-table w-full">
+        <thead>
+            <tr>
+                <th class="w-8"></th>
+                <th class="w-12">Şəkil</th>
+                <th>Məhsul</th>
+                <th class="hidden md:table-cell">Kateqoriya</th>
+                <th class="hidden lg:table-cell">Qiymət / Stok</th>
+                <th class="w-16 text-center">Status</th>
+                <th class="w-20 text-right"></th>
+            </tr>
+        </thead>
+        <tbody id="productsList">
+            @forelse($products as $product)
+            <tr id="row-{{ $product->id }}" data-id="{{ $product->id }}">
+                <td class="cursor-grab text-gray-300 hover:text-gray-500 text-center drag-handle">
+                    <i class="fa fa-grip-vertical"></i>
+                </td>
+                <td>
+                    @if($product->src)
+                    <img src="{{ asset('files/products/covers/'.$product->src) }}"
+                         class="w-10 h-9 object-cover rounded-lg" alt="">
+                    @else
+                    <div class="w-10 h-9 rounded-lg bg-gray-100 flex items-center justify-center text-gray-300">
+                        <i class="fa fa-image"></i>
+                    </div>
+                    @endif
+                </td>
+                <td>
+                    <div class="font-medium text-gray-900 text-sm leading-tight">{{ Str::limit($product->title_az, 40) }}</div>
+                    @if($product->sku)
+                    <div class="text-xs text-gray-400 font-mono mt-0.5">{{ $product->sku }}</div>
+                    @endif
+                </td>
+                <td class="hidden md:table-cell">
+                    @if($product->service)
+                    <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 whitespace-nowrap">
+                        {{ Str::limit($product->service->name_az, 20) }}
+                    </span>
+                    @else<span class="text-gray-400">—</span>@endif
+                </td>
+                <td class="hidden lg:table-cell">
+                    @if($product->price)
+                    <div class="text-sm font-semibold text-gray-900 whitespace-nowrap">{{ number_format($product->price, 2) }} ₼</div>
+                    @if($product->price_old)<div class="text-xs text-gray-400 line-through">{{ number_format($product->price_old, 2) }} ₼</div>@endif
+                    @else<span class="text-gray-400 text-xs">—</span>@endif
+                    @if($product->stock !== null)
+                    <div class="text-xs {{ $product->stock > 0 ? 'text-green-600' : 'text-red-500' }} mt-0.5">
+                        {{ $product->stock > 0 ? $product->stock.' '.($product->unit ?: 'əd') : 'Stokda yox' }}
+                    </div>
+                    @endif
+                </td>
+                <td class="text-center">
+                    <span class="inline-flex w-2 h-2 rounded-full {{ $product->status ? 'bg-green-500' : 'bg-red-400' }}" title="{{ $product->status ? 'Aktiv' : 'Deaktiv' }}"></span>
+                    @if($product->featured)
+                    <i class="fa fa-star text-amber-400 text-xs ml-1" title="Öne çıxan"></i>
+                    @endif
+                </td>
+                <td class="text-right">
+                    <div class="btn-group justify-end">
+                        <a href="{{ route('product.edit', $product->id) }}" class="btn-primary btn-sm">
+                            <i class="fa fa-pen"></i>
+                        </a>
+                        <button onclick="deleteProduct({{ $product->id }})" class="btn-danger btn-sm">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            @empty
+            <tr>
+                <td colspan="6" class="text-center text-gray-400 py-12">
+                    <i class="fa fa-box-open text-3xl mb-3 block text-gray-200"></i>
+                    Məhsul tapılmadı
+                </td>
+            </tr>
+            @endforelse
+        </tbody>
+    </table>
+</div>
+
+@if($products->hasPages())
+<div class="mt-5">
+    {{ $products->links() }}
+</div>
+@endif
+
 @endsection
 
-@section('js')
-    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.flash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/jq-3.3.1/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-html5-1.6.2/b-print-1.6.2/datatables.min.js"></script>
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const list = document.getElementById('productsList');
+    if (!list) return;
+    Sortable.create(list, {
+        handle: '.drag-handle',
+        animation: 150,
+        ghostClass: 'bg-indigo-50',
+        onEnd: function () {
+            const ids = Array.from(list.querySelectorAll('tr[data-id]')).map(r => r.dataset.id);
+            $.post('{{ route("product.reorder") }}', {
+                ids: ids,
+                _token: $('meta[name="csrf-token"]').attr('content')
+            }).done(r => toastr.success(r.message))
+              .fail(() => toastr.error('Xəta baş verdi'));
+        }
+    });
+});
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/printThis/1.15.0/printThis.min.js" integrity="sha512-d5Jr3NflEZmFDdFHZtxeJtBzk0eB+kkRXWFQqEc1EKmolXjHm2IKCA7kTvXBNjIYzjXfD5XzIjaaErpkZHCkBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/printThis/1.15.0/printThis.js" integrity="sha512-Fd3EQng6gZYBGzHbKd52pV76dXZZravPY7lxfg01nPx5mdekqS8kX4o1NfTtWiHqQyKhEGaReSf4BrtfKc+D5w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script>
-        $(document).on('input','.productNo',function () {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            let id          = $(this).attr('data-id');
-            let order_no    = $(this).val();
-            $.ajax({
-                type : 'POST',
-                data : {
-                    id : id,
-                    order_no : order_no
-                },
-                url : '{!! route('product.order') !!}',
-                success: function (response) {
-                    toastr.success('Sıra dəyişdirildi');
-                },
-                error: function (myErrors) {
-                    $.each(myErrors.responseJSON.errors, function (key, error) {
-                        toastr.success(error);
-                    })
-                }
-            });
-        });
-
-
-        $(document).ready(function(){
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            var table = $('#mehsullar');
-
-            var today = new Date();
-            var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
-            var time = today.getHours() + "-" + today.getMinutes() + "-" + today.getSeconds();
-            var fileName = date+'-'+time;
-
-            table.DataTable({
-                processing: true,
-                serverSide: true,
-                select: true,
-                "lengthMenu": [[5, 10, 25, 50, 100, -1], [5, 10, 25, 50, 100,'Bütün']],
-                ajax: {
-                    url: "{{ route('product.index') }}",
-                },
-                columns: [
-                    {data: 'src', name: 'src'},
-                    {data: 'service_id', name: 'service_id'},
-                    {data: 'title_az', name: 'title_az'},
-                    {data: 'title_az', name: 'title_en'},
-                    {data: 'title_az', name: 'title_ru'},
-                    {data: 'order_no', name: 'order_no'},
-                    {data: 'action', name: 'action',searchable:false,orderable: false},
-                ],
-                createdRow: function( row, data, dataIndex ) {
-                    $( row ).find('td:eq(0)').attr('data-label', 'Cover');
-                    $( row ).find('td:eq(1)').attr('data-label', 'Servis');
-                    $( row ).find('td:eq(2)').attr('data-label', 'NAME(AZ)');
-                    $( row ).find('td:eq(3)').attr('data-label', 'NAME(EN)');
-                    $( row ).find('td:eq(4)').attr('data-label', 'NAME(RU)');
-                    $( row ).find('td:eq(5)').attr('data-label', 'Action');
-                },
-                "language": {
-                    "emptyTable": "Cədvəldə heç bir məlumat yoxdur",
-                    "infoEmpty": "Nəticə Yoxdur",
-                    "infoFiltered": "( _MAX_ Nəticə İçindən Tapılanlar)",
-                    "lengthMenu": "Səhifədə _MENU_ Nəticə Göstər",
-                    "loadingRecords": "Yüklənir...",
-                    "processing": "Gözləyin...",
-                    "search": "Axtarış:",
-                    "zeroRecords": "Nəticə Tapılmadı.",
-                    "paginate": {
-                        "first": "İlk",
-                        "last": "Axırıncı",
-                        "previous": "Öncəki",
-                        "next": "Sonrakı"
-                    },
-                    "aria": {
-                        "sortDescending": ": sütunu azalma sırası üzərə aktiv etmək",
-                        "sortAscending": ": sütunu artma sırası üzərə aktiv etməkr"
-                    },
-                    "autoFill": {
-                        "cancel": "Ləğv Et",
-                        "fill": "Bütün hücrələri <i>%d<\/i> ile doldur",
-                        "fillHorizontal": "Hücrələri üfiqi olaraq doldur",
-                        "fillVertical": "Hücrələri şaquli olara1 doldur"
-                    },
-                    "buttons": {
-                        "collection": "Kolleksiya <span class=\"\\\"><\/span>",
-                        "colvis": "Sütun baxışı",
-                        "colvisRestore": "Baxışı əvvəlki vəziyyətinə gətir",
-                        "copy": "Kopyala",
-                        "copyKeys": "Cədvəldəki qeydi kopyalamaq üçün CTRL və ya u2318 + C düymələrinə basın. Ləğv etmək üçün bu mesajı vurun və ya ESC düyməsini vurun.",
-                        "copySuccess": {
-                            "1": "1 sətir panoya kopyalandı",
-                            "_": "%ds sətir panoya kopyalandı"
-                        },
-                        "copyTitle": "Panoya kopyala",
-                        "csv": "CSV",
-                        "excel": "Excel",
-                        "pageLength": {
-                            "-1": "Bütün sətirlari göstər",
-                            "_": "%d sətir göstər"
-                        },
-                        "pdf": "PDF",
-                        "print": "Çap Et"
-                    },
-                    "decimal": ",",
-                    "info": "_TOTAL_ Nəticədən _START_ - _END_ Arası Nəticələr",
-                    "infoThousands": ".",
-                    "searchBuilder": {
-                        "add": "Koşul Ekle",
-                        "button": {
-                            "0": "Axtarış Yaradıcı",
-                            "_": "Axtarış Yaradıcı (%d)"
-                        },
-                        "clearAll": "Filtrləri Təmizlə",
-                        "condition": "Şərt",
-                        "conditions": {
-                            "date": {
-                                "after": "Növbəti",
-                                "before": "Öncəki",
-                                "between": "Arasında",
-                                "empty": "Boş",
-                                "equals": "Bərabərdir",
-                                "not": "Deyildir",
-                                "notBetween": "Xaricində",
-                                "notEmpty": "Dolu"
-                            },
-                            "number": {
-                                "between": "Arasında",
-                                "empty": "Boş",
-                                "equals": "Bərabərdir",
-                                "gt": "Böyükdür",
-                                "gte": "Böyük bərabərdir",
-                                "lt": "Kiçikdir",
-                                "lte": "Kiçik bərabərdir",
-                                "not": "Deyildir",
-                                "notBetween": "Xaricində",
-                                "notEmpty": "Dolu"
-                            },
-                            "string": {
-                                "contains": "Tərkibində",
-                                "empty": "Boş",
-                                "endsWith": "İlə bitər",
-                                "equals": "Bərabərdir",
-                                "not": "Deyildir",
-                                "notEmpty": "Dolu",
-                                "startsWith": "İlə başlayar"
-                            },
-                            "array": {
-                                "equals": "Bərabərdir",
-                                "empty": "Boş",
-                                "contains": "Tərkibində",
-                                "not": "Deyildir",
-                                "notEmpty": "Dolu",
-                                "without": "Xaric"
-                            }
-                        },
-                        "data": "Qeyd",
-                        "deleteTitle": "Filtrləmə qaydasını silin",
-                        "leftTitle": "Meyarı xaricə çıxarmaq",
-                        "logicAnd": "və",
-                        "logicOr": "vəya",
-                        "rightTitle": "Meyarı içəri al",
-                        "title": {
-                            "0": "Axtarış Yaradıcı",
-                            "_": "Axtarış Yaradıcı (%d)"
-                        },
-                        "value": "Değer"
-                    },
-                    "searchPanes": {
-                        "clearMessage": "Hamısını Təmizlə",
-                        "collapse": {
-                            "0": "Axtarış Bölməsi",
-                            "_": "Axtarış Bölməsi (%d)"
-                        },
-                        "count": "{total}",
-                        "countFiltered": "{shown}\/{total}",
-                        "emptyPanes": "Axtarış Bölməsi yoxdur",
-                        "loadMessage": "Axtarış Bölməsi yüklənir ...",
-                        "title": "Aktiv filtrlər - %d"
-                    },
-                    "searchPlaceholder": "Axtarış",
-                    "select": {
-                        "1": "%d sətir seçildi",
-                        "_": "%d sətir seçildi",
-                        "cells": {
-                            "1": "1 hücrə seçildi",
-                            "_": "%d hücrə seçildi"
-                        },
-                        "columns": {
-                            "1": "1 sütun seçildi",
-                            "_": "%d sütun seçildi"
-                        },
-                        "rows": {
-                            "1": "1 qeyd seçildi",
-                            "_": "%d qeyd seçildi"
-                        }
-                    },
-                    "thousands": ".",
-                    "datetime": {
-                        "previous": "Öncəki",
-                        "next": "Növbəti",
-                        "hours": "Saat",
-                        "minutes": "Dəqiqə",
-                        "seconds": "Saniyə",
-                        "unknown": "Naməlum",
-                        "amPm": [
-                            "am",
-                            "pm"
-                        ]
-                    },
-                    "editor": {
-                        "close": "Bağla",
-                        "create": {
-                            "button": "Təzə",
-                            "title": "Yeni qeyd yarat",
-                            "submit": "Qeyd Et"
-                        },
-                        "edit": {
-                            "button": "Redaktə Et",
-                            "title": "Qeydi Redaktə Et",
-                            "submit": "Yeniləyin"
-                        },
-                        "remove": {
-                            "button": "Sil",
-                            "title": "Qeydləri sil",
-                            "submit": "Sil",
-                            "confirm": {
-                                "_": "%d ədəd qeydi silmək istədiyinizə əminsiniz?",
-                                "1": "Bu qeydi silmək istədiyinizə əminsiniz?"
-                            }
-                        },
-                        "error": {
-                            "system": "Sistem xətası baş verdi (Ətraflı Məlumat)"
-                        },
-                        "multi": {
-                            "title": "Çox dəyər",
-                            "info": "Seçilmiş qeydlər bu sahədə fərqli dəyərlər ehtiva edir. Bütün seçilmiş qeydlər üçün bu sahəyə eyni dəyəri təyin etmək üçün buraya vurun; əks halda hər qeyd öz dəyərini saxlayacaqdır.",
-                            "restore": "Dəyişiklikləri geri qaytarın",
-                            "noMulti": "Bu sahə qrup şəklində deyil, ayrı-ayrılıqda təşkil edilə bilər."
-                        }
-                    }
-                },
-                stateSave: true,
-            });
-
-            $('#print').click(function () {
-                $("#printable").printThis({
-                    importCSS: false,            // import parent page css
-                    // importStyle: true,         // import style tags
-                    loadCSS: "{{ asset('print.css') }}",
-                    canvas: true
-                });
-            });
-
-        });
-
-        $(document).on('click','.MehsulDeleter',function () {
-            let id = $(this).attr('data-id');
-            if(confirm('Silmək istədiyinizdən əminsiniz?')){
-                window.location.href = "/admin/product/"+id;
-            }
-
-        });
-    </script>
-@endsection
+function deleteProduct(id) {
+    if (!confirm('Silinsin?')) return;
+    $.ajax({
+        url: '/admin/product/' + id,
+        type: 'DELETE',
+        data: { _token: $('meta[name="csrf-token"]').attr('content') },
+        success: function (r) {
+            document.getElementById('row-' + id).remove();
+            toastr.success(r.message);
+        },
+        error: function () { toastr.error('Xəta baş verdi'); }
+    });
+}
+</script>
+@endpush

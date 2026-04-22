@@ -76,7 +76,6 @@ class CompanyController extends Controller
             'alt'=>$request->alt,
         ]);
 
-        toastr()->success('Data əlavə edildi','Əla');
         return redirect()->route('company.edit',$company->id);
     }
 
@@ -149,7 +148,6 @@ class CompanyController extends Controller
             'alt'=>$request->alt,
         ]);
 
-        toastr()->success('Data redakte edildi','Əla');
         return redirect()->route('company.edit',$id);
     }
 
@@ -164,7 +162,6 @@ class CompanyController extends Controller
         $company = Company::whereId($id)->firstOrFail();
         $this->fileDelete('files/company/'.$company->src);
         $company->delete();
-        toastr()->success('Data silindi');
         return redirect()->route('company.index');
     }
 }

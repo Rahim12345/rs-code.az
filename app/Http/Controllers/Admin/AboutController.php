@@ -24,26 +24,26 @@ class AboutController extends Controller
 
     public function update(Request $request)
     {
-        $rules = [
+        $validator = Validator::make($request->all(), [
             'about_az' => 'required',
             'about_en' => 'required',
-            'about_ru' => 'required'
-        ];
+            'about_ru' => 'required',
+        ], [], [
+            'about_az' => 'Haqqımızda (AZ)',
+            'about_en' => 'About (EN)',
+            'about_ru' => 'О нас (RU)',
+        ]);
 
-        $validator = Validator::make($request->all(), $rules);
-
-        if($validator->fails())
-        {
-            return redirect()->back()->withErrors($validator)->withInput();
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        $about_az = $request->input('about_az');
-        $about_en = $request->input('about_en');
-        $about_ru = $request->input('about_ru');
+        DB::table('abouts')->update([
+            'about_az' => $request->about_az,
+            'about_en' => $request->about_en,
+            'about_ru' => $request->about_ru,
+        ]);
 
-        DB::table('abouts')->update(['about_az' => $about_az, 'about_en' => $about_en, 'about_ru' => $about_ru]);
-
-        return redirect('admin/about')->with('status', 'Dəyişiliklər qeydə alındı!');
-
+        return response()->json(['message' => 'Dəyişikliklər qeydə alındı']);
     }
 }

@@ -1,56 +1,123 @@
 @extends('back.layouts.master')
+@section('title', 'Xidmət Əlavə Et')
 
 @section('content')
-    <div class="content m-3">
-        <div class="mb-3 col-md-12">
-            <a href="{{ route('services.index') }}" class="btn btn-primary w-100">All</a>
-            <form action="{{ route('services.store') }}" method="POST" enctype="multipart/form-data" class="mb-5">
-                @csrf
-                <div class="row">
-                    <div class="form-group mb-3 col-md-12">
-                        <label class="form-label" for="src">Cover</label>
-                        <input type="file" class="form-control @error('src') is-invalid  @enderror" name="src" id="src">
-                        @error('src')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
+@php
+$errAz = collect(['name_az'])->filter(fn($f)=>$errors->has($f))->count();
+$errEn = collect(['name_en'])->filter(fn($f)=>$errors->has($f))->count();
+$errRu = collect(['name_ru'])->filter(fn($f)=>$errors->has($f))->count();
+$initLang = $errAz ? 'az' : ($errEn ? 'en' : ($errRu ? 'ru' : 'az'));
+@endphp
+<div x-data="{ lang: '{{ $initLang }}' }">
 
-                    <div class="form-group mb-3 col-md-12">
-                        <label class="form-label" for="alt">ALT</label>
-                        <input type="text" class="form-control @error('alt') is-invalid  @enderror" id="alt" name="alt" value="{{ old('alt') }}">
-                        @error('alt')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <div class="form-group mb-3 col-md-4">
-                        <label class="form-label" for="name_az">Name(AZ)</label>
-                        <input type="text" class="form-control @error('name_az') is-invalid  @enderror" name="name_az" id="name_az" value="{{ old('name_az') }}">
-                        @error('name_az')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <div class="form-group mb-3 col-md-4">
-                        <label class="form-label" for="name_en">Name(EN)</label>
-                        <input type="text" class="form-control @error('name_en') is-invalid  @enderror" name="name_en" id="name_en" value="{{ old('name_en') }}">
-                        @error('name_en')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <div class="form-group mb-3 col-md-4">
-                        <label class="form-label" for="name_ru">Name(RU)</label>
-                        <input type="text" class="form-control @error('name_ru') is-invalid  @enderror" name="name_ru" id="name_ru" value="{{ old('name_ru') }}">
-                        @error('name_ru')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="form-group mb-3">
-                    <button class="btn btn-primary float-right">ADD</button>
-                </div>
-            </form>
+{{-- Header --}}
+<div class="flex items-center justify-between mb-7">
+    <div class="flex items-center gap-3">
+        <a href="{{ route('services.index') }}" class="w-9 h-9 flex items-center justify-center rounded-xl bg-white border border-gray-200 hover:border-indigo-400 hover:text-indigo-600 transition-all shadow-sm text-gray-500">
+            <i class="fa fa-arrow-left text-sm"></i>
+        </a>
+        <div>
+            <h1 class="text-xl font-bold text-gray-900">Yeni Xidmət</h1>
+            <p class="text-xs text-gray-400 mt-0.5">3 dildə məlumat daxil edin</p>
         </div>
     </div>
+    <button form="srvForm" type="submit" class="btn-primary shadow-lg shadow-indigo-100">
+        <i class="fa fa-check"></i> Yadda Saxla
+    </button>
+</div>
+
+@if($errors->any())
+<div class="mb-5 flex items-start gap-3 bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-xl text-sm">
+    <i class="fa fa-circle-exclamation mt-0.5 shrink-0"></i>
+    <ul class="list-disc list-inside space-y-0.5">@foreach($errors->all() as $e)<li>{{ $e }}</li>@endforeach</ul>
+</div>
+@endif
+
+<form id="srvForm" action="{{ route('services.store') }}" method="POST" enctype="multipart/form-data">
+@csrf
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <div class="lg:col-span-2 space-y-5">
+
+        {{-- Lang tabs --}}
+        <div class="form-card">
+            <div class="flex border-b border-gray-100">
+                @foreach([['az','AZ','indigo',$errAz],['en','EN','blue',$errEn],['ru','RU','rose',$errRu]] as [$l,$lbl,$c,$ec])
+                <button type="button" @click="lang='{{ $l }}'"
+                    :class="lang==='{{ $l }}' ? 'text-{{ $c }}-600 border-b-2 border-{{ $c }}-500 bg-{{ $c }}-50/40' : 'text-gray-400 hover:text-gray-600'"
+                    class="flex-1 py-3.5 text-sm font-semibold transition-all flex items-center justify-center gap-2 relative">
+                    <span class="w-5 h-5 rounded text-[10px] font-bold flex items-center justify-center"
+                          :class="lang==='{{ $l }}' ? 'bg-{{ $c }}-100 text-{{ $c }}-700' : 'bg-gray-100 text-gray-500'">{{ $lbl }}</span>
+                    @if($l==='az') Azərbaycanca @elseif($l==='en') English @else Русский @endif
+                    @if($ec > 0)
+                    <span class="absolute top-1.5 right-2 w-4 h-4 bg-red-500 text-white text-[9px] font-bold rounded-full flex items-center justify-center">{{ $ec }}</span>
+                    @endif
+                </button>
+                @endforeach
+            </div>
+            <div class="p-6 space-y-4">
+                @foreach(['az'=>['Xidmətin adı','AZ'],'en'=>['Service name','EN'],'ru'=>['Название услуги','RU']] as $l=>[$ph,$lbl])
+                <div x-show="lang==='{{ $l }}'">
+                    <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Ad *</label>
+                    <input type="text" name="name_{{ $l }}" value="{{ old('name_'.$l) }}"
+                           class="admin-input text-base @error('name_'.$l) border-red-400 ring-2 ring-red-100 @enderror"
+                           placeholder="{{ $ph }} ({{ $lbl }})">
+                    @error('name_'.$l)<p class="mt-1.5 text-xs text-red-500 flex items-center gap-1"><i class="fa fa-circle-exclamation"></i>{{ $message }}</p>@enderror
+                </div>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- ALT --}}
+        <div class="form-card form-card-body">
+            <div class="form-section-title"><i class="fa fa-tag text-gray-300"></i> SEO</div>
+            <label class="admin-label">ALT mətn</label>
+            <input type="text" name="alt" value="{{ old('alt') }}" class="admin-input" placeholder="Şəkil üçün alt mətn">
+        </div>
+    </div>
+
+    {{-- Sidebar --}}
+    <div class="space-y-5">
+        <div class="form-card form-card-body">
+            <div class="form-section-title"><i class="fa fa-image text-gray-300"></i> İkon / Şəkil</div>
+            <label class="upload-zone h-44 group" id="coverLbl">
+                <input type="file" name="src" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer"
+                       onchange="previewImg(this,'covPrev','covPh')">
+                <div id="covPh" class="flex flex-col items-center gap-2 text-gray-400 group-hover:text-indigo-500 transition-colors p-6">
+                    <i class="fa fa-cloud-arrow-up text-4xl"></i>
+                    <span class="text-sm font-semibold">Şəkil seç</span>
+                    <span class="text-xs text-gray-300">SVG, PNG, JPG</span>
+                </div>
+                <img id="covPrev" src="#" class="hidden absolute inset-0 w-full h-full object-contain p-3 rounded-xl">
+            </label>
+            @error('src')<p class="mt-2 text-xs text-red-500 flex items-center gap-1"><i class="fa fa-circle-exclamation"></i>{{ $message }}</p>@enderror
+        </div>
+
+        <div class="bg-gradient-to-br from-indigo-500 to-violet-600 rounded-2xl p-5 text-white shadow-lg shadow-indigo-100">
+            <div class="flex items-center gap-2 mb-2">
+                <i class="fa fa-circle-info text-indigo-200"></i>
+                <span class="text-sm font-semibold">Məlumat</span>
+            </div>
+            <p class="text-xs text-indigo-100 leading-relaxed">Xidmət əlavə edildikdən sonra aktivlik vəziyyətini dəyişə bilərsiniz.</p>
+        </div>
+    </div>
+</div>
+</form>
+</div>
 @endsection
+
+@push('scripts')
+<script>
+function previewImg(input, prevId, phId) {
+    if (!input.files[0]) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+        const img = document.getElementById(prevId);
+        img.src = e.target.result;
+        img.classList.remove('hidden');
+        document.getElementById(phId).classList.add('hidden');
+    };
+    reader.readAsDataURL(input.files[0]);
+}
+</script>
+@endpush

@@ -1,59 +1,80 @@
 @extends('front.layouts.master')
-
+@section('title', __('google.googleTitle') . ' | RS Code')
 @section('content')
 
-    <!-- ==================== Start header ==================== -->
-    <header class="pages-header2 circle-bg valign sub-bg bg-img" data-background="img/patrn.svg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="cont mt-20 mb-20 text-center">
-                        <h1 class="color-font fw-700 fontsize">{{__('google.googleTitle')}}</h1>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="half sub-bg">
-            <div class="circle-color">
-                <div class="gradient-circle"></div>
-                <div class="gradient-circle two"></div>
-            </div>
-        </div>
-    </header>
-    <!-- ==================== End header ==================== -->
-<div class="main-content">
-        <!-- ==================== DATA SECTION START ==================== -->
-<section class="data-section section-padding3 pp-svg">
-    <div class="container-fluid">
-        <div class="fr-view">
-            <li><p>{{__('google.google1')}}</p></li>
-            <li><h3>{{__('google.google2')}}</h3></li>
-            <li><p>{{__('google.google3')}}</p></li>
-            <li><h3>{{__('google.google4')}}</h3></li>
-            <li><p>{{__('google.google5')}}</p></li>
-            <div class="down-li">
-                <ol>
-                    <li><p>{{__('google.google6')}}</p></li>
-                    <li><p>{{__('google.google7')}}</p></li>
-                    <li><p>{{__('google.google8')}} </p></li>
-                </ol>
-            </div>
-            <li><h3>{{__('google.google9')}}</h3></li>
-            <li><h5>{{__('google.google10')}}</h5></li>
-            <li><h6>{{__('google.google11')}}</h6></li>
-            <li><p>{{__('google.google12')}}</p></li>
-            <li><h3>{{__('google.google13')}}</h3></li>
-            <li><p><img class="image-fir diir" src="/img/slid/google_reklamlari3.png" alt="">{{__('google.google14')}}</p></li>
-            <div class="down-li">
-                <ol>
-                    <li><p>{{__('google.google15')}}</p></li>
-                    <li><p>{{__('google.google6')}}</p></li>
-                    <li><p>{{__('google.google17')}}</p></li>
-                </ol>
-            </div>
-        </div>
+{{-- Hero --}}
+<section class="relative pt-32 pb-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-violet-950/20 via-transparent to-transparent pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style="font-family:'Bricolage Grotesque',sans-serif">
+            {{ __('google.googleTitle') }}
+        </h1>
     </div>
 </section>
-<!-- ==================== DATA SECTION END ==================== -->
+
+{{-- Content --}}
+<section class="py-12 pb-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+        <p class="text-zinc-400 leading-relaxed text-sm">{{ __('google.google1') }}</p>
+
+        {{-- Google Adwords --}}
+        <div class="bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-8">
+            <h2 class="text-xl font-bold text-white mb-3" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('google.google2') }}</h2>
+            <p class="text-zinc-400 leading-relaxed text-sm">{{ __('google.google3') }}</p>
+        </div>
+
+        {{-- Keyword targeting --}}
+        <div class="bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-8">
+            <h2 class="text-xl font-bold text-white mb-3" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('google.google4') }}</h2>
+            <p class="text-zinc-400 leading-relaxed text-sm mb-5">{{ __('google.google5') }}</p>
+            <ul class="space-y-3">
+                @foreach([__('google.google6'), __('google.google7'), __('google.google8')] as $item)
+                <li class="flex items-start gap-3 text-zinc-300 text-sm leading-relaxed">
+                    <span class="w-5 h-5 rounded-full bg-violet-600/20 flex items-center justify-center shrink-0 mt-0.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
+                    </span>
+                    {{ $item }}
+                </li>
+                @endforeach
+            </ul>
+        </div>
+
+        {{-- Site quality --}}
+        <div class="bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-6">
+            <h2 class="text-lg font-bold text-white mb-2" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('google.google9') }}</h2>
+            <p class="text-zinc-400 text-sm leading-relaxed mb-3">{{ __('google.google10') }}</p>
+            <h3 class="font-semibold text-violet-300 mb-1 text-sm">{{ __('google.google11') }}</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">{{ __('google.google12') }}</p>
+        </div>
+
+        {{-- Google AdSense --}}
+        <div class="bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-8">
+            <h2 class="text-xl font-bold text-white mb-3" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('google.google13') }}</h2>
+            <p class="text-zinc-400 leading-relaxed text-sm mb-5">{{ __('google.google14') }}</p>
+            <ul class="space-y-3">
+                @foreach([__('google.google15'), __('google.google6'), __('google.google17')] as $item)
+                <li class="flex items-start gap-3 text-zinc-300 text-sm leading-relaxed">
+                    <span class="w-5 h-5 rounded-full bg-violet-600/20 flex items-center justify-center shrink-0 mt-0.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
+                    </span>
+                    {{ $item }}
+                </li>
+                @endforeach
+            </ul>
+        </div>
+
+        {{-- CTA --}}
+        <div class="bg-gradient-to-br from-violet-900/30 to-violet-800/10 border border-violet-500/20 rounded-2xl p-8 text-center">
+            <h3 class="text-xl font-bold text-white mb-3" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('index.cta_h1_line1') }}</h3>
+            <p class="text-zinc-400 text-sm mb-6">{{ __('index.cta_text') }}</p>
+            <a href="/contact" class="inline-flex items-center gap-2 bg-violet-700 hover:bg-violet-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-violet-700/30">
+                {{ __('index.contact') }}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+
+    </div>
+</section>
+
 @endsection

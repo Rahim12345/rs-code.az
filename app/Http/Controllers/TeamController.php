@@ -61,7 +61,6 @@ class TeamController extends Controller
             'professional'=>$request->professional
         ]);
 
-        toastr()->success('Data yaradıldı','Əla');
         return redirect()->route('team.edit',$team->id);
     }
 
@@ -119,8 +118,15 @@ class TeamController extends Controller
             'full_name'=>$request->full_name,
             'professional'=>$request->professional
         ]);
-        toastr()->success('Data redaktə','Əla');
         return redirect()->route('team.edit',$team->id);
+    }
+
+    public function reorder(Request $request)
+    {
+        foreach ($request->ids as $index => $id) {
+            Team::whereId($id)->update(['order_no' => $index + 1]);
+        }
+        return response()->json(['message' => 'Sıra yeniləndi']);
     }
 
     /**
@@ -134,7 +140,6 @@ class TeamController extends Controller
         $this->fileDelete('files/teams/'.$team->src);
         $team->delete();
 
-        toastr()->success('Data silindi','Əla');
         return redirect()->route('team.index');
     }
 }

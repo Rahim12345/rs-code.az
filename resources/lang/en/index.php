@@ -163,4 +163,67 @@ return [
     'seoadiut5' => 'Phone*',
     'seoadiut6' => 'Send',
     'seoadiut7' => 'Your application has been successfully submitted and will be returned within a day. Thank you.',
+
+    // Hero
+    'hero_h1_line1' => 'We Turn Your',
+    'hero_h1_line2' => 'Brand Into',
+    'hero_h1_line3' => 'Digital Power',
+    'hero_subtitle' => 'Logo design, corporate identity, website, SMM — all branding services in one place.',
+    'hero_portfolio_btn' => 'View Portfolio',
+    'hero_contact_btn' => 'Contact Us',
+    'stat_clients' => 'Clients',
+    'stat_experience' => 'Years Experience',
+    'stat_projects' => 'Projects',
+    'stat_experts' => 'Experts',
+    'scroll_text' => 'scroll',
+
+    // Services
+    'services_eyebrow' => 'What We Do',
+    'services_heading' => 'Our Services',
+    'services_more' => 'Details',
+    'services_all' => 'View All Services',
+
+    // Portfolio
+    'portfolio_eyebrow' => 'Our Work',
+    'portfolio_heading' => 'Recent Projects',
+    'portfolio_all' => 'View All',
+
+    // About
+    'about_eyebrow' => 'About Us',
+    'about_h1_line1' => 'Discover the Power',
+    'about_h1_line2' => 'of Branding Together',
+    'about_btn' => 'Learn More',
+    'stat_success_clients' => 'Happy Clients',
+    'stat_completed' => 'Completed Projects',
+    'stat_years' => 'Years in Business',
+    'stat_team' => 'Team Members',
+
+    // Partners
+    'partners_eyebrow' => 'Our Partners',
+
+    // Reviews
+    'reviews_eyebrow' => 'Reviews',
+    'reviews_heading' => 'What Our Clients Say?',
+    'reviews_role' => 'Client',
+
+    // Blog
+    'blog_eyebrow' => 'Blog',
+    'blog_heading' => 'Recent Articles',
+    'blog_all' => 'View All',
+    'blog_read' => 'Read',
+    'blog_read_more'     => 'Read more',
+    'blog_hero_h1_span'  => 'Useful articles',
+    'blog_hero_h1'       => 'and resources',
+    'blog_hero_desc'     => 'Expert insights on design, SEO, branding and digital marketing',
+    'blog_empty'         => 'No articles yet',
+    'blog_cta_heading'   => 'Stay updated with new articles',
+    'blog_cta_text'      => 'Expert content on digital marketing, design and technology',
+    'blog_cta_btn'       => 'Contact us',
+
+    // CTA
+    'cta_h1_line1' => 'Let\'s Realize Your',
+    'cta_h1_line2' => 'Project Together',
+    'cta_text' => 'We are ready to find the most suitable solution for you. Contact us and get a free consultation.',
+    'cta_contact' => 'Contact Us',
+    'cta_order' => 'Order Now',
 ];

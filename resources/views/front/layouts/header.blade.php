@@ -1,166 +1,193 @@
-@php
-    $logotips       = \App\Models\LogoTip::all();
-    $vizit_karts    = \App\Models\VizitKart::all();
-    $konverts       = \App\Models\Konvert::all();
-    $styles         = \App\Models\FirmaStili::all();
-    $veb_dasiyicis  = \App\Models\VebDasiyici::with('numunes')->get();
-    $veb_vesaits    = \App\Models\VebVesait::all();
-@endphp
+<header
+    x-data="{ open: false, scrolled: false }"
+    @scroll.window="scrolled = window.scrollY > 40"
+    :class="open ? '' : (scrolled ? 'bg-[#09090b]/90 backdrop-blur-xl border-b border-zinc-800/60 shadow-xl shadow-black/20' : 'bg-transparent')"
+    class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
 
-<!DOCTYPE html>
-<html lang="az" class="html">
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="title" content="{{__('index.first')}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="keywords" content="Veb Saytların Hazırlanması, websayt, sayt sifarişi, sayt yığılması" />
-    <meta name="description" content="Veb Saytların Hazırlanması, istəyə uyğun sayt yığılması. Ətraflı məlumat üçün əlaqə saxlayın" />
-    <meta name="author" content="{{ config('app.name') }}" />
-    <meta name="csrf-token" content="{{ csrf_token() }}"/>
-    <title>{{__('index.first')}}</title>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-20">
 
-    <link rel="icon" type="image/png" href="{{ asset('img/132.png') }}">
-    <link rel="shortcut icon" href="{{ asset('img/132.png') }}" />
-    <meta property="og:image" content="{{ asset('img/132.png') }}">
-    <meta property="twitter:image" content="{{ asset('img/132.png') }}">
-
-    <meta property="og:url" content="{{ config('app.url') }}">
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta http-equiv="Content-language" content="az_AZ">
-    <meta name="keywords" content="saytlarin hazirlanmasi, sayt sifarisi, sayt acmaq, sayt yaratmaq, saytlarin yaradilmasi, saytlarin yigilmasi">
-    <meta name="designer" content="Rahim Süleymanov">
-    <meta name="coder" content="Rahim Süleymanov">
-    <meta name="description" content="Veb saytların sürətli və peşəkar səviyyədə hazırlanması.saytların yığılması bir sifarişə baxır.">
-    <meta property="twitter:title" content="{{__('index.first')}}">
-    <meta property="twitter:description" content="Veb Saytların Hazırlanması, SEO Xidməti, SMM Xidməti, Hostinq xidmətləri, Google Reklamları, Facebook və İnstagram Reklamları, Loqo Hazırlanması, Qrafiki xidmətlər">
-    <meta property="og:title" content="{{__('index.first')}}">
-    <meta property="og:description" content="Veb Saytların Hazırlanması, SEO Xidməti, SMM Xidməti, Hostinq xidmətləri, Google Reklamları, Facebook və İnstagram Reklamları, Loqo Hazırlanması, Qrafiki xidmətlər">
-    <meta property="og:site_name" content="{{ config('app.name') }}">
-
-
-
-    <meta name="facebook-domain-verification" content="s59utpbwg5gn9yu7ln6cuyx5bbqm0f" />
-
-    <link rel="canonical" href="{{ config('app.url') }}">
-    <link rel="shortcut icon" href="{{ asset('img/132.png') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.0/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/4.1.5/css/flag-icons.min.css">
-    <link rel="stylesheet" href="{{ asset('css/animation.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/main.css?v='.time()) }}"/>
-
-    <meta name="google-site-verification" content="VUYowyHre6ewr9gpY1xcdfhkeZS4_JMKO52DzOTko1w" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
-
-    <link rel="stylesheet" href="{{ asset('css/brif/brifs.css') }}">
-    <script>
-        function openModal() {
-            document.getElementById('id01').style.display = 'block';
-        }
-    </script>
-</head>
-
-<body>
-<nav class="navbar navbar-expand-lg change" >
-    <div class="container-fluid">
-        <a class="logo imgLoad" href="/">
-            <img class="lozad" data-src="{{ asset('img/rs-code.png') }}" src="{{ asset('img/rs-code.png') }}" alt="{{ config('app.name') }}" />
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="icon-bar"><i class="fas fa-bars"></i></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav m-auto">
-                <li class="nav-item"><a class="nav-link @if(Request::segment(1) == 'about') active @endif" href="/about">{{__('index.about')}}</a></li>
-                <li class="nav-item "><a class="nav-link @if(Request::segment(1) == 'portfolio') active @endif" href="{{ route('front.portfolio') }}" role="button" aria-haspopup="true" aria-expanded="false">{{__('index.projects')}}</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle @if(Request::segment(1) == 'services') active @endif" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{__('index.services')}}</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="/veb-saytlarin-hazirlanmasi"><span class="menu-text">{{__('index.header1')}}</span></a></li>
-                        <li><a class="dropdown-item" href="/loqo-hazirlanmasi"><span class="menu-text">{{__('index.header3')}}</span></a></li>
-                        <li><a class="dropdown-item" href="/korporativ-email"><span class="menu-text">{{__('index.header4')}}</span></a></li>
-                        <li><a class="dropdown-item" href="/seo-xidmeti"><span class="menu-text">{{__('index.header5')}}</span></a></li>
-                        <li><a class="dropdown-item" href="/google-reklamlari"><span class="menu-text">{{__('index.header6')}}</span></a></li>
-                        <li><a class="dropdown-item" href="/texniki-destek"><span class="menu-text">{{__('index.header7')}}</span></a></li>
-                        <li><a class="dropdown-item" href="/smm-xidmeti"><span class="menu-text">{{__('index.header9')}}</span></a></li>
-                    </ul>
-                </li>
-
-              {{--
-                <li class="nav-item "><a class="nav-link @if(Request::segment(1) == 'blogs') active @endif" href="/blogs" role="button" aria-haspopup="true" aria-expanded="false">{{__('index.blog')}}</a></li>--}}
-                <li class="nav-item "><a class="nav-link @if(Request::segment(1) == 'faq') active @endif" href="/faq" role="button" aria-haspopup="true" aria-expanded="false">{{__('index.faq')}}</a></li>
-                <li class="nav-item"><a class="nav-link @if(Request::segment(1) == 'contact') active @endif" href="/contact">{{__('index.contact')}}</a></li>
-
-            </ul>
-            <a  onclick="openModal();" class="butn curve btnHidden" style="color: #fff" id="BtnM"
-                data-wow-delay=".5s"><span >{{__('index.order')}}</span></a>
-        </div>
-        <div class="lang" style="flex-grow: 0" id="navbarSupportedContent">
-                <div class="selected-lang">
-                </div>
-                <ul>
-                    <li>
-                        <a href="{{ route('front.lang',['lang'=>'az']) }}" class="az">Az</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('front.lang',['lang'=>'ru']) }}" class="ru">Ru</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('front.lang',['lang'=>'en']) }}" class="en">En</a>
-                    </li>
-                </ul>
-        </div>
-
-</div>
-</nav>
-
-<!-- Mobile Menu -->
-
-<div class="vs-menu-wrapper position-re">
-    <div class="vs-menu-area">
-        <button class="vs-menu-toggle text-theme vs-active"><i class="fas fa-times-circle"></i></button>
-        <div class="mobile-logo">
-            <a class="logo imgLoad" href="/">
-                <img class="lozad" data-src="{{ asset('img/rs-code.png') }}" src="{{ asset('img/rs-code.png') }}" alt="{{ config('app.name') }}" />
+            {{-- Logo --}}
+            <a href="/" class="flex items-center gap-2 shrink-0">
+                <img src="{{ asset('img/rs-code.png') }}" alt="RS Code" class="h-8 lg:h-9 w-auto">
             </a>
+
+            {{-- Desktop Nav --}}
+            <nav class="hidden lg:flex items-center gap-1">
+                @php
+                    $navUrls = [
+                        'az' => ['about' => '/haqqimizda', 'portfolio' => '/isler',        'blogs' => '/bloqlar', 'faq' => '/suallar',                     'contact' => '/elaqe'],
+                        'en' => ['about' => '/about',      'portfolio' => '/portfolio',     'blogs' => '/blogs',   'faq' => '/faq',                         'contact' => '/contact'],
+                        'ru' => ['about' => '/o-nas',      'portfolio' => '/portfolio-ru',  'blogs' => '/blogi',   'faq' => '/chasto-zadavaemye-voprosy',    'contact' => '/kontakty'],
+                    ];
+                    $nu = $navUrls[$lang] ?? $navUrls['az'];
+                    $navItems = [
+                        ['url' => '/',            'label' => __('index.main'),     'seg' => ''],
+                        ['url' => $nu['about'],   'label' => __('index.about'),    'seg' => 'about'],
+                        ['url' => $nu['portfolio'],'label' => __('index.projects'),'seg' => 'portfolio'],
+                        ['url' => $nu['blogs'],   'label' => __('index.blog'),     'seg' => 'blogs'],
+                        ['url' => $nu['faq'],     'label' => __('index.faq'),      'seg' => 'faq'],
+                        ['url' => $nu['contact'], 'label' => __('index.contact'),  'seg' => 'contact'],
+                    ];
+                @endphp
+
+                @foreach($navItems as $item)
+                    @if($item['url'] !== '#')
+                        @php
+                            $seg1 = Request::segment(1);
+                            $active = $seg1 === $item['seg']
+                                || ($item['seg'] === 'about'     && in_array($seg1, ['about','haqqimizda','o-nas']))
+                                || ($item['seg'] === 'portfolio' && in_array($seg1, ['portfolio','isler','portfolio-ru']))
+                                || ($item['seg'] === 'blogs'     && in_array($seg1, ['blogs','bloqlar','blogi']))
+                                || ($item['seg'] === 'faq'       && in_array($seg1, ['faq','suallar','chasto-zadavaemye-voprosy']))
+                                || ($item['seg'] === 'contact'   && in_array($seg1, ['contact','elaqe','kontakty']));
+                        @endphp
+                        <a href="{{ $item['url'] }}"
+                           class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200
+                                  {{ $active
+                                      ? 'text-violet-400 bg-violet-500/10'
+                                      : 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60' }}">
+                            {{ $item['label'] }}
+                        </a>
+                    @endif
+                @endforeach
+
+                {{-- Services dropdown --}}
+                <div class="relative" x-data="{ open: false }" @mouseenter="open=true" @mouseleave="open=false">
+                    <button class="px-4 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 rounded-lg transition-all flex items-center gap-1">
+                        {{ __('index.services') }}
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                         class="absolute top-full left-0 w-64 pt-2 z-50">
+                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl shadow-2xl shadow-black/50 p-2">
+                        @php
+                        $serviceSlugs = [
+                            'az' => [
+                                '/veb-saytlarin-hazirlanmasi',
+                                '/loqo-hazirlanmasi',
+                                '/korporativ-email',
+                                '/seo-xidmeti',
+                                '/google-reklamlari',
+                                '/smm-xidmeti',
+                                '/texniki-destek',
+                            ],
+                            'en' => [
+                                '/website-development',
+                                '/logo-design',
+                                '/corporate-email',
+                                '/seo-services',
+                                '/google-ads',
+                                '/smm-services',
+                                '/technical-support',
+                            ],
+                            'ru' => [
+                                '/razrabotka-sajtov',
+                                '/razrabotka-logo',
+                                '/korporativnaya-pochta',
+                                '/seo-uslugi',
+                                '/reklama-google',
+                                '/smm-uslugi',
+                                '/tekhnicheskaya-podderzhka',
+                            ],
+                        ];
+                        $slugs = $serviceSlugs[$lang] ?? $serviceSlugs['az'];
+                        $services = [
+                            [$slugs[0], __('index.header1')],
+                            [$slugs[1], __('index.header3')],
+                            [$slugs[2], __('index.header4')],
+                            [$slugs[3], __('index.header5')],
+                            [$slugs[4], __('index.header6')],
+                            [$slugs[5], __('index.header9')],
+                            [$slugs[6], __('index.header7')],
+                        ]; @endphp
+                        @foreach($services as [$href, $label])
+                        <a href="{{ $href }}" class="flex items-center gap-3 px-3 py-2.5 text-sm text-zinc-400 hover:text-violet-400 hover:bg-violet-500/10 rounded-lg transition-all">
+                            <span class="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0"></span>
+                            {{ $label }}
+                        </a>
+                        @endforeach
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            {{-- Right: Lang + CTA --}}
+            <div class="hidden lg:flex items-center gap-4">
+                {{-- Language --}}
+                <div class="flex items-center gap-1 bg-zinc-800/40 rounded-lg p-1">
+                    @foreach(['az','ru','en'] as $l)
+                    <a href="{{ route('front.lang', ['lang' => $l]) }}"
+                       class="px-2.5 py-1 text-xs font-semibold rounded-md transition-all
+                              {{ $lang === $l ? 'bg-violet-600 text-white' : 'text-zinc-500 hover:text-zinc-200' }}">
+                        {{ strtoupper($l) }}
+                    </a>
+                    @endforeach
+                </div>
+
+                {{-- CTA --}}
+                <button @click="orderModal = true"
+                        class="bg-violet-700 hover:bg-violet-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-violet-700/30">
+                    {{ __('index.order') }}
+                </button>
+            </div>
+
+            {{-- Mobile burger --}}
+            <button @click="open = !open" class="lg:hidden text-zinc-400 hover:text-white p-2">
+                <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg x-show="open"  class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+    </div>
+
+    {{-- Mobile menu — full-screen overlay --}}
+    <div x-show="open"
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-150"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         style="display:none"
+         class="lg:hidden fixed inset-0 z-[60] bg-[#09090b] flex flex-col">
+
+        {{-- Top bar --}}
+        <div class="flex items-center justify-between h-16 px-4 border-b border-zinc-800/60 shrink-0">
+            <a href="/" class="flex items-center gap-2">
+                <img src="{{ asset('img/rs-code.png') }}" alt="RS Code" class="h-8 w-auto">
+            </a>
+            <button @click="open = false" class="text-zinc-400 hover:text-white p-2 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
         </div>
 
-        <ul class="menu-items">
-            <li class="nav-item"><a class="nav-link vs-mobile-menu @if(Request::segment(1) == '') active @endif" href="/">{{__('index.main')}}</a></li>
-            <li class="nav-item"><a class="nav-link vs-mobile-menu @if(Request::segment(1) == 'about') active @endif" href="/about">{{__('index.about')}}</a></li>
-            <li class="nav-item "><a class="nav-link vs-mobile-menu @if(Request::segment(1) == 'portfolio') active @endif" href="{{ route('front.portfolio') }}" role="button" aria-haspopup="true" aria-expanded="false">{{__('index.projects')}}</a></li>
-            <li id="menu-item-1612" class="menu-item nav-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1612 dropdown"><a title="Xidmətlər" href="#" data-toggle="dropdown1" class="hvr-underline-from-left1 vs-mobile-menu" aria-expanded="false" data-scroll="" data-options="easing: easeOutQuart">{{__('index.services')}}</a>
-                <ul role="menu" class="submenu" style="display: none;">
-                    <li id="menu-item-1155" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1155"><a title="SEO Xidməti" href="/veb-saytlarin-hazirlanmasi/">{{__('index.header1')}}</a></li>
-                    <li id="menu-item-1157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1157"><a title="Saytların hazırlanması" href="https://www.webman.az/saytlarin-hazirlanmasi/">{{__('index.header2')}}</a></li>
-                    <li id="menu-item-1156" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1156"><a title="Sosial media marketinq" href="/loqo-hazirlanmasi">{{__('index.header3')}}</a></li>
-                    <li id="menu-item-1529" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1529"><a title="Google xəritədə ünvan" href="/korporativ-email">{{__('index.header4')}}</a></li>
-                    <li id="menu-item-1529" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1529"><a title="Google xəritədə ünvan" href="/seo-xidmeti">{{__('index.header5')}}</a></li>
-                    <li id="menu-item-1529" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1529"><a title="Google xəritədə ünvan" href="/google-reklamlari">{{__('index.header6')}}</a></li>
-                    <li id="menu-item-1529" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1529"><a title="Google xəritədə ünvan" href="/texniki-destek">{{__('index.header7')}}</a></li>
-                    <li id="menu-item-1529" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1529"><a title="Google xəritədə ünvan" href="#">{{__('index.header8')}}</a></li>
-                    <li id="menu-item-1529" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1529"><a title="Google xəritədə ünvan" href="/smm-xidmeti">{{__('index.header9')}}</a></li>
-                </ul>
-                <div class="dropdown-btn"><span class="fa fa-angle-down"></span></div>
-            </li>
-            <li class="nav-item "><a class="nav-link vs-mobile-menu @if(Request::segment(1) == 'faq') active @endif" href="/faq" role="button" aria-haspopup="true" aria-expanded="false">{{__('index.faq')}}</a></li>
-            <li class="nav-item"><a class="nav-link vs-mobile-menu @if(Request::segment(1) == 'contact') active @endif" href="/contact">{{__('index.contact')}}</a></li>
-        </ul>
+        {{-- Nav links --}}
+        <nav class="flex flex-col gap-0.5 px-3 py-4 flex-1 overflow-y-auto">
+            <a href="/"                     @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.main') }}</a>
+            <a href="{{ $nu['about'] }}"    @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.about') }}</a>
+            <a href="{{ $nu['portfolio'] }}" @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.projects') }}</a>
+            <a href="{{ $nu['blogs'] }}"    @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.blog') }}</a>
+            <a href="{{ $nu['faq'] }}"      @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.faq') }}</a>
+            <a href="{{ $nu['contact'] }}"  @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.contact') }}</a>
+        </nav>
 
-        <ul class="menu-items languages" >
-            <li class="nav-item"><a class="nav-link" href="{{ route('front.lang',['lang'=>'az']) }}"><span class="flag-icon flag-icon-az"></span></a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('front.lang',['lang'=>'ru']) }}"><span class="flag-icon flag-icon-ru"></span></a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('front.lang',['lang'=>'en']) }}"><span class="flag-icon flag-icon-gb"></span></a></li>
-        </ul>
-
-
+        {{-- Bottom: lang + CTA --}}
+        <div class="flex items-center justify-between px-4 py-5 border-t border-zinc-800/60 shrink-0">
+            <div class="flex items-center gap-1 bg-zinc-800/60 rounded-lg p-1">
+                @foreach(['az','ru','en'] as $l)
+                <a href="{{ route('front.lang', ['lang' => $l]) }}"
+                   class="px-2.5 py-1 text-xs font-semibold rounded-md transition-all
+                          {{ $lang === $l ? 'bg-violet-600 text-white' : 'text-zinc-500 hover:text-zinc-200' }}">
+                    {{ strtoupper($l) }}
+                </a>
+                @endforeach
+            </div>
+            <button @click="orderModal = true; open = false"
+                    class="bg-violet-700 hover:bg-violet-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all">
+                {{ __('index.order') }}
+            </button>
+        </div>
     </div>
-</div>
-@include('front.includes.sifaris')
-<!-- ==================== End Navbar ==================== -->
+</header>

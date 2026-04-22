@@ -8,6 +8,25 @@ use DB, Validator;
 
 class BlogController extends Controller
 {
+    private array $attrs = [
+        'slug_az'   => 'Slug (AZ)',
+        'slug_en'   => 'Slug (EN)',
+        'slug_ru'   => 'Slug (RU)',
+        'title_az'  => 'Başlıq (AZ)',
+        'title_en'  => 'Title (EN)',
+        'title_ru'  => 'Заголовок (RU)',
+        'review_az' => 'Xülasə (AZ)',
+        'review_en' => 'Review (EN)',
+        'review_ru' => 'Описание (RU)',
+        'text_az'   => 'Mətn (AZ)',
+        'text_en'   => 'Content (EN)',
+        'text_ru'   => 'Содержание (RU)',
+        'date_az'   => 'Tarix (AZ)',
+        'date_en'   => 'Date (EN)',
+        'date_ru'   => 'Дата (RU)',
+        'photo'     => 'Kapak şəkli',
+    ];
+
     public function index()
     {
         $data['blogs'] = DB::table('blogs')->get();
@@ -25,133 +44,134 @@ class BlogController extends Controller
         return view('back.blog.edit', $data);
     }
 
-    public function update(Request $request, $id)
-    {
-        if (DB::table('blogs')->where('id', $id)->exists()) 
-        {
-            $blog = DB::table('blogs')->where('id', $id)->first();
-            
-            $rules = [
-                'slug'  => 'required',
-                'title_az'  => 'required',
-                'title_en'  => 'required',
-                'title_ru'  => 'required',
-                'review_ru' => 'required',
-                'review_en' => 'required',
-                'review_az' => 'required',
-                'text_az'   => 'required',
-                'text_en'   => 'required',
-                'text_ru'   => 'required',
-                'date_az'   => 'required',
-                'date_en'   => 'required',
-                'date_ru'   => 'required',
-            ];
-    
-            $validator = Validator::make($request->all(), $rules);
-    
-            if ($validator->fails()) 
-            {
-                return redirect()->back()->withErrors($validator)->withInput();
-            }
-    
-            
-            $slug      = $request->slug;
-            $title_az  = $request->title_az;
-            $title_en  = $request->title_en;
-            $title_ru  = $request->title_ru;
-            $review_az = $request->review_az;
-            $review_en = $request->review_en;
-            $review_ru = $request->review_ru;
-            $text_az   = $request->text_az;
-            $text_en   = $request->text_en;
-            $text_ru   = $request->text_ru;
-            $date_az   = $request->date_az;
-            $date_en   = $request->date_en;
-            $date_ru   = $request->date_ru;
-            $photo     = $request->file('photo');
-    
-            if ($photo) 
-            {
-                \File::delete('/images/blog/'.$blog->photo);
-                $photo_name = uniqid().".".$photo->getClientOriginalExtension();
-                $photo->move(public_path('images/blog'), $photo_name);
-            }
-            else
-            {
-                $photo_name = $blog->photo;
-            }
-    
-            
-            DB::table('blogs')->where('id', '=', $id)->update(['slug' => $slug, 'title_az' => $title_az, 'title_en' => $title_en, 'title_ru' => $title_ru, 'review_az' => $review_az, 'review_en' => $review_en, 'review_ru' => $review_ru, 'text_az' => $text_az, 'text_ru' => $text_ru, 'text_en' => $text_en, 'photo' => $photo_name, 'date_az' => $date_az, 'date_en' => $date_en, 'date_ru' => $date_ru]);
-    
-            return redirect('admin/blogs')->with('success', 'Blog\'da dəyişikliklər edildi');
-        }
-       
-    }
-    
-
     public function store(Request $request)
     {
         $rules = [
-            'slug'  => 'required',
+            'slug_az'   => 'required',
+            'slug_en'   => 'required',
+            'slug_ru'   => 'required',
             'title_az'  => 'required',
             'title_en'  => 'required',
             'title_ru'  => 'required',
-            'review_ru' => 'required',
-            'review_en' => 'required',
             'review_az' => 'required',
+            'review_en' => 'required',
+            'review_ru' => 'required',
             'text_az'   => 'required',
             'text_en'   => 'required',
             'text_ru'   => 'required',
             'date_az'   => 'required',
             'date_en'   => 'required',
             'date_ru'   => 'required',
-            'photo'     => 'required'
+            'photo'     => 'required|image',
         ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, [], $this->attrs);
 
-        if ($validator->fails()) 
-        {
-            return redirect()->back()->withErrors($validator)->withInput();
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
         }
 
-        $slug      = $request->slug;
-        $title_az  = $request->title_az;
-        $title_en  = $request->title_en;
-        $title_ru  = $request->title_ru;
-        $review_az = $request->review_az;
-        $review_en = $request->review_en;
-        $review_ru = $request->review_ru;
-        $text_az  = $request->text_az;
-        $text_en  = $request->text_en;
-        $text_ru  = $request->text_ru;
-        $date_az  = $request->date_az;
-        $date_en  = $request->date_en;
-        $date_ru  = $request->date_ru;
-        $photo    = $request->file('photo');
-
-        $photo_name = uniqid().".".$photo->getClientOriginalExtension();
+        $photo = $request->file('photo');
+        $photo_name = uniqid() . '.' . $photo->getClientOriginalExtension();
         $photo->move(public_path('images/blog'), $photo_name);
 
-        DB::table('blogs')->insert(['slug' => $slug, 'title_az' => $title_az, 'title_en' => $title_en, 'title_ru' => $title_ru, 'review_az' => $review_az, 'review_en' => $review_en, 'review_ru' => $review_ru, 'text_az' => $text_az, 'text_ru' => $text_ru, 'text_en' => $text_en, 'photo' => $photo_name, 'date_az' => $date_az, 'date_en' => $date_en, 'date_ru' => $date_ru]);
+        DB::table('blogs')->insert([
+            'slug_az'   => $request->slug_az,
+            'slug_en'   => $request->slug_en,
+            'slug_ru'   => $request->slug_ru,
+            'title_az'  => $request->title_az,
+            'title_en'  => $request->title_en,
+            'title_ru'  => $request->title_ru,
+            'review_az' => $request->review_az,
+            'review_en' => $request->review_en,
+            'review_ru' => $request->review_ru,
+            'text_az'   => $request->text_az,
+            'text_en'   => $request->text_en,
+            'text_ru'   => $request->text_ru,
+            'date_az'   => $request->date_az,
+            'date_en'   => $request->date_en,
+            'date_ru'   => $request->date_ru,
+            'photo'     => $photo_name,
+            'created_at'=> now(),
+            'updated_at'=> now(),
+        ]);
 
-        return redirect('/admin/blogs')->with('success', 'Blog əlavə olundu');
+        return response()->json(['message' => 'Blog uğurla əlavə olundu']);
+    }
+
+    public function update(Request $request, $id)
+    {
+        if (!DB::table('blogs')->where('id', $id)->exists()) {
+            return response()->json(['message' => 'Tapılmadı'], 404);
+        }
+
+        $blog = DB::table('blogs')->where('id', $id)->first();
+
+        $rules = [
+            'slug_az'   => 'required',
+            'slug_en'   => 'required',
+            'slug_ru'   => 'required',
+            'title_az'  => 'required',
+            'title_en'  => 'required',
+            'title_ru'  => 'required',
+            'review_az' => 'required',
+            'review_en' => 'required',
+            'review_ru' => 'required',
+            'text_az'   => 'required',
+            'text_en'   => 'required',
+            'text_ru'   => 'required',
+            'date_az'   => 'required',
+            'date_en'   => 'required',
+            'date_ru'   => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, [], $this->attrs);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        $photo = $request->file('photo');
+        if ($photo) {
+            \File::delete(public_path('images/blog/' . $blog->photo));
+            $photo_name = uniqid() . '.' . $photo->getClientOriginalExtension();
+            $photo->move(public_path('images/blog'), $photo_name);
+        } else {
+            $photo_name = $blog->photo;
+        }
+
+        DB::table('blogs')->where('id', $id)->update([
+            'slug_az'   => $request->slug_az,
+            'slug_en'   => $request->slug_en,
+            'slug_ru'   => $request->slug_ru,
+            'title_az'  => $request->title_az,
+            'title_en'  => $request->title_en,
+            'title_ru'  => $request->title_ru,
+            'review_az' => $request->review_az,
+            'review_en' => $request->review_en,
+            'review_ru' => $request->review_ru,
+            'text_az'   => $request->text_az,
+            'text_en'   => $request->text_en,
+            'text_ru'   => $request->text_ru,
+            'date_az'   => $request->date_az,
+            'date_en'   => $request->date_en,
+            'date_ru'   => $request->date_ru,
+            'photo'     => $photo_name,
+            'updated_at'=> now(),
+        ]);
+
+        return response()->json(['message' => "Blog uğurla yeniləndi"]);
     }
 
     public function delete(Request $request)
     {
         $id = $request->id;
-        if (DB::table('blogs')->where('id', '=', $id)->exists()) 
-        {
-            $blog = DB::table('blogs')->where('id', '=', $id)->first();
-            DB::table('blogs')->where('id', '=', $id)->delete();
-            \File::delete('images/blog/'.$blog->photo);
-            return response()->json(['status' => 1, 'message' => 'Uğurla Silindi', 'id' => $id], 200);
+        if (DB::table('blogs')->where('id', $id)->exists()) {
+            $blog = DB::table('blogs')->where('id', $id)->first();
+            DB::table('blogs')->where('id', $id)->delete();
+            \File::delete(public_path('images/blog/' . $blog->photo));
+            return response()->json(['status' => 1, 'message' => 'Uğurla Silindi', 'id' => $id]);
         }
-        else
-        {
-            return response()->json(['status' => 0, 'message' => 'Bazada belə bir məlumat yoxdur'], 200);
-        }
+        return response()->json(['status' => 0, 'message' => 'Bazada belə bir məlumat yoxdur']);
     }
 }

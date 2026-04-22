@@ -23,6 +23,21 @@ class CommentController extends Controller
         }
     }
 
+    public function delete(Request $request)
+    {
+        $id      = $request->id;
+        $comment = DB::table('comments')->where('id', $id)->first();
+        if (!$comment) {
+            return response()->json(['status' => 0, 'message' => 'Tapılmadı']);
+        }
+        // Delete photo file if it's a local file (not a URL)
+        if ($comment->photo && !str_starts_with($comment->photo, 'http')) {
+            \File::delete(public_path('images/comments/' . $comment->photo));
+        }
+        DB::table('comments')->where('id', $id)->delete();
+        return response()->json(['status' => 1, 'message' => 'Uğurla silindi', 'id' => $id]);
+    }
+
     public function update(Request $request, $id)
     {
         if (DB::table('comments')->where('id', $id)->exists()) 

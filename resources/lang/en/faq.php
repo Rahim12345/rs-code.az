@@ -2,6 +2,7 @@
 
 return [
     'questions' => 'Frequently Asked Questions',
+    'subtitle'  => 'We answer your most common questions',
     'howmuch' => 'How much does a website cost?',
     'howmuchd' => 'The cost of site development can be different. It is difficult to say the standard price. The price depends on the structure, design, functions, etc. D. Site. depends on. After receiving information about you from the site we created during the phone call, it is possible to contact you at an approximate price. In this case, the prices are considered to be as high as possible to avoid the subsequent increase in price, which creates a negative impression on the buyer. However, the exact price can be stated after the detailed discussion. Discounts on general costs are possible only after mutual discussion.',
     'afterdevelop' => 'What form of technical support is provided after the site is developed?',

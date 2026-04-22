@@ -1,440 +1,112 @@
 @extends('front.layouts.master')
+@section('title', __('index.services') . ' | RS Code')
+@section('description', 'RS Code xidmətləri — veb sayt, brendinq, SEO, SMM, loqo, korporativ email, texniki dəstək.')
 
 @section('content')
+@php
+    $lang     = session('lang','az');
+    $services = \App\Models\Service::orderBy('order_no')->get();
+@endphp
 
-<header class="pages-header2 circle-bg valign sub-bg bg-img" data-background="img/patrn.svg">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="cont mt-20 mb-20 text-center">
-                    <h1 class="color-font fw-700 fontsize">{{__('index.services')}}</h1>
-                </div>
-            </div>
+{{-- Hero --}}
+<section class="relative pt-32 pb-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-violet-950/20 via-transparent to-transparent pointer-events-none"></div>
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-violet-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center max-w-3xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6" style="font-family:'Bricolage Grotesque',sans-serif">
+                Biznesiniz üçün <span class="gradient-text">kompleks həllər</span>
+            </h1>
+            <p class="text-zinc-400 text-lg">Dizayn, texnologiya və strategiyanı birləşdirərək brendinizi güclü edirik</p>
         </div>
     </div>
-    <div class="half sub-bg">
-        <div class="circle-color">
-            <div class="gradient-circle"></div>
-            <div class="gradient-circle two"></div>
-        </div>
-    </div>
-</header>
+</section>
 
-<!-- ==================== End Slider ==================== -->
-
-<!-- ==================== Start Services ==================== -->
-<div class="main-content">
-<section class="services bords section-padding2 pt-0">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-4 col-md-12 f9f">
-                <div class="imag">
-                    <img src="/img/main_service.png" alt="">
+{{-- Services grid --}}
+<section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            @foreach($services as $service)
+            @php
+                $name = $service->{'name_'.$lang} ?? $service->name_az;
+                $desc = $service->{'desc_'.$lang} ?? $service->desc_az;
+            @endphp
+            <div class="group bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-7 hover:border-violet-500/30 transition-all duration-300 hover:-translate-y-1">
+                {{-- Icon --}}
+                <div class="w-14 h-14 bg-violet-600/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-violet-600/20 transition-all">
+                    @if($service->icon)
+                    <svg class="w-7 h-7 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $service->icon }}"/>
+                    </svg>
+                    @else
+                    <svg class="w-7 h-7 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    @endif
                 </div>
+                <h2 class="text-xl font-bold text-white mb-3 group-hover:text-violet-300 transition-colors">{{ $name }}</h2>
+                <p class="text-zinc-500 text-sm leading-relaxed mb-5">{{ strip_tags($desc) }}</p>
+                @if($service->slug)
+                <a href="/{{ $service->slug }}"
+                   class="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm font-medium transition-colors group/link">
+                    Ətraflı oxu
+                    <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+                @endif
             </div>
-            <div class="col-xl-8 col-md-12 f8f pt-20">
-                <div class="row pt-50">
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".2s">
-                        <div class="item-box px-1 md-mb20">
-                            <div class="imgBox">
-                                <a href="/veb-saytlarin-hazirlanmasi"> <i class="fas fa-window-restore"></i></a>
-                            </div>
-                            <h6><a href="/veb-saytlarin-hazirlanmasi">{{__('service.website')}}</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".2s">
-                        <div class="item-box px-1">
-                            <div class="imgBox">
-                                <a ><i class="fas fa-pencil-ruler"></i></a>
-                            </div>
-                            <h6><a href="#">{{__('service.design')}}</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".4s">
-                        <div class="item-box px-1 md-mb20">
-                            <div class="imgBox">
-                                <a href="/smm-xidmeti"><i class="fas fa-poll"></i></a>
-                            </div>
-                            <h6><a href="/smm-xidmeti">{{__('about.smm')}}</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".4s">
-                        <div class="item-box px-1">
-                            <div class="imgBox">
-                                <a href="/loqo-hazirlanmasi"><i class="fas fa-pen-alt"></i></a>
-                            </div>
-                            <h6><a href="/loqo-hazirlanmasi">{{__('service.photo')}}</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".6s">
-                        <div class="item-box px-1 md-mb20">
-                            <div class="imgBox">
-                                <a href="/korporativ-email"><i class="fas fa-envelope-open-text"></i></a>
-                            </div>
-                            <h6><a href="/korporativ-email">{{__('service.comail')}}</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".6s">
-                        <div class="item-box px-1">
-                            <div class="imgBox">
-                                <a href="/seo-xidmeti"><i class="fas fa-chart-line"></i></a>
-                            </div>
-                            <h6><a href="/seo-xidmeti">{{__('about.seo')}}</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".6s">
-                        <div class="item-box px-1 md-mb20">
-                            <div class="imgBox">
-                                <a href="/google-reklamlari"><i class="fab fa-google"></i></a>
-                            </div>
-                            <h6><a href="/google-reklamlari">{{__('service.googleads')}}</a></h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".6s">
-                        <div class="item-box px-1">
-                            <div class="imgBox">
-                                <a href="/texniki-destek"><i class="fas fa-user-cog"></i></a>
+            @endforeach
+        </div>
 
-                            </div>
-                            <h6><a href="/texniki-destek">{{__('service.support')}}</a></h6>
-                        </div>
+        {{-- Why us --}}
+        <div class="mt-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-3" style="font-family:'Bricolage Grotesque',sans-serif">
+                    Nə üçün <span class="gradient-text">RS Code?</span>
+                </h2>
+                <p class="text-zinc-500">8 il ərzində 150+ müştəriyə xidmət göstərməyin verdiyi təcrübə</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach([
+                    ['M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0', 'Keyfiyyət zəmanəti', 'Hər layihəni zəmanət müddəti ərzində dəstəkləyirik.'],
+                    ['M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0', 'Vaxtında çatdırılma', 'Razılaşdırılmış müddətdə layihənizi teslim edirik.'],
+                    ['M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z', 'Peşəkar komanda', '15 nəfərlik ixtisaslaşmış komanda ilə işləyirik.'],
+                    ['M13 10V3L4 14h7v7l9-11h-7z', 'Müasir texnologiyalar', 'Ən son texnologiya trendarını izləyərək işləyirik.'],
+                    ['M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', 'Daimi əlaqə', '7/24 müştəri dəstəyi ilə sorularınıza cavab veririk.'],
+                    ['M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z', 'Şəffaf hesabat', 'Hər layihə üçün detallı hesabat və analitika.'],
+                ] as [$icon,$title,$desc])
+                <div class="bg-zinc-900/30 border border-zinc-800/30 rounded-xl p-5 flex gap-4">
+                    <div class="w-10 h-10 bg-violet-600/10 rounded-xl flex items-center justify-center shrink-0">
+                        <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $icon }}"/>
+                        </svg>
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 wow fadeInLeft" data-wow-delay=".6s">
-                        <div class="item-box px-1">
-                            <div class="imgBox">
-                                <i class="fas fa-server"></i>
-                            </div>
-                            <h6><a href="#">{{__('service.hosting')}}</a></h6>
-
-                        </div>
+                    <div>
+                        <h3 class="text-white font-semibold text-sm mb-1">{{ $title }}</h3>
+                        <p class="text-zinc-500 text-xs leading-relaxed">{{ $desc }}</p>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
 </section>
-<!-- ==================== End Services ==================== -->
- {{-- <section class="section-padding2 princ pt-0 position-re">
 
-    <div class="princgtable pb-100">
-        <div class="container">
-            <h4 class=" text-center color-font fontsize2 pb-70 pt-5">
-                Korporativ sayt hazırlanması qiymətləri
-            </h4>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="pricingTable10 paket1">
-                        <div class="pricingTable-header">
-                            <h3 class="heading">"S" Paketi</h3>
-                            <span class="price-value">
-                                <span class="currency"></span>499
-                                <span class="month">&#8380;</span>
-                            </span>
-                        </div>
-                        <div class="pricing-content">
-                            <ul>
-                                <li>Premium şablon üzərində dizayn</li>
-                                <li>Landing (1 səhifəli sayt)</li>
-                                <li>Dil seçimi: 1 - 2 dildə</li>
-                                <li>Hostinq: 12 ay</li>
-                                <li>SSL sertifikat</li>
-                                <li>Domen hədiyyə</li>
-                            </ul>
-                            <a href="#" class="read">Sifariş et</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 sm-pt30">
-                    <div class="pricingTable10 pak paket2 active">
-                        <div class="pricingTable-header">
-                            <h3 class="heading">"M" Paketi</h3>
-                            <span class="price-value">
-                                <span class="currency"></span>800-1400
-                                <span class="month">&#8380;</span>
-                            </span>
-                        </div>
-                        <div class="pricing-content">
-                            <ul>
-                                <li>PHP, Laravel</li>
-                                <li>Dil seçimi: 1 - 3 dildə</li>
-                                <li>Hostinq: 12 ay</li>
-                                <li>İdarəetmə paneli</li>
-                                <li>Axtarış Sistemlərində Qeydiyyat</li>
-                                <li>SSL sertifikat</li>
-                                <li>Domen hədiyyə</li>
-                            </ul>
-                            <a href="#" class="read">Sifariş et</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="pricingTable10  paket3 ">
-                        <div class="pricingTable-header">
-                            <h3 class="heading">"L" Paketi</h3>
-                            <span class="price-value">
-                                <span class="currency"></span>1500-2400
-                                <span class="month">&#8380;</span>
-                            </span>
-                        </div>
-                        <div class="pricing-content">
-                            <ul>
-                                <li>PHP, Laravel</li>
-                                <li>Dil seçimi: 2 - 3 dildə</li>
-                                <li>Hostinq: 12 ay</li>
-                                <li>İdarəetmə paneli</li>
-                                <li>Axtarış Sistemlərində Qeydiyyat</li>
-                                <li>SEO xidməti</li>
-                                <li>Onlayn Çat Sistemi</li>
-                                <li>SSL sertifikat</li>
-                                <li>Domen hədiyyə</li>
-                            </ul>
-                            <a href="#" class="read">Sifariş et</a>
-                        </div>
-                    </div>
-                </div>
+{{-- CTA --}}
+<section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="bg-gradient-to-br from-violet-900/40 via-purple-900/20 to-zinc-900/40 border border-violet-500/20 rounded-3xl p-12">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4" style="font-family:'Bricolage Grotesque',sans-serif">
+                Hansı xidmətə ehtiyacınız var?
+            </h2>
+            <p class="text-zinc-400 mb-8">Pulsuz konsultasiya alın — layihənizə uyğun həll seçək</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact" class="bg-violet-700 hover:bg-violet-600 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-violet-700/30">Əlaqə saxla</a>
+                <button @click="orderModal = true" class="border border-zinc-700 hover:border-violet-500 text-zinc-300 hover:text-white font-semibold px-8 py-3.5 rounded-xl transition-all">Sifariş ver</button>
             </div>
-        </div>
-    </div>
-
-    <div class="line top left"></div>
-
-
-</section>
-<section class="section-padding2 princ pt-0 position-re">
-    <div class="princgtable pb-100">
-        <div class="container">
-            <h4 class="text-center color-font fontsize2  pb-70 pt-5">
-                Onlayn Mağaza tipli sayt hazırlanması qiymətləri
-            </h4>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="pricingTable10 paket1 ">
-                        <div class="pricingTable-header">
-                            <h3 class="heading">"Market-1 "Paketi</h3>
-                            <span class="price-value">
-                                <span class="currency"></span>790
-                                <span class="month">&#8380;</span>
-                            </span>
-                        </div>
-                        <div class="pricing-content">
-                            <ul>
-                                <li>Premium şablon üzərində dizayn</li>
-                                <li>PHP, Laravel</li>
-                                <li>İdarəetmə paneli</li>
-                                <li>Kataloq strukturunun qurulması</li>
-                                <li>Məhsul əlavə edilməsi: 100 ədəd</li>
-                                <li>Dil seçimi: 2 - 3 dildə</li>
-                                <li>Hostinq: 12 ay</li>
-                                <li>SSL sertifikat</li>
-                                <li>Domen hədiyyə</li>
-                            </ul>
-                            <a href="#" class="read">Sifariş et</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="pricingTable10 pak paket2 active sm-pt30">
-                        <div class="pricingTable-header">
-                            <h3 class="heading">"Market-2" Paketi</h3>
-                            <span class="price-value">
-                                <span class="currency"></span>1200-1700
-                                <span class="month">&#8380;</span>
-                            </span>
-                        </div>
-                        <div class="pricing-content">
-                            <ul>
-                                <li>PHP, Laravel</li>
-                                <li>Hazır dizayn üzərində frontend</li>
-                                <li>Onlayn Ödəniş Sistemi</li>
-                                <li>Dil seçimi: 1 - 3 dildə</li>
-                                <li>Kataloq strukturunun qurulması</li>
-                                <li>Məhsul əlavə edilməsi: 200 ədəd</li>
-                                <li>Hostinq: 12 ay</li>
-                                <li>İdarəetmə paneli</li>
-                                <li>Axtarış Sistemlərində Qeydiyyat</li>
-                                <li>SSL sertifikat</li>
-                                <li>Domen hədiyyə</li>
-                            </ul>
-                            <a href="#" class="read">Sifariş et</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="pricingTable10 paket3">
-                        <div class="pricingTable-header">
-                            <h3 class="heading">"Market-3" Paketi</h3>
-                            <span class="price-value">
-                                <span class="currency"></span>1800-3000
-                                <span class="month">&#8380;</span>
-                            </span>
-                        </div>
-                        <div class="pricing-content">
-                            <ul>
-                                <li>Unkal Dizayn</li>
-                                <li>PHP, Laravel</li>
-                                <li>Hissə-hissə ödəniş sistemi</li>
-                                <li>Hazır dizayn üzərində frontend</li>
-                                <li>Onlayn Ödəniş Sistemi</li>
-                                <li>Dil seçimi: 1 - 4 dildə</li>
-                                <li>Kataloq strukturunun qurulması</li>
-                                <li>Məhsul əlavə edilməsi: 300 ədəd</li>
-                                <li>Hostinq: 12 ay</li>
-                                <li>İdarəetmə paneli</li>
-                                <li>Axtarış Sistemlərində Qeydiyyat</li>
-                                <li>SEO xidməti</li>
-                                <li>Onlayn Chat sistemi</li>
-                                <li>SSL sertifikat</li>
-                                <li>Domen hədiyyə</li>
-                            </ul>
-                            <a href="#" class="read">Sifariş et</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="line top right"></div>
-</section> --}}
-<!--
-<section class="section-padding2 position-re calculator">
-    <div class="container">
-        <div class="info">
-            <h3>
-                Hörmətli Müştərilər
-            </h3>
-            <p>
-                Bu səhifədə göstərilən bütün qiymətlər orta bazar qiymətləridir. Layihənizin unikal olduğunu və fərdi bir yanaşma tələb etdiyini başa düşürük. Buna görə də studiyamızdan daha dəqiq, fərdi təklif almaq üçün ən yaxşısı <a href="mailto:info@crr.az">info@crr.az</a> elektron poçtuna sorğu göndərməkdir və layihənizi daha ətraflı öyrənib maliyyətini daha konkret adlandıracağıq. Texniki bir xüsusiyyətiniz yoxdursa, menecerlərimizlə əlaqə qurmaq üçün telefon nömrənizi buraxın. Yaxın gələcəkdə menecerlərimiz layihənin detallarını aydınlaşdırmaq üçün sizinlə əlaqə saxlayacaqlar.
-            </p>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="calculator_container">
-                    <article class="service_form">
-                        <div class="service_form_group">
-                            <span class="service_form_group_name">Saytın növu:</span>
-                            <div class="service_form_group_select">
-                                <select class="service_form_group_select_name" name="site_type" id="">
-                                    <option disabled selected>Saytın növünü seçin</option>
-                                    <option value="2">Landing</option>
-                                    <option value="2">Xəbər saytı</option>
-                                    <option value="2">Onlayn Mağaza</option>
-                                    <option value="2">Koperativ</option>
-                                </select>
-
-                            </div>
-                            <span class="service_form_group_price">0</span>
-                        </div>
-                        <div class="service_form_group">
-                            <span class="service_form_group_name">Dizayn:</span>
-                            <div class="service_form_group_select">
-                                <select name="site_type" id="">
-                                    <option disabled selected>Dizayn seçin</option>
-                                    <option value="2">İnteraktiv Dizayn</option>
-                                    <option value="1">Sadə Dizayn</option>
-
-                                </select>
-
-                            </div>
-                            <span class="service_form_group_price">0</span>
-                        </div>
-                        <div class="service_form_group">
-                            <span class="service_form_group_name">Texniki Tapşırıq:</span>
-                            <div class="service_form_group_select">
-                                <select name="site_type" id="">
-                                    <option disabled selected>*</option>
-                                    <option value="2">Var</option>
-                                    <option value="1">Yoxdur</option>
-
-                                </select>
-
-                            </div>
-                            <span class="service_form_group_price">0</span>
-                        </div>
-                        <div class="service_form_group">
-                            <span class="service_form_group_name">Hazırlanma Müddəti:</span>
-                            <div class="service_form_group_select">
-                                <select name="site_type" id="">
-                                    <option disabled selected>*</option>
-                                    <option value="2">Tələsirəm</option>
-                                    <option value="1">Standart</option>
-
-                                </select>
-
-                            </div>
-                            <span class="service_form_group_price">0</span>
-                        </div>
-                        <div class="service_form_group">
-                            <span class="service_form_group_name">Funksionallıq:</span>
-                            <div class="service_form_group_select">
-                                <div class="service_form_group_multiselect_content">
-                                    <input type="text" readonly="readonly" class="multiselect_preview" placeholder="secmek ucun buraya klikleyin">
-                                    <ul class="service_form_group_multiselect_items">
-                                        <label>
-                                            <input type="checkbox" name="site_function" data-function-name="${item.name}" value="${item.pk}">
-                                            Ödəmə sistemi
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="site_function" data-function-name="${item.name}" value="${item.pk}">
-                                            Bir neçə dil
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="site_function" data-function-name="${item.name}" value="${item.pk}">
-                                            Bir neçə dil
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" name="site_function" data-function-name="${item.name}" value="${item.pk}">
-                                            Səbət Sistemi
-                                        </label>
-                                    </ul>
-                                </div>
-
-                            </div>
-                            <span class="service_form_group_price">0</span>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="calculator-container">
-                    <article class="calculator-checkout">
-                        <div class="calculator-checkout_body">
-                            <h3>Layihə smetası</h3>
-                            <div class="calculator-checkout-item">
-                                <span>Saytin novu</span>
-                                <div class="calculator-checkout-item__price">0</div>
-                                <div class="linec"></div>
-                            </div>
-                            <div class="calculator-checkout-item">
-                                <span>Dizayn</span>
-                                <div class="calculator-checkout-item__price">0</div>
-                                <div class="linec"></div>
-                            </div>
-                            <div class="calculator-checkout-item">
-                                <span>Texniki tapsiriq</span>
-                                <div class="calculator-checkout-item__price">0</div>
-                                <div class="linec"></div>
-                            </div>
-                            <div class="calculator-checkout-item">
-                                <span>Hazirlanma muddeti</span>
-                                <div class="calculator-checkout-item__price">0</div>
-                                <div class="linec"></div>
-                            </div>
-                            <div class="calculator-checkout-item">
-                                <span>Funksionallıq</span>
-                                <div class="calculator-checkout-item__price">0</div>
-                                <div class="linec"></div>
-                            </div>
-                        </div>
-                    <div class="calculator-footer">
-                        <h2>Toplam : <span id="id_calculator_total">0 &#8380;</span></h2>
-                    </div>
-                    </article>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>
--->
+
 @endsection

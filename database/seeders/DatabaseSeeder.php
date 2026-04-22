@@ -6,17 +6,14 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
-    public function run()
+    public function run(): void
     {
         $this->call([
-           UserSeeder::class,
-           GroupSeeder::class,
+            // Sistem / Lookup cədvəlləri
+            AdminSeeder::class,
+            UserSeeder::class,
 
+            // Brif seçimləri (sıra vacibdir)
             LogoTipSeeder::class,
             VizitKartSeeder::class,
             KonvertSeeder::class,
@@ -24,6 +21,25 @@ class DatabaseSeeder extends Seeder
             VebDasiyiciSeeder::class,
             VebDasiyiciNumuneSeeder::class,
             VebVesaitSeeder::class,
+
+            // Əsas kontent
+            AboutSeeder::class,
+            GroupSeeder::class,
+            ServiceSeeder::class,
+            TeamSeeder::class,
+            PartnerSeeder::class,
+            BlogSeeder::class,
+            CommentSeeder::class,
+
+            // Şirkət & Məhsul (GroupSeeder-dən sonra)
+            CompanySeeder::class,
+            ProductSeeder::class,
+
+            // Layihə portfeli
+            ProjectSeeder::class,
+
+            // Əlaqə müraciətləri
+            ContactSeeder::class,
         ]);
     }
 }

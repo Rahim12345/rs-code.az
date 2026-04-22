@@ -1,89 +1,85 @@
 @extends('back.layouts.master')
 
-@section('title', 'Haqqımızda')
+@section('title', 'Kommentlər')
+
 @section('content')
-
-<div class="content">
-    <div class="row">
-      <ol class="breadcrumb bg-transparent ml-3">
-        <li class="breadcrumb-item">
-          <a href="#">Home</a>
-        </li>
-        <li class="breadcrumb-item">
-          <a href="#">Library</a>
-        </li>
-        <li class="breadcrumb-item active">Data</li>
-      </ol><br>
-      @if (session('success'))
-      <div class="alert alert-success">
-        {{ session('success') }}
-      </div>
-      @endif
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header">
-            <div class="tools float-right">
-              <div class="dropdown">
-                <button type="button" class="btn btn-default dropdown-toggle btn-link btn-icon" data-toggle="dropdown">
-                  <i class="tim-icons icon-settings-gear-63"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="">Düzəliş Et</a>
-                </div>
-              </div>
-            </div>
-            <h4 class="card-title">Haqqımızda</h4>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table">
-                <thead class="text-primary">
-                  <tr>
-                    <th>
-                        Azərbaycanca ad
-                      </th>
-                      <th>
-                        İngiliscə ad
-                      </th>
-                      <th>
-                        Rusca ad
-                      </th>
-                      <th>
-
-                      </th>
-                  </tr>
-                </thead>
-                <tbody>
-                    @foreach ($comments as $comment)
-                    <tr>
-                        <td>
-                        {{ $comment->name_az }}
-                        </td>
-                        <td>
-                        {{ $comment->name_en }}
-                        </td>
-                        <td>
-                        {{ $comment->name_ru }}
-                        </td>
-                        <td>
-                        <img src="/images/comments/{{ $comment->comment_ru }}" alt=""> 
-                        </td>
-                        <td class="text-center">
-                            <a href="/admin/edit-comment/{{ $comment->id }}">
-                              <button type="button" class="btn btn-primary edit"  data-toggle="modal" data-target="#editmodal">
-                                  Edit
-                                </button>
-                              </a>
-                          </td>
-                      </tr>
-                    @endforeach
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="flex items-center justify-between mb-6">
+    <div>
+        <h1 class="text-xl font-bold text-gray-900">Kommentlər</h1>
+        <p class="text-sm text-gray-500 mt-0.5">Müştəri rəylərini idarə edin</p>
     </div>
-  </div>
-    
+</div>
+
+@if(session('success'))
+<div class="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700 text-sm">{{ session('success') }}</div>
+@endif
+
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <table class="admin-table w-full">
+        <thead>
+            <tr>
+                <th>Şəkil</th>
+                <th>Ad</th>
+                <th>Rəy (AZ)</th>
+                <th class="text-right">Əməliyyat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse($comments as $comment)
+            <tr id="row-{{ $comment->id }}">
+                <td>
+                    @php
+                        $src = $comment->photo && str_starts_with($comment->photo, 'http')
+                            ? $comment->photo
+                            : asset('images/comments/' . $comment->photo);
+                    @endphp
+                    @if($comment->photo)
+                    <img src="{{ $src }}" class="w-12 h-12 object-cover rounded-full" alt="">
+                    @else
+                    <div class="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-300">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    @endif
+                </td>
+                <td class="font-medium text-gray-900">{{ $comment->name_az }}</td>
+                <td class="text-gray-500 text-sm max-w-xs truncate">{{ Str::limit($comment->comment_az, 80) }}</td>
+                <td class="text-right">
+                    <div class="btn-group justify-end">
+                        <a href="/admin/edit-comment/{{ $comment->id }}" class="btn-primary btn-sm">
+                            <i class="fa fa-pen"></i>
+                        </a>
+                        <button onclick="deleteComment({{ $comment->id }})" class="btn-danger btn-sm">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            @empty
+            <tr><td colspan="4" class="text-center text-gray-400 py-8">Komment tapılmadı</td></tr>
+            @endforelse
+        </tbody>
+    </table>
+</div>
 @endsection
+
+@push('scripts')
+<script>
+function deleteComment(id) {
+    if (!confirm('Silmək istədiyinizdən əminsiniz?')) return;
+    $.ajax({
+        url: '/admin/delete-comment',
+        type: 'POST',
+        data: { id: id, _token: $('meta[name="csrf-token"]').attr('content') },
+        success: function(r) {
+            if (r.status == 1) {
+                document.getElementById('row-' + id).remove();
+                toastr.success(r.message);
+            } else {
+                toastr.error(r.message);
+            }
+        },
+        error: function() { toastr.error('Xəta baş verdi'); }
+    });
+}
+</script>
+@endpush

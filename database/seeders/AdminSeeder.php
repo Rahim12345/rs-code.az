@@ -3,20 +3,19 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use DB;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
+    public function run(): void
     {
         DB::table('admins')->insert([
-        'name' => 'Rahidə Mahmudova', 
-        'email' => 'mahmudovarahide@gmail.com', 
-        'password' => bcrypt('rahide123')]);
+            'name'       => 'Rahidə Mahmudova',
+            'email'      => 'admin@rscode.az',
+            'password'   => Hash::make('admin123'),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }

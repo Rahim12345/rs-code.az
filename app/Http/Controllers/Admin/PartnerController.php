@@ -11,8 +11,17 @@ class PartnerController extends Controller
 {
     public function index()
     {
-        $data['partners'] = DB::table('partners')->get();
+        $data['partners'] = DB::table('partners')->orderBy('order_no')->orderBy('id')->get();
         return view('back.partners.index', $data);
+    }
+
+    public function reorder(Request $request)
+    {
+        $this->validate($request, ['ids' => 'required|array']);
+        foreach ($request->ids as $index => $id) {
+            DB::table('partners')->where('id', $id)->update(['order_no' => $index + 1]);
+        }
+        return response()->json(['message' => 'Sıra yeniləndi']);
     }
 
     public function store(Request $request)
@@ -38,7 +47,7 @@ class PartnerController extends Controller
 
             if ($logo) 
             {
-                \File::delete("images/partners".$partner->logo);
+                \File::delete(public_path("images/partners/" . $partner->logo));
                 $logo_name = uniqid().".".$logo->getClientOriginalExtension();
                 $logo->move(public_path("images/partners"), $logo_name);
             }
@@ -49,8 +58,8 @@ class PartnerController extends Controller
     
             
     
-            DB::table('partners')->update(['link' => $link, 'logo' => $logo_name, 'name' => $name]);
-            return redirect('/partners')->with('status', 'Dəyişikliklər qeydə alındı!');
+            DB::table('partners')->where('id', $id)->update(['link' => $link, 'logo' => $logo_name, 'name' => $name]);
+            return redirect('/admin/partners')->with('status', 'Dəyişikliklər qeydə alındı!');
         }
         $rules = [
             'name'     => 'required',

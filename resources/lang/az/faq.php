@@ -2,6 +2,7 @@
 
 return [
     'questions' => 'Ən çox verilən suallar',
+    'subtitle'  => 'Sizin suallarınıza cavab veririk',
     'howmuch' => 'Veb sayt hazırlanmasının qiyməti neçədir? ',
     'howmuchd' => 'Saytın hazırlanmasının qiyməti müxtəlif ola bilər. Standart qiymət demək çətindir. Qiymət saytın strukturundan, dizaynından, funksiyalarından və s. asılıdır. Telefon əlaqəsi zamanı sizdən yaradılacaq sayt haqqında məlumat aldıqdan sonra sizə təxmini qiymət demək mümkün ola bilər. Bu zaman sonradan qiymət artımı və bunun müştəridə neqativ fikir yaratması halından qaçmaq üçün qiymətlər mümkün qədər yüksək deyilir. Lakin daha dəqiq qiyməti görüşüb ətraflı müzakirədən sonra demək mümkündür. Ümumi qiymətə endirimi də ancaq qarşılıqlı müzakirədən sonra etmək olar.',
     'afterdevelop' => 'Saytın hazırlanmasından sonra texniki dəstək hansı formada göstərilir?',

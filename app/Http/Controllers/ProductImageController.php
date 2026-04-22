@@ -89,30 +89,39 @@ class ProductImageController extends Controller
         $productImage->delete();
     }
 
+    public function destroyAjax($id)
+    {
+        $productImage = ProductImage::findOrFail($id);
+        $this->fileDelete('files/products/images/' . $productImage->src);
+        $productImage->delete();
+        return response()->json(['message' => 'Şəkil silindi']);
+    }
+
     public function deleter($id)
     {
         $productImage   = ProductImage::findOrFail($id);
         $this->fileDelete('files/products/images/'.$productImage->src);
         $productImage->delete();
 
-        toastr()->success('Data silindi','Əla');
         return redirect()->back();
     }
 
     public function ordered(\Illuminate\Http\Request $request)
     {
-        $this->validate($request,[
-           'imgID'=>'required|exists:product_images,id',
-           'order_no'=>'required|integer|min:0',
-        ],[],[
-            'imgID'=>'Şəkil sırası'
-        ]);
+        // Batch reorder: ids[] array
+        if ($request->has('ids')) {
+            foreach ($request->ids as $index => $id) {
+                ProductImage::whereId($id)->update(['order_no' => $index + 1]);
+            }
+            return response()->json(['message' => 'Sıra yeniləndi']);
+        }
 
-        $image = ProductImage::findOrFail($request->imgID);
-        $image->update([
-           'order_no'=>$request->order_no
+        // Legacy single update
+        $this->validate($request, [
+            'imgID'    => 'required|exists:product_images,id',
+            'order_no' => 'required|integer|min:0',
         ]);
-
-        return response('ok',200);
+        ProductImage::findOrFail($request->imgID)->update(['order_no' => $request->order_no]);
+        return response('ok', 200);
     }
 }

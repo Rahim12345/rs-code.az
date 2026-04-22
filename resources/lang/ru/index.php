@@ -166,4 +166,67 @@ return [
     'seoadiut5' => 'Телефон*',
     'seoadiut6' => 'Отправить',
     'seoadiut7' => 'Ваша заявка успешно отправлена и будет возвращена в течение дня. Спасибо.',
+
+    // Hero
+    'hero_h1_line1' => 'Превращаем ваш',
+    'hero_h1_line2' => 'бренд в',
+    'hero_h1_line3' => 'цифровую силу',
+    'hero_subtitle' => 'Дизайн логотипа, корпоративный стиль, веб-сайт, SMM — все брендинговые услуги в одном месте.',
+    'hero_portfolio_btn' => 'Посмотреть портфолио',
+    'hero_contact_btn' => 'Связаться с нами',
+    'stat_clients' => 'Клиентов',
+    'stat_experience' => 'Лет опыта',
+    'stat_projects' => 'Проектов',
+    'stat_experts' => 'Специалистов',
+    'scroll_text' => 'scroll',
+
+    // Services
+    'services_eyebrow' => 'Что мы делаем?',
+    'services_heading' => 'Наши услуги',
+    'services_more' => 'Подробнее',
+    'services_all' => 'Посмотреть все услуги',
+
+    // Portfolio
+    'portfolio_eyebrow' => 'Наши работы',
+    'portfolio_heading' => 'Последние проекты',
+    'portfolio_all' => 'Посмотреть все',
+
+    // About
+    'about_eyebrow' => 'О нас',
+    'about_h1_line1' => 'Откройте силу брендинга',
+    'about_h1_line2' => 'вместе с нами',
+    'about_btn' => 'Подробнее',
+    'stat_success_clients' => 'Довольных клиентов',
+    'stat_completed' => 'Завершённых проектов',
+    'stat_years' => 'Лет на рынке',
+    'stat_team' => 'Членов команды',
+
+    // Partners
+    'partners_eyebrow' => 'Наши партнёры',
+
+    // Reviews
+    'reviews_eyebrow' => 'Отзывы',
+    'reviews_heading' => 'Что говорят наши клиенты?',
+    'reviews_role' => 'Клиент',
+
+    // Blog
+    'blog_eyebrow' => 'Блог',
+    'blog_heading' => 'Последние статьи',
+    'blog_all' => 'Посмотреть все',
+    'blog_read' => 'Читать',
+    'blog_read_more'     => 'Подробнее',
+    'blog_hero_h1_span'  => 'Полезные статьи',
+    'blog_hero_h1'       => 'и ресурсы',
+    'blog_hero_desc'     => 'Экспертные материалы о дизайне, SEO, брендинге и цифровом маркетинге',
+    'blog_empty'         => 'Статей пока нет',
+    'blog_cta_heading'   => 'Следите за новыми статьями',
+    'blog_cta_text'      => 'Экспертный контент о цифровом маркетинге, дизайне и технологиях',
+    'blog_cta_btn'       => 'Связаться с нами',
+
+    // CTA
+    'cta_h1_line1' => 'Реализуем ваш проект',
+    'cta_h1_line2' => 'вместе',
+    'cta_text' => 'Мы готовы найти для вас наиболее подходящее решение. Свяжитесь с нами и получите бесплатную консультацию.',
+    'cta_contact' => 'Связаться',
+    'cta_order' => 'Заказать',
 ];

@@ -1,358 +1,183 @@
-<div class="modal fade " id="logo" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-     aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">{{ __('static.modal_1_label_1') }}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+{{-- LOGO BRİF MODALI --}}
+<div x-show="activeModal === 'logo'"
+     x-transition:enter="transition ease-out duration-150"
+     x-transition:enter-start="opacity-0 translate-x-2"
+     x-transition:enter-end="opacity-100 translate-x-0"
+     style="display:none">
+
+    <div class="overflow-y-auto max-h-[70vh] px-6 py-5 space-y-4">
+        <form id="brifModalOne" onsubmit="return false">
+
+            {{-- Şirkət adı --}}
+            <div class="brif-field">
+                <label class="control-label" for="logobrief-sirketadi">{{ __('static.modal_1_label_2') }}</label>
+                <textarea id="logobrief-sirketadi" class="form-control" name="sirketadi" rows="2"></textarea>
+                <small id="sirketadi-error"></small>
             </div>
-            <div class="modal-body" id="modal-body">
-                <form id="brifModalOne" class="sky-form" action="{{ route('front.brif.modal.one') }}" method="post" enctype="multipart/form-data" onsubmit="return false">
 
-                    <fieldset>
-                        <section>
-
-                            <label class="label labels"></label>
-
-                            <label class="textarea textarea-expandable  textarea-resizable">
-
-                                <div class="form-group field-logobrief-sirketadi required">
-                                    <label class="control-label" for="logobrief-sirketadi">{{ __('static.modal_1_label_2') }}</label>
-                                    <textarea id="logobrief-sirketadi" class="form-control" name="sirketadi" rows="3"
-                                              aria-required="true"></textarea>
-
-                                    <div class="help-block"></div>
-                                    <small class="text-danger" id="sirketadi-error"></small>
-                                </div>
-                            </label>
-                        </section>
-                        <section>
-                            <label class="label labels"></label>
-                            <label class="textarea textarea-expandable  textarea-resizable">
-
-                                <div class="form-group field-logobrief-logotip required">
-                                    <label class="control-label" for="logobrief-logotip">{{ __('static.modal_1_label_3') }}</label>
-                                    <textarea id="logobrief-logotip" class="form-control" name="logotip" rows="3"
-                                              aria-required="true"></textarea>
-
-                                    <div class="help-block"></div>
-                                    <small class="text-danger" id="logotip-error"></small>
-                                </div>
-                            </label>
-                        </section>
-                        <section>
-                            <label class="label labels"></label>
-                            <label class="textarea textarea-expandable  textarea-resizable">
-
-                                <div class="form-group field-logobrief-fealiyyetsahesi required">
-                                    <label class="control-label" for="logobrief-fealiyyetsahesi">{{ __('static.modal_1_label_4') }}</label>
-                                    <textarea id="logobrief-fealiyyetsahesi" class="form-control" name="fealiyyetsahesi"
-                                              rows="3" aria-required="true"></textarea>
-
-                                    <div class="help-block"></div>
-                                    <small class="text-danger" id="fealiyyetsahesi-error"></small>
-                                </div>
-                            </label>
-                        </section>
-                        <section>
-                            <label class="label labels"></label>
-                            <label class="textarea textarea-expandable  textarea-resizable">
-                                <div class="form-group field-logobrief-prespektiv">
-                                    <label class="control-label" for="logobrief-prespektiv">{{ __('static.modal_1_label_5') }}</label>
-                                    <textarea id="logobrief-prespektiv" class="form-control" name="prespektiv"
-                                              rows="3"></textarea>
-
-                                    <div class="help-block"></div>
-                                    <small class="text-danger" id="prespektiv-error"></small>
-                                </div>
-                            </label>
-                        </section>
-                        <section>
-                            <label class="label labels"></label>
-                            <label class="textarea textarea-expandable  textarea-resizable">
-                                <div class="form-group field-logobrief-reqibler">
-                                    <label class="control-label" for="logobrief-reqibler">{{ __('static.modal_1_label_6') }}</label>
-                                    <textarea id="logobrief-reqibler" class="form-control" name="reqibler"
-                                              rows="3"></textarea>
-
-                                    <div class="help-block"></div>
-                                    <small class="text-danger" id="reqibler-error"></small>
-                                </div>
-                            </label>
-                        </section>
-                        <section>
-                            <label class="label labels"></label>
-                            <label class="textarea textarea-expandable  textarea-resizable">
-                                <div class="form-group field-logobrief-fealiyyetdairesi">
-                                    <label class="control-label" for="logobrief-fealiyyetdairesi">{{ __('static.modal_1_label_7') }}</label>
-                                    <textarea id="logobrief-fealiyyetdairesi" class="form-control" name="fealiyyetdairesi"
-                                              rows="3"></textarea>
-
-                                    <div class="help-block"></div>
-                                    <small class="text-danger" id="fealiyyetdairesi-error"></small>
-                                </div>
-                            </label>
-                        </section>
-
-                        <section>
-                            <label class="label labels">{{ __('static.modal_1_label_8') }}</label>
-                                    <img id="image-preview" src="" alt="Image Preview">
-                            <label for="file" class="input input-file">
-                                <div class="buttonBrowser butn ">
-                                    <div class="form-group field-logobrief-movcudlogo">
-                                        <label class="control-label" for="logobrief-movcudlogo"></label>
-                                        <input type="file" id="logobrief-movcudlogo" name="movcudlogo" accept="image/*">
-                                        {{ __('static.modal_1_label_9') }}
-                                        <div class="help-block"></div>
-                                    </div>
-                                </div>
-                                <input type="text" readonly="">
-                            </label>
-                            <small class="text-danger" id="movcudlogo-error"></small>
-                        </section>
-
-                        <section>
-                            <label class="label labels"></label>
-                            <label class="textarea textarea-expandable  textarea-resizable">
-                                <div class="form-group field-logobrief-reng">
-                                    <label class="control-label" for="logobrief-reng">{{ __('static.modal_1_label_10') }}</label>
-                                    <textarea id="logobrief-reng" class="form-control" name="reng" rows="3"></textarea>
-
-                                    <div class="help-block"></div>
-                                    <small class="text-danger" id="reng-error"></small>
-                                </div>
-                            </label>
-                        </section>
-                        <section>
-                            <label class="label labels"></label>
-                            <label class="textarea textarea-expandable  textarea-resizable">
-                                <div class="form-group field-logobrief-logotipvacibliyi">
-                                    <label class="control-label" for="logobrief-logotipvacibliyi">{{ __('static.modal_1_label_11') }}</label>
-                                    <textarea id="logobrief-logotipvacibliyi" class="form-control" name="logotipvacibliyi"
-                                              rows="3"></textarea>
-
-                                    <div class="help-block"></div>
-                                    <small class="text-danger" id="logotipvacibliyi-error"></small>
-                                </div>
-                            </label>
-                        </section>
-                    </fieldset>
-                    <fieldset>
-                        <section style="margin-left: 12px">
-                            <!-- LOGOLAR -->
-                            <label class="label labels">{!! __('static.modal_1_label_12') !!}</label>
-                            @foreach($logotips->chunk(4) as $chunk)
-                                <div class="row">
-                                    <ul class="d-flex flex-wrap justify-content-between w-100">
-                                        @foreach($chunk as $item)
-                                            <li class="myli">
-
-                                                <input type="checkbox" id="myCheckbox{{ $item->id }}" class="checkbok logos husu"
-                                                       name="logotipsecimi" value="{{ $item->id }}">
-
-                                                <label for="myCheckbox{{ $item->id }}" class="logo-label">
-                                                    <figure class="sign">
-                                                        <p><img src="{{ asset('brif/logos/'.$item->src) }}" width="144.11" height="153.75"
-                                                                alt="Скульптура"></p>
-                                                        <figcaption style="width: 145px; height: 72px;">{{ $item->{'name_'.app()->getLocale()} }}
-                                                        </figcaption>
-                                                    </figure>
-                                                </label>
-                                            </li>
-                                        @endforeach
-                                    </ul>
-
-                                </div>
-                                <br>
-                                <br>
-                            @endforeach
-                            <small class="text-danger" id="logotipsecimi-error"></small>
-                        </section>
-                    </fieldset>
-
-                    <fieldset>
-                        <section>
-                            <label class="label text-center mt-3"> {{ __('static.modal_1_label_13') }}</label>
-                            <label class="label labels">{{ __('static.modal_1_label_14') }}</label>
-                            <div class="row">
-                                <div class="col col-12">
-                                    @foreach($vizit_karts as $vizit_kartsvizit_kart)
-                                        <label class="checkbox" for="logobrief-karparativkart_{{ $vizit_kartsvizit_kart->id }}"><input type="checkbox" id="logobrief-karparativkart_{{ $vizit_kartsvizit_kart->id }}" class="checkbok"
-                                                                                                                                       name="karparativkart[]" value="{{ $vizit_kartsvizit_kart->id }}"><i></i>{{ $vizit_kartsvizit_kart->{'name_'.app()->getLocale()} }}</label>
-                                    @endforeach
-                                        <small class="text-danger" id="karparativkart-error"></small>
-                                </div>
-                            </div>
-                        </section>
-                        <section>
-                            <label class="label labels">{{ __('static.modal_1_label_15') }}</label>
-                            <div class="row">
-                                <div class="col col-12">
-                                    @foreach($konverts as $konvert)
-                                        <label class="checkbox" for="logobrief-konvert_{{ $konvert->id }}"><input type="checkbox" id="logobrief-konvert_{{ $konvert->id }}" class="checkbok"
-                                                                                                                  name="konvert[]" value="{{ $konvert->id }}"><i></i>{{ $konvert->{'name_'.app()->getLocale()} }}</label>
-                                    @endforeach
-                                        <small class="text-danger" id="konvert-error"></small>
-                                </div>
-                            </div>
-                            <label class="label mt-3">{{ __('static.modal_1_label_16') }}</label>
-                            <label class="textarea textarea-expandable  textarea-resizable">
-                                <div class="form-group field-logobrief-diger">
-                                    <label class="control-label" for="logobrief-diger"></label>
-                                    <textarea id="logobrief-diger" class="form-control" name="diger" rows="3"></textarea>
-
-                                    <div class="help-block"></div>
-                                    <small class="text-danger" id="diger-error"></small>
-                                </div>
-                            </label>
-                        </section>
-
-                    </fieldset>
-                    <fieldset>
-                        <section>
-                            <label class="label labels">{{ __('static.modal_1_label_17') }}</label>
-                            <div class="row">
-                                <div class="col col-12">
-                                    @foreach($styles as $style)
-                                        <label class="checkbox" for="logobrief-style_{{ $style->id }}"><input type="checkbox" id="logobrief-style_{{ $style->id }}" class="checkbok"
-                                                                                                              name="firma_stili[]" value="{{ $style->id }}"><i></i>{{ $style->{'name_'.app()->getLocale()} }}</label>
-                                    @endforeach
-                                        <small class="text-danger" id="firma_stili-error"></small>
-                                </div>
-                            </div>
-                        </section>
-                    </fieldset>
-                    <fieldset>
-                        <section>
-                            <label class="label labels mt-3"></label>
-                            <label class="textarea textarea-expandable  textarea-resizable">
-                                <div class="form-group field-logobrief-basqaarzu">
-                                    <label class="control-label" for="logobrief-basqaarzu">{{ __('static.modal_1_label_18') }}</label>
-                                    <textarea id="logobrief-basqaarzu" class="form-control" name="basqaarzu"
-                                              rows="3"></textarea>
-
-                                    <div class="help-block"></div>
-                                    <small class="text-danger" id="basqaarzu-error"></small>
-                                </div>
-                            </label>
-                        </section>
-                    </fieldset>
-                    <fieldset>
-                        <label class="label labels mt-3">{{ __('static.modal_1_label_19') }}</label>
-
-                        <label class="textarea mb-4">
-
-
-                            <div class="form-group field-logobrief-ad required">
-                                <label class="control-label" for="logobrief-ad"></label>
-                                <textarea id="logobrief-ad" class="form-control" name="ad" rows="1"
-                                          placeholder="{{ __('static.modal_1_label_20') }}" aria-required="true"></textarea>
-
-                                <div class="help-block"></div>
-                                <small class="text-danger" id="ad-error"></small>
-                            </div>
-                        </label>
-
-
-                        <label class="textarea mb-4">
-
-
-                            <div class="form-group field-logobrief-vezife required">
-                                <label class="control-label" for="logobrief-vezife"></label>
-                                <textarea id="logobrief-vezife" class="form-control" name="vezife" rows="1"
-                                          placeholder="{{ __('static.modal_1_label_21') }}" aria-required="true"></textarea>
-
-                                <div class="help-block"></div>
-                                <small class="text-danger" id="vezife-error"></small>
-                            </div>
-                        </label>
-
-
-                        <label class="textarea mb-4">
-
-
-                            <div class="form-group field-logobrief-telefon required">
-                                <label class="control-label" for="logobrief-telefon"></label>
-                                <textarea id="logobrief-telefon" class="form-control" name="telefon" rows="1"
-                                          placeholder="{{ __('static.modal_1_label_22') }}" aria-required="true"></textarea>
-
-                                <div class="help-block"></div>
-                                <small class="text-danger" id="telefon-error"></small>
-                            </div>
-                        </label>
-
-
-
-                        <label class="textarea mb-4">
-
-
-                            <div class="form-group field-logobrief-email required">
-                                <label class="control-label" for="logobrief-email"></label>
-                                <textarea id="logobrief-email" class="form-control" name="email" rows="1"
-                                          placeholder="{{ __('static.modal_1_label_23') }}" aria-required="true"></textarea>
-
-                                <div class="help-block"></div>
-                                <small class="text-danger" id="email-error"></small>
-                            </div>
-                        </label>
-
-
-                        <section>
-
-                            <label class="textarea">
-
-
-                                <div class="form-group field-logobrief-vaxt required">
-                                    <label class="control-label" for="logobrief-vaxt"></label>
-                                    <textarea id="logobrief-vaxt" class="form-control" name="vaxt" rows="1"
-                                              placeholder="{{ __('static.modal_1_label_24') }}:" aria-required="true"></textarea>
-
-                                    <div class="help-block"></div>
-                                    <small class="text-danger" id="vaxt-error"></small>
-                                </div>
-                            </label>
-                        </section>
-
-                    </fieldset>
-
-
-                </form>
+            {{-- Logotip mətn --}}
+            <div class="brif-field">
+                <label class="control-label" for="logobrief-logotip">{{ __('static.modal_1_label_3') }}</label>
+                <textarea id="logobrief-logotip" class="form-control" name="logotip" rows="2"></textarea>
+                <small id="logotip-error"></small>
             </div>
-            <div class="modal-footer">
 
-                <button type="button" class="btn btn-primary butn" id="modalOneBtn">{{ __('static.modal_1_label_25') }}</button>
+            {{-- Fəaliyyət sahəsi --}}
+            <div class="brif-field">
+                <label class="control-label" for="logobrief-fealiyyetsahesi">{{ __('static.modal_1_label_4') }}</label>
+                <textarea id="logobrief-fealiyyetsahesi" class="form-control" name="fealiyyetsahesi" rows="2"></textarea>
+                <small id="fealiyyetsahesi-error"></small>
             </div>
-        </div>
+
+            {{-- Perspektiv --}}
+            <div class="brif-field">
+                <label class="control-label" for="logobrief-prespektiv">{{ __('static.modal_1_label_5') }}</label>
+                <textarea id="logobrief-prespektiv" class="form-control" name="prespektiv" rows="2"></textarea>
+                <small id="prespektiv-error"></small>
+            </div>
+
+            {{-- Rəqiblər --}}
+            <div class="brif-field">
+                <label class="control-label" for="logobrief-reqibler">{{ __('static.modal_1_label_6') }}</label>
+                <textarea id="logobrief-reqibler" class="form-control" name="reqibler" rows="2"></textarea>
+                <small id="reqibler-error"></small>
+            </div>
+
+            {{-- Fəaliyyət dairəsi --}}
+            <div class="brif-field">
+                <label class="control-label" for="logobrief-fealiyyetdairesi">{{ __('static.modal_1_label_7') }}</label>
+                <textarea id="logobrief-fealiyyetdairesi" class="form-control" name="fealiyyetdairesi" rows="2"></textarea>
+                <small id="fealiyyetdairesi-error"></small>
+            </div>
+
+            {{-- Mövcud loqo şəkli --}}
+            <div class="brif-field">
+                <p class="brif-section-title">{{ __('static.modal_1_label_8') }}</p>
+                <div class="flex items-center gap-3">
+                    <label class="flex items-center gap-2 px-4 py-2 bg-zinc-800 border border-zinc-700 rounded-lg cursor-pointer hover:border-violet-500 transition-colors text-sm text-zinc-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14"/></svg>
+                        {{ __('static.modal_1_label_9') }}
+                        <input type="file" id="logobrief-movcudlogo" name="movcudlogo" accept="image/*" class="hidden"
+                               onchange="document.getElementById('image-preview').src=URL.createObjectURL(this.files[0]); document.getElementById('image-preview').style.display='block'">
+                    </label>
+                </div>
+                <img id="image-preview" src="" alt="Image Preview" style="display:none; max-height:100px; margin-top:0.5rem; border-radius:0.5rem;">
+                <small id="movcudlogo-error"></small>
+            </div>
+
+            {{-- Rəng --}}
+            <div class="brif-field">
+                <label class="control-label" for="logobrief-reng">{{ __('static.modal_1_label_10') }}</label>
+                <textarea id="logobrief-reng" class="form-control" name="reng" rows="2"></textarea>
+                <small id="reng-error"></small>
+            </div>
+
+            {{-- Logotip vacibliyi --}}
+            <div class="brif-field">
+                <label class="control-label" for="logobrief-logotipvacibliyi">{{ __('static.modal_1_label_11') }}</label>
+                <textarea id="logobrief-logotipvacibliyi" class="form-control" name="logotipvacibliyi" rows="2"></textarea>
+                <small id="logotipvacibliyi-error"></small>
+            </div>
+
+            {{-- Logotip seçimi --}}
+            <div class="brif-field">
+                <p class="brif-section-title">{!! __('static.modal_1_label_12') !!}</p>
+                <div class="brif-logo-grid">
+                    @foreach($logotips as $item)
+                    <div class="brif-logo-item">
+                        <input type="checkbox" id="myCheckbox{{ $item->id }}" name="logotipsecimi" value="{{ $item->id }}">
+                        <label for="myCheckbox{{ $item->id }}">
+                            <img src="{{ asset('brif/logos/'.$item->src) }}" alt="{{ $item->{'name_'.app()->getLocale()} }}">
+                            <figcaption>{{ $item->{'name_'.app()->getLocale()} }}</figcaption>
+                        </label>
+                    </div>
+                    @endforeach
+                </div>
+                <small id="logotipsecimi-error"></small>
+            </div>
+
+            {{-- Vizit kart --}}
+            <div class="brif-field">
+                <p class="brif-section-title">{{ __('static.modal_1_label_14') }}</p>
+                <div class="brif-check-group">
+                    @foreach($vizit_karts as $vk)
+                    <label>
+                        <input type="checkbox" name="karparativkart[]" value="{{ $vk->id }}">
+                        {{ $vk->{'name_'.app()->getLocale()} }}
+                    </label>
+                    @endforeach
+                </div>
+                <small id="karparativkart-error"></small>
+            </div>
+
+            {{-- Konvert --}}
+            <div class="brif-field">
+                <p class="brif-section-title">{{ __('static.modal_1_label_15') }}</p>
+                <div class="brif-check-group">
+                    @foreach($konverts as $k)
+                    <label>
+                        <input type="checkbox" name="konvert[]" value="{{ $k->id }}">
+                        {{ $k->{'name_'.app()->getLocale()} }}
+                    </label>
+                    @endforeach
+                </div>
+                <small id="konvert-error"></small>
+                <div class="brif-field" style="margin-top:0.5rem">
+                    <label class="control-label">{{ __('static.modal_1_label_16') }}</label>
+                    <textarea id="logobrief-diger" class="form-control" name="diger" rows="2"></textarea>
+                    <small id="diger-error"></small>
+                </div>
+            </div>
+
+            {{-- Firma stili --}}
+            <div class="brif-field">
+                <p class="brif-section-title">{{ __('static.modal_1_label_17') }}</p>
+                <div class="brif-check-group">
+                    @foreach($styles as $style)
+                    <label>
+                        <input type="checkbox" name="firma_stili[]" value="{{ $style->id }}">
+                        {{ $style->{'name_'.app()->getLocale()} }}
+                    </label>
+                    @endforeach
+                </div>
+                <small id="firma_stili-error"></small>
+            </div>
+
+            {{-- Başqa arzu --}}
+            <div class="brif-field">
+                <label class="control-label" for="logobrief-basqaarzu">{{ __('static.modal_1_label_18') }}</label>
+                <textarea id="logobrief-basqaarzu" class="form-control" name="basqaarzu" rows="2"></textarea>
+                <small id="basqaarzu-error"></small>
+            </div>
+
+            {{-- Əlaqə məlumatları --}}
+            <p class="brif-section-title">{{ __('static.modal_1_label_19') }}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="brif-field">
+                    <textarea id="logobrief-ad" class="form-control" name="ad" rows="1" placeholder="{{ __('static.modal_1_label_20') }}"></textarea>
+                    <small id="ad-error"></small>
+                </div>
+                <div class="brif-field">
+                    <textarea id="logobrief-vezife" class="form-control" name="vezife" rows="1" placeholder="{{ __('static.modal_1_label_21') }}"></textarea>
+                    <small id="vezife-error"></small>
+                </div>
+                <div class="brif-field">
+                    <textarea id="logobrief-telefon" class="form-control" name="telefon" rows="1" placeholder="{{ __('static.modal_1_label_22') }}"></textarea>
+                    <small id="telefon-error"></small>
+                </div>
+                <div class="brif-field">
+                    <textarea id="logobrief-email" class="form-control" name="email" rows="1" placeholder="{{ __('static.modal_1_label_23') }}"></textarea>
+                    <small id="email-error"></small>
+                </div>
+                <div class="brif-field sm:col-span-2">
+                    <textarea id="logobrief-vaxt" class="form-control" name="vaxt" rows="1" placeholder="{{ __('static.modal_1_label_24') }}"></textarea>
+                    <small id="vaxt-error"></small>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="brif-submit">
+        <button type="button" id="modalOneBtn">{{ __('static.modal_1_label_25') }}</button>
     </div>
 </div>
-
-
-<script>
-    // Get references to the input and image elements
-    const imageInput = document.getElementById("logobrief-movcudlogo");
-    const imagePreview = document.getElementById("image-preview");
-
-    // Add an event listener to the input element to trigger the image preview
-    imageInput.addEventListener("change", function() {
-        const selectedImage = imageInput.files[0];
-
-        if (selectedImage) {
-            // Create a FileReader to read the selected image file
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                // Set the src attribute of the image element to display the preview
-                imagePreview.src = e.target.result;
-                imagePreview.style.display = "block"; // Display the image preview
-            };
-
-            // Read the selected image as a data URL
-            reader.readAsDataURL(selectedImage);
-        } else {
-            // If no image is selected, hide the image preview
-            imagePreview.style.display = "none";
-        }
-    });
-</script>

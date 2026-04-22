@@ -1,157 +1,101 @@
 @extends('front.layouts.master')
-
+@section('title', __('seo.seoTitle') . ' | RS Code')
 @section('content')
 
-    <!-- ==================== Start header ==================== -->
-    <header class="pages-header2 circle-bg valign sub-bg bg-img" data-background="img/patrn.svg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="cont mt-20 mb-20 text-center">
-                        <h1 class="color-font fw-700 fontsize">{{__('seo.seoTitle')}}</h1>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="half sub-bg">
-            <div class="circle-color">
-                <div class="gradient-circle"></div>
-                <div class="gradient-circle two"></div>
-            </div>
-        </div>
-    </header>
-
-
-    <!-- ==================== End header ==================== -->
-
-    <div class="main-content">
-        <!-- ==================== DATA SECTION START ==================== -->
-
-<section class="data-section section-padding3 pp-svg">
-    <div class="container-fluid">
-        <div class="fr-view">
-            <li>
-                <h3>{{__('seo.seo1')}}</h3>
-            </li>
-            <li>
-                <p>{{__('seo.seo2')}}</p>
-            </li>
-            <li>
-                <h3>
-                    {{__('seo.seo3')}}
-                </h3>
-            </li>
-            <li>
-                <p>{{__('seo.seo4')}}</p>
-            </li>
-            <li>
-                <h3>
-                    {{__('seo.seo5')}}
-                </h3>
-            </li>
-            <div class="down-li">
-                <ol>
-                    <li>
-                        <p>{{__('seo.seo6')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo7')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo8')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo9')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo10')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo11')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo12')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo13')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo14')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo15')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo16')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo17')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo18')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo19')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo20')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo21')}}</p>
-                    </li>
-                    <li>
-                        <p>{{__('seo.seo22')}}</p>
-                    </li>
-                </ol>
-            </div>
-            <div class="bigger-text">
-                <li>
-                    <h3>{{__('seo.seo23')}}</h3>
-                </li>
-                <li>
-                    <h4>{{__('seo.seo24')}}</h4>
-                    <p>{{__('seo.seo25')}}</p>
-                </li>
-                <li>
-                    <h4>{{__('seo.seo26')}}</h4>
-                    <p>{{__('seo.seo27')}}</p>
-                </li>
-                <li>
-                    <h4>{{__('seo.seo28')}}</h4>
-                    <p>{{__('seo.seo29')}}</p>
-                </li>
-                <li>
-                    <h4>{{__('seo.seo30')}}</h4>
-                    <p>{{__('seo.seo31')}}</p>
-                </li>
-                <li>
-                    <h4>{{__('seo.seo32')}}</h4>
-                    <p>{{__('seo.seo33')}}</p>
-                </li>
-                <li>
-                    <h4>{{__('seo.seo34')}}</h4>
-                    <p>{{__('seo.seo35')}}</p>
-                </li>
-            </div>
-            <div class="down-li-two">
-                <li>
-                    <h3>{{__('seo.seo36')}}</h3>
-                </li>
-                <ol>
-                    <li>{{__('seo.seo37')}}</li>
-                    <li>{{__('seo.seo38')}}</li>
-                    <li>{{__('seo.seo39')}}</li>
-                    <li>{{__('seo.seo40')}}</li>
-                </ol>
-            </div>
-        </div>
+{{-- Hero --}}
+<section class="relative pt-32 pb-16 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-violet-950/20 via-transparent to-transparent pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style="font-family:'Bricolage Grotesque',sans-serif">
+            {{ __('seo.seoTitle') }}
+        </h1>
     </div>
 </section>
 
+{{-- Content --}}
+<section class="py-12 pb-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
+        {{-- What is SEO --}}
+        <div class="bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-8">
+            <h2 class="text-xl font-bold text-white mb-3" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('seo.seo1') }}</h2>
+            <p class="text-zinc-400 leading-relaxed text-sm">{{ __('seo.seo2') }}</p>
+        </div>
 
+        {{-- Why important --}}
+        <div class="bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-8">
+            <h2 class="text-xl font-bold text-white mb-3" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('seo.seo3') }}</h2>
+            <p class="text-zinc-400 leading-relaxed text-sm">{{ __('seo.seo4') }}</p>
+        </div>
 
-        <!-- ==================== DATA SECTION END ==================== -->
+        {{-- How is SEO done --}}
+        <div>
+            <h2 class="text-2xl font-bold text-white mb-5" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('seo.seo5') }}</h2>
+            <div class="bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-8">
+                <ul class="space-y-3">
+                    @foreach([
+                        __('seo.seo6'), __('seo.seo7'), __('seo.seo8'), __('seo.seo9'), __('seo.seo10'),
+                        __('seo.seo11'), __('seo.seo12'), __('seo.seo13'), __('seo.seo14'), __('seo.seo15'),
+                        __('seo.seo16'), __('seo.seo17'), __('seo.seo18'), __('seo.seo19'), __('seo.seo20'),
+                        __('seo.seo21'), __('seo.seo22'),
+                    ] as $item)
+                    <li class="flex items-start gap-3 text-zinc-300 text-sm leading-relaxed">
+                        <span class="w-5 h-5 rounded-full bg-violet-600/20 flex items-center justify-center shrink-0 mt-0.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
+                        </span>
+                        {{ $item }}
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+
+        {{-- How to get more visitors --}}
+        <div>
+            <h2 class="text-2xl font-bold text-white mb-6" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('seo.seo23') }}</h2>
+            <div class="space-y-4">
+                @foreach([
+                    [__('seo.seo24'), __('seo.seo25')],
+                    [__('seo.seo26'), __('seo.seo27')],
+                    [__('seo.seo28'), __('seo.seo29')],
+                    [__('seo.seo30'), __('seo.seo31')],
+                    [__('seo.seo32'), __('seo.seo33')],
+                    [__('seo.seo34'), __('seo.seo35')],
+                ] as [$title, $desc])
+                <div class="bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-6 hover:border-violet-500/30 transition-all">
+                    <h3 class="font-semibold text-violet-300 mb-2 text-base">{{ $title }}</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">{{ $desc }}</p>
+                </div>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- Criteria --}}
+        <div class="bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-8">
+            <h2 class="text-xl font-bold text-white mb-5" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('seo.seo36') }}</h2>
+            <ul class="space-y-3">
+                @foreach([__('seo.seo37'), __('seo.seo38'), __('seo.seo39'), __('seo.seo40')] as $item)
+                <li class="flex items-start gap-3 text-zinc-300 text-sm leading-relaxed">
+                    <span class="w-5 h-5 rounded-full bg-violet-600/20 flex items-center justify-center shrink-0 mt-0.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
+                    </span>
+                    {{ $item }}
+                </li>
+                @endforeach
+            </ul>
+        </div>
+
+        {{-- CTA --}}
+        <div class="bg-gradient-to-br from-violet-900/30 to-violet-800/10 border border-violet-500/20 rounded-2xl p-8 text-center">
+            <h3 class="text-xl font-bold text-white mb-3" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('index.cta_h1_line1') }}</h3>
+            <p class="text-zinc-400 text-sm mb-6">{{ __('index.cta_text') }}</p>
+            <a href="/contact" class="inline-flex items-center gap-2 bg-violet-700 hover:bg-violet-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-violet-700/30">
+                {{ __('index.contact') }}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+        </div>
+
+    </div>
+</section>
 
 @endsection

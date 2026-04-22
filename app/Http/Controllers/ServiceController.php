@@ -21,40 +21,46 @@ class ServiceController extends Controller
         {
             if($_POST["action"] == 'fetch_data')
             {
-                $services   = Service::orderBy('order_no','asc')->get();
-                $output     = '';
-                foreach($services as $item)
+                $services = Service::orderBy('order_no','asc')->get();
+                $output   = '';
+                foreach ($services as $item)
                 {
-                    $output .= '<tr id="'.$item->id.'">';
-                    $output .= '<td data-label="Name(AZ)">'.$item->name_az.'</td>';
-                    $output .= '<td data-label="Name(EN)">'.$item->name_en.'</td>';
-                    $output .= '<td data-label="Name(RU)">'.$item->name_ru.'</td>';
-                    $output .= '<td data-label="On Home">';
-                    if ($item->on_home)
-                    {
-                        $output .= '<a href="'.route('service.changer',['id'=>$item->id]).'" class="btn btn-primary"><i class="fa fa-check"></i></a>';
-                    }
-                    else
-                    {
-                        $output .= '<a href="'.route('service.changer',['id'=>$item->id]).'" class="btn btn-danger"><i class="fa fa-times"></i></a>';
-                    }
-                    $output .= '</td>';
-                    $output .= '
+                    $onHomeClass = $item->on_home ? 'btn-primary' : 'btn-danger';
+                    $onHomeIcon  = $item->on_home ? 'fa-check' : 'fa-times';
+                    $output .= '<tr id="'.$item->id.'" class="cursor-grab active:cursor-grabbing">';
+                    $output .= '<td class="text-gray-300 text-center w-10"><i class="fa fa-grip-vertical"></i></td>';
+                    $output .= '<td class="font-medium text-gray-900">'.e($item->name_az).'</td>';
+                    $output .= '<td class="text-gray-600">'.e($item->name_en).'</td>';
+                    $output .= '<td class="text-gray-600">'.e($item->name_ru).'</td>';
+                    $output .= '<td><a href="'.route('service.changer',['id'=>$item->id]).'" class="'.$onHomeClass.' btn-sm"><i class="fa '.$onHomeIcon.'"></i></a></td>';
+                    $output .= '<td class="text-end">';
+                    $output .= '<div class="d-flex align-items-center justify-content-end gap-2 btn-group">';
 
-            <td data-label="Action">
-                <div class="btn-list flex-nowrap d-flex">
-                    <a href="'.route('services.edit',$item->id).'" class="btn btn-primary mr-1"><i class="fa fa-pen"></i></a>
-                    <form action="'.route('services.destroy',$item->id).'" method="POST">
-                    '.csrf_field().'
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button class="btn btn-danger" type="submit" onclick="return confirm(\'Silmək istədiyinizdən əminsiniz?\')"><i class="fa fa-times"></i></button>
-                    </form>
-                </div>
-            </td>
-            ';
+                    $output .= '<a href="'.route('services.edit',$item->id).'"
+                class="btn btn-primary btn-sm d-flex align-items-center justify-content-center"
+                style="width:34px;height:34px;">
+                <i class="fa fa-pen"></i>
+            </a>';
+
+                    $output .= '<form action="'.route('services.destroy',$item->id).'"
+                method="POST"
+                class="d-inline m-0 p-0"
+                onsubmit="return confirm(\'Silmək istədiyinizdən əminsiniz?\')">';
+
+                    $output .= csrf_field().'<input type="hidden" name="_method" value="DELETE">';
+
+                    $output .= '<button type="submit"
+                class="btn btn-danger btn-sm d-flex align-items-center justify-content-center"
+                style="width:34px;height:34px;">
+                <i class="fa fa-trash"></i>
+            </button>';
+
+                    $output .= '</form>';
+
+                    $output .= '</div>';
+                    $output .= '</td>';
                     $output .= '</tr>';
                 }
-
                 return $output;
             }
 
@@ -112,7 +118,6 @@ class ServiceController extends Controller
             'alt'=>$request->alt,
         ]);
 
-        toastr()->success('Data əlavə edildi','Əla');
         return redirect()->route('services.index');
     }
 
@@ -159,7 +164,6 @@ class ServiceController extends Controller
             'alt'=>$request->alt
         ]);
 
-        toastr()->success('Data redaktə edildi','Əla');
         return redirect()->route('services.index');
     }
 
@@ -174,7 +178,6 @@ class ServiceController extends Controller
         $this->fileDelete('files/services/'.$service->src);
         $service->delete();
 
-        toastr()->success('Data silindi','Əla');
         return redirect()->route('services.index');
     }
 
@@ -185,7 +188,6 @@ class ServiceController extends Controller
             'on_home'=>$service->on_home == 0 ? 1 : 0
         ]);
 
-        toastr()->success('Status dəyişdirildi','Əla');
-        return redirect()->route('services.index');
+        return redirect()->route('services.index')->with('success', 'Status dəyişdirildi');
     }
 }

@@ -8,13 +8,14 @@ use DB;
 
 class BlogDetailsController extends Controller
 {
-    public function index($slug)
+    public function index($id)
     {
-        if (DB::table('blogs')->where('slug', $slug)->exists()) 
-        {
-            $data['blog'] = DB::table('blogs')->where('slug', $slug)->first();
-            return view('front.blog-details', $data);
+        $blog = DB::table('blogs')->where('id', $id)->first();
+
+        if (!$blog) {
+            abort(404);
         }
-        
+
+        return view('front.blog-details', compact('blog'));
     }
 }

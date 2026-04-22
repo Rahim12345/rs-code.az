@@ -1,472 +1,119 @@
 @extends('back.layouts.master')
 
-@section('jquery')
-
-<script>
-
-  $(function(){
-    num = 2;
-    $(".photo-number:last").html(num);
-    $(".addphoto").click(function(){
-      if(num > 15)
-      {
-        alert("15'dən artıq şəkil əlavə edə bilməzsiniz!!");
-        return false;
-      }
-    var copy = $(".copy-form").html();
-    num++;
-    $(".photo-number:last").html(num);
-    $(".zone").append(copy);
-    });
-
-    editnum = $("body").find(".photo-number-edit:first").html();
-
-    $(".addphotoedit").click(function(){
-      if(editnum > 15)
-      {
-        alert("15'dən artıq şəkil əlavə edə bilməzsiniz!!");
-        return false;
-      }
-    var copy = $(".copy-form").html();
-    editnum++;
-    $(".photo-number-edit:last").html(editnum);
-    $(".zone-edit").append(copy);
-    });
-
-    $(".add").click(function(){
-      var num = $("#projects").val();
-    })
-
-    $(".btn-file").click(function(){
-       val =  $(this).children("#first_hidden").val();
-       alert(val);
-    })
-
-    $(".delete").click(function(){
-      var id = $(this).data('id');
-      if(confirm('Silmək istədiyinizə əminsiniz?'))
-      {
-          $.ajax({
-          url: '/admin/delete-project',
-          type: "post",
-          data: {id:id},
-          headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
-          dataType: "json",
-          success: function(data){
-            alert(data.message);
-            if(data.status == 1)
-            {
-              $("tr#"+data.id).remove();
-            }
-          },
-          error: function(e){
-              alert(e);
-          }
-          })
-      }
-      else
-      {
-        return false;
-      }
-      
-    })
-
-  $(".edit").click(function(){
-    $("#projects").trigger('reset');
-    $(".copy-form-zone").not(".copy-form-zone:last").remove();
-    var id = $(this).data('id');
-    $.ajax({
-      url: "/admin/edit-project",
-      type: "POST",
-      data: {id:id},
-      dataType: "json",
-      headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-      },
-      success: function(e){
-        $("#name_edit").val(e.project.name);
-        $("#link_edit").val(e.project.link);
-        $("#category_edit").val(e.project.kateqoriya);
-        $("#slug_edit").val(e.project.slug);
-        $("#tarix_edit").val(e.project.tarix);
-        $("#id").val(e.project.id);
-        photo = e.images.split('|');
-        $("#thumb").attr("src", "/images/projects/"+photo[0]);
-        $("#first_hidden").val(photo[0]);
-        num = 2;
-        for (let index = 1; index < photo.length; index++) {
-          $(".photo-number-edit:last").html(num);
-        $("#thumbother").attr("src", "/images/projects/"+photo[index]);
-        $("#other_hiddens").val(photo[index]);
-        var copy = $(".copy-form-edit").html();
-        $(".zone-edit").append(copy);
-        num++;
-          
-        }
-        
-      },
-      error: function(){
-        alert("error");
-      }
-    })
-  })
-
-  })
-  
-</script>
-    
-@endsection
+@section('title', 'Layihələr')
 
 @section('content')
 
-{{-- Store Modal --}}
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form method="POST" id="projects" enctype="multipart/form-data">
-              @csrf
-                <div class="zone">
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Ad:</label>
-                  <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control text-dark" >
-                  @if ($errors->first('name'))
-                  <span class="alert alert-danger">{{ $errors->first('name') }}</span>
-                  @endif
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Link:</label>
-                  <input type="text" name="link" id="link" value="{{ old('link') }}" class="form-control text-dark" >
-                  @if ($errors->first('link'))
-                  <span class="alert alert-danger">{{ $errors->first('link') }}</span>
-                  @endif
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Tarix:</label>
-                  <input type="text" name="tarix" id="tarix" value="{{ old('tarix') }}" class="form-control text-dark" >
-                  @if ($errors->first('tarix'))
-                  <span class="alert alert-danger">{{ $errors->first('tarix') }}</span>
-                  @endif
-                </div>
-                <div class="form-group">
-                    <label for="message-text" class="col-form-label">Kateqoriya:</label>
-                    <select name="category" id="category" value="{{ old('category') }}" class="form-control text-dark">
-                      <option value="websites">Web Saytlar</option>
-                      <option value="portfolio">Portfolio</option>
-                      <option value="e-commerce">E-Ticarət</option>
-                      <option value="blog">Blog</option>
-                    </select>
-                    @if ($errors->first('category'))
-                    <span class="alert alert-danger">{{ $errors->first('category') }}</span>
-                    @endif
-                  </div>
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Slug:</label>
-                    <input type="text" name="slug" id="slug" value="{{ old('slug') }}" class="form-control text-dark" >
-                    @if ($errors->first('slug'))
-                    <span class="alert alert-danger">{{ $errors->first('slug') }}</span>
-                    @endif
-                  </div>
-                  <div class="form-group">
-                    <h4 class="card-title text-dark">Ana şəkil:</h4>
-                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                        <div class="fileinput-new thumbnail">
-                        <img src="../../assets/img/image_placeholder.jpg" alt="...">
-                        </div>
-                        <div class="fileinput-preview fileinput-exists thumbnail"></div>
-                        <div>
-                        <span class="btn btn-rose btn-round btn-file">
-                            <span class="fileinput-new">Select image</span>
-                            <span class="fileinput-exists">Change</span>
-                            <input type="file" id="photo" value="{{ old('photos') }}" name="photos[]">
-                        </span>
-                        @if ($errors->first('photos'))
-                    <span class="alert alert-danger">{{ $errors->first('photos') }}</span>
-                    @endif
-                        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                  <button type="button" class="btn btn-secondary addphoto">
-                    Şəkil əlavə et +
-                  </button>
-              
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </div>
-      </form>
-      </div>
+<div class="flex items-center justify-between mb-6">
+    <div>
+        <h1 class="text-xl font-bold text-gray-900">Layihələr</h1>
+        <p class="text-sm text-gray-500 mt-0.5">Portfolio proyektlərini idarə edin</p>
     </div>
-  </div>
-  {{-- Store Modal End --}}
+    <a href="/admin/add-project" class="btn-primary">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+        Layihə Əlavə Et
+    </a>
+</div>
 
-
-
-  {{-- Edit Modal --}}
-  <div class="modal fade" id="editmodal" tabindex="-1" role="dialog" aria-labelledby="editmodalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editmodal">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form method="POST" id="projects_edit" enctype="multipart/form-data">
-              @csrf
-              <input type="hidden" name="id" id="id" value="">
-                <div class="zone-edit">
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Ad:</label>
-                  <input type="text" name="name" id="name_edit" value="{{ old('name') }}" class="form-control text-dark" >
-                  @if ($errors->first('name'))
-                  <span class="alert alert-danger">{{ $errors->first('name') }}</span>
-                  @endif
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Link:</label>
-                  <input type="text" name="link" id="link_edit" value="{{ old('link') }}" class="form-control text-dark" >
-                  @if ($errors->first('link'))
-                  <span class="alert alert-danger">{{ $errors->first('link') }}</span>
-                  @endif
-                </div>
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Tarix:</label>
-                  <input type="text" name="tarix" id="tarix_edit" value="{{ old('tarix') }}" class="form-control text-dark" >
-                  @if ($errors->first('tarix'))
-                  <span class="alert alert-danger">{{ $errors->first('tarix') }}</span>
-                  @endif
-                </div>
-                <div class="form-group">
-                    <label for="message-text" class="col-form-label">Kateqoriya:</label>
-                    <select name="category" id="category_edit" value="{{ old('category') }}" class="form-control text-dark">
-                      <option value="websites">Web Saytlar</option>
-                      <option value="portfolio">Portfolio</option>
-                      <option value="e-commerce">E-Ticarət</option>
-                      <option value="blog">Blog</option>
-                    </select>
-                    @if ($errors->first('category'))
-                    <span class="alert alert-danger">{{ $errors->first('category') }}</span>
-                    @endif
-                  </div>
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Slug:</label>
-                    <input type="text" name="slug" id="slug_edit" value="{{ old('slug') }}" class="form-control text-dark" >
-                    @if ($errors->first('slug'))
-                    <span class="alert alert-danger">{{ $errors->first('slug') }}</span>
-                    @endif
-                  </div>
-                  <div class="form-group">
-                    <h4 class="card-title text-dark">Ana şəkil:</h4>
-                    <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                        <div class="fileinput-new thumbnail">
-                        <img src="../../assets/img/image_placeholder.jpg" id="thumb" alt="...">
-                        </div>
-                        <div class="fileinput-preview fileinput-exists thumbnail"></div>
-                        <div>
-                        <span class="btn btn-rose btn-round btn-file">
-                            <span class="fileinput-new">Select image</span>
-                            <span class="fileinput-exists">Change</span>
-                            <input type="file" id="photo" value="{{ old('photos') }}" name="photos[]">
-                            <input type="hidden" id="first_hidden" name="photos_hidden[]">
-                        </span>
-                        @if ($errors->first('photos'))
-                    <span class="alert alert-danger">{{ $errors->first('photos') }}</span>
-                    @endif
-                        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-                  <button type="button" class="btn btn-secondary addphotoedit">
-                    Şəkil əlavə et +
-                  </button>
-              
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
-        </div>
-      </form>
-      </div>
-    </div>
-  </div>
-   {{-- Edit Modal End --}}
-
-  <div class="content">
-    <div class="row">
-        
-      <ol class="breadcrumb bg-transparent ml-3">
-        <li class="breadcrumb-item">
-          <a href="#">Home</a>
-        </li>
-        <li class="breadcrumb-item">
-          <a href="#">Library</a>
-        </li>
-        <li class="breadcrumb-item active">Data</li>
-      </ol><br>
-      @if (session('status'))
-      <div class="alert alert-success">
-        {{ session('status') }}
-      </div>
-      @endif
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header">
-            <div class="tools float-right">
-              <div class="dropdown">
-                <button type="button" class="btn btn-default dropdown-toggle btn-link btn-icon" data-toggle="dropdown">
-                  <i class="tim-icons icon-settings-gear-63"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="/about/edit">Düzəliş Et</a>
-                </div>
-              </div>
-            </div>
-            <h4 class="card-title">İşlərimiz</h4>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table">
-                <button type="button" class="btn btn-primary add" data-toggle="modal" data-target="#exampleModal">
-                    Add
-                  </button>
-                <thead class="text-primary">
-                  <tr>
-                    <th>
-                      Ad
-                    </th>
-                    <th>
-                      Link
-                    </th>
-                    <th>
-                      Kateqoriya
-                    </th>
-                    <th>
-                        Slug
-                    </th>
-                    <th width="10%">
-                        Foto
-                    </th>
-                    <th width="20%">
-
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                    @foreach ($projects as $project)
-                    <tr id="{{ $project->id }}">
-                        <td>
-                          {{ $project->name }}
-                        </td>
-                        <td>
-                          {{ $project->link }}
-                        </td>
-                        <td>
-                          {{ $project->kateqoriya }}
-                        </td>
-                        <td>
-                          {{ $project->slug }}
-                        </td>
-                        <td>
-                          @foreach ($project->images as $i)
-                            @if ($loop->first)
-                            <img src="/images/projects/{{$i->photo}}" alt="">
-                            @endif
-                          @endforeach
-                          
-                        </td>
-                        <td class="text-center">
-                            <button type="button" class="btn btn-primary edit" data-id="{{ $project->id }}" data-toggle="modal" data-target="#editmodal">
-                                Edit
-                              </button>
-                              <button type="button" class="btn btn-secondary delete" data-id="{{ $project->id }}">
-                                Delete
-                              </button>
-                        </td>
-                      </tr>
+<div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+    <table class="admin-table w-full">
+        <thead>
+            <tr>
+                <th>Ad (AZ)</th>
+                <th>Link</th>
+                <th>Kateqoriya</th>
+                <th>Şəkil</th>
+                <th class="text-center">Ana Səhifə</th>
+                <th class="text-right">Əməliyyat</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse($projects as $project)
+            <tr id="row-{{ $project->id }}">
+                <td class="font-medium text-gray-900">{{ $project->name_az ?: $project->name }}</td>
+                <td class="text-blue-600 hover:underline">
+                    <a href="{{ $project->link }}" target="_blank">{{ Str::limit($project->link, 35) }}</a>
+                </td>
+                <td>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700">{{ $project->kateqoriya }}</span>
+                </td>
+                <td>
+                    @foreach($project->images as $img)
+                        @if($loop->first)
+                        <img src="/images/projects/{{ $img->photo }}" class="w-16 h-12 object-cover rounded-lg" alt="">
+                        @endif
                     @endforeach
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="copy-form" style="display: none">
-        <h4 class="card-title text-dark">Foto <span class="photo-number"></span>:</h4>
-        <div class="fileinput photo-display fileinput-new text-center" data-provides="fileinput">
-            <div class="fileinput-new thumbnail">
-            <img src="../../assets/img/image_placeholder.jpg" alt="...">
-            </div>
-            <div class="fileinput-preview fileinput-exists thumbnail"></div>
-            <div>
-            <span class="btn btn-rose btn-round btn-file">
-                <span class="fileinput-new">Select image</span>
-                <span class="fileinput-exists">Change</span>
-                <input type="file" name="photos[]">
-            </span>
-            <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-            </div>
-        </div>
-  </div>
-
-  <div class="copy-form-edit" style="display: none">
-    <div class="copy-form-zone">
-     <h4 class="card-title text-dark">Foto <span class="photo-number-edit"></span>:</h4>
-      <div class="fileinput photo-display fileinput-new text-center" data-provides="fileinput">
-          <div class="fileinput-new thumbnail">
-          <img src="../../assets/img/image_placeholder.jpg" id="thumbother" alt="...">
-          </div>
-          <div class="fileinput-preview fileinput-exists thumbnail"></div>
-          <div>
-          <span class="btn btn-rose btn-round btn-file">
-              <span class="fileinput-new">Select image</span>
-              <span class="fileinput-exists">Change</span>
-              <input type="file" name="photos[]">
-              <input type="hidden" name="photos_hidden[]" id="other_hiddens">
-          </span>
-          <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-          </div>
-      </div>
-    </div>
+                </td>
+                <td class="text-center">
+                    {{-- Toggle checkbox --}}
+                    <button onclick="toggleHome({{ $project->id }}, this)"
+                            data-home="{{ $project->home }}"
+                            title="{{ $project->home ? 'Ana səhifədə görünür — klik ilə gizlət' : 'Ana səhifədə görünmür — klik ilə göstər' }}"
+                            class="relative inline-flex items-center justify-center w-11 h-6 rounded-full transition-colors duration-200 focus:outline-none
+                                   {{ $project->home ? 'bg-violet-600' : 'bg-gray-200' }}">
+                        <span class="inline-block w-4 h-4 bg-white rounded-full shadow-sm transition-transform duration-200
+                                     {{ $project->home ? 'translate-x-2.5' : '-translate-x-2.5' }}"></span>
+                    </button>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group justify-end">
+                        <a href="/admin/edit-project/{{ $project->id }}" class="btn-primary btn-sm">
+                            <i class="fa fa-pen"></i>
+                        </a>
+                        <button onclick="deleteProject({{ $project->id }})" class="btn-danger btn-sm">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            @empty
+            <tr><td colspan="6" class="text-center text-gray-400 py-8">Layihə tapılmadı</td></tr>
+            @endforelse
+        </tbody>
+    </table>
 </div>
 
-<div class="copy-form-add" style="display: none">
-  <div class="copy-form-zone-add">
-   <h4 class="card-title text-dark">Foto <span class="photo-number-edit-add"></span>:</h4>
-    <div class="fileinput photo-display fileinput-new text-center" data-provides="fileinput">
-        <div class="fileinput-new thumbnail">
-        <img src="../../assets/img/image_placeholder.jpg" alt="...">
-        </div>
-        <div class="fileinput-preview fileinput-exists thumbnail"></div>
-        <div>
-        <span class="btn btn-rose btn-round btn-file">
-            <span class="fileinput-new">Select image</span>
-            <span class="fileinput-exists">Change</span>
-            <input type="file" name="photos[]">
-        </span>
-        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-        </div>
-    </div>
-  </div>
-</div>
-  
-
- 
 @endsection
+
+@push('scripts')
+<script>
+function toggleHome(id, btn) {
+    $.ajax({
+        url: '/admin/toggle-project-home/' + id,
+        type: 'POST',
+        data: { _token: $('meta[name="csrf-token"]').attr('content') },
+        success: function(r) {
+            const isHome = r.home == 1;
+            // Update toggle colour
+            $(btn).toggleClass('bg-violet-600', isHome).toggleClass('bg-gray-200', !isHome);
+            // Move knob
+            $(btn).find('span').toggleClass('translate-x-2.5', isHome).toggleClass('-translate-x-2.5', !isHome);
+            // Update tooltip
+            btn.title = isHome
+                ? 'Ana səhifədə görünür — klik ilə gizlət'
+                : 'Ana səhifədə görünmür — klik ilə göstər';
+            toastr.success(isHome ? 'Ana səhifəyə əlavə edildi' : 'Ana səhifədən çıxarıldı');
+        },
+        error: function() { toastr.error('Xəta baş verdi'); }
+    });
+}
+
+function deleteProject(id) {
+    if (!confirm('Silmək istədiyinizdən əminsiniz?')) return;
+    $.ajax({
+        url: '/admin/delete-project',
+        type: 'POST',
+        data: { id: id, _token: $('meta[name="csrf-token"]').attr('content') },
+        success: function(r) {
+            if (r.status == 1) {
+                document.getElementById('row-' + id).remove();
+                toastr.success(r.message);
+            } else {
+                toastr.error(r.message);
+            }
+        },
+        error: function() { toastr.error('Xəta baş verdi'); }
+    });
+}
+</script>
+@endpush

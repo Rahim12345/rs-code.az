@@ -166,4 +166,67 @@ return [
     'seoadiut5' => 'Nömrə*',
     'seoadiut6' => 'Göndər',
     'seoadiut7' => 'Müraciətiniz uğurla göndərildi, gün ərzində geri dönüş ediləcək. Təşəkkür edirik.',
+
+    // Hero
+    'hero_h1_line1' => 'Brendinizi',
+    'hero_h1_line2' => 'Rəqəmsal Gücünüzə',
+    'hero_h1_line3' => 'Çeviririk',
+    'hero_subtitle' => 'Logo dizaynı, korporativ üslub, veb sayt, SMM — bütün brendinq xidmətləri bir yerdə.',
+    'hero_portfolio_btn' => 'Portfolioya Bax',
+    'hero_contact_btn' => 'Bizimlə Əlaqə',
+    'stat_clients' => 'Müştəri',
+    'stat_experience' => 'İl Təcrübə',
+    'stat_projects' => 'Layihə',
+    'stat_experts' => 'Mütəxəssis',
+    'scroll_text' => 'scroll',
+
+    // Services
+    'services_eyebrow' => 'Nə Edirik?',
+    'services_heading' => 'Xidmətlərimiz',
+    'services_more' => 'Ətraflı',
+    'services_all' => 'Bütün xidmətləri gör',
+
+    // Portfolio
+    'portfolio_eyebrow' => 'İşlərimiz',
+    'portfolio_heading' => 'Son Layihələr',
+    'portfolio_all' => 'Hamısına Bax',
+
+    // About
+    'about_eyebrow' => 'Haqqımızda',
+    'about_h1_line1' => 'Brendinqin Gücünü',
+    'about_h1_line2' => 'Birlikdə Kəşf Edək',
+    'about_btn' => 'Daha Ətraflı',
+    'stat_success_clients' => 'Uğurlu Müştəri',
+    'stat_completed' => 'Tamamlanmış Layihə',
+    'stat_years' => 'İl Bazarda',
+    'stat_team' => 'Komanda Üzvü',
+
+    // Partners
+    'partners_eyebrow' => 'Tərəfdaşlarımız',
+
+    // Reviews
+    'reviews_eyebrow' => 'Rəylər',
+    'reviews_heading' => 'Müştərilərimiz Nə Deyir?',
+    'reviews_role' => 'Müştəri',
+
+    // Blog
+    'blog_eyebrow' => 'Blog',
+    'blog_heading' => 'Son Məqalələr',
+    'blog_all' => 'Hamısına Bax',
+    'blog_read' => 'Oxu',
+    'blog_read_more'     => 'Daha ətraflı',
+    'blog_hero_h1_span'  => 'Faydalı məqalələr',
+    'blog_hero_h1'       => 'və resurslar',
+    'blog_hero_desc'     => 'Dizayn, SEO, brendinq və rəqəmsal marketinq haqqında ekspert məlumatlar',
+    'blog_empty'         => 'Hələlik heç bir məqalə yoxdur',
+    'blog_cta_heading'   => 'Yeni məqalələrdən xəbərdar olun',
+    'blog_cta_text'      => 'Rəqəmsal marketinq, dizayn və texnologiya haqqında ekspert məzmun',
+    'blog_cta_btn'       => 'Bizimlə əlaqə saxla',
+
+    // CTA
+    'cta_h1_line1' => 'Layihənizi Birlikdə',
+    'cta_h1_line2' => 'Həyata Keçirək',
+    'cta_text' => 'Sizin üçün ən uyğun həlli tapmağa hazırıq. Əlaqə saxlayın, pulsuz məsləhət alın.',
+    'cta_contact' => 'Əlaqə Saxla',
+    'cta_order' => 'Sifariş Ver',
 ];

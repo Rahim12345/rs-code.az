@@ -1,241 +1,94 @@
 @extends('back.layouts.master')
-
-@section('jquery')
-
-<script>
-  
-  $(function(){
-    num = 2;
-    $(".photo-number:last").html(num);
-    $(".addphoto").click(function(){
-      if(num > 15)
-      {
-        alert("15'dən artıq şəkil əlavə edə bilməzsiniz!!");
-        return false;
-      }
-    var copy = $(".copy-form").html();
-    num++;
-    $(".photo-number:last").html(num);
-    $(".zone").append(copy);
-    });
-
-    editnum = $("body").find(".photo-number-edit:first").html();
-
-    $(".addphotoedit").click(function(){
-      alert(editnum);
-      if(editnum > 15)
-      {
-        alert("15'dən artıq şəkil əlavə edə bilməzsiniz!!");
-        return false;
-      }
-    var copy = $(".copy-form").html();
-    editnum++;
-    $(".photo-number-edit:last").html(editnum);
-    $(".zone-edit").append(copy);
-    });
-
-    $(".add").click(function(){
-      var num = $("#projects").val();
-    })
-
-    $(".delete").click(function(){
-      var id = $(this).data('id');
-      if(confirm('Silmək istədiyinizə əminsiniz?'))
-      {
-          $.ajax({
-          url: '/admin/delete-blog',
-          type: "post",
-          data: {id:id},
-          headers: {
-          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          },
-          dataType: "json",
-          success: function(data){
-            alert(data.message);
-            if(data.status == 1)
-            {
-              $("tr#"+data.id).remove();
-            }
-          }
-          })
-      }
-      else
-      {
-        return false;
-      }
-      
-    })
-
-  })
-  
-</script>
-    
-@endsection
+@section('title', 'Blog yazıları')
+@section('breadcrumb', 'Admin / Blog')
 
 @section('content')
 
+<div class="flex items-center justify-between mb-6">
+    <div>
+        <h2 class="text-lg font-semibold text-gray-900">Blog yazıları</h2>
+        <p class="text-sm text-gray-500 mt-0.5">{{ $blogs->count() }} yazı</p>
+    </div>
+    <a href="/admin/add-blog" class="btn-primary inline-flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+        Yeni blog
+    </a>
+</div>
 
-
-  <div class="content">
-    <div class="row">
-        
-      <ol class="breadcrumb bg-transparent ml-3">
-        <li class="breadcrumb-item">
-          <a href="#">Home</a>
-        </li>
-        <li class="breadcrumb-item">
-          <a href="#">Library</a>
-        </li>
-        <li class="breadcrumb-item active">Data</li>
-      </ol><br>
-      @if (session('success'))
-      <div class="alert alert-success">
-        {{ session('success') }}
-      </div>
-      @endif
-      <div class="col-md-12">
-        <div class="card">
-          <div class="card-header">
-            <div class="tools float-right">
-              <div class="dropdown">
-                <button type="button" class="btn btn-default dropdown-toggle btn-link btn-icon" data-toggle="dropdown">
-                  <i class="tim-icons icon-settings-gear-63"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right">
-                  <a class="dropdown-item" href="/about/edit">Düzəliş Et</a>
-                </div>
-              </div>
-            </div>
-            <h4 class="card-title">Bloqlar</h4>
-          </div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table">
-                <a href="/admin/add-blog">
-                <button type="button" class="btn btn-primary add">
-                    Add
-                  </button></a>
-                <thead class="text-primary">
-                  <tr>
-                    <th>
-                      Başlıq
-                    </th>
-                    <th>
-                      Qısa Başlıq
-                    </th>
-                    <th>
-                      Mətn
-                    </th>
-                    <th>
-                        Tarix
-                    </th>
-                    <th width="10%">
-                        Foto
-                    </th>
-                    <th width="20%">
-
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                    @foreach ($blogs as $blog)
-                    <tr id="{{ $blog->id }}">
-                        <td>
-                          {{ $blog->title_az }}
-                        </td>
-                        <td>
-                          {{ $blog->review_az }}
-                        </td>
-                        <td>
-                          {!! \Illuminate\Support\Str::limit($blog->text_az, 150, "...") !!}
-                        </td>
-                        <td>
-                          {{ $blog->date_az }}
-                        </td>
-                        <td>
-                          <img src="/images/blog/{{ $blog->photo }}" alt="">
-                        </td>
-                        <td class="text-center">
-                          <a href="/admin/edit-blog/{{ $blog->id }}">
-                            <button type="button" class="btn btn-primary edit" data-id="{{ $blog->id }}" data-toggle="modal" data-target="#editmodal">
-                                Edit
-                              </button>
+<div class="admin-card overflow-hidden">
+    <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+            <thead class="bg-gray-50 border-b border-gray-200">
+                <tr>
+                    <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider w-12">#</th>
+                    <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Başlıq</th>
+                    <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider hidden md:table-cell">Xülasə</th>
+                    <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider hidden lg:table-cell">Tarix</th>
+                    <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider w-20">Foto</th>
+                    <th class="px-4 py-3 w-28"></th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+                @forelse($blogs as $blog)
+                <tr id="row-{{ $blog->id }}" class="hover:bg-gray-50 transition-colors">
+                    <td class="px-4 py-3 text-gray-400 text-xs">{{ $blog->id }}</td>
+                    <td class="px-4 py-3">
+                        <div class="font-medium text-gray-900 line-clamp-1">{{ $blog->title_az }}</div>
+                    </td>
+                    <td class="px-4 py-3 text-gray-500 hidden md:table-cell">
+                        <div class="line-clamp-1 text-xs">{{ strip_tags(Str::limit($blog->review_az, 80)) }}</div>
+                    </td>
+                    <td class="px-4 py-3 text-gray-500 text-xs hidden lg:table-cell">{{ $blog->date_az }}</td>
+                    <td class="px-4 py-3">
+                        @php
+                            $photo = $blog->photo;
+                            $src = ($photo && !str_starts_with($photo,'http')) ? asset('images/blog/'.$photo) : $photo;
+                        @endphp
+                        @if($src)
+                        <img src="{{ $src }}" class="w-10 h-10 rounded-lg object-cover">
+                        @else
+                        <div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14"/></svg>
+                        </div>
+                        @endif
+                    </td>
+                    <td class="px-4 py-3 text-right">
+                        <div class="btn-group justify-end">
+                            <a href="/admin/edit-blog/{{ $blog->id }}" class="btn-primary btn-sm">
+                                <i class="fa fa-pen"></i>
                             </a>
-                              <button type="button" class="btn btn-secondary delete" data-id="{{ $blog->id }}">
-                                Delete
-                              </button>
-                        </td>
-                      </tr>
-                    @endforeach
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="copy-form" style="display: none">
-        <h4 class="card-title text-dark">Foto <span class="photo-number"></span>:</h4>
-        <div class="fileinput photo-display fileinput-new text-center" data-provides="fileinput">
-            <div class="fileinput-new thumbnail">
-            <img src="../../assets/img/image_placeholder.jpg" alt="...">
-            </div>
-            <div class="fileinput-preview fileinput-exists thumbnail"></div>
-            <div>
-            <span class="btn btn-rose btn-round btn-file">
-                <span class="fileinput-new">Select image</span>
-                <span class="fileinput-exists">Change</span>
-                <input type="file" name="photos[]">
-            </span>
-            <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-            </div>
-        </div>
-  </div>
-
-  <div class="copy-form-edit" style="display: none">
-    <div class="copy-form-zone">
-     <h4 class="card-title text-dark">Foto <span class="photo-number-edit"></span>:</h4>
-      <div class="fileinput photo-display fileinput-new text-center" data-provides="fileinput">
-          <div class="fileinput-new thumbnail">
-          <img src="../../assets/img/image_placeholder.jpg" id="thumbother" alt="...">
-          </div>
-          <div class="fileinput-preview fileinput-exists thumbnail"></div>
-          <div>
-          <span class="btn btn-rose btn-round btn-file">
-              <span class="fileinput-new">Select image</span>
-              <span class="fileinput-exists">Change</span>
-              <input type="file" name="photos[]">
-              <input type="hidden" name="photos_hidden[]" id="other_hiddens">
-          </span>
-          <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-          </div>
-      </div>
+                            <button onclick="deleteBlog({{ $blog->id }})" class="btn-danger btn-sm">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="6" class="px-4 py-12 text-center text-gray-400 text-sm">
+                        Hələlik heç bir blog yazısı yoxdur
+                    </td>
+                </tr>
+                @endforelse
+            </tbody>
+        </table>
     </div>
 </div>
 
-<div class="copy-form-add" style="display: none">
-  <div class="copy-form-zone-add">
-   <h4 class="card-title text-dark">Foto <span class="photo-number-edit-add"></span>:</h4>
-    <div class="fileinput photo-display fileinput-new text-center" data-provides="fileinput">
-        <div class="fileinput-new thumbnail">
-        <img src="../../assets/img/image_placeholder.jpg" alt="...">
-        </div>
-        <div class="fileinput-preview fileinput-exists thumbnail"></div>
-        <div>
-        <span class="btn btn-rose btn-round btn-file">
-            <span class="fileinput-new">Select image</span>
-            <span class="fileinput-exists">Change</span>
-            <input type="file" name="photos[]">
-        </span>
-        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-        </div>
-    </div>
-  </div>
-</div>
-  
+@push('scripts')
+<script>
+function deleteBlog(id) {
+    if (!confirm('Bu blog yazısını silmək istədiyinizə əminsiniz?')) return;
+    $.post('/admin/delete-blog', { id: id }, function(r) {
+        if (r.status === 1) {
+            $('#row-'+id).fadeOut(300, function(){ $(this).remove(); });
+            toastr.success(r.message);
+        } else {
+            toastr.error(r.message);
+        }
+    });
+}
+</script>
+@endpush
 
- 
 @endsection
