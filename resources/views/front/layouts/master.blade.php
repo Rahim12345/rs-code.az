@@ -127,7 +127,7 @@
       "logo": "https://rs-code.az/img/rs-code.png",
       "image": "https://rs-code.az/img/og-default.jpg",
       "description": "RS Code — Azərbaycanın aparıcı proqram, veb sayt, mobil tətbiq və brendinq agentliyi. Bakı.",
-      "telephone": "+994508001122",
+      "telephone": "+994775829989",
       "email": "info@rs-code.az",
       "address": {
         "@type": "PostalAddress",
