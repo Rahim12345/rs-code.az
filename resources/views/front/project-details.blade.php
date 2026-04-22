@@ -2,6 +2,8 @@
 @section('title', ($project->{'name_'.session('lang','az')} ?? $project->name) . ' | RS Code')
 @section('description', $project->{'description_'.session('lang','az')} ?? $project->description_az ?? '')
 @section('canonical', 'https://rs-code.az/project-details/' . ($project->slug_az ?? $project->slug))
+@section('og_type', 'article')
+@section('og_image', $project->photo1 ? 'https://rs-code.az/images/projects/' . $project->photo1 : 'https://rs-code.az/img/og-default.jpg')
 
 @section('content')
 @php
