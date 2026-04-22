@@ -41,6 +41,39 @@
     <meta name="twitter:image"      content="{{ $ogImg }}">
 
     <link rel="icon" type="image/png" href="{{ asset('img/132.png') }}">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "RS Code",
+      "url": "https://rs-code.az",
+      "logo": "https://rs-code.az/img/rs-code.png",
+      "image": "https://rs-code.az/img/og-default.jpg",
+      "description": "RS Code — Azərbaycanın aparıcı proqram, veb sayt, mobil tətbiq və brendinq agentliyi. Bakı.",
+      "telephone": "+994508001122",
+      "email": "info@rs-code.az",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bakı",
+        "addressCountry": "AZ"
+      },
+      "areaServed": "AZ",
+      "priceRange": "$$",
+      "sameAs": [
+        "https://www.instagram.com/rscode.az",
+        "https://www.linkedin.com/company/rscode"
+      ],
+      "serviceType": [
+        "Proqram yazılması",
+        "Veb sayt hazırlanması",
+        "Mobil tətbiq hazırlanması",
+        "CRM sistemi",
+        "ERP sistemi",
+        "Loqo dizaynı",
+        "SMM xidməti"
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
