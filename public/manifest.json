@@ -1,0 +1,44 @@
+{
+  "name": "RS Code",
+  "short_name": "RS Code",
+  "description": "Proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri — Bakı.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#09090b",
+  "theme_color": "#6d28d9",
+  "lang": "az",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Sifariş ver",
+      "url": "/#order",
+      "description": "Yeni sifariş"
+    },
+    {
+      "name": "Portfel",
+      "url": "/portfolio",
+      "description": "İşlərimizə bax"
+    },
+    {
+      "name": "Əlaqə",
+      "url": "/elaqe",
+      "description": "Bizimlə əlaqə"
+    }
+  ]
+}

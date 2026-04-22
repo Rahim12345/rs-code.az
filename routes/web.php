@@ -130,6 +130,7 @@ Route::prefix('admin')->middleware('isLogin')->group(static function () {
 Route::post('/track-click', 'App\Http\Controllers\Front\LinkClickController@track')->name('track.click');
 Route::get('/sitemap.xml', 'App\Http\Controllers\Front\SitemapController@index');
 Route::get('/robots.txt',  'App\Http\Controllers\Front\RobotsController@index');
+Route::get('/offline',     fn() => view('front.offline'));
 
 Route::middleware('locale')->group(static function () {
     Route::get('/', "App\Http\Controllers\Front\IndexController@index");

@@ -81,7 +81,7 @@
         $lookupPath   = rtrim($curPath, '/') ?: '/';
         $hreflangAlts = $hreflangMap[$lookupPath] ?? null;
     @endphp
-    <title>@yield('title', 'RS Code') — Brendinq & Rəqəmsal Agentlik</title>
+    <title>@yield('title', 'RS Code') — Proqram Yazılması & Veb Sayt | Bakı</title>
     <meta name="description"         content="@yield('description', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri. Biznesinizi rəqəmsal dünyaya daşıyırıq.')">
     <link rel="canonical"            href="@yield('canonical', $siteBase . $curPath)">
     @hasSection('hreflang')
@@ -99,7 +99,7 @@
     @endif
     <meta property="og:type"         content="@yield('og_type', 'website')">
     <meta property="og:url"          content="@yield('canonical', $siteBase . $curPath)">
-    <meta property="og:title"        content="@yield('og_title', 'RS Code — Brendinq & Rəqəmsal Agentlik')">
+    <meta property="og:title"        content="@yield('og_title', 'RS Code — Proqram Yazılması & Veb Sayt | Bakı')">
     <meta property="og:description"  content="@yield('og_desc', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri. Biznesinizi rəqəmsal dünyaya daşıyırıq.')">
     <meta property="og:image"        content="@yield('og_image', $siteBase . '/img/og-default.jpg')">
     <meta property="og:image:width"  content="1200">
@@ -112,10 +112,19 @@
     @endif
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:site"        content="@rscodeaz">
-    <meta name="twitter:title"       content="@yield('og_title', 'RS Code — Brendinq & Rəqəmsal Agentlik')">
+    <meta name="twitter:title"       content="@yield('og_title', 'RS Code — Proqram Yazılması & Veb Sayt | Bakı')">
     <meta name="twitter:description" content="@yield('og_desc', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri. Biznesinizi rəqəmsal dünyaya daşıyırıq.')">
     <meta name="twitter:image"       content="@yield('og_image', $siteBase . '/img/og-default.jpg')">
 
+    {{-- PWA --}}
+    <link rel="manifest"             href="/manifest.json">
+    <meta name="theme-color"         content="#6d28d9">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="RS Code">
+    <link rel="apple-touch-icon"     href="{{ asset('img/apple-touch-icon.png') }}">
+    {{-- Favicon --}}
     <link rel="icon" type="image/png" href="{{ asset('img/132.png') }}">
     <script type="application/ld+json">
     @verbatim
@@ -266,6 +275,15 @@
             }
         }, true);
     })();
+    </script>
+    {{-- PWA Service Worker --}}
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js', { scope: '/' })
+                .catch(function(){});
+        });
+    }
     </script>
 </body>
 </html>
