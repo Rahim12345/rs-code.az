@@ -48,7 +48,8 @@
       "Read(//c/Program Files \\(x86\\)/Google/Chrome/**)",
       "Bash(where chrome:*)",
       "Bash(where chromium:*)",
-      "Bash(npm list:*)"
+      "Bash(npm list:*)",
+      "Bash(xargs head:*)"
     ]
   }
 }

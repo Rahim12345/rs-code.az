@@ -14,34 +14,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="google-site-verification" content="VUYowyHre6ewr9gpY1xcdfhkeZS4_JMKO52DzOTko1w">
-    <title>@yield('title', 'RS Code') — Brendinq & Rəqəmsal Agentlik</title>
-    <meta name="description" content="@yield('description', 'RS Code — Azərbaycanın aparıcı dizayn, veb sayt və brendinq agentliyi.')">
-    <link rel="canonical" href="@yield('canonical', 'https://rs-code.az' . strtok(request()->getRequestUri(), '?'))">
-
-    {{-- Open Graph --}}
     @php
-        $ogUrl   = \Illuminate\Support\Str::of('https://rs-code.az' . strtok(request()->getRequestUri(), '?'))->__toString();
-        $ogTitle = trim(strip_tags(View::yieldContent('title') ?: 'RS Code')) . ' — Brendinq & Rəqəmsal Agentlik';
-        $ogDesc  = trim(strip_tags(View::yieldContent('description') ?: 'RS Code — Azərbaycanın aparıcı dizayn, veb sayt və brendinq agentliyi.'));
-        $ogImg   = trim(View::yieldContent('og_image') ?: 'https://rs-code.az/img/og-default.jpg');
-        $ogType  = trim(View::yieldContent('og_type') ?: 'website');
+        $siteBase  = 'https://rs-code.az';
+        $curPath   = strtok(request()->getRequestUri(), '?');
+        $ogLocale  = $lang === 'ru' ? 'ru_RU' : ($lang === 'en' ? 'en_US' : 'az_AZ');
     @endphp
-    <meta property="og:type"        content="{{ $ogType }}">
-    <meta property="og:url"         content="{{ $ogUrl }}">
-    <meta property="og:title"       content="{{ $ogTitle }}">
-    <meta property="og:description" content="{{ $ogDesc }}">
-    <meta property="og:image"       content="{{ $ogImg }}">
+    <title>@yield('title', 'RS Code') — Brendinq & Rəqəmsal Agentlik</title>
+    <meta name="description"         content="@yield('description', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP sistemi və brendinq xidmətləri.')">
+    <link rel="canonical"            href="@yield('canonical', $siteBase . $curPath)">
+    <meta property="og:type"         content="@yield('og_type', 'website')">
+    <meta property="og:url"          content="@yield('canonical', $siteBase . $curPath)">
+    <meta property="og:title"        content="@yield('og_title', 'RS Code — Brendinq & Rəqəmsal Agentlik')">
+    <meta property="og:description"  content="@yield('og_desc', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP sistemi və brendinq xidmətləri.')">
+    <meta property="og:image"        content="@yield('og_image', $siteBase . '/img/og-default.jpg')">
     <meta property="og:image:width"  content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:site_name"   content="RS Code">
-    <meta property="og:locale"      content="{{ session('lang','az') === 'ru' ? 'ru_RU' : (session('lang','az') === 'en' ? 'en_US' : 'az_AZ') }}">
-    <meta name="twitter:card"       content="summary_large_image">
-    <meta name="twitter:title"      content="{{ $ogTitle }}">
-    <meta name="twitter:description" content="{{ $ogDesc }}">
-    <meta name="twitter:image"      content="{{ $ogImg }}">
+    <meta property="og:site_name"    content="RS Code">
+    <meta property="og:locale"       content="{{ $ogLocale }}">
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:title"       content="@yield('og_title', 'RS Code — Brendinq & Rəqəmsal Agentlik')">
+    <meta name="twitter:description" content="@yield('og_desc', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP sistemi və brendinq xidmətləri.')">
+    <meta name="twitter:image"       content="@yield('og_image', $siteBase . '/img/og-default.jpg')">
 
     <link rel="icon" type="image/png" href="{{ asset('img/132.png') }}">
     <script type="application/ld+json">
+    @verbatim
     {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
@@ -73,6 +70,7 @@
         "SMM xidməti"
       ]
     }
+    @endverbatim
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

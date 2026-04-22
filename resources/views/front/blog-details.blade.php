@@ -13,7 +13,9 @@
 @section('title', $title . ' | RS Code Blog')
 @section('description', strip_tags(Str::limit($review, 160)))
 @section('canonical', 'https://rs-code.az/blog-details/' . ($blog->slug_az ?? $blog->slug_en ?? $blog->id))
-@section('og_type', 'article')
+@section('og_type',  'article')
+@section('og_title', strip_tags($title) . ' | RS Code Blog')
+@section('og_desc',  strip_tags(Str::limit($review, 160)))
 @section('og_image', $imgSrc)
 
 @section('content')
