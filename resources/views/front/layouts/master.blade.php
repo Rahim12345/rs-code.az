@@ -14,26 +14,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="google-site-verification" content="VUYowyHre6ewr9gpY1xcdfhkeZS4_JMKO52DzOTko1w">
+    <meta name="robots" content="@yield('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1')">
     @php
         $siteBase  = 'https://rs-code.az';
         $curPath   = strtok(request()->getRequestUri(), '?');
         $ogLocale  = $lang === 'ru' ? 'ru_RU' : ($lang === 'en' ? 'en_US' : 'az_AZ');
+
+        // Hreflang map — every AZ / EN / RU path triple
+        $hreflangMap = [
+            '/'                                 => ['az'=>'/',                                  'en'=>'/',                             'ru'=>'/'],
+            '/haqqimizda'                       => ['az'=>'/haqqimizda',                       'en'=>'/about',                        'ru'=>'/o-nas'],
+            '/about'                            => ['az'=>'/haqqimizda',                       'en'=>'/about',                        'ru'=>'/o-nas'],
+            '/o-nas'                            => ['az'=>'/haqqimizda',                       'en'=>'/about',                        'ru'=>'/o-nas'],
+            '/elaqe'                            => ['az'=>'/elaqe',                            'en'=>'/contact',                      'ru'=>'/kontakty'],
+            '/contact'                          => ['az'=>'/elaqe',                            'en'=>'/contact',                      'ru'=>'/kontakty'],
+            '/kontakty'                         => ['az'=>'/elaqe',                            'en'=>'/contact',                      'ru'=>'/kontakty'],
+            '/xidmetler'                        => ['az'=>'/xidmetler',                        'en'=>'/services',                     'ru'=>'/uslugi'],
+            '/services'                         => ['az'=>'/xidmetler',                        'en'=>'/services',                     'ru'=>'/uslugi'],
+            '/uslugi'                           => ['az'=>'/xidmetler',                        'en'=>'/services',                     'ru'=>'/uslugi'],
+            '/isler'                            => ['az'=>'/isler',                            'en'=>'/portfolio',                    'ru'=>'/portfolio-ru'],
+            '/portfolio'                        => ['az'=>'/isler',                            'en'=>'/portfolio',                    'ru'=>'/portfolio-ru'],
+            '/portfolio-ru'                     => ['az'=>'/isler',                            'en'=>'/portfolio',                    'ru'=>'/portfolio-ru'],
+            '/bloqlar'                          => ['az'=>'/bloqlar',                          'en'=>'/blogs',                        'ru'=>'/blogi'],
+            '/blogs'                            => ['az'=>'/bloqlar',                          'en'=>'/blogs',                        'ru'=>'/blogi'],
+            '/blogi'                            => ['az'=>'/bloqlar',                          'en'=>'/blogs',                        'ru'=>'/blogi'],
+            '/suallar'                          => ['az'=>'/suallar',                          'en'=>'/faq',                          'ru'=>'/chasto-zadavaemye-voprosy'],
+            '/faq'                              => ['az'=>'/suallar',                          'en'=>'/faq',                          'ru'=>'/chasto-zadavaemye-voprosy'],
+            '/chasto-zadavaemye-voprosy'        => ['az'=>'/suallar',                          'en'=>'/faq',                          'ru'=>'/chasto-zadavaemye-voprosy'],
+            '/veb-saytlarin-hazirlanmasi'       => ['az'=>'/veb-saytlarin-hazirlanmasi',       'en'=>'/website-development',          'ru'=>'/razrabotka-sajtov'],
+            '/website-development'              => ['az'=>'/veb-saytlarin-hazirlanmasi',       'en'=>'/website-development',          'ru'=>'/razrabotka-sajtov'],
+            '/razrabotka-sajtov'                => ['az'=>'/veb-saytlarin-hazirlanmasi',       'en'=>'/website-development',          'ru'=>'/razrabotka-sajtov'],
+            '/seo-xidmeti'                      => ['az'=>'/seo-xidmeti',                      'en'=>'/seo-services',                 'ru'=>'/seo-uslugi'],
+            '/seo-services'                     => ['az'=>'/seo-xidmeti',                      'en'=>'/seo-services',                 'ru'=>'/seo-uslugi'],
+            '/seo-uslugi'                       => ['az'=>'/seo-xidmeti',                      'en'=>'/seo-services',                 'ru'=>'/seo-uslugi'],
+            '/domen-nedir'                      => ['az'=>'/domen-nedir',                      'en'=>'/what-is-domain',               'ru'=>'/chto-takoe-domen'],
+            '/what-is-domain'                   => ['az'=>'/domen-nedir',                      'en'=>'/what-is-domain',               'ru'=>'/chto-takoe-domen'],
+            '/chto-takoe-domen'                 => ['az'=>'/domen-nedir',                      'en'=>'/what-is-domain',               'ru'=>'/chto-takoe-domen'],
+            '/ssl-sertifikati-nedir'            => ['az'=>'/ssl-sertifikati-nedir',            'en'=>'/what-is-ssl-certificate',      'ru'=>'/chto-takoe-ssl-sertifikat'],
+            '/what-is-ssl-certificate'          => ['az'=>'/ssl-sertifikati-nedir',            'en'=>'/what-is-ssl-certificate',      'ru'=>'/chto-takoe-ssl-sertifikat'],
+            '/chto-takoe-ssl-sertifikat'        => ['az'=>'/ssl-sertifikati-nedir',            'en'=>'/what-is-ssl-certificate',      'ru'=>'/chto-takoe-ssl-sertifikat'],
+            '/smm-xidmeti'                      => ['az'=>'/smm-xidmeti',                      'en'=>'/smm-services',                 'ru'=>'/smm-uslugi'],
+            '/smm-services'                     => ['az'=>'/smm-xidmeti',                      'en'=>'/smm-services',                 'ru'=>'/smm-uslugi'],
+            '/smm-uslugi'                       => ['az'=>'/smm-xidmeti',                      'en'=>'/smm-services',                 'ru'=>'/smm-uslugi'],
+            '/google-reklamlari'                => ['az'=>'/google-reklamlari',                'en'=>'/google-ads',                   'ru'=>'/reklama-google'],
+            '/google-ads'                       => ['az'=>'/google-reklamlari',                'en'=>'/google-ads',                   'ru'=>'/reklama-google'],
+            '/reklama-google'                   => ['az'=>'/google-reklamlari',                'en'=>'/google-ads',                   'ru'=>'/reklama-google'],
+            '/loqo-hazirlanmasi'                => ['az'=>'/loqo-hazirlanmasi',                'en'=>'/logo-design',                  'ru'=>'/razrabotka-logo'],
+            '/logo-design'                      => ['az'=>'/loqo-hazirlanmasi',                'en'=>'/logo-design',                  'ru'=>'/razrabotka-logo'],
+            '/razrabotka-logo'                  => ['az'=>'/loqo-hazirlanmasi',                'en'=>'/logo-design',                  'ru'=>'/razrabotka-logo'],
+            '/facebook-ve-instagram-reklamlari' => ['az'=>'/facebook-ve-instagram-reklamlari', 'en'=>'/facebook-instagram-ads',       'ru'=>'/reklama-facebook-instagram'],
+            '/facebook-instagram-ads'           => ['az'=>'/facebook-ve-instagram-reklamlari', 'en'=>'/facebook-instagram-ads',       'ru'=>'/reklama-facebook-instagram'],
+            '/reklama-facebook-instagram'       => ['az'=>'/facebook-ve-instagram-reklamlari', 'en'=>'/facebook-instagram-ads',       'ru'=>'/reklama-facebook-instagram'],
+            '/backlink-nedir'                   => ['az'=>'/backlink-nedir',                   'en'=>'/what-is-backlink',             'ru'=>'/chto-takoe-backlink'],
+            '/what-is-backlink'                 => ['az'=>'/backlink-nedir',                   'en'=>'/what-is-backlink',             'ru'=>'/chto-takoe-backlink'],
+            '/chto-takoe-backlink'              => ['az'=>'/backlink-nedir',                   'en'=>'/what-is-backlink',             'ru'=>'/chto-takoe-backlink'],
+            '/kontent-marketinq'                => ['az'=>'/kontent-marketinq',                'en'=>'/content-marketing',            'ru'=>'/kontent-marketing'],
+            '/content-marketing'                => ['az'=>'/kontent-marketinq',                'en'=>'/content-marketing',            'ru'=>'/kontent-marketing'],
+            '/kontent-marketing'                => ['az'=>'/kontent-marketinq',                'en'=>'/content-marketing',            'ru'=>'/kontent-marketing'],
+            '/texniki-destek'                   => ['az'=>'/texniki-destek',                   'en'=>'/technical-support',            'ru'=>'/tekhnicheskaya-podderzhka'],
+            '/technical-support'                => ['az'=>'/texniki-destek',                   'en'=>'/technical-support',            'ru'=>'/tekhnicheskaya-podderzhka'],
+            '/tekhnicheskaya-podderzhka'        => ['az'=>'/texniki-destek',                   'en'=>'/technical-support',            'ru'=>'/tekhnicheskaya-podderzhka'],
+            '/korporativ-email'                 => ['az'=>'/korporativ-email',                 'en'=>'/corporate-email',              'ru'=>'/korporativnaya-pochta'],
+            '/corporate-email'                  => ['az'=>'/korporativ-email',                 'en'=>'/corporate-email',              'ru'=>'/korporativnaya-pochta'],
+            '/korporativnaya-pochta'            => ['az'=>'/korporativ-email',                 'en'=>'/corporate-email',              'ru'=>'/korporativnaya-pochta'],
+        ];
+        $lookupPath   = rtrim($curPath, '/') ?: '/';
+        $hreflangAlts = $hreflangMap[$lookupPath] ?? null;
     @endphp
     <title>@yield('title', 'RS Code') — Brendinq & Rəqəmsal Agentlik</title>
-    <meta name="description"         content="@yield('description', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP sistemi və brendinq xidmətləri.')">
+    <meta name="description"         content="@yield('description', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri. Biznesinizi rəqəmsal dünyaya daşıyırıq.')">
     <link rel="canonical"            href="@yield('canonical', $siteBase . $curPath)">
+    @hasSection('hreflang')
+        @yield('hreflang')
+    @elseif($hreflangAlts)
+    <link rel="alternate" hreflang="az"        href="{{ $siteBase . $hreflangAlts['az'] }}">
+    <link rel="alternate" hreflang="en"        href="{{ $siteBase . $hreflangAlts['en'] }}">
+    <link rel="alternate" hreflang="ru"        href="{{ $siteBase . $hreflangAlts['ru'] }}">
+    <link rel="alternate" hreflang="x-default" href="{{ $siteBase . $hreflangAlts['az'] }}">
+    @else
+    <link rel="alternate" hreflang="az"        href="{{ $siteBase . $curPath }}">
+    <link rel="alternate" hreflang="en"        href="{{ $siteBase . $curPath }}">
+    <link rel="alternate" hreflang="ru"        href="{{ $siteBase . $curPath }}">
+    <link rel="alternate" hreflang="x-default" href="{{ $siteBase . $curPath }}">
+    @endif
     <meta property="og:type"         content="@yield('og_type', 'website')">
     <meta property="og:url"          content="@yield('canonical', $siteBase . $curPath)">
     <meta property="og:title"        content="@yield('og_title', 'RS Code — Brendinq & Rəqəmsal Agentlik')">
-    <meta property="og:description"  content="@yield('og_desc', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP sistemi və brendinq xidmətləri.')">
+    <meta property="og:description"  content="@yield('og_desc', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri. Biznesinizi rəqəmsal dünyaya daşıyırıq.')">
     <meta property="og:image"        content="@yield('og_image', $siteBase . '/img/og-default.jpg')">
     <meta property="og:image:width"  content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name"    content="RS Code">
     <meta property="og:locale"       content="{{ $ogLocale }}">
+    @if($__env->yieldContent('og_published'))
+    <meta property="article:published_time" content="{{ $__env->yieldContent('og_published') }}">
+    <meta property="article:modified_time"  content="{{ $__env->yieldContent('og_modified') }}">
+    @endif
     <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@rscodeaz">
     <meta name="twitter:title"       content="@yield('og_title', 'RS Code — Brendinq & Rəqəmsal Agentlik')">
-    <meta name="twitter:description" content="@yield('og_desc', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP sistemi və brendinq xidmətləri.')">
+    <meta name="twitter:description" content="@yield('og_desc', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri. Biznesinizi rəqəmsal dünyaya daşıyırıq.')">
     <meta name="twitter:image"       content="@yield('og_image', $siteBase . '/img/og-default.jpg')">
 
     <link rel="icon" type="image/png" href="{{ asset('img/132.png') }}">

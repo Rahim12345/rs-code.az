@@ -2,10 +2,12 @@
 @section('title', ($project->{'name_'.session('lang','az')} ?? $project->name) . ' | RS Code')
 @section('description', $project->{'description_'.session('lang','az')} ?? $project->description_az ?? '')
 @section('canonical', 'https://rs-code.az/project-details/' . ($project->slug_az ?? $project->slug))
-@section('og_type',  'article')
-@section('og_title', ($project->{'name_'.session('lang','az')} ?? $project->name) . ' | RS Code Portfolio')
-@section('og_desc',  Str::limit(strip_tags($project->{'description_'.session('lang','az')} ?? $project->description_az ?? ''), 160))
-@section('og_image', $project->photo1 ? 'https://rs-code.az/images/projects/' . $project->photo1 : 'https://rs-code.az/img/og-default.jpg')
+@section('og_type',      'article')
+@section('og_title',     ($project->{'name_'.session('lang','az')} ?? $project->name) . ' | RS Code Portfolio')
+@section('og_desc',      Str::limit(strip_tags($project->{'description_'.session('lang','az')} ?? $project->description_az ?? ''), 160))
+@section('og_image',     $project->photo1 ? 'https://rs-code.az/images/projects/' . $project->photo1 : 'https://rs-code.az/img/og-default.jpg')
+@section('og_published', \Carbon\Carbon::parse($project->created_at)->toIso8601String())
+@section('og_modified',  \Carbon\Carbon::parse($project->updated_at)->toIso8601String())
 
 @section('content')
 @php
