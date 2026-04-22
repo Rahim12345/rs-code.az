@@ -196,7 +196,7 @@
                     </div>
                     <div>
                         <div class="text-zinc-200 font-medium text-sm">{{ $cName }}</div>
-                        <div class="text-zinc-600 text-xs">{{ __('index.reviews_role') }}</div>
+                        <div class="text-zinc-400 text-xs">{{ __('index.reviews_role') }}</div>
                     </div>
                 </div>
             </div>

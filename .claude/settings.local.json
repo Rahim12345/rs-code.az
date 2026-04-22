@@ -49,7 +49,11 @@
       "Bash(where chrome:*)",
       "Bash(where chromium:*)",
       "Bash(npm list:*)",
-      "Bash(xargs head:*)"
+      "Bash(xargs head:*)",
+      "Read(//c/laragon/etc/nginx/sites-enabled/**)",
+      "Read(//c/laragon/etc/nginx/**)",
+      "Bash(cat vite.config.js)",
+      "Bash(cat vite.config.ts)"
     ]
   }
 }

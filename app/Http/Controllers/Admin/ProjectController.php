@@ -94,8 +94,7 @@ class ProjectController extends Controller
         $project->save();
 
         foreach ($request->file('photos') as $photo) {
-            $photo_name = uniqid() . '.' . $photo->getClientOriginalExtension();
-            $photo->move(public_path('images/projects'), $photo_name);
+            $photo_name = $this->storeImage($photo);
             DB::table('project_images')->insert(['project_id' => $project->id, 'photo' => $photo_name]);
         }
 
@@ -152,8 +151,7 @@ class ProjectController extends Controller
         // Handle new photos
         if ($request->hasFile('photos')) {
             foreach ($request->file('photos') as $photo) {
-                $photo_name = uniqid() . '.' . $photo->getClientOriginalExtension();
-                $photo->move(public_path('images/projects'), $photo_name);
+                $photo_name = $this->storeImage($photo);
                 DB::table('project_images')->insert(['project_id' => $id, 'photo' => $photo_name]);
             }
         }
@@ -193,5 +191,48 @@ class ProjectController extends Controller
         DB::table('project_images')->where('project_id', $id)->delete();
         $project->delete();
         return response()->json(['status' => 1, 'message' => 'Uğurla Silindi', 'id' => $id]);
+    }
+
+    /**
+     * Convert any uploaded image to WebP and resize to max 1400px wide.
+     * Saves ~70–90% file size vs PNG, ~20–40% vs JPEG.
+     */
+    private function storeImage(\Illuminate\Http\UploadedFile $file): string
+    {
+        $maxW    = 1400;
+        $quality = 85;
+        $ext     = strtolower($file->getClientOriginalExtension());
+
+        $src = match ($ext) {
+            'png'  => imagecreatefrompng($file->getRealPath()),
+            'gif'  => imagecreatefromgif($file->getRealPath()),
+            'webp' => imagecreatefromwebp($file->getRealPath()),
+            default => imagecreatefromjpeg($file->getRealPath()),
+        };
+
+        // GD failed — fall back to moving the file as-is
+        if (!$src) {
+            $name = uniqid() . '.' . $ext;
+            $file->move(public_path('images/projects'), $name);
+            return $name;
+        }
+
+        $sw = imagesx($src);
+        $sh = imagesy($src);
+
+        // Resize if wider than $maxW (height scales proportionally)
+        if ($sw > $maxW) {
+            $dh  = (int) round($sh * $maxW / $sw);
+            $dst = imagecreatetruecolor($maxW, $dh);
+            imagecopyresampled($dst, $src, 0, 0, 0, 0, $maxW, $dh, $sw, $sh);
+            imagedestroy($src);
+            $src = $dst;
+        }
+
+        $filename = uniqid() . '.webp';
+        imagewebp($src, public_path('images/projects/' . $filename), $quality);
+        imagedestroy($src);
+
+        return $filename;
     }
 }

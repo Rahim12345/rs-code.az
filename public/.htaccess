@@ -19,3 +19,37 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+# ─── Cache-Control headers ──────────────────────────────────────────────────
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+
+    # Vite-hashed assets (immutable — content-addressed filenames like app-B9Q-icnn.js)
+    <FilesMatch "\.(js|css|woff2?|ttf|otf|eot|svg)$">
+        ExpiresDefault "access plus 1 year"
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+
+    # Images & icons (fingerprinted by upload timestamp — safe for 30 days)
+    <FilesMatch "\.(webp|jpg|jpeg|png|gif|ico|avif)$">
+        ExpiresDefault "access plus 30 days"
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+
+    # PWA manifest & service worker (must revalidate to pick up updates)
+    <FilesMatch "^(manifest\.json|sw\.js)$">
+        ExpiresDefault "access plus 0 seconds"
+        Header set Cache-Control "public, max-age=0, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+    # Ensure mod_expires rules are honoured even if mod_expires is absent
+    <FilesMatch "\.(js|css|woff2?|ttf|otf|eot|svg)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(webp|jpg|jpeg|png|gif|ico|avif)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+</IfModule>
