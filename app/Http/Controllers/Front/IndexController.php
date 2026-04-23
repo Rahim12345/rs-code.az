@@ -104,28 +104,26 @@ class IndexController extends Controller
             'kontent-marketing' => ['az' => '/kontent-marketinq', 'en' => '/content-marketing', 'ru' => '/kontent-marketing'],
         ];
 
-        // Detect current page slug from referrer
-        $refPath = trim(parse_url(url()->previous(), PHP_URL_PATH), '/');
-        $segments = explode('/', $refPath);
+        // Detect current page from referrer
+        $refPath      = trim(parse_url(url()->previous(), PHP_URL_PATH), '/');
+        $segments     = explode('/', $refPath);
         $firstSegment = $segments[0];
+
+        // Blog-details: session-dan slug map-i oxu (yalnız referrer blog-details-dirsə)
+        if ($firstSegment === 'blog-details' && session()->has('blog_lang_slugs')) {
+            $slugs      = session()->pull('blog_lang_slugs'); // oxu və sil
+            $targetSlug = $slugs[$lang] ?? $slugs['az'] ?? null;
+            if ($targetSlug) {
+                return redirect('/blog-details/' . $targetSlug);
+            }
+        }
+
+        // Başqa səhifədədirsə session-u təmizlə
+        session()->forget('blog_lang_slugs');
 
         // Static slug map lookup
         if (isset($slugMap[$firstSegment]) && isset($slugMap[$firstSegment][$lang])) {
             return redirect($slugMap[$firstSegment][$lang]);
-        }
-
-        // Dynamic blog-details slug lookup
-        if ($firstSegment === 'blog-details' && isset($segments[1])) {
-            $blogSlug = $segments[1];
-            $blog = \DB::table('blogs')
-                ->where('slug_az', $blogSlug)
-                ->orWhere('slug_en', $blogSlug)
-                ->orWhere('slug_ru', $blogSlug)
-                ->first();
-            if ($blog) {
-                $targetSlug = $blog->{'slug_'.$lang} ?? $blog->slug_az;
-                return redirect('/blog-details/' . $targetSlug);
-            }
         }
 
         return redirect()->back();

@@ -21,6 +21,12 @@ class BlogDetailsController extends Controller
             abort(404);
         }
 
+        session(['blog_lang_slugs' => [
+            'az' => $blog->slug_az,
+            'en' => $blog->slug_en,
+            'ru' => $blog->slug_ru,
+        ]]);
+
         return view('front.blog-details', compact('blog'));
     }
 }
