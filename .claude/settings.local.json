@@ -53,7 +53,8 @@
       "Read(//c/laragon/etc/nginx/sites-enabled/**)",
       "Read(//c/laragon/etc/nginx/**)",
       "Bash(cat vite.config.js)",
-      "Bash(cat vite.config.ts)"
+      "Bash(cat vite.config.ts)",
+      "Bash(ssh -o StrictHostKeyChecking=no u623198832@rs-code.az \"ls /home/u623198832/public_html/\")"
     ]
   }
 }
