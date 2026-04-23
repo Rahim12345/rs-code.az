@@ -157,51 +157,18 @@
     {{-- TAB: Backup ────────────────────────────────────── --}}
     <div x-show="tab==='backup'" x-data="backupManager()">
 
-        {{-- Hero card --}}
-        <div class="rounded-2xl bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-700 p-6 mb-5 shadow-xl shadow-indigo-200 text-white">
-            <div class="flex items-start justify-between gap-4">
-                <div>
-                    <div class="flex items-center gap-2 mb-1">
-                        <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
-                            <i class="fa fa-database text-sm"></i>
-                        </div>
-                        <span class="text-sm font-semibold opacity-80">Verilənlər bazası</span>
-                    </div>
-                    <h2 class="text-2xl font-bold tracking-tight">
-                        {{ config('database.connections.'.config('database.default').'.database') }}
-                    </h2>
-                    <p class="text-xs text-white/60 mt-1">Yedəklər serverdə saxlanılır · SQL formatı</p>
-                </div>
-                <button @click="createBackup()" :disabled="creating"
-                        class="shrink-0 flex items-center gap-2 bg-white text-indigo-700 font-bold px-4 py-2.5 rounded-xl text-sm hover:bg-indigo-50 transition-all shadow-lg disabled:opacity-60 disabled:cursor-not-allowed">
-                    <i class="fa" :class="creating ? 'fa-spinner fa-spin' : 'fa-plus'"></i>
-                    <span x-text="creating ? 'Yaradılır...' : 'Yeni Backup'"></span>
-                </button>
-            </div>
-
-            <div class="mt-5 grid grid-cols-3 gap-3">
-                <div class="bg-white/10 rounded-xl px-4 py-3">
-                    <div class="text-xs text-white/60 mb-0.5">Backup sayı</div>
-                    <div class="text-xl font-bold" x-text="backups.length"></div>
-                </div>
-                <div class="bg-white/10 rounded-xl px-4 py-3">
-                    <div class="text-xs text-white/60 mb-0.5">Ümumi həcm</div>
-                    <div class="text-xl font-bold" x-text="totalSize()"></div>
-                </div>
-                <div class="bg-white/10 rounded-xl px-4 py-3">
-                    <div class="text-xs text-white/60 mb-0.5">Son backup</div>
-                    <div class="text-base font-bold truncate" x-text="lastBackupDate()"></div>
-                </div>
-            </div>
-        </div>
-
         {{-- Backup list --}}
         <div class="form-card overflow-hidden">
             <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
                 <h3 class="font-semibold text-gray-800 text-sm flex items-center gap-2">
-                    <i class="fa fa-clock-rotate-left text-gray-400"></i> Backup tarixçəsi
+                    <i class="fa fa-database text-gray-400"></i> DB Backup
+                    <span class="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-full" x-text="backups.length + ' fayl'"></span>
                 </h3>
-                <span class="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-full" x-text="backups.length + ' fayl'"></span>
+                <button @click="createBackup()" :disabled="creating"
+                        class="flex items-center gap-1.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-lg text-sm transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+                    <i class="fa" :class="creating ? 'fa-spinner fa-spin' : 'fa-plus'"></i>
+                    <span x-text="creating ? 'Yaradılır...' : 'Yeni Backup'"></span>
+                </button>
             </div>
 
             {{-- Empty state --}}
@@ -365,14 +332,6 @@ function backupManager() {
         creating: false,
         backups: @json($backups),
 
-        totalSize() {
-            const total = this.backups.reduce((s, b) => s + b.size, 0);
-            return this.formatSize(total);
-        },
-        lastBackupDate() {
-            if (!this.backups.length) return '—';
-            return this.formatDate(this.backups[0].created);
-        },
         formatSize(bytes) {
             if (bytes < 1024) return bytes + ' B';
             if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
