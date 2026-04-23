@@ -29,7 +29,9 @@ Route::prefix('admin')->middleware('isLogout')->group(function () {
     Route::get('/profile/2fa-setup', 'App\Http\Controllers\Admin\ProfileController@setup2fa')->name('admin.2fa.setup');
     Route::post('/profile/2fa-enable', 'App\Http\Controllers\Admin\ProfileController@enable2fa')->name('admin.2fa.enable');
     Route::post('/profile/2fa-disable', 'App\Http\Controllers\Admin\ProfileController@disable2fa')->name('admin.2fa.disable');
-    Route::get('/profile/backup', 'App\Http\Controllers\Admin\ProfileController@backup')->name('admin.backup');
+    Route::post('/profile/backup/create',           'App\Http\Controllers\Admin\ProfileController@createBackup')->name('admin.backup.create');
+    Route::get('/profile/backup/download/{file}',   'App\Http\Controllers\Admin\ProfileController@downloadBackup')->name('admin.backup.download');
+    Route::delete('/profile/backup/delete/{file}',  'App\Http\Controllers\Admin\ProfileController@deleteBackup')->name('admin.backup.delete');
     Route::get('/partners', 'App\Http\Controllers\Admin\PartnerController@index');
     Route::post('/partners', 'App\Http\Controllers\Admin\PartnerController@store');
     Route::post('/edit-partner', 'App\Http\Controllers\Admin\PartnerController@edit')->name('edit.partner');

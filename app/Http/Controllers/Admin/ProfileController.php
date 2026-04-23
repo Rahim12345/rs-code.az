@@ -146,16 +146,18 @@ class ProfileController extends Controller
     }
 
     /* ── DB Backup ─────────────────────────────────────── */
-    public function backup()
-    {
-        $cfg  = config('database.connections.' . config('database.default'));
-        $host = $cfg['host'];
-        $port = $cfg['port'] ?? 3306;
-        $db   = $cfg['database'];
-        $user = $cfg['username'];
-        $pass = $cfg['password'];
 
-        // Find mysqldump binary
+    private function backupDir(): string
+    {
+        $dir = storage_path('app/backups');
+        if (!is_dir($dir)) {
+            mkdir($dir, 0755, true);
+        }
+        return $dir;
+    }
+
+    private function findMysqldump(): ?string
+    {
         $candidates = [
             'mysqldump',
             'C:\\laragon\\bin\\mysql\\mysql-8.0.30-winx64\\bin\\mysqldump.exe',
@@ -163,23 +165,52 @@ class ProfileController extends Controller
             '/usr/bin/mysqldump',
             '/usr/local/bin/mysqldump',
         ];
-
-        $binary = null;
         foreach ($candidates as $c) {
             if (str_contains($c, '\\') || str_contains($c, '/')) {
-                if (file_exists($c)) { $binary = $c; break; }
+                if (file_exists($c)) return $c;
             } else {
-                exec('where ' . $c . ' 2>NUL || which ' . $c . ' 2>/dev/null', $out, $rc);
-                if ($rc === 0 && !empty($out)) { $binary = trim($out[0]); break; }
+                exec('which ' . escapeshellarg($c) . ' 2>/dev/null', $out, $rc);
+                if ($rc === 0 && !empty($out)) return trim($out[0]);
             }
         }
+        return null;
+    }
 
+    public function index()
+    {
+        $backups = [];
+        $dir = $this->backupDir();
+        foreach (glob($dir . '/*.sql') as $file) {
+            $backups[] = [
+                'name'    => basename($file),
+                'size'    => filesize($file),
+                'created' => filemtime($file),
+            ];
+        }
+        usort($backups, fn($a, $b) => $b['created'] - $a['created']);
+
+        return view('back.profile.index', [
+            'user'    => Auth::user(),
+            'backups' => $backups,
+        ]);
+    }
+
+    public function createBackup()
+    {
+        $cfg    = config('database.connections.' . config('database.default'));
+        $host   = $cfg['host'];
+        $port   = $cfg['port'] ?? 3306;
+        $db     = $cfg['database'];
+        $user   = $cfg['username'];
+        $pass   = $cfg['password'];
+
+        $binary = $this->findMysqldump();
         if (!$binary) {
-            return response()->json(['error' => 'mysqldump tapılmadı.'], 500);
+            return response()->json(['error' => 'mysqldump tapılmadı. Serverinizdə quraşdırılıb?'], 500);
         }
 
         $filename = 'backup_' . $db . '_' . date('Y-m-d_H-i-s') . '.sql';
-        $tmpPath  = storage_path('app/' . $filename);
+        $filePath = $this->backupDir() . '/' . $filename;
 
         $passArg = $pass ? '--password=' . escapeshellarg($pass) : '';
         $cmd = sprintf(
@@ -190,16 +221,48 @@ class ProfileController extends Controller
             escapeshellarg($user),
             $passArg,
             escapeshellarg($db),
-            escapeshellarg($tmpPath)
+            escapeshellarg($filePath)
         );
 
         exec($cmd, $output, $code);
 
-        if ($code !== 0 || !file_exists($tmpPath) || filesize($tmpPath) === 0) {
-            $err = implode("\n", $output);
-            return response()->json(['error' => 'Backup alınamadı: ' . ($err ?: 'Naməlum xəta')], 500);
+        if ($code !== 0 || !file_exists($filePath) || filesize($filePath) === 0) {
+            @unlink($filePath);
+            return response()->json(['error' => 'Backup alınamadı: ' . implode(' ', $output)], 500);
         }
 
-        return response()->download($tmpPath, $filename)->deleteFileAfterSend(true);
+        return response()->json([
+            'message' => 'Backup uğurla yaradıldı',
+            'backup'  => [
+                'name'    => $filename,
+                'size'    => filesize($filePath),
+                'created' => filemtime($filePath),
+            ],
+        ]);
+    }
+
+    public function downloadBackup(string $file)
+    {
+        // Prevent path traversal
+        if (str_contains($file, '/') || str_contains($file, '\\') || str_contains($file, '..')) {
+            abort(400);
+        }
+        $path = $this->backupDir() . '/' . $file;
+        if (!file_exists($path)) abort(404);
+
+        return response()->download($path, $file);
+    }
+
+    public function deleteBackup(string $file)
+    {
+        if (str_contains($file, '/') || str_contains($file, '\\') || str_contains($file, '..')) {
+            return response()->json(['error' => 'Yanlış fayl adı'], 400);
+        }
+        $path = $this->backupDir() . '/' . $file;
+        if (!file_exists($path)) {
+            return response()->json(['error' => 'Fayl tapılmadı'], 404);
+        }
+        unlink($path);
+        return response()->json(['message' => 'Backup silindi']);
     }
 }

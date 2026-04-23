@@ -155,27 +155,105 @@
     </div>
 
     {{-- TAB: Backup ────────────────────────────────────── --}}
-    <div x-show="tab==='backup'">
-        <div class="form-card form-card-body">
-            <div class="form-section-title"><i class="fa fa-database text-gray-300"></i> Verilənlər bazası yedəyi</div>
-            <div class="mt-4 space-y-5">
-                <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-800 flex gap-3">
-                    <i class="fa fa-circle-info mt-0.5 shrink-0 text-blue-500"></i>
-                    <div>
-                        Düyməyə basıldıqda <strong>{{ config('database.connections.'.config('database.default').'.database') }}</strong>
-                        bazasının tam SQL yedəyi yaradılıb endiriləcək.<br>
-                        <span class="text-blue-600 text-xs mt-1 block">mysqldump serverinizdə quraşdırılmış olmalıdır.</span>
+    <div x-show="tab==='backup'" x-data="backupManager()">
+
+        {{-- Hero card --}}
+        <div class="rounded-2xl bg-gradient-to-br from-indigo-600 via-indigo-700 to-violet-700 p-6 mb-5 shadow-xl shadow-indigo-200 text-white">
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <div class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
+                            <i class="fa fa-database text-sm"></i>
+                        </div>
+                        <span class="text-sm font-semibold opacity-80">Verilənlər bazası</span>
                     </div>
+                    <h2 class="text-2xl font-bold tracking-tight">
+                        {{ config('database.connections.'.config('database.default').'.database') }}
+                    </h2>
+                    <p class="text-xs text-white/60 mt-1">Yedəklər serverdə saxlanılır · SQL formatı</p>
                 </div>
-                <div class="flex items-center gap-3">
-                    <a href="{{ route('admin.backup') }}" id="backupBtn"
-                       class="btn-primary">
-                        <i class="fa fa-download"></i> SQL Yedəyi Endir
-                    </a>
-                    <span class="text-xs text-gray-400">{{ config('database.connections.'.config('database.default').'.database') }}_{{ date('Y-m-d') }}.sql</span>
+                <button @click="createBackup()" :disabled="creating"
+                        class="shrink-0 flex items-center gap-2 bg-white text-indigo-700 font-bold px-4 py-2.5 rounded-xl text-sm hover:bg-indigo-50 transition-all shadow-lg disabled:opacity-60 disabled:cursor-not-allowed">
+                    <i class="fa" :class="creating ? 'fa-spinner fa-spin' : 'fa-plus'"></i>
+                    <span x-text="creating ? 'Yaradılır...' : 'Yeni Backup'"></span>
+                </button>
+            </div>
+
+            <div class="mt-5 grid grid-cols-3 gap-3">
+                <div class="bg-white/10 rounded-xl px-4 py-3">
+                    <div class="text-xs text-white/60 mb-0.5">Backup sayı</div>
+                    <div class="text-xl font-bold" x-text="backups.length"></div>
+                </div>
+                <div class="bg-white/10 rounded-xl px-4 py-3">
+                    <div class="text-xs text-white/60 mb-0.5">Ümumi həcm</div>
+                    <div class="text-xl font-bold" x-text="totalSize()"></div>
+                </div>
+                <div class="bg-white/10 rounded-xl px-4 py-3">
+                    <div class="text-xs text-white/60 mb-0.5">Son backup</div>
+                    <div class="text-base font-bold truncate" x-text="lastBackupDate()"></div>
                 </div>
             </div>
         </div>
+
+        {{-- Backup list --}}
+        <div class="form-card overflow-hidden">
+            <div class="px-5 py-4 border-b border-gray-100 flex items-center justify-between">
+                <h3 class="font-semibold text-gray-800 text-sm flex items-center gap-2">
+                    <i class="fa fa-clock-rotate-left text-gray-400"></i> Backup tarixçəsi
+                </h3>
+                <span class="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded-full" x-text="backups.length + ' fayl'"></span>
+            </div>
+
+            {{-- Empty state --}}
+            <div x-show="backups.length === 0" class="flex flex-col items-center justify-center py-16 text-center px-4">
+                <div class="w-16 h-16 rounded-2xl bg-gray-100 flex items-center justify-center mb-4">
+                    <i class="fa fa-database text-2xl text-gray-300"></i>
+                </div>
+                <p class="text-gray-500 font-medium">Hələ backup yoxdur</p>
+                <p class="text-gray-400 text-xs mt-1">Yuxarıdakı düyməyə basaraq ilk yedəyi yaradın</p>
+            </div>
+
+            {{-- Table --}}
+            <div x-show="backups.length > 0" class="divide-y divide-gray-50">
+                <template x-for="(b, i) in backups" :key="b.name">
+                    <div class="flex items-center gap-3 px-5 py-3.5 hover:bg-gray-50 transition-colors group">
+
+                        {{-- Index badge --}}
+                        <div class="w-7 h-7 rounded-lg bg-indigo-50 flex items-center justify-center shrink-0">
+                            <span class="text-xs font-bold text-indigo-400" x-text="i + 1"></span>
+                        </div>
+
+                        {{-- File info --}}
+                        <div class="flex-1 min-w-0">
+                            <div class="text-sm font-mono font-medium text-gray-700 truncate" x-text="b.name"></div>
+                            <div class="flex items-center gap-3 mt-0.5">
+                                <span class="text-xs text-gray-400">
+                                    <i class="fa fa-calendar-days text-gray-300 mr-1"></i>
+                                    <span x-text="formatDate(b.created)"></span>
+                                </span>
+                                <span class="text-xs text-gray-400">
+                                    <i class="fa fa-weight-hanging text-gray-300 mr-1"></i>
+                                    <span x-text="formatSize(b.size)"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        {{-- Actions --}}
+                        <div class="flex items-center gap-2 shrink-0">
+                            <a :href="'/admin/profile/backup/download/' + encodeURIComponent(b.name)"
+                               class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-50 text-indigo-700 text-xs font-semibold hover:bg-indigo-100 transition-colors">
+                                <i class="fa fa-download text-xs"></i> Endir
+                            </a>
+                            <button @click="deleteBackup(b.name, i)"
+                                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-50 text-red-600 text-xs font-semibold hover:bg-red-100 transition-colors">
+                                <i class="fa fa-trash text-xs"></i> Sil
+                            </button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+
     </div>
 
 </div>
@@ -279,6 +357,59 @@ function disable2fa() {
          }
          btn.disabled = false; btn.innerHTML = '<i class="fa fa-shield-xmark"></i> 2FA-nı deaktiv et';
      });
+}
+
+/* ── Backup Manager ─────────────────────────────────── */
+function backupManager() {
+    return {
+        creating: false,
+        backups: @json($backups),
+
+        totalSize() {
+            const total = this.backups.reduce((s, b) => s + b.size, 0);
+            return this.formatSize(total);
+        },
+        lastBackupDate() {
+            if (!this.backups.length) return '—';
+            return this.formatDate(this.backups[0].created);
+        },
+        formatSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / 1048576).toFixed(2) + ' MB';
+        },
+        formatDate(ts) {
+            const d = new Date(ts * 1000);
+            return d.toLocaleDateString('az-AZ', { day:'2-digit', month:'short', year:'numeric' })
+                 + ' ' + d.toLocaleTimeString('az-AZ', { hour:'2-digit', minute:'2-digit' });
+        },
+        createBackup() {
+            this.creating = true;
+            $.post('{{ route("admin.backup.create") }}', { _token: $('meta[name="csrf-token"]').attr('content') })
+             .done(r => {
+                 this.backups.unshift(r.backup);
+                 toastr.success(r.message);
+             })
+             .fail(xhr => {
+                 const msg = xhr.responseJSON?.error || 'Backup alınamadı';
+                 toastr.error(msg);
+             })
+             .always(() => { this.creating = false; });
+        },
+        deleteBackup(name, idx) {
+            if (!confirm('"' + name + '" silinsin?')) return;
+            $.ajax({
+                url: '/admin/profile/backup/delete/' + encodeURIComponent(name),
+                type: 'DELETE',
+                data: { _token: $('meta[name="csrf-token"]').attr('content') }
+            }).done(r => {
+                this.backups.splice(idx, 1);
+                toastr.success(r.message);
+            }).fail(xhr => {
+                toastr.error(xhr.responseJSON?.error || 'Silinə bilmədi');
+            });
+        }
+    };
 }
 
 /* ── Helpers ────────────────────────────────────────── */
