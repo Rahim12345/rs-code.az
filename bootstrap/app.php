@@ -14,6 +14,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         // Global middleware
+        $middleware->prepend([
+            \App\Http\Middleware\RedirectPublicPrefix::class,
+        ]);
         $middleware->append([
             \App\Http\Middleware\Language::class,
         ]);
