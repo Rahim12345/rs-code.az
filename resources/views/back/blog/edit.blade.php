@@ -175,7 +175,7 @@
 @endsection
 
 @push('scripts')
-<script src="https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-build-classic@38.1.0/build/ckeditor.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/38.1.0/super-build/ckeditor.js"></script>
 <script>
 const _editors = {};
 const _langFields = {
@@ -293,9 +293,30 @@ function submitBlog() {
 
 </script>
 <script>
+const _editorConfig = {
+    toolbar: {
+        items: [
+            'heading', '|',
+            'bold', 'italic', 'underline', 'strikethrough', '|',
+            'alignment:left', 'alignment:center', 'alignment:right', 'alignment:justify', '|',
+            'bulletedList', 'numberedList', '|',
+            'outdent', 'indent', '|',
+            'link', 'blockQuote', 'insertTable', '|',
+            'undo', 'redo'
+        ]
+    },
+    removePlugins: [
+        'RealTimeCollaborativeEditing', 'RealTimeCollaborativeComments',
+        'RealTimeCollaborativeTrackChanges', 'RealTimeCollaborativeRevisionHistory',
+        'PresenceList', 'Comments', 'TrackChanges', 'TrackChangesData',
+        'RevisionHistory', 'Pagination', 'WProofreader', 'MathType',
+        'DocumentOutline', 'TableOfContents', 'FormatPainter', 'CaseChange',
+        'SlashCommand', 'Template', 'MultiLevelList'
+    ]
+};
 ['text_az','text_en','text_ru'].forEach(id => {
     const el = document.getElementById(id);
-    if (el) ClassicEditor.create(el).then(e => { _editors[id] = e; }).catch(console.error);
+    if (el) CKEDITOR.ClassicEditor.create(el, _editorConfig).then(e => { _editors[id] = e; }).catch(console.error);
 });
 </script>
 @endpush
