@@ -26,9 +26,9 @@
 
 <form id="blogForm" action="/admin/add-blog" method="POST" enctype="multipart/form-data">
 @csrf
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 gap-6">
 
-    <div class="lg:col-span-2 space-y-5">
+    <div class="space-y-5">
 
         {{-- Dil tabları --}}
         <div class="form-card">
@@ -98,6 +98,26 @@
                         <p id="err-date_{{ $l }}" class="hidden mt-1 text-xs text-red-500 flex items-center gap-1"></p>
                     </div>
 
+                    {{-- Cover --}}
+                    @php $photoField = $l === 'az' ? 'photo' : 'photo_'.$l; @endphp
+                    <div class="border-t border-gray-100 pt-4">
+                        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                            <i class="fa fa-image mr-1 text-gray-300"></i> Kapak şəkli{{ $l === 'az' ? ' *' : '' }}
+                        </label>
+                        <label class="relative flex flex-col items-center justify-center h-40 rounded-xl border-2 border-dashed border-gray-200 hover:border-indigo-400 cursor-pointer overflow-hidden group transition-colors">
+                            <input type="file" name="{{ $photoField }}" id="{{ $photoField }}" accept="image/*"
+                                   class="absolute inset-0 opacity-0 cursor-pointer"
+                                   onchange="previewImg(this,'covPrev_{{ $l }}','covPh_{{ $l }}')">
+                            <div id="covPh_{{ $l }}" class="flex flex-col items-center gap-2 text-gray-400 group-hover:text-indigo-500 transition-colors p-5">
+                                <i class="fa fa-cloud-arrow-up text-3xl"></i>
+                                <span class="text-sm font-semibold">Şəkil seç</span>
+                                <span class="text-xs text-gray-300">PNG, JPG, WEBP</span>
+                            </div>
+                            <img id="covPrev_{{ $l }}" src="#" class="hidden absolute inset-0 w-full h-full object-cover rounded-xl">
+                        </label>
+                        <p id="err-{{ $photoField }}" class="hidden mt-2 text-xs text-red-500 flex items-center gap-1"></p>
+                    </div>
+
                     {{-- SEO Meta --}}
                     <div class="border-t border-gray-100 pt-4">
                         <div class="flex items-center gap-2 mb-3">
@@ -132,28 +152,6 @@
             </div>
         </div>
     </div>
-
-    {{-- Sidebar --}}
-    <div class="space-y-5">
-
-        {{-- Cover --}}
-        <div class="form-card form-card-body">
-            <div class="form-section-title"><i class="fa fa-image text-gray-300"></i> Kapak şəkli *</div>
-            <label class="upload-zone h-44 group">
-                <input type="file" name="photo" id="photo" accept="image/*"
-                       class="absolute inset-0 opacity-0 cursor-pointer"
-                       onchange="previewImg(this,'covPrev','covPh')">
-                <div id="covPh" class="flex flex-col items-center gap-2 text-gray-400 group-hover:text-indigo-500 transition-colors p-5">
-                    <i class="fa fa-cloud-arrow-up text-3xl"></i>
-                    <span class="text-sm font-semibold">Şəkil seç</span>
-                    <span class="text-xs text-gray-300">PNG, JPG, WEBP</span>
-                </div>
-                <img id="covPrev" src="#" class="hidden absolute inset-0 w-full h-full object-cover rounded-xl">
-            </label>
-            <p id="err-photo" class="hidden mt-2 text-xs text-red-500 flex items-center gap-1"></p>
-        </div>
-
-    </div>
 </div>
 </form>
 </div>
@@ -164,9 +162,9 @@
 <script>
 const _editors = {};
 const _langFields = {
-    az: ['title_az','slug_az','review_az','text_az','date_az','meta_title_az','meta_description_az','meta_keywords_az'],
-    en: ['title_en','slug_en','review_en','text_en','date_en','meta_title_en','meta_description_en','meta_keywords_en'],
-    ru: ['title_ru','slug_ru','review_ru','text_ru','date_ru','meta_title_ru','meta_description_ru','meta_keywords_ru'],
+    az: ['title_az','slug_az','review_az','text_az','date_az','photo','meta_title_az','meta_description_az','meta_keywords_az'],
+    en: ['title_en','slug_en','review_en','text_en','date_en','photo_en','meta_title_en','meta_description_en','meta_keywords_en'],
+    ru: ['title_ru','slug_ru','review_ru','text_ru','date_ru','photo_ru','meta_title_ru','meta_description_ru','meta_keywords_ru'],
 };
 const _slugLocked = { az: false, en: false, ru: false };
 

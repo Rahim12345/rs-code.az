@@ -33,7 +33,9 @@ class BlogController extends Controller
         'meta_keywords_az'     => 'Meta Açar Sözlər (AZ)',
         'meta_keywords_en'     => 'Meta Keywords (EN)',
         'meta_keywords_ru'     => 'Meta Ключевые слова (RU)',
-        'photo'                => 'Kapak şəkli',
+        'photo'                => 'Kapak şəkli (AZ)',
+        'photo_en'             => 'Kapak şəkli (EN)',
+        'photo_ru'             => 'Kapak şəkli (RU)',
     ];
 
     public function index()
@@ -72,6 +74,8 @@ class BlogController extends Controller
             'date_en'   => 'required',
             'date_ru'   => 'required',
             'photo'     => 'required|image',
+            'photo_en'  => 'nullable|image',
+            'photo_ru'  => 'nullable|image',
         ];
 
         $validator = Validator::make($request->all(), $rules, [], $this->attrs);
@@ -83,6 +87,20 @@ class BlogController extends Controller
         $photo = $request->file('photo');
         $photo_name = uniqid() . '.' . $photo->getClientOriginalExtension();
         $photo->move(public_path('images/blog'), $photo_name);
+
+        $photo_en_name = null;
+        if ($request->hasFile('photo_en')) {
+            $f = $request->file('photo_en');
+            $photo_en_name = uniqid() . '.' . $f->getClientOriginalExtension();
+            $f->move(public_path('images/blog'), $photo_en_name);
+        }
+
+        $photo_ru_name = null;
+        if ($request->hasFile('photo_ru')) {
+            $f = $request->file('photo_ru');
+            $photo_ru_name = uniqid() . '.' . $f->getClientOriginalExtension();
+            $f->move(public_path('images/blog'), $photo_ru_name);
+        }
 
         DB::table('blogs')->insert([
             'slug_az'             => $request->slug_az,
@@ -110,6 +128,8 @@ class BlogController extends Controller
             'meta_keywords_en'    => $request->meta_keywords_en,
             'meta_keywords_ru'    => $request->meta_keywords_ru,
             'photo'               => $photo_name,
+            'photo_en'            => $photo_en_name,
+            'photo_ru'            => $photo_ru_name,
             'created_at'          => now(),
             'updated_at'          => now(),
         ]);
@@ -151,11 +171,29 @@ class BlogController extends Controller
 
         $photo = $request->file('photo');
         if ($photo) {
-            \File::delete(public_path('images/blog/' . $blog->photo));
+            if ($blog->photo) \File::delete(public_path('images/blog/' . $blog->photo));
             $photo_name = uniqid() . '.' . $photo->getClientOriginalExtension();
             $photo->move(public_path('images/blog'), $photo_name);
         } else {
             $photo_name = $blog->photo;
+        }
+
+        $photo_en = $request->file('photo_en');
+        if ($photo_en) {
+            if ($blog->photo_en) \File::delete(public_path('images/blog/' . $blog->photo_en));
+            $photo_en_name = uniqid() . '.' . $photo_en->getClientOriginalExtension();
+            $photo_en->move(public_path('images/blog'), $photo_en_name);
+        } else {
+            $photo_en_name = $blog->photo_en;
+        }
+
+        $photo_ru = $request->file('photo_ru');
+        if ($photo_ru) {
+            if ($blog->photo_ru) \File::delete(public_path('images/blog/' . $blog->photo_ru));
+            $photo_ru_name = uniqid() . '.' . $photo_ru->getClientOriginalExtension();
+            $photo_ru->move(public_path('images/blog'), $photo_ru_name);
+        } else {
+            $photo_ru_name = $blog->photo_ru;
         }
 
         DB::table('blogs')->where('id', $id)->update([
@@ -184,6 +222,8 @@ class BlogController extends Controller
             'meta_keywords_en'    => $request->meta_keywords_en,
             'meta_keywords_ru'    => $request->meta_keywords_ru,
             'photo'               => $photo_name,
+            'photo_en'            => $photo_en_name,
+            'photo_ru'            => $photo_ru_name,
             'updated_at'          => now(),
         ]);
 

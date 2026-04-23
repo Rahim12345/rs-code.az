@@ -223,7 +223,8 @@
             @foreach($blogs->take(3) as $blog)
             <a href="/blog-details/{{ $blog->{'slug_'.$lang} ?? $blog->slug_az ?? $blog->id }}" class="group bg-zinc-900/50 border border-zinc-800/60 rounded-2xl overflow-hidden hover:border-violet-700/30 transition-all hover:-translate-y-1 block">
                 <div class="relative overflow-hidden h-48">
-                    <img src="{{ str_starts_with($blog->photo, 'http') || str_starts_with($blog->photo, '/') ? $blog->photo : asset('images/blog/'.$blog->photo) }}" alt="{{ $blog->{'title_'.$lang} }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                    @php $bPhoto = ($lang !== 'az' && !empty($blog->{'photo_'.$lang})) ? $blog->{'photo_'.$lang} : $blog->photo; @endphp
+                    <img src="{{ str_starts_with($bPhoto, 'http') || str_starts_with($bPhoto, '/') ? $bPhoto : asset('images/blog/'.$bPhoto) }}" alt="{{ $blog->{'title_'.$lang} }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent"></div>
                 </div>
                 <div class="p-5">

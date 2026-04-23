@@ -26,9 +26,9 @@
 
 <form id="blogForm" action="/admin/edit-blog/{{ $blog->id }}" method="POST" enctype="multipart/form-data">
 @csrf
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 gap-6">
 
-    <div class="lg:col-span-2 space-y-5">
+    <div class="space-y-5">
 
         {{-- Dil tabları --}}
         <div class="form-card">
@@ -96,6 +96,34 @@
                         <p id="err-date_{{ $l }}" class="hidden mt-1 text-xs text-red-500 flex items-center gap-1"></p>
                     </div>
 
+                    {{-- Cover --}}
+                    @php
+                        $photoField = $l === 'az' ? 'photo' : 'photo_'.$l;
+                        $existingPhoto = $l === 'az' ? $blog->photo : ($blog->{'photo_'.$l} ?? null);
+                        $existingPhotoSrc = $existingPhoto ? asset('images/blog/'.$existingPhoto) : null;
+                    @endphp
+                    <div class="border-t border-gray-100 pt-4">
+                        <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+                            <i class="fa fa-image mr-1 text-gray-300"></i> Kapak şəkli{{ $l === 'az' ? '' : '' }}
+                        </label>
+                        @if($existingPhotoSrc)
+                        <div class="mb-3 bg-gray-50 border border-gray-100 rounded-xl overflow-hidden h-36 flex items-center justify-center" id="currentPhotoWrap_{{ $l }}">
+                            <img id="currentPhoto_{{ $l }}" src="{{ $existingPhotoSrc }}" class="w-full h-full object-cover" alt="">
+                        </div>
+                        @endif
+                        <label class="relative flex flex-col items-center justify-center h-28 rounded-xl border-2 border-dashed border-gray-200 hover:border-indigo-400 cursor-pointer overflow-hidden group transition-colors">
+                            <input type="file" name="{{ $photoField }}" id="{{ $photoField }}" accept="image/*"
+                                   class="absolute inset-0 opacity-0 cursor-pointer"
+                                   onchange="previewImgLang(this,'covPrev_{{ $l }}','covPh_{{ $l }}','currentPhotoWrap_{{ $l }}')">
+                            <div id="covPh_{{ $l }}" class="flex flex-col items-center gap-2 text-gray-400 group-hover:text-indigo-500 transition-colors p-4">
+                                <i class="fa fa-arrow-up-from-bracket text-2xl"></i>
+                                <span class="text-xs font-semibold">{{ $existingPhotoSrc ? 'Yenilə' : 'Şəkil seç' }}</span>
+                            </div>
+                            <img id="covPrev_{{ $l }}" src="#" class="hidden absolute inset-0 w-full h-full object-cover rounded-xl">
+                        </label>
+                        <p id="err-{{ $photoField }}" class="hidden mt-2 text-xs text-red-500 flex items-center gap-1"></p>
+                    </div>
+
                     {{-- SEO Meta --}}
                     <div class="border-t border-gray-100 pt-4">
                         <div class="flex items-center gap-2 mb-3">
@@ -130,45 +158,6 @@
             </div>
         </div>
     </div>
-
-    {{-- Sidebar --}}
-    <div class="space-y-5">
-
-        {{-- Cover --}}
-        <div class="form-card form-card-body">
-            <div class="form-section-title"><i class="fa fa-image text-gray-300"></i> Kapak şəkli</div>
-            @php
-                $photoSrc = $blog->photo ? asset('images/blog/'.$blog->photo) : null;
-            @endphp
-            @if($photoSrc)
-            <div class="mb-3 bg-gray-50 border border-gray-100 rounded-xl overflow-hidden h-36 flex items-center justify-center">
-                <img id="currentPhoto" src="{{ $photoSrc }}" class="w-full h-full object-cover" alt="">
-            </div>
-            @endif
-            <label class="upload-zone h-28 group">
-                <input type="file" name="photo" id="photo" accept="image/*"
-                       class="absolute inset-0 opacity-0 cursor-pointer"
-                       onchange="previewImg(this,'covPrev','covPh')">
-                <div id="covPh" class="flex flex-col items-center gap-2 text-gray-400 group-hover:text-indigo-500 transition-colors p-4">
-                    <i class="fa fa-arrow-up-from-bracket text-2xl"></i>
-                    <span class="text-xs font-semibold">{{ $photoSrc ? 'Yenilə' : 'Şəkil seç' }}</span>
-                </div>
-                <img id="covPrev" src="#" class="hidden absolute inset-0 w-full h-full object-cover rounded-xl">
-            </label>
-        </div>
-
-        {{-- Info --}}
-        <div class="form-card form-card-body">
-            <div class="form-section-title"><i class="fa fa-circle-info text-gray-300"></i> Məlumat</div>
-            <div class="text-xs text-gray-500 space-y-2">
-                <div class="flex justify-between"><span>ID</span><span class="font-mono font-semibold text-gray-700">#{{ $blog->id }}</span></div>
-                @if($blog->created_at)
-                <div class="flex justify-between"><span>Yaradılıb</span><span class="text-gray-700">{{ \Carbon\Carbon::parse($blog->created_at)->format('d.m.Y') }}</span></div>
-                @endif
-            </div>
-        </div>
-
-    </div>
 </div>
 </form>
 </div>
@@ -179,9 +168,9 @@
 <script>
 const _editors = {};
 const _langFields = {
-    az: ['title_az','slug_az','review_az','text_az','date_az','meta_title_az','meta_description_az','meta_keywords_az'],
-    en: ['title_en','slug_en','review_en','text_en','date_en','meta_title_en','meta_description_en','meta_keywords_en'],
-    ru: ['title_ru','slug_ru','review_ru','text_ru','date_ru','meta_title_ru','meta_description_ru','meta_keywords_ru'],
+    az: ['title_az','slug_az','review_az','text_az','date_az','photo','meta_title_az','meta_description_az','meta_keywords_az'],
+    en: ['title_en','slug_en','review_en','text_en','date_en','photo_en','meta_title_en','meta_description_en','meta_keywords_en'],
+    ru: ['title_ru','slug_ru','review_ru','text_ru','date_ru','photo_ru','meta_title_ru','meta_description_ru','meta_keywords_ru'],
 };
 // Edit: slugs start locked (manual) to protect existing values
 const _slugLocked = { az: true, en: true, ru: true };
@@ -232,8 +221,19 @@ function previewImg(input, prevId, phId) {
         const img = document.getElementById(prevId);
         img.src = e.target.result; img.classList.remove('hidden');
         if (phId) document.getElementById(phId).classList.add('hidden');
-        const cur = document.getElementById('currentPhoto');
-        if (cur) cur.parentElement.classList.add('hidden');
+    };
+    reader.readAsDataURL(input.files[0]);
+}
+
+function previewImgLang(input, prevId, phId, wrapId) {
+    if (!input.files[0]) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+        const img = document.getElementById(prevId);
+        img.src = e.target.result; img.classList.remove('hidden');
+        if (phId) document.getElementById(phId).classList.add('hidden');
+        const wrap = document.getElementById(wrapId);
+        if (wrap) wrap.classList.add('hidden');
     };
     reader.readAsDataURL(input.files[0]);
 }

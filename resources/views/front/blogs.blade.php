@@ -27,7 +27,7 @@
             @php
                 $title  = $blog->{'title_'.$lang} ?? $blog->title_az;
                 $review = $blog->{'review_'.$lang} ?? $blog->review_az ?? '';
-                $photo  = $blog->photo;
+                $photo  = ($lang !== 'az' && !empty($blog->{'photo_'.$lang})) ? $blog->{'photo_'.$lang} : $blog->photo;
                 $imgSrc = ($photo && !str_starts_with($photo,'http'))
                           ? asset('images/blog/'.$photo)
                           : ($photo ?: 'https://picsum.photos/seed/blog-'.$blog->id.'/600/400');
