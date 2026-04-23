@@ -90,11 +90,15 @@
     <div class="absolute inset-0 bg-gradient-to-b from-violet-950/20 to-transparent pointer-events-none"></div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div class="text-center">
-            <a href="/blogs" class="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm mb-6 transition-colors group">
+            @php
+                $blogListUrl   = ['az' => '/bloqlar', 'en' => '/blogs', 'ru' => '/blogi'][$lang] ?? '/bloqlar';
+                $blogBackLabel = ['az' => 'Bloga qayıt', 'en' => 'Back to Blog', 'ru' => 'Назад к блогу'][$lang] ?? 'Bloga qayıt';
+            @endphp
+            <a href="{{ $blogListUrl }}" class="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm mb-6 transition-colors group">
                 <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
                 </svg>
-                Bloga qayıt
+                {{ $blogBackLabel }}
             </a>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6" style="font-family:'Bricolage Grotesque',sans-serif">
                 {{ $title }}
@@ -139,7 +143,7 @@
                 </div>
                 {{-- Share --}}
                 <div class="mt-10 pt-8 border-t border-zinc-800/50 flex items-center gap-4">
-                    <span class="text-zinc-500 text-sm">Paylaş:</span>
+                    <span class="text-zinc-500 text-sm">{{ ['az'=>'Paylaş:','en'=>'Share:','ru'=>'Поделиться:'][$lang] ?? 'Paylaş:' }}</span>
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
                        target="_blank" class="w-9 h-9 bg-zinc-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all">
                         <svg class="w-4 h-4 text-zinc-400" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -152,26 +156,62 @@
             </article>
 
             {{-- Sidebar --}}
+            @php
+                $sidebarData = [
+                    'az' => [
+                        'cta_title'    => 'Layihəniz var?',
+                        'cta_desc'     => 'Pulsuz konsultasiya üçün bizimlə əlaqə saxlayın.',
+                        'cta_btn'      => 'Sifariş ver',
+                        'services_lbl' => 'Xidmətlər',
+                        'services'     => [
+                            ['/veb-saytlarin-hazirlanmasi', 'Veb sayt hazırlanması'],
+                            ['/seo-xidmeti',                'SEO xidməti'],
+                            ['/smm-xidmeti',                'SMM xidməti'],
+                            ['/loqo-hazirlanmasi',          'Loqo hazırlanması'],
+                        ],
+                    ],
+                    'en' => [
+                        'cta_title'    => 'Have a project?',
+                        'cta_desc'     => 'Contact us for a free consultation.',
+                        'cta_btn'      => 'Order Now',
+                        'services_lbl' => 'Services',
+                        'services'     => [
+                            ['/website-development', 'Website Development'],
+                            ['/seo-services',        'SEO Services'],
+                            ['/smm-services',        'SMM Services'],
+                            ['/logo-design',         'Logo Design'],
+                        ],
+                    ],
+                    'ru' => [
+                        'cta_title'    => 'Есть проект?',
+                        'cta_desc'     => 'Свяжитесь с нами для бесплатной консультации.',
+                        'cta_btn'      => 'Заказать',
+                        'services_lbl' => 'Услуги',
+                        'services'     => [
+                            ['/razrabotka-sajtov',  'Разработка сайтов'],
+                            ['/seo-uslugi',         'SEO услуги'],
+                            ['/smm-uslugi',         'SMM услуги'],
+                            ['/razrabotka-logo',    'Разработка логотипа'],
+                        ],
+                    ],
+                ];
+                $sb = $sidebarData[$lang] ?? $sidebarData['az'];
+            @endphp
             <aside class="lg:col-span-1">
                 <div class="sticky top-24 space-y-6">
                     {{-- CTA card --}}
                     <div class="bg-gradient-to-br from-violet-900/40 to-zinc-900/60 border border-violet-500/20 rounded-2xl p-6">
-                        <h3 class="text-white font-bold mb-2 text-sm">Layihəniz var?</h3>
-                        <p class="text-zinc-500 text-xs mb-4 leading-relaxed">Pulsuz konsultasiya üçün bizimlə əlaqə saxlayın.</p>
+                        <h3 class="text-white font-bold mb-2 text-sm">{{ $sb['cta_title'] }}</h3>
+                        <p class="text-zinc-500 text-xs mb-4 leading-relaxed">{{ $sb['cta_desc'] }}</p>
                         <button @click="orderModal = true" class="w-full bg-violet-700 hover:bg-violet-600 text-white text-xs font-semibold py-2.5 rounded-lg transition-all">
-                            Sifariş ver
+                            {{ $sb['cta_btn'] }}
                         </button>
                     </div>
-                    {{-- Other links --}}
+                    {{-- Services links --}}
                     <div class="bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-5">
-                        <h3 class="text-white font-semibold text-sm mb-3">Xidmətlər</h3>
+                        <h3 class="text-white font-semibold text-sm mb-3">{{ $sb['services_lbl'] }}</h3>
                         <ul class="space-y-2">
-                            @foreach([
-                                ['/veb-saytlarin-hazirlanmasi','Veb sayt hazırlanması'],
-                                ['/seo-xidmeti','SEO xidməti'],
-                                ['/smm-xidmeti','SMM xidməti'],
-                                ['/loqo-hazirlanmasi','Loqo hazırlanması'],
-                            ] as [$href,$label])
+                            @foreach($sb['services'] as [$href, $label])
                             <li><a href="{{ $href }}" class="text-zinc-500 hover:text-violet-400 text-xs transition-colors">→ {{ $label }}</a></li>
                             @endforeach
                         </ul>
