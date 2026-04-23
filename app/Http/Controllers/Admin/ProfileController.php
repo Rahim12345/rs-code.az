@@ -16,11 +16,6 @@ use BaconQrCode\Writer;
 
 class ProfileController extends Controller
 {
-    public function index()
-    {
-        return view('back.profile.index', ['user' => Auth::user()]);
-    }
-
     /* ── Profil yenilə ─────────────────────────────────── */
     public function updateProfile(Request $request)
     {
