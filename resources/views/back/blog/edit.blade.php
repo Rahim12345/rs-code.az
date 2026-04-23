@@ -47,10 +47,10 @@
 
             <div class="p-6 space-y-4">
                 @foreach([
-                    'az' => ['Başlıq','Slug','Qısa xülasə','Mətn','Tarix', $blog->title_az, $blog->slug_az, $blog->review_az, $blog->text_az, $blog->date_az],
-                    'en' => ['Title','Slug','Short review','Content','Date', $blog->title_en, $blog->slug_en, $blog->review_en, $blog->text_en, $blog->date_en],
-                    'ru' => ['Заголовок','Slug','Краткое описание','Содержание','Дата', $blog->title_ru, $blog->slug_ru, $blog->review_ru, $blog->text_ru, $blog->date_ru],
-                ] as $l => [$tLabel,$sLabel,$rLabel,$txLabel,$dLabel,$tVal,$sVal,$rVal,$txVal,$dVal])
+                    'az' => ['Başlıq','Slug','Qısa xülasə','Mətn','Tarix','Meta Başlıq','Meta Açıqlama','Meta Açar Sözlər', $blog->title_az, $blog->slug_az, $blog->review_az, $blog->text_az, $blog->date_az, $blog->meta_title_az ?? '', $blog->meta_description_az ?? '', $blog->meta_keywords_az ?? ''],
+                    'en' => ['Title','Slug','Short review','Content','Date','Meta Title','Meta Description','Meta Keywords', $blog->title_en, $blog->slug_en, $blog->review_en, $blog->text_en, $blog->date_en, $blog->meta_title_en ?? '', $blog->meta_description_en ?? '', $blog->meta_keywords_en ?? ''],
+                    'ru' => ['Заголовок','Slug','Краткое описание','Содержание','Дата','Meta Заголовок','Meta Описание','Meta Ключевые слова', $blog->title_ru, $blog->slug_ru, $blog->review_ru, $blog->text_ru, $blog->date_ru, $blog->meta_title_ru ?? '', $blog->meta_description_ru ?? '', $blog->meta_keywords_ru ?? ''],
+                ] as $l => [$tLabel,$sLabel,$rLabel,$txLabel,$dLabel,$mtLabel,$mdLabel,$mkLabel,$tVal,$sVal,$rVal,$txVal,$dVal,$mtVal,$mdVal,$mkVal])
                 <div x-show="lang==='{{ $l }}'" class="space-y-4">
 
                     <div>
@@ -94,6 +94,35 @@
                         <input type="text" name="date_{{ $l }}" id="date_{{ $l }}"
                                value="{{ $dVal }}" class="admin-input">
                         <p id="err-date_{{ $l }}" class="hidden mt-1 text-xs text-red-500 flex items-center gap-1"></p>
+                    </div>
+
+                    {{-- SEO Meta --}}
+                    <div class="border-t border-gray-100 pt-4">
+                        <div class="flex items-center gap-2 mb-3">
+                            <i class="fa fa-magnifying-glass text-gray-300 text-xs"></i>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">SEO Meta</span>
+                        </div>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{{ $mtLabel }}</label>
+                                <input type="text" name="meta_title_{{ $l }}" id="meta_title_{{ $l }}"
+                                       value="{{ $mtVal }}" class="admin-input" placeholder="{{ $mtLabel }} ({{ strtoupper($l) }})">
+                                <p id="err-meta_title_{{ $l }}" class="hidden mt-1 text-xs text-red-500 flex items-center gap-1"></p>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{{ $mdLabel }}</label>
+                                <textarea name="meta_description_{{ $l }}" id="meta_description_{{ $l }}" rows="2"
+                                          class="admin-input resize-none"
+                                          placeholder="{{ $mdLabel }} ({{ strtoupper($l) }})">{{ $mdVal }}</textarea>
+                                <p id="err-meta_description_{{ $l }}" class="hidden mt-1 text-xs text-red-500 flex items-center gap-1"></p>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{{ $mkLabel }}</label>
+                                <input type="text" name="meta_keywords_{{ $l }}" id="meta_keywords_{{ $l }}"
+                                       value="{{ $mkVal }}" class="admin-input" placeholder="{{ $mkLabel }} ({{ strtoupper($l) }})">
+                                <p id="err-meta_keywords_{{ $l }}" class="hidden mt-1 text-xs text-red-500 flex items-center gap-1"></p>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -150,9 +179,9 @@
 <script>
 const _editors = {};
 const _langFields = {
-    az: ['title_az','slug_az','review_az','text_az','date_az'],
-    en: ['title_en','slug_en','review_en','text_en','date_en'],
-    ru: ['title_ru','slug_ru','review_ru','text_ru','date_ru'],
+    az: ['title_az','slug_az','review_az','text_az','date_az','meta_title_az','meta_description_az','meta_keywords_az'],
+    en: ['title_en','slug_en','review_en','text_en','date_en','meta_title_en','meta_description_en','meta_keywords_en'],
+    ru: ['title_ru','slug_ru','review_ru','text_ru','date_ru','meta_title_ru','meta_description_ru','meta_keywords_ru'],
 };
 // Edit: slugs start locked (manual) to protect existing values
 const _slugLocked = { az: true, en: true, ru: true };
