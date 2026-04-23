@@ -238,7 +238,7 @@
 
                 fetch(route, {
                     method: 'POST',
-                    headers: { 'X-CSRF-TOKEN': CSRF },
+                    headers: { 'X-CSRF-TOKEN': CSRF, 'Accept': 'application/json' },
                     body: new FormData(form)
                 })
                 .then(function(res){
