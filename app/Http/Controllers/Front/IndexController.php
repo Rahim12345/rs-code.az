@@ -106,11 +106,26 @@ class IndexController extends Controller
 
         // Detect current page slug from referrer
         $refPath = trim(parse_url(url()->previous(), PHP_URL_PATH), '/');
-        // For portfolio/isler with optional slug segment, use only first segment
-        $firstSegment = explode('/', $refPath)[0];
+        $segments = explode('/', $refPath);
+        $firstSegment = $segments[0];
 
+        // Static slug map lookup
         if (isset($slugMap[$firstSegment]) && isset($slugMap[$firstSegment][$lang])) {
             return redirect($slugMap[$firstSegment][$lang]);
+        }
+
+        // Dynamic blog-details slug lookup
+        if ($firstSegment === 'blog-details' && isset($segments[1])) {
+            $blogSlug = $segments[1];
+            $blog = \DB::table('blogs')
+                ->where('slug_az', $blogSlug)
+                ->orWhere('slug_en', $blogSlug)
+                ->orWhere('slug_ru', $blogSlug)
+                ->first();
+            if ($blog) {
+                $targetSlug = $blog->{'slug_'.$lang} ?? $blog->slug_az;
+                return redirect('/blog-details/' . $targetSlug);
+            }
         }
 
         return redirect()->back();
