@@ -25,15 +25,16 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($blogs as $blog)
             @php
-                $title  = $blog->{'title_'.$lang} ?? $blog->title_az;
-                $review = $blog->{'review_'.$lang} ?? $blog->review_az ?? '';
-                $photo  = ($lang !== 'az' && !empty($blog->{'photo_'.$lang})) ? $blog->{'photo_'.$lang} : $blog->photo;
-                $imgSrc = ($photo && !str_starts_with($photo,'http'))
-                          ? asset('images/blog/'.$photo)
-                          : ($photo ?: 'https://picsum.photos/seed/blog-'.$blog->id.'/600/400');
+                $title   = $blog->{'title_'.$lang} ?? $blog->title_az;
+                $review  = $blog->{'review_'.$lang} ?? $blog->review_az ?? '';
+                $photo   = ($lang !== 'az' && !empty($blog->{'photo_'.$lang})) ? $blog->{'photo_'.$lang} : $blog->photo;
+                $imgSrc  = ($photo && !str_starts_with($photo,'http'))
+                           ? asset('images/blog/'.$photo)
+                           : ($photo ?: 'https://picsum.photos/seed/blog-'.$blog->id.'/600/400');
+                $blogSlug = $blog->{'slug_'.$lang} ?? $blog->slug_az ?? $blog->id;
             @endphp
             <article class="group bg-zinc-900/40 border border-zinc-800/50 rounded-2xl overflow-hidden hover:border-violet-500/30 transition-all duration-300 hover:-translate-y-1">
-                <a href="/blog-details/{{ $blog->id }}" class="block overflow-hidden aspect-video">
+                <a href="/blog-details/{{ $blogSlug }}" class="block overflow-hidden aspect-video">
                     <img src="{{ $imgSrc }}" alt="{{ $title }}"
                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </a>
@@ -43,14 +44,14 @@
                         <span class="text-xs text-zinc-600">{{ $blog->{'date_'.$lang} ?? $blog->date_az }}</span>
                     </div>
                     <h2 class="text-white font-bold text-lg mb-3 group-hover:text-violet-300 transition-colors line-clamp-2">
-                        <a href="/blog-details/{{ $blog->id }}">{{ $title }}</a>
+                        <a href="/blog-details/{{ $blogSlug }}">{{ $title }}</a>
                     </h2>
                     @if($review)
                     <p class="text-zinc-500 text-sm leading-relaxed line-clamp-3 mb-5">
                         {{ strip_tags(Str::limit($review, 160)) }}
                     </p>
                     @endif
-                    <a href="/blog-details/{{ $blog->id }}"
+                    <a href="/blog-details/{{ $blogSlug }}"
                        class="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm font-medium transition-colors group/link">
                         {{ __('index.blog_read_more') }}
                         <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

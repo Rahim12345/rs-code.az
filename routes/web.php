@@ -185,7 +185,7 @@ Route::middleware('locale')->group(static function () {
     Route::get('/suallar',                    "App\Http\Controllers\Front\FaqController@index");
     Route::get('/faq',                        "App\Http\Controllers\Front\FaqController@index");
     Route::get('/chasto-zadavaemye-voprosy',  "App\Http\Controllers\Front\FaqController@index");
-    Route::get('/blog-details/{id}', "App\Http\Controllers\Front\BlogDetailsController@index");
+    Route::get('/blog-details/{slug}', "App\Http\Controllers\Front\BlogDetailsController@index");
     Route::get('/project-details/{slug}', "App\Http\Controllers\Front\ProjectDetailsController@index");
 
     // Web Development — AZ / EN / RU

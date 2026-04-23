@@ -83,6 +83,8 @@
     @endphp
     <title>@yield('title', 'RS Code') — Proqram Yazılması & Veb Sayt | Bakı</title>
     <meta name="description"         content="@yield('description', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri. Biznesinizi rəqəmsal dünyaya daşıyırıq.')">
+    @hasSection('keywords')<meta name="keywords" content="@yield('keywords')">@endif
+    @hasSection('author')<meta name="author"   content="@yield('author')">@endif
     <link rel="canonical"            href="@yield('canonical', $siteBase . $curPath)">
     @hasSection('hreflang')
         @yield('hreflang')
@@ -109,7 +111,11 @@
     @if($__env->yieldContent('og_published'))
     <meta property="article:published_time" content="{{ $__env->yieldContent('og_published') }}">
     <meta property="article:modified_time"  content="{{ $__env->yieldContent('og_modified') }}">
+    <meta property="article:author"         content="@yield('article_author', 'RS Code')">
+    <meta property="article:section"        content="@yield('article_section', 'Blog')">
+    @hasSection('article_tag')<meta property="article:tag" content="@yield('article_tag')">@endif
     @endif
+    @stack('head_extra')
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:site"        content="@rscodeaz">
     <meta name="twitter:title"       content="@yield('og_title', 'RS Code — Proqram Yazılması & Veb Sayt | Bakı')">

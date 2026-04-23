@@ -1,24 +1,98 @@
 @extends('front.layouts.master')
 @php
-    $lang   = session('lang','az');
-    $title  = $blog->{'title_'.$lang}  ?? $blog->title_az;
-    $review = $blog->{'review_'.$lang} ?? $blog->review_az ?? '';
-    $body   = $blog->{'text_'.$lang}   ?? $blog->text_az;
-    $date   = $blog->{'date_'.$lang}   ?? $blog->date_az;
-    $photo  = ($lang !== 'az' && !empty($blog->{'photo_'.$lang})) ? $blog->{'photo_'.$lang} : $blog->photo;
-    $imgSrc = ($photo && !str_starts_with($photo,'http'))
-              ? asset('images/blog/'.$photo)
-              : ($photo ?: 'https://picsum.photos/seed/blog-'.$blog->id.'/1200/600');
+    $lang     = session('lang','az');
+    $title    = $blog->{'title_'.$lang}  ?? $blog->title_az;
+    $review   = $blog->{'review_'.$lang} ?? $blog->review_az ?? '';
+    $body     = $blog->{'text_'.$lang}   ?? $blog->text_az;
+    $date     = $blog->{'date_'.$lang}   ?? $blog->date_az;
+    $photo    = ($lang !== 'az' && !empty($blog->{'photo_'.$lang})) ? $blog->{'photo_'.$lang} : $blog->photo;
+    $imgSrc   = ($photo && !str_starts_with($photo,'http'))
+                ? asset('images/blog/'.$photo)
+                : ($photo ?: 'https://picsum.photos/seed/blog-'.$blog->id.'/1200/600');
+
+    // Admin-dən daxil edilmiş meta sahələr, yoxdursa əsas məlumatdan fallback
+    $metaTitle = !empty($blog->{'meta_title_'.$lang})
+        ? $blog->{'meta_title_'.$lang}
+        : ($title . ' | RS Code Blog');
+    $metaDesc  = !empty($blog->{'meta_description_'.$lang})
+        ? $blog->{'meta_description_'.$lang}
+        : strip_tags(Str::limit($review, 160));
+    $metaKw    = $blog->{'meta_keywords_'.$lang} ?? '';
+
+    $slug      = $blog->{'slug_'.$lang} ?? $blog->slug_az ?? $blog->slug_en ?? $blog->id;
+    $canonical = 'https://rs-code.az/blog-details/' . $slug;
+
+    $publishedAt = \Carbon\Carbon::parse($blog->created_at)->toIso8601String();
+    $modifiedAt  = \Carbon\Carbon::parse($blog->updated_at)->toIso8601String();
+
+    $slugAz = $blog->slug_az ?? $blog->id;
+    $slugEn = $blog->slug_en ?? $blog->id;
+    $slugRu = $blog->slug_ru ?? $blog->id;
 @endphp
-@section('title', $title . ' | RS Code Blog')
-@section('description', strip_tags(Str::limit($review, 160)))
-@section('canonical', 'https://rs-code.az/blog-details/' . ($blog->slug_az ?? $blog->slug_en ?? $blog->id))
-@section('og_type',      'article')
-@section('og_title',     strip_tags($title) . ' | RS Code Blog')
-@section('og_desc',      strip_tags(Str::limit($review, 160)))
-@section('og_image',     $imgSrc)
-@section('og_published', \Carbon\Carbon::parse($blog->created_at)->toIso8601String())
-@section('og_modified',  \Carbon\Carbon::parse($blog->updated_at)->toIso8601String())
+
+@section('title',          $metaTitle)
+@section('description',    $metaDesc)
+@if($metaKw)
+@section('keywords',       $metaKw)
+@endif
+@section('author',         'RS Code')
+@section('canonical',      $canonical)
+@section('og_type',        'article')
+@section('og_title',       strip_tags($metaTitle))
+@section('og_desc',        strip_tags($metaDesc))
+@section('og_image',       $imgSrc)
+@section('og_published',   $publishedAt)
+@section('og_modified',    $modifiedAt)
+@section('article_author', 'RS Code')
+@section('article_section','Blog')
+@if($metaKw)
+@section('article_tag',    $metaKw)
+@endif
+
+@section('hreflang')
+<link rel="alternate" hreflang="az"        href="https://rs-code.az/blog-details/{{ $slugAz }}">
+<link rel="alternate" hreflang="en"        href="https://rs-code.az/blog-details/{{ $slugEn }}">
+<link rel="alternate" hreflang="ru"        href="https://rs-code.az/blog-details/{{ $slugRu }}">
+<link rel="alternate" hreflang="x-default" href="https://rs-code.az/blog-details/{{ $slugAz }}">
+@endsection
+
+@push('head_extra')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ Js::from(strip_tags($title)) }},
+  "description": {{ Js::from(strip_tags($metaDesc)) }},
+  "image": {{ Js::from($imgSrc) }},
+  "url": {{ Js::from($canonical) }},
+  "datePublished": "{{ $publishedAt }}",
+  "dateModified": "{{ $modifiedAt }}",
+  "author": {
+    "@type": "Organization",
+    "name": "RS Code",
+    "url": "https://rs-code.az",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rs-code.az/img/rs-code.png"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "RS Code",
+    "url": "https://rs-code.az",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rs-code.az/img/rs-code.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ Js::from($canonical) }}
+  }@if($metaKw),
+  "keywords": {{ Js::from($metaKw) }}@endif
+}
+</script>
+@endpush
 
 @section('content')
 
