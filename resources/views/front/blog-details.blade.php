@@ -32,9 +32,7 @@
 
 @section('title',          $metaTitle)
 @section('description',    $metaDesc)
-@if($metaKw)
 @section('keywords',       $metaKw)
-@endif
 @section('author',         'RS Code')
 @section('canonical',      $canonical)
 @section('og_type',        'article')
@@ -45,9 +43,7 @@
 @section('og_modified',    $modifiedAt)
 @section('article_author', 'RS Code')
 @section('article_section','Blog')
-@if($metaKw)
 @section('article_tag',    $metaKw)
-@endif
 
 @section('hreflang')
 <link rel="alternate" hreflang="az"        href="https://rs-code.az/blog-details/{{ $slugAz }}">
@@ -56,42 +52,35 @@
 <link rel="alternate" hreflang="x-default" href="https://rs-code.az/blog-details/{{ $slugAz }}">
 @endsection
 
+@php
+    $ldJson = [
+        '@context'        => 'https://schema.org',
+        '@type'           => 'BlogPosting',
+        'headline'        => strip_tags($title),
+        'description'     => strip_tags($metaDesc),
+        'image'           => $imgSrc,
+        'url'             => $canonical,
+        'datePublished'   => $publishedAt,
+        'dateModified'    => $modifiedAt,
+        'author'          => [
+            '@type' => 'Organization',
+            'name'  => 'RS Code',
+            'url'   => 'https://rs-code.az',
+            'logo'  => ['@type' => 'ImageObject', 'url' => 'https://rs-code.az/img/rs-code.png'],
+        ],
+        'publisher'       => [
+            '@type' => 'Organization',
+            'name'  => 'RS Code',
+            'url'   => 'https://rs-code.az',
+            'logo'  => ['@type' => 'ImageObject', 'url' => 'https://rs-code.az/img/rs-code.png'],
+        ],
+        'mainEntityOfPage' => ['@type' => 'WebPage', '@id' => $canonical],
+    ];
+    if ($metaKw) $ldJson['keywords'] = $metaKw;
+@endphp
+
 @push('head_extra')
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": {{ Js::from(strip_tags($title)) }},
-  "description": {{ Js::from(strip_tags($metaDesc)) }},
-  "image": {{ Js::from($imgSrc) }},
-  "url": {{ Js::from($canonical) }},
-  "datePublished": "{{ $publishedAt }}",
-  "dateModified": "{{ $modifiedAt }}",
-  "author": {
-    "@type": "Organization",
-    "name": "RS Code",
-    "url": "https://rs-code.az",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://rs-code.az/img/rs-code.png"
-    }
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "RS Code",
-    "url": "https://rs-code.az",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://rs-code.az/img/rs-code.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": {{ Js::from($canonical) }}
-  }@if($metaKw),
-  "keywords": {{ Js::from($metaKw) }}@endif
-}
-</script>
+<script type="application/ld+json">{!! json_encode($ldJson, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES) !!}</script>
 @endpush
 
 @section('content')
