@@ -45,6 +45,9 @@ self.addEventListener('fetch', event => {
     const { request } = event;
     const url = new URL(request.url);
 
+    // Skip non-http(s) schemes (chrome-extension, data, blob, etc.)
+    if (url.protocol !== 'http:' && url.protocol !== 'https:') return;
+
     // Skip non-GET, admin, filemanager, track-click
     if (request.method !== 'GET') return;
     if (url.pathname.startsWith('/admin')) return;
