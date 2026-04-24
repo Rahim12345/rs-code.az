@@ -12,42 +12,42 @@
             <div class="brif-field">
                 <label class="control-label" for="logobrief-sirketadi">{{ __('static.modal_1_label_2') }}</label>
                 <textarea id="logobrief-sirketadi" class="form-control" name="sirketadi" rows="2"></textarea>
-                <small id="sirketadi-error"></small>
+                <small class="sirketadi-error"></small>
             </div>
 
             {{-- Logotip mətn --}}
             <div class="brif-field">
                 <label class="control-label" for="logobrief-logotip">{{ __('static.modal_1_label_3') }}</label>
                 <textarea id="logobrief-logotip" class="form-control" name="logotip" rows="2"></textarea>
-                <small id="logotip-error"></small>
+                <small class="logotip-error"></small>
             </div>
 
             {{-- Fəaliyyət sahəsi --}}
             <div class="brif-field">
                 <label class="control-label" for="logobrief-fealiyyetsahesi">{{ __('static.modal_1_label_4') }}</label>
                 <textarea id="logobrief-fealiyyetsahesi" class="form-control" name="fealiyyetsahesi" rows="2"></textarea>
-                <small id="fealiyyetsahesi-error"></small>
+                <small class="fealiyyetsahesi-error"></small>
             </div>
 
             {{-- Perspektiv --}}
             <div class="brif-field">
                 <label class="control-label" for="logobrief-prespektiv">{{ __('static.modal_1_label_5') }}</label>
                 <textarea id="logobrief-prespektiv" class="form-control" name="prespektiv" rows="2"></textarea>
-                <small id="prespektiv-error"></small>
+                <small class="prespektiv-error"></small>
             </div>
 
             {{-- Rəqiblər --}}
             <div class="brif-field">
                 <label class="control-label" for="logobrief-reqibler">{{ __('static.modal_1_label_6') }}</label>
                 <textarea id="logobrief-reqibler" class="form-control" name="reqibler" rows="2"></textarea>
-                <small id="reqibler-error"></small>
+                <small class="reqibler-error"></small>
             </div>
 
             {{-- Fəaliyyət dairəsi --}}
             <div class="brif-field">
                 <label class="control-label" for="logobrief-fealiyyetdairesi">{{ __('static.modal_1_label_7') }}</label>
                 <textarea id="logobrief-fealiyyetdairesi" class="form-control" name="fealiyyetdairesi" rows="2"></textarea>
-                <small id="fealiyyetdairesi-error"></small>
+                <small class="fealiyyetdairesi-error"></small>
             </div>
 
             {{-- Mövcud loqo şəkli --}}
@@ -62,21 +62,21 @@
                     </label>
                 </div>
                 <img id="image-preview" src="" alt="Image Preview" style="display:none; max-height:100px; margin-top:0.5rem; border-radius:0.5rem;">
-                <small id="movcudlogo-error"></small>
+                <small class="movcudlogo-error"></small>
             </div>
 
             {{-- Rəng --}}
             <div class="brif-field">
                 <label class="control-label" for="logobrief-reng">{{ __('static.modal_1_label_10') }}</label>
                 <textarea id="logobrief-reng" class="form-control" name="reng" rows="2"></textarea>
-                <small id="reng-error"></small>
+                <small class="reng-error"></small>
             </div>
 
             {{-- Logotip vacibliyi --}}
             <div class="brif-field">
                 <label class="control-label" for="logobrief-logotipvacibliyi">{{ __('static.modal_1_label_11') }}</label>
                 <textarea id="logobrief-logotipvacibliyi" class="form-control" name="logotipvacibliyi" rows="2"></textarea>
-                <small id="logotipvacibliyi-error"></small>
+                <small class="logotipvacibliyi-error"></small>
             </div>
 
             {{-- Logotip seçimi --}}
@@ -93,7 +93,7 @@
                     </div>
                     @endforeach
                 </div>
-                <small id="logotipsecimi-error"></small>
+                <small class="logotipsecimi-error"></small>
             </div>
 
             {{-- Vizit kart --}}
@@ -107,7 +107,7 @@
                     </label>
                     @endforeach
                 </div>
-                <small id="karparativkart-error"></small>
+                <small class="karparativkart-error"></small>
             </div>
 
             {{-- Konvert --}}
@@ -121,11 +121,11 @@
                     </label>
                     @endforeach
                 </div>
-                <small id="konvert-error"></small>
+                <small class="konvert-error"></small>
                 <div class="brif-field" style="margin-top:0.5rem">
                     <label class="control-label">{{ __('static.modal_1_label_16') }}</label>
                     <textarea id="logobrief-diger" class="form-control" name="diger" rows="2"></textarea>
-                    <small id="diger-error"></small>
+                    <small class="diger-error"></small>
                 </div>
             </div>
 
@@ -140,14 +140,14 @@
                     </label>
                     @endforeach
                 </div>
-                <small id="firma_stili-error"></small>
+                <small class="firma_stili-error"></small>
             </div>
 
             {{-- Başqa arzu --}}
             <div class="brif-field">
                 <label class="control-label" for="logobrief-basqaarzu">{{ __('static.modal_1_label_18') }}</label>
                 <textarea id="logobrief-basqaarzu" class="form-control" name="basqaarzu" rows="2"></textarea>
-                <small id="basqaarzu-error"></small>
+                <small class="basqaarzu-error"></small>
             </div>
 
             {{-- Əlaqə məlumatları --}}
@@ -155,23 +155,23 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div class="brif-field">
                     <textarea id="logobrief-ad" class="form-control" name="ad" rows="1" placeholder="{{ __('static.modal_1_label_20') }}"></textarea>
-                    <small id="ad-error"></small>
+                    <small class="ad-error"></small>
                 </div>
                 <div class="brif-field">
                     <textarea id="logobrief-vezife" class="form-control" name="vezife" rows="1" placeholder="{{ __('static.modal_1_label_21') }}"></textarea>
-                    <small id="vezife-error"></small>
+                    <small class="vezife-error"></small>
                 </div>
                 <div class="brif-field">
                     <textarea id="logobrief-telefon" class="form-control" name="telefon" rows="1" placeholder="{{ __('static.modal_1_label_22') }}"></textarea>
-                    <small id="telefon-error"></small>
+                    <small class="telefon-error"></small>
                 </div>
                 <div class="brif-field">
                     <textarea id="logobrief-email" class="form-control" name="email" rows="1" placeholder="{{ __('static.modal_1_label_23') }}"></textarea>
-                    <small id="email-error"></small>
+                    <small class="email-error"></small>
                 </div>
                 <div class="brif-field sm:col-span-2">
                     <textarea id="logobrief-vaxt" class="form-control" name="vaxt" rows="1" placeholder="{{ __('static.modal_1_label_24') }}"></textarea>
-                    <small id="vaxt-error"></small>
+                    <small class="vaxt-error"></small>
                 </div>
             </div>
         </form>
