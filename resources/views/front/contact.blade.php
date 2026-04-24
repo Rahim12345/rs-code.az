@@ -140,18 +140,48 @@
 
 @push('scripts')
 <script>
-$(function(){
-    $('#contactBtn').on('click', function(){
-        $('.name-error,.sirket-error,.email2-error,.elaqe_nomresi-error,.message-error').html('');
-        var data = new FormData(document.getElementById('contactForm'));
-        $.ajax({
-            type: 'POST', url: '{{ route("front.contact.mail") }}',
-            data: data, cache: false, processData: false, contentType: false,
-            success: function(r){ $('#contactForm')[0].reset(); toastr.success(r.message); },
-            error: function(e){ if(e.responseJSON) $.each(e.responseJSON.errors, function(k,v){ $('.'+k+'-error').html(v[0]); }); }
-        });
+(function(){
+    var CSRF = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    function showToast(msg, type) {
+        var t = document.createElement('div');
+        t.className = 'rs-toast rs-' + (type || 'success');
+        t.textContent = msg;
+        document.body.appendChild(t);
+        requestAnimationFrame(function(){ t.classList.add('rs-show'); });
+        setTimeout(function(){
+            t.classList.remove('rs-show');
+            setTimeout(function(){ t.remove(); }, 350);
+        }, 4000);
+    }
+
+    document.getElementById('contactBtn').addEventListener('click', function(){
+        var form = document.getElementById('contactForm');
+        form.querySelectorAll('[class$="-error"]').forEach(function(el){ el.innerHTML = ''; });
+
+        fetch('{{ route("front.contact.mail") }}', {
+            method: 'POST',
+            headers: { 'X-CSRF-TOKEN': CSRF, 'Accept': 'application/json' },
+            body: new FormData(form)
+        })
+        .then(function(res){
+            return res.json().then(function(json){ return { ok: res.ok, json: json }; });
+        })
+        .then(function(r){
+            if (r.ok) {
+                form.reset();
+                showToast(r.json.message, 'success');
+            } else {
+                var errors = r.json.errors || {};
+                Object.keys(errors).forEach(function(k){
+                    var errEl = form.querySelector('.' + k + '-error');
+                    if (errEl) errEl.innerHTML = Array.isArray(errors[k]) ? errors[k][0] : errors[k];
+                });
+            }
+        })
+        .catch(function(){});
     });
-});
+})();
 </script>
 @endpush
 
