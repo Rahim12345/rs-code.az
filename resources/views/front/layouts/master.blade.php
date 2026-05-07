@@ -192,6 +192,14 @@
     </style>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9JNJ6R0KS"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-K9JNJ6R0KS');
+    </script>
 </head>
 <body class="bg-[#09090b] text-zinc-100 antialiased overflow-x-hidden" x-data="{ orderModal: false, activeModal: '' }">
 
