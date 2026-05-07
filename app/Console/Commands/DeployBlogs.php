@@ -164,38 +164,45 @@ class DeployBlogs extends Command
             return;
         }
 
-        // Pack all images into a tar, upload once, extract on server
-        $tarLocal    = $this->msysPath(sys_get_temp_dir()) . '/blog_images_' . time() . '.tar.gz';
-        $tarRemote   = '/tmp/blog_images_' . time() . '.tar.gz';
-        $localDirFwd = $this->msysPath($localDir);
+        // Pack with PHP PharData — avoids shell tar path issues on Windows
+        $ts        = time();
+        $tarBase   = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'blog_images_' . $ts;
+        $tarFile   = $tarBase . '.tar';
+        $tgzFile   = $tarBase . '.tar.gz';
+        $tarRemote = '/tmp/blog_images_' . $ts . '.tar.gz';
 
-        $fileArgs = implode(' ', array_map(fn($f) => escapeshellarg($f), $toUpload));
-        $packCmd  = "tar -czf \"{$tarLocal}\" -C \"{$localDirFwd}\" {$fileArgs}";
-        exec($packCmd, $out, $exit);
-
-        if ($exit !== 0) {
-            $this->error('tar yaratmaq uğursuz oldu.');
+        try {
+            $phar = new \PharData($tarFile);
+            foreach ($toUpload as $img) {
+                $phar->addFile($localDir . DIRECTORY_SEPARATOR . $img, $img);
+            }
+            $phar->compress(\Phar::GZ);
+            unlink($tarFile);
+        } catch (\Throwable $e) {
+            $this->error('Arxiv yaratmaq uğursuz: ' . $e->getMessage());
+            @unlink($tarFile);
             return;
         }
 
-        $size = round(filesize($tarLocal) / 1024, 1);
+        $size = round(filesize($tgzFile) / 1024, 1);
         $this->line("Arxiv: {$size} KB");
 
-        $ssh = $this->sshBase($cfg);
-        $scp = "scp -P {$cfg['port']} \"{$tarLocal}\" {$cfg['user']}@{$cfg['host']}:{$tarRemote}";
+        $ssh        = $this->sshBase($cfg);
+        $tgzEscaped = escapeshellarg($tgzFile);
+        $scp        = "scp -P {$cfg['port']} {$tgzEscaped} {$cfg['user']}@{$cfg['host']}:{$tarRemote}";
 
         $this->line('Yüklənir...');
         passthru($scp, $exit);
 
         if ($exit !== 0) {
             $this->error('SCP uğursuz oldu.');
-            @unlink($tarLocal);
+            @unlink($tgzFile);
             return;
         }
 
         $extractCmd = "mkdir -p {$remoteDir} && tar -xzf {$tarRemote} -C {$remoteDir} && rm -f {$tarRemote}";
         passthru("{$ssh} \"{$extractCmd}\"", $exit);
-        @unlink($tarLocal);
+        @unlink($tgzFile);
 
         $exit === 0
             ? $this->info('Şəkillər OK — ' . count($toUpload) . ' fayl')
