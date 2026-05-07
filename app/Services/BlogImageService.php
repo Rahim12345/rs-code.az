@@ -32,54 +32,97 @@ class BlogImageService
         $img = imagecreatetruecolor(self::W, self::H);
         imagesavealpha($img, true);
 
-        $this->drawBackground($img, $slug);
+        $theme = $this->theme($slug, $category);
+
+        $this->drawBackground($img, $theme);
+        $this->drawDiagonalStreaks($img, $theme);
         $this->drawDotGrid($img);
-        $this->drawGlows($img, $slug);
-        $this->drawRightPanel($img, $lang, $category);
-        $this->drawCategoryTag($img, $lang, $category);
+        $this->drawGlows($img, $theme);
+        $this->drawFloatingOrbs($img, $theme);
+        $this->drawRightPanel($img, $lang, $category, $theme);
+        $this->drawCategoryTag($img, $lang, $category, $theme);
         $this->drawLangBadge($img, $lang);
-        $this->drawTitle($img, $title);
+        $this->drawTitle($img, $title, $theme);
+        $this->drawBottomAccent($img, $theme);
         $this->drawBranding($img);
 
-        imagejpeg($img, $path, 90);
+        imagejpeg($img, $path, 92);
         imagedestroy($img);
 
         return $filename;
     }
 
+    // ── Theme detection ───────────────────────────────────────────────────────
+
+    private function theme(string $slug, string $category): string
+    {
+        $hay = strtolower($slug . ' ' . $category);
+        if (str_contains($hay, 'seo') || str_contains($hay, 'smm'))            return 'teal';
+        if (str_contains($hay, 'pos') || str_contains($hay, 'anbar') || str_contains($hay, 'magaza') || str_contains($hay, 'restoran')) return 'orange';
+        if (str_contains($hay, 'lms') || str_contains($hay, 'kurs') || str_contains($hay, 'tehsil'))  return 'indigo';
+        if (str_contains($hay, 'logo') || str_contains($hay, 'brand'))         return 'rose';
+        return 'violet';
+    }
+
+    private function themeColors(string $theme): array
+    {
+        return match($theme) {
+            'teal'   => ['bg' => [5,28,42],   'mid' => [3,16,32],  'bot' => [2,7,20],   'glow1' => [0,190,160],  'glow2' => [0,100,120], 'accent' => [0,220,190],  'streak' => [0,180,150]],
+            'orange' => ['bg' => [28,14,6],   'mid' => [20,10,4],  'bot' => [10,5,2],   'glow1' => [220,100,20], 'glow2' => [180,50,10], 'accent' => [255,140,40], 'streak' => [200,90,20]],
+            'indigo' => ['bg' => [10,8,35],   'mid' => [7,5,25],   'bot' => [3,2,14],   'glow1' => [80,60,220],  'glow2' => [40,20,160], 'accent' => [120,100,255],'streak' => [70,50,200]],
+            'rose'   => ['bg' => [28,6,16],   'mid' => [20,4,12],  'bot' => [10,2,6],   'glow1' => [220,40,100], 'glow2' => [160,20,70], 'accent' => [255,80,140], 'streak' => [200,30,90]],
+            default  => ['bg' => [16,6,38],   'mid' => [10,4,28],  'bot' => [4,2,14],   'glow1' => [110,40,200], 'glow2' => [60,20,160], 'accent' => [150,80,255], 'streak' => [100,40,200]],
+        };
+    }
+
     // ── Background gradient ───────────────────────────────────────────────────
 
-    private function drawBackground(\GdImage $img, string $slug): void
+    private function drawBackground(\GdImage $img, string $theme): void
     {
-        $isTeal = str_contains($slug, 'seo') || str_contains($slug, 'smm') || str_contains($slug, 'sosial');
-
-        if ($isTeal) {
-            // Deep teal → navy
-            $topR = 5;  $topG = 30; $topB = 45;
-            $midR = 3;  $midG = 18; $midB = 35;
-            $botR = 2;  $botG = 8;  $botB = 22;
-        } else {
-            // Deep violet → near-black
-            $topR = 18; $topG = 8;  $topB = 40;
-            $midR = 10; $midG = 4;  $midB = 28;
-            $botR = 4;  $botG = 2;  $botB = 14;
-        }
+        $c = $this->themeColors($theme);
+        [$topR, $topG, $topB] = $c['bg'];
+        [$midR, $midG, $midB] = $c['mid'];
+        [$botR, $botG, $botB] = $c['bot'];
 
         for ($y = 0; $y < self::H; $y++) {
             $t = $y / self::H;
             if ($t < 0.5) {
                 $t2 = $t * 2;
-                $r  = (int) ($topR + ($midR - $topR) * $t2);
-                $g  = (int) ($topG + ($midG - $topG) * $t2);
-                $b  = (int) ($topB + ($midB - $topB) * $t2);
+                $r  = (int)($topR + ($midR - $topR) * $t2);
+                $g  = (int)($topG + ($midG - $topG) * $t2);
+                $b  = (int)($topB + ($midB - $topB) * $t2);
             } else {
                 $t2 = ($t - 0.5) * 2;
-                $r  = (int) ($midR + ($botR - $midR) * $t2);
-                $g  = (int) ($midG + ($botG - $midG) * $t2);
-                $b  = (int) ($midB + ($botB - $midB) * $t2);
+                $r  = (int)($midR + ($botR - $midR) * $t2);
+                $g  = (int)($midG + ($botG - $midG) * $t2);
+                $b  = (int)($midB + ($botB - $midB) * $t2);
             }
-            $c = imagecolorallocate($img, $r, $g, $b);
-            imageline($img, 0, $y, self::W, $y, $c);
+            $col = imagecolorallocate($img, $r, $g, $b);
+            imageline($img, 0, $y, self::W, $y, $col);
+        }
+    }
+
+    // ── Diagonal light streaks ────────────────────────────────────────────────
+
+    private function drawDiagonalStreaks(\GdImage $img, string $theme): void
+    {
+        $c  = $this->themeColors($theme);
+        [$sr, $sg, $sb] = $c['streak'];
+
+        $streaks = [
+            ['x1' => -100, 'y1' => 300,  'x2' => self::W * 0.7, 'y2' => -80,  'alpha' => 115, 'w' => 1],
+            ['x1' => 0,    'y1' => 650,  'x2' => self::W * 0.5, 'y2' => 200,  'alpha' => 120, 'w' => 1],
+            ['x1' => 200,  'y1' => self::H + 50, 'x2' => self::W * 0.85, 'y2' => 100, 'alpha' => 118, 'w' => 1],
+        ];
+
+        foreach ($streaks as $s) {
+            // Draw thin streak with blur effect (3 lines with varying alpha)
+            foreach ([-1, 0, 1] as $offset) {
+                $alphaShift = $offset === 0 ? 0 : 8;
+                $col = imagecolorallocatealpha($img, $sr, $sg, $sb, min(127, $s['alpha'] + $alphaShift));
+                imageline($img, (int)$s['x1'] + $offset, (int)$s['y1'], (int)$s['x2'] + $offset, (int)$s['y2'], $col);
+                imagecolordeallocate($img, $col);
+            }
         }
     }
 
@@ -87,8 +130,8 @@ class BlogImageService
 
     private function drawDotGrid(\GdImage $img): void
     {
-        $dot = imagecolorallocatealpha($img, 255, 255, 255, 118);
-        $step = 40;
+        $dot  = imagecolorallocatealpha($img, 255, 255, 255, 116);
+        $step = 44;
         for ($x = $step; $x < self::W - 40; $x += $step) {
             for ($y = $step; $y < self::H - 40; $y += $step) {
                 imagesetpixel($img, $x, $y, $dot);
@@ -98,268 +141,338 @@ class BlogImageService
 
     // ── Radial glows ─────────────────────────────────────────────────────────
 
-    private function drawGlows(\GdImage $img, string $slug): void
+    private function drawGlows(\GdImage $img, string $theme): void
     {
-        $isTeal = str_contains($slug, 'seo') || str_contains($slug, 'smm') || str_contains($slug, 'sosial');
+        $c = $this->themeColors($theme);
+        [$r1, $g1, $b1] = $c['glow1'];
+        [$r2, $g2, $b2] = $c['glow2'];
 
-        // Left glow — violet or teal
-        if ($isTeal) {
-            $this->drawRadialGlow($img, 280, 512, 340, 0, 180, 120);
-        } else {
-            $this->drawRadialGlow($img, 280, 512, 340, 100, 30, 180);
-        }
-
-        // Right glow — indigo
-        $this->drawRadialGlow($img, self::W - 200, 300, 260, 60, 20, 160);
+        // Main left glow — larger and brighter
+        $this->drawRadialGlow($img, 240, 490, 400, $r1, $g1, $b1, 0.55);
+        // Secondary right glow
+        $this->drawRadialGlow($img, self::W - 180, 260, 300, $r2, $g2, $b2, 0.40);
+        // Small accent glow bottom-left
+        $this->drawRadialGlow($img, 120, self::H - 80, 160, $r1, $g1, $b1, 0.30);
     }
 
-    private function drawRadialGlow(\GdImage $img, int $cx, int $cy, int $radius, int $r, int $g, int $b): void
+    private function drawRadialGlow(\GdImage $img, int $cx, int $cy, int $radius, int $r, int $g, int $b, float $intensity = 0.45): void
     {
-        $steps = 28;
+        $steps = 32;
         for ($i = $steps; $i >= 1; $i--) {
             $frac  = $i / $steps;
-            $alpha = (int) (127 * (1 - $frac * 0.38));
+            $alpha = (int)(127 * (1 - $frac * $intensity));
             $cr    = imagecolorallocatealpha($img, $r, $g, $b, $alpha);
-            $rad   = (int) ($radius * $frac);
-            imagefilledellipse($img, $cx, $cy, $rad * 2, (int) ($rad * 1.4), $cr);
+            $rad   = (int)($radius * $frac);
+            imagefilledellipse($img, $cx, $cy, $rad * 2, (int)($rad * 1.3), $cr);
             imagecolordeallocate($img, $cr);
+        }
+    }
+
+    // ── Floating decorative orbs ──────────────────────────────────────────────
+
+    private function drawFloatingOrbs(\GdImage $img, string $theme): void
+    {
+        $c = $this->themeColors($theme);
+        [$r, $g, $b] = $c['accent'];
+
+        $orbs = [
+            [self::W * 0.38, 90,  18, 105],
+            [self::W * 0.52, 200, 10, 110],
+            [self::W * 0.28, 820, 14, 108],
+            [80,             160, 8,  112],
+            [self::W * 0.62, 860, 12, 107],
+        ];
+
+        foreach ($orbs as [$ox, $oy, $size, $alpha]) {
+            $col = imagecolorallocatealpha($img, $r, $g, $b, $alpha);
+            imagefilledellipse($img, (int)$ox, (int)$oy, $size, $size, $col);
+            // ring around orb
+            $ring = imagecolorallocatealpha($img, $r, $g, $b, $alpha + 10);
+            imagearc($img, (int)$ox, (int)$oy, $size + 6, $size + 6, 0, 360, $ring);
+            imagecolordeallocate($img, $col);
+            imagecolordeallocate($img, $ring);
         }
     }
 
     // ── Right decorative panel ────────────────────────────────────────────────
 
-    private function drawRightPanel(\GdImage $img, string $lang, string $category): void
+    private function drawRightPanel(\GdImage $img, string $lang, string $category, string $theme): void
     {
-        $px = self::W - 420;
-        $py = 80;
-        $pw = 360;
-        $ph = 520;
+        $c  = $this->themeColors($theme);
+        $px = self::W - 430;
+        $py = 70;
+        $pw = 370;
+        $ph = 540;
 
-        // Panel background
-        $panelBg = imagecolorallocatealpha($img, 255, 255, 255, 110);
-        $this->fillRoundedRect($img, $px, $py, $pw, $ph, 16, $panelBg);
+        // Outer glow behind panel
+        [$gr, $gg, $gb] = $c['glow2'];
+        $this->drawRadialGlow($img, (int)($px + $pw / 2), (int)($py + $ph / 2), 220, $gr, $gg, $gb, 0.20);
 
-        // Panel border
-        $border = imagecolorallocatealpha($img, 130, 100, 220, 90);
-        $this->drawRoundedRectOutline($img, $px, $py, $pw, $ph, 16, $border);
+        // Panel glass background
+        $panelBg = imagecolorallocatealpha($img, 255, 255, 255, 112);
+        $this->fillRoundedRect($img, $px, $py, $pw, $ph, 18, $panelBg);
 
-        // Header bar with dots
-        $headerBg = imagecolorallocatealpha($img, 20, 12, 50, 70);
-        $this->fillRoundedRect($img, $px, $py, $pw, 36, 16, $headerBg);
+        // Accent border
+        [$ar, $ag, $ab] = $c['accent'];
+        $border = imagecolorallocatealpha($img, $ar, $ag, $ab, 88);
+        $this->drawRoundedRectOutline($img, $px, $py, $pw, $ph, 18, $border);
 
+        // Top accent line inside panel
+        $accentLine = imagecolorallocatealpha($img, $ar, $ag, $ab, 70);
+        $this->fillRoundedRect($img, $px + 1, $py + 1, $pw - 2, 3, 1, $accentLine);
+
+        // Header bar
+        $headerBg = imagecolorallocatealpha($img, 10, 6, 30, 65);
+        $this->fillRoundedRect($img, $px, $py, $pw, 38, 18, $headerBg);
+
+        // macOS dots
         $dotColors = [
             imagecolorallocate($img, 255, 95, 87),
             imagecolorallocate($img, 255, 189, 46),
             imagecolorallocate($img, 40, 200, 64),
         ];
         foreach ($dotColors as $i => $dc) {
-            imagefilledellipse($img, $px + 18 + $i * 20, $py + 18, 10, 10, $dc);
+            imagefilledellipse($img, $px + 18 + $i * 22, $py + 19, 11, 11, $dc);
         }
 
         // Panel title
-        $titleClr = imagecolorallocate($img, 180, 160, 255);
+        $titleClr = imagecolorallocatealpha($img, $ar, $ag, $ab, 40);
         $label    = $this->panelTitle($lang, $category);
-        $this->drawText($img, $this->fontBold, 11, $px + 80, $py + 24, $titleClr, $label);
+        $this->drawText($img, $this->fontBold, 11, $px + 90, $py + 25, $titleClr, $label);
 
         // Data rows
-        $rows = $this->panelRows($lang, $category);
+        $rows = $this->panelRows($lang, $category, $theme);
         $ry   = $py + 56;
         foreach ($rows as $row) {
             [$rowLabel, $rowVal, $barPct] = $row;
 
-            $labelClr = imagecolorallocate($img, 160, 150, 200);
-            $valClr   = imagecolorallocate($img, 230, 225, 255);
-            $this->drawText($img, $this->fontBold, 10, $px + 14, $ry + 12, $labelClr, $rowLabel);
-            $this->drawText($img, $this->fontBold,    10, $px + $pw - 14, $ry + 12, $valClr, $rowVal, true);
+            $labelClr = imagecolorallocate($img, 155, 145, 195);
+            $valClr   = imagecolorallocate($img, 235, 228, 255);
+            $this->drawText($img, $this->fontBold, 10, $px + 16, $ry + 13, $labelClr, $rowLabel);
+            $this->drawText($img, $this->fontBold, 10, $px + $pw - 16, $ry + 13, $valClr, $rowVal, true);
 
-            // Bar
-            $barY  = $ry + 18;
-            $barW  = $pw - 28;
-            $barBg = imagecolorallocatealpha($img, 60, 50, 90, 80);
-            $this->fillRoundedRect($img, $px + 14, $barY, $barW, 5, 2, $barBg);
-            $barFill = imagecolorallocate($img, 130, 80, 220);
-            $fillW   = max(4, (int) ($barW * $barPct));
-            $this->fillRoundedRect($img, $px + 14, $barY, $fillW, 5, 2, $barFill);
+            // Bar background
+            $barY  = $ry + 20;
+            $barW  = $pw - 32;
+            $barBg = imagecolorallocatealpha($img, 40, 30, 70, 80);
+            $this->fillRoundedRect($img, $px + 16, $barY, $barW, 5, 2, $barBg);
 
-            $ry += 46;
+            // Bar fill with accent color
+            $fillW   = max(4, (int)($barW * $barPct));
+            $barFill = imagecolorallocatealpha($img, $ar, $ag, $ab, 60);
+            $this->fillRoundedRect($img, $px + 16, $barY, $fillW, 5, 2, $barFill);
+
+            // Bright tip dot at bar end
+            $tipCol = imagecolorallocatealpha($img, $ar, $ag, $ab, 30);
+            imagefilledellipse($img, $px + 16 + $fillW, $barY + 2, 7, 7, $tipCol);
+
+            $ry += 48;
         }
 
-        // Mini bar chart at bottom of panel
-        $this->drawMiniChart($img, $px + 14, $py + $ph - 110, $pw - 28, 80);
+        // Mini bar chart
+        $this->drawMiniChart($img, $px + 16, $py + $ph - 120, $pw - 32, 90, $c);
+
+        // Bottom label in panel
+        $bottomLbl = imagecolorallocatealpha($img, 160, 150, 200, 60);
+        $this->drawText($img, $this->fontBold, 9, $px + 16, $py + $ph - 14, $bottomLbl, 'rs-code.az • 2026');
     }
 
     private function panelTitle(string $lang, string $category): string
     {
         $map = [
-            'az' => ['pos' => 'POS Analitika', 'seo' => 'SEO Göstəricilər', 'default' => 'Layihə Statistikası'],
-            'en' => ['pos' => 'POS Analytics',  'seo' => 'SEO Metrics',       'default' => 'Project Statistics'],
-            'ru' => ['pos' => 'POS Аналитика',  'seo' => 'SEO Показатели',    'default' => 'Статистика Проекта'],
+            'az' => ['pos' => 'Satış Analitika', 'seo' => 'SEO Göstəricilər', 'lms' => 'Kurs Statistikası', 'default' => 'Layihə Statistikası'],
+            'en' => ['pos' => 'Sales Analytics',  'seo' => 'SEO Metrics',       'lms' => 'Course Statistics', 'default' => 'Project Statistics'],
+            'ru' => ['pos' => 'Аналитика Продаж', 'seo' => 'SEO Показатели',    'lms' => 'Статистика Курсов','default' => 'Статистика Проекта'],
         ];
         $cat = strtolower($category);
-        $key = str_contains($cat, 'pos') ? 'pos' : (str_contains($cat, 'seo') ? 'seo' : 'default');
+        $key = str_contains($cat, 'pos') || str_contains($cat, 'anbar') || str_contains($cat, 'magaza') ? 'pos'
+             : (str_contains($cat, 'seo') || str_contains($cat, 'smm') ? 'seo'
+             : (str_contains($cat, 'lms') || str_contains($cat, 'kurs') ? 'lms' : 'default'));
         return $map[$lang][$key] ?? $map['az']['default'];
     }
 
-    private function panelRows(string $lang, string $category): array
+    private function panelRows(string $lang, string $category, string $theme): array
     {
         $cat = strtolower($category);
 
-        if (str_contains($cat, 'pos')) {
+        if (str_contains($cat, 'pos') || str_contains($cat, 'anbar') || str_contains($cat, 'magaza') || str_contains($cat, 'restoran')) {
             return [
-                [['az' => 'Sürət', 'en' => 'Speed',    'ru' => 'Скорость'][$lang] ?? 'Speed',    '98%',  0.98],
-                [['az' => 'Etibarlılıq', 'en' => 'Reliability', 'ru' => 'Надёжность'][$lang] ?? 'Reliability', '99.9%', 0.999],
-                [['az' => 'İnteqrasiya', 'en' => 'Integration', 'ru' => 'Интеграция'][$lang] ?? 'Integration', '12+',   0.72],
-                [['az' => 'Müştəri',     'en' => 'Clients',     'ru' => 'Клиенты'][$lang]   ?? 'Clients',    '200+',  0.85],
-                [['az' => 'Dəstək',      'en' => 'Support',     'ru' => 'Поддержка'][$lang]  ?? 'Support',   '24/7',  1.0],
+                [['az'=>'Sürət','en'=>'Speed','ru'=>'Скорость'][$lang]??'Speed', '98%', 0.98],
+                [['az'=>'Etibarlılıq','en'=>'Reliability','ru'=>'Надёжность'][$lang]??'Reliability', '99.9%', 0.999],
+                [['az'=>'İnteqrasiya','en'=>'Integrations','ru'=>'Интеграции'][$lang]??'Integrations', '12+', 0.72],
+                [['az'=>'Müştəri','en'=>'Clients','ru'=>'Клиенты'][$lang]??'Clients', '200+', 0.85],
+                [['az'=>'Dəstək','en'=>'Support','ru'=>'Поддержка'][$lang]??'Support', '24/7', 1.0],
             ];
         }
-
         if (str_contains($cat, 'seo') || str_contains($cat, 'smm')) {
             return [
-                [['az' => 'Trafik artımı', 'en' => 'Traffic boost', 'ru' => 'Рост трафика'][$lang] ?? 'Traffic', '+320%', 0.92],
-                [['az' => 'Açar söz',      'en' => 'Keywords',      'ru' => 'Ключевые слова'][$lang] ?? 'Keywords', 'TOP 3',  0.78],
-                [['az' => 'Dönüşüm',       'en' => 'Conversion',    'ru' => 'Конверсия'][$lang]      ?? 'Conv.',   '4.8%',  0.68],
-                [['az' => 'Sürət balı',    'en' => 'Speed score',   'ru' => 'Score скорости'][$lang] ?? 'Speed',  '96/100',0.96],
-                [['az' => 'DA skoru',      'en' => 'DA score',      'ru' => 'DA балл'][$lang]         ?? 'DA',     '42',    0.60],
+                [['az'=>'Trafik artımı','en'=>'Traffic boost','ru'=>'Рост трафика'][$lang]??'Traffic', '+320%', 0.92],
+                [['az'=>'Açar söz','en'=>'Keywords','ru'=>'Ключевые слова'][$lang]??'Keywords', 'TOP 3', 0.78],
+                [['az'=>'Dönüşüm','en'=>'Conversion','ru'=>'Конверсия'][$lang]??'Conv.', '4.8%', 0.68],
+                [['az'=>'Sürət balı','en'=>'Speed score','ru'=>'Score'][$lang]??'Score', '96/100', 0.96],
+                [['az'=>'DA skoru','en'=>'DA score','ru'=>'DA балл'][$lang]??'DA', '42', 0.60],
             ];
         }
-
-        // default — web dev
+        if (str_contains($cat, 'lms') || str_contains($cat, 'kurs')) {
+            return [
+                [['az'=>'Şagird','en'=>'Students','ru'=>'Студентов'][$lang]??'Students', '500+', 0.85],
+                [['az'=>'Kurs','en'=>'Courses','ru'=>'Курсов'][$lang]??'Courses', '24', 0.72],
+                [['az'=>'Tamamlanma','en'=>'Completion','ru'=>'Завершение'][$lang]??'Completion', '87%', 0.87],
+                [['az'=>'Sertifikat','en'=>'Certificates','ru'=>'Сертификаты'][$lang]??'Certs', '320+', 0.80],
+                [['az'=>'Reytinq','en'=>'Rating','ru'=>'Рейтинг'][$lang]??'Rating', '4.9/5', 0.98],
+            ];
+        }
         return [
-            [['az' => 'Sürət balı',  'en' => 'Speed score',  'ru' => 'Score'][$lang]   ?? 'Score',   '99/100', 0.99],
-            [['az' => 'Responsiv',   'en' => 'Responsive',   'ru' => 'Адаптивность'][$lang] ?? 'Responsive', '✓',  1.0],
-            [['az' => 'Layihə',      'en' => 'Projects',     'ru' => 'Проекты'][$lang]  ?? 'Projects', '100+',  0.80],
-            [['az' => 'Texnologiya', 'en' => 'Tech stack',   'ru' => 'Технологии'][$lang] ?? 'Stack',  '15+',   0.65],
-            [['az' => 'Müştəri',     'en' => 'Clients',      'ru' => 'Клиенты'][$lang]  ?? 'Clients', '80+',   0.75],
+            [['az'=>'Sürət balı','en'=>'Speed score','ru'=>'Score'][$lang]??'Score', '99/100', 0.99],
+            [['az'=>'Responsiv','en'=>'Responsive','ru'=>'Адаптивность'][$lang]??'Responsive', '✓', 1.0],
+            [['az'=>'Layihə','en'=>'Projects','ru'=>'Проекты'][$lang]??'Projects', '100+', 0.80],
+            [['az'=>'Texnologiya','en'=>'Tech stack','ru'=>'Технологии'][$lang]??'Stack', '15+', 0.65],
+            [['az'=>'Müştəri','en'=>'Clients','ru'=>'Клиенты'][$lang]??'Clients', '80+', 0.75],
         ];
     }
 
-    private function drawMiniChart(\GdImage $img, int $x, int $y, int $w, int $h): void
+    private function drawMiniChart(\GdImage $img, int $x, int $y, int $w, int $h, array $c): void
     {
-        $barData = [0.4, 0.65, 0.5, 0.8, 0.6, 0.9, 0.75, 0.85];
+        [$ar, $ag, $ab] = $c['accent'];
+        $barData = [0.35, 0.55, 0.45, 0.72, 0.58, 0.88, 0.70, 0.82, 0.95];
         $count   = count($barData);
-        $barW    = (int) (($w - ($count - 1) * 4) / $count);
+        $gap     = 5;
+        $barW    = (int)(($w - ($count - 1) * $gap) / $count);
         $bx      = $x;
 
-        foreach ($barData as $val) {
-            $bh     = (int) ($h * $val);
+        foreach ($barData as $i => $val) {
+            $bh     = (int)($h * $val);
             $by     = $y + $h - $bh;
-            $alpha  = 60 + (int) (50 * $val);
-            $barClr = imagecolorallocatealpha($img, 120, 70, 220, 127 - $alpha);
+
+            // Bar body
+            $alpha  = (int)(127 - 55 * $val);
+            $barClr = imagecolorallocatealpha($img, $ar, $ag, $ab, $alpha);
             $this->fillRoundedRect($img, $bx, $by, $barW, $bh, 3, $barClr);
-            $bx += $barW + 4;
+
+            // Bright top cap
+            $capClr = imagecolorallocatealpha($img, $ar, $ag, $ab, max(30, $alpha - 25));
+            $this->fillRoundedRect($img, $bx, $by, $barW, min(4, $bh), 2, $capClr);
+
+            imagecolordeallocate($img, $barClr);
+            imagecolordeallocate($img, $capClr);
+            $bx += $barW + $gap;
         }
+
+        // Baseline
+        $base = imagecolorallocatealpha($img, $ar, $ag, $ab, 100);
+        imageline($img, $x, $y + $h, $x + $w, $y + $h, $base);
     }
 
     // ── Category tag pill ─────────────────────────────────────────────────────
 
-    private function drawCategoryTag(\GdImage $img, string $lang, string $category): void
+    private function drawCategoryTag(\GdImage $img, string $lang, string $category, string $theme): void
     {
-        $text    = strtoupper($this->categoryLabel($lang, $category)) . ' • 2026';
+        $c    = $this->themeColors($theme);
+        [$ar, $ag, $ab] = $c['accent'];
+        $text = strtoupper($this->categoryLabel($lang, $category)) . ' • 2026';
         $fontSize = 11;
-        $bbox    = imagettfbbox($fontSize, 0, $this->fontBold, $text);
-        $tw      = abs($bbox[4] - $bbox[0]) + 32;
-        $th      = 28;
-        $tx      = 60;
-        $ty      = 60;
+        $bbox = imagettfbbox($fontSize, 0, $this->fontBold, $text);
+        $tw   = abs($bbox[4] - $bbox[0]) + 34;
+        $th   = 30;
+        $tx   = 58;
+        $ty   = 56;
 
-        // Pill background
-        $pillBg = imagecolorallocatealpha($img, 0, 200, 180, 90);
-        $this->fillRoundedRect($img, $tx, $ty, $tw, $th, 14, $pillBg);
+        $pillBg = imagecolorallocatealpha($img, $ar, $ag, $ab, 96);
+        $this->fillRoundedRect($img, $tx, $ty, $tw, $th, 15, $pillBg);
+        $pillBorder = imagecolorallocatealpha($img, $ar, $ag, $ab, 55);
+        $this->drawRoundedRectOutline($img, $tx, $ty, $tw, $th, 15, $pillBorder);
 
-        // Pill border
-        $pillBorder = imagecolorallocatealpha($img, 0, 220, 200, 60);
-        $this->drawRoundedRectOutline($img, $tx, $ty, $tw, $th, 14, $pillBorder);
-
-        $textClr = imagecolorallocate($img, 220, 255, 250);
-        $this->drawText($img, $this->fontBold, $fontSize, $tx + 16, $ty + 18, $textClr, $text);
+        $textClr = imagecolorallocate($img, 240, 255, 250);
+        $this->drawText($img, $this->fontBold, $fontSize, $tx + 17, $ty + 20, $textClr, $text);
     }
 
     private function categoryLabel(string $lang, string $category): string
     {
         $cat = strtolower($category);
-        if (str_contains($cat, 'pos'))   return ['az' => 'POS Sistem',  'en' => 'POS System',  'ru' => 'POS Система'][$lang] ?? 'POS';
-        if (str_contains($cat, 'seo'))   return ['az' => 'SEO',         'en' => 'SEO',          'ru' => 'SEO'][$lang]         ?? 'SEO';
-        if (str_contains($cat, 'smm'))   return ['az' => 'SMM',         'en' => 'SMM',          'ru' => 'SMM'][$lang]         ?? 'SMM';
-        if (str_contains($cat, 'lms'))   return ['az' => 'LMS',         'en' => 'LMS',          'ru' => 'LMS'][$lang]         ?? 'LMS';
-        if (str_contains($cat, 'logo'))  return ['az' => 'Loqo',        'en' => 'Logo',         'ru' => 'Логотип'][$lang]     ?? 'Logo';
-        return ['az' => 'Bloq', 'en' => 'Blog', 'ru' => 'Блог'][$lang] ?? 'Blog';
+        if (str_contains($cat, 'pos') || str_contains($cat, 'magaza') || str_contains($cat, 'anbar'))
+            return ['az'=>'Mağaza / POS', 'en'=>'Store / POS', 'ru'=>'Магазин / POS'][$lang] ?? 'POS';
+        if (str_contains($cat, 'restoran'))
+            return ['az'=>'Restoran POS', 'en'=>'Restaurant POS', 'ru'=>'Ресторан POS'][$lang] ?? 'POS';
+        if (str_contains($cat, 'seo'))   return 'SEO';
+        if (str_contains($cat, 'smm'))   return 'SMM';
+        if (str_contains($cat, 'lms'))   return 'LMS';
+        if (str_contains($cat, 'logo'))  return ['az'=>'Loqo', 'en'=>'Logo', 'ru'=>'Логотип'][$lang] ?? 'Logo';
+        if (str_contains($cat, 'crm') || str_contains($cat, 'erp')) return 'CRM / ERP';
+        return ['az'=>'Bloq', 'en'=>'Blog', 'ru'=>'Блог'][$lang] ?? 'Blog';
     }
 
     // ── Language badge ────────────────────────────────────────────────────────
 
     private function drawLangBadge(\GdImage $img, string $lang): void
     {
-        $text    = strtoupper($lang);
+        $text = strtoupper($lang);
         $fontSize = 12;
-        $bw      = 46;
-        $bh      = 28;
-        $bx      = self::W - $bw - 60;
-        $by      = 60;
+        $bw = 48; $bh = 30;
+        $bx = self::W - $bw - 58;
+        $by = 56;
 
-        $bg     = imagecolorallocatealpha($img, 100, 60, 200, 70);
-        $border = imagecolorallocatealpha($img, 150, 100, 255, 60);
+        $bg     = imagecolorallocatealpha($img, 90, 50, 180, 68);
+        $border = imagecolorallocatealpha($img, 160, 110, 255, 55);
         $this->fillRoundedRect($img, $bx, $by, $bw, $bh, 8, $bg);
         $this->drawRoundedRectOutline($img, $bx, $by, $bw, $bh, 8, $border);
 
         $bbox  = imagettfbbox($fontSize, 0, $this->fontBold, $text);
         $tw    = abs($bbox[4] - $bbox[0]);
-        $textX = $bx + (int) (($bw - $tw) / 2);
-        $textY = $by + 19;
-        $clr   = imagecolorallocate($img, 220, 210, 255);
-        $this->drawText($img, $this->fontBold, $fontSize, $textX, $textY, $clr, $text);
+        $textX = $bx + (int)(($bw - $tw) / 2);
+        $clr   = imagecolorallocate($img, 225, 215, 255);
+        $this->drawText($img, $this->fontBold, $fontSize, $textX, $by + 20, $clr, $text);
     }
 
     // ── Title text ────────────────────────────────────────────────────────────
 
-    private function drawTitle(\GdImage $img, string $title): void
+    private function drawTitle(\GdImage $img, string $title, string $theme): void
     {
-        $maxWidth  = self::W - 460 - 60;  // leave room for right panel
-        $startX    = 60;
-        $startY    = 140;
-        $fontSize  = 58;
-        $lineHeight = 72;
-        $minFont   = 36;
+        $c        = $this->themeColors($theme);
+        $maxWidth = self::W - 460 - 58;
+        $startX   = 58;
+        $fontSize = 60;
+        $minFont  = 34;
 
-        // Shrink font until text fits
         while ($fontSize >= $minFont) {
             $lines = $this->wrapText($title, $fontSize, $maxWidth);
-            if (count($lines) <= 4) {
-                break;
-            }
+            if (count($lines) <= 4) break;
             $fontSize -= 4;
         }
 
         $lines      = $this->wrapText($title, $fontSize, $maxWidth);
-        $lineHeight = (int) ($fontSize * 1.22);
+        $lineHeight = (int)($fontSize * 1.20);
         $totalH     = count($lines) * $lineHeight;
-        $startY     = (int) ((self::H * 0.5) - ($totalH / 2) + 20);
-        $startY     = max(130, min($startY, self::H - $totalH - 100));
+        $startY     = max(130, (int)((self::H * 0.48) - ($totalH / 2)));
+        $startY     = min($startY, self::H - $totalH - 110);
+
+        // Accent bar before first line
+        [$ar, $ag, $ab] = $c['accent'];
+        $barClr = imagecolorallocatealpha($img, $ar, $ag, $ab, 50);
+        $this->fillRoundedRect($img, $startX, $startY - 4, 5, $totalH + $lineHeight - 4, 2, $barClr);
 
         foreach ($lines as $i => $line) {
             $ly = $startY + $i * $lineHeight + $lineHeight;
 
-            // Shadow
-            $shadow = imagecolorallocatealpha($img, 0, 0, 0, 60);
-            $this->drawText($img, $this->fontBold, $fontSize, $startX + 2, $ly + 3, $shadow, $line);
+            // Subtle shadow
+            $shadow = imagecolorallocatealpha($img, 0, 0, 0, 55);
+            $this->drawText($img, $this->fontBold, $fontSize, $startX + 18, $ly + 3, $shadow, $line);
 
             // White text
             $white = imagecolorallocate($img, 255, 255, 255);
-            $this->drawText($img, $this->fontBold, $fontSize, $startX, $ly, $white, $line);
+            $this->drawText($img, $this->fontBold, $fontSize, $startX + 16, $ly, $white, $line);
         }
     }
 
     private function wrapText(string $text, float $fontSize, int $maxWidth): array
     {
-        $words  = explode(' ', $text);
-        $lines  = [];
+        $words   = explode(' ', $text);
+        $lines   = [];
         $current = '';
 
         foreach ($words as $word) {
             $test = $current ? "$current $word" : $word;
             $bbox = imagettfbbox($fontSize, 0, $this->fontBold, $test);
             $tw   = abs($bbox[4] - $bbox[0]);
-
             if ($tw > $maxWidth && $current !== '') {
                 $lines[] = $current;
                 $current = $word;
@@ -367,43 +480,54 @@ class BlogImageService
                 $current = $test;
             }
         }
-        if ($current !== '') {
-            $lines[] = $current;
-        }
-
+        if ($current !== '') $lines[] = $current;
         return $lines;
+    }
+
+    // ── Bottom accent bar ─────────────────────────────────────────────────────
+
+    private function drawBottomAccent(\GdImage $img, string $theme): void
+    {
+        $c = $this->themeColors($theme);
+        [$ar, $ag, $ab] = $c['accent'];
+
+        // Thin gradient line at very bottom
+        for ($x = 0; $x < self::W; $x++) {
+            $frac  = $x / self::W;
+            $alpha = (int)(80 + 40 * abs($frac - 0.5) * 2);
+            $col   = imagecolorallocatealpha($img, $ar, $ag, $ab, min(127, $alpha));
+            imageline($img, $x, self::H - 3, $x, self::H - 1, $col);
+            imagecolordeallocate($img, $col);
+        }
     }
 
     // ── RS Code branding ──────────────────────────────────────────────────────
 
     private function drawBranding(\GdImage $img): void
     {
-        $bx = 60;
-        $by = self::H - 60;
+        $bx = 58;
+        $by = self::H - 52;
 
-        // Logo PNG
         if (file_exists($this->logoPath)) {
             $logo = @imagecreatefrompng($this->logoPath);
             if ($logo) {
                 $lw = imagesx($logo);
                 $lh = imagesy($logo);
                 $targetH = 28;
-                $targetW = (int) ($lw * $targetH / $lh);
+                $targetW = (int)($lw * $targetH / $lh);
                 imagealphablending($img, true);
                 imagecopyresampled($img, $logo, $bx, $by - $targetH, 0, 0, $targetW, $targetH, $lw, $lh);
                 imagedestroy($logo);
-                $bx += $targetW + 12;
+                $bx += $targetW + 14;
             }
         }
 
-        // Divider dot
-        $divClr = imagecolorallocatealpha($img, 180, 160, 255, 80);
-        imagefilledellipse($img, $bx, $by - 14, 4, 4, $divClr);
+        $divClr = imagecolorallocatealpha($img, 180, 160, 255, 75);
+        imagefilledellipse($img, $bx, $by - 13, 4, 4, $divClr);
         $bx += 12;
 
-        // Domain
-        $domainClr = imagecolorallocatealpha($img, 200, 185, 255, 30);
-        $this->drawText($img, $this->fontBold, 13, $bx, $by - 6, $domainClr, 'rs-code.az');
+        $domainClr = imagecolorallocatealpha($img, 200, 185, 255, 28);
+        $this->drawText($img, $this->fontBold, 13, $bx, $by - 5, $domainClr, 'rs-code.az');
     }
 
     // ── Drawing helpers ───────────────────────────────────────────────────────
@@ -412,34 +536,29 @@ class BlogImageService
     {
         if ($rightAlign) {
             $bbox = imagettfbbox($size, 0, $font, $text);
-            $tw   = abs($bbox[4] - $bbox[0]);
-            $x   -= $tw;
+            $x   -= abs($bbox[4] - $bbox[0]);
         }
         imagettftext($img, $size, 0, $x, $y, $color, $font, $text);
     }
 
     private function fillRoundedRect(\GdImage $img, int $x, int $y, int $w, int $h, int $r, int $color): void
     {
-        $r = min($r, (int) ($w / 2), (int) ($h / 2));
-
-        imagefilledrectangle($img, $x + $r, $y,       $x + $w - $r, $y + $h,      $color);
-        imagefilledrectangle($img, $x,      $y + $r,  $x + $w,      $y + $h - $r, $color);
-
-        imagefilledellipse($img, $x + $r,       $y + $r,       $r * 2, $r * 2, $color);
-        imagefilledellipse($img, $x + $w - $r,  $y + $r,       $r * 2, $r * 2, $color);
-        imagefilledellipse($img, $x + $r,       $y + $h - $r,  $r * 2, $r * 2, $color);
-        imagefilledellipse($img, $x + $w - $r,  $y + $h - $r,  $r * 2, $r * 2, $color);
+        $r = min($r, (int)($w / 2), (int)($h / 2));
+        imagefilledrectangle($img, $x + $r, $y,      $x + $w - $r, $y + $h,      $color);
+        imagefilledrectangle($img, $x,      $y + $r, $x + $w,      $y + $h - $r, $color);
+        imagefilledellipse($img, $x + $r,      $y + $r,      $r * 2, $r * 2, $color);
+        imagefilledellipse($img, $x + $w - $r, $y + $r,      $r * 2, $r * 2, $color);
+        imagefilledellipse($img, $x + $r,      $y + $h - $r, $r * 2, $r * 2, $color);
+        imagefilledellipse($img, $x + $w - $r, $y + $h - $r, $r * 2, $r * 2, $color);
     }
 
     private function drawRoundedRectOutline(\GdImage $img, int $x, int $y, int $w, int $h, int $r, int $color): void
     {
-        $r = min($r, (int) ($w / 2), (int) ($h / 2));
-
-        imageline($img, $x + $r,      $y,          $x + $w - $r,  $y,          $color);
-        imageline($img, $x + $r,      $y + $h,     $x + $w - $r,  $y + $h,     $color);
-        imageline($img, $x,           $y + $r,     $x,            $y + $h - $r, $color);
-        imageline($img, $x + $w,      $y + $r,     $x + $w,       $y + $h - $r, $color);
-
+        $r = min($r, (int)($w / 2), (int)($h / 2));
+        imageline($img, $x + $r,     $y,         $x + $w - $r, $y,          $color);
+        imageline($img, $x + $r,     $y + $h,    $x + $w - $r, $y + $h,     $color);
+        imageline($img, $x,          $y + $r,    $x,           $y + $h - $r, $color);
+        imageline($img, $x + $w,     $y + $r,    $x + $w,      $y + $h - $r, $color);
         imagearc($img, $x + $r,      $y + $r,      $r * 2, $r * 2, 180, 270, $color);
         imagearc($img, $x + $w - $r, $y + $r,      $r * 2, $r * 2, 270, 360, $color);
         imagearc($img, $x + $r,      $y + $h - $r, $r * 2, $r * 2,  90, 180, $color);
