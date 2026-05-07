@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Services\BlogImageService;
 use Illuminate\Http\Request;
 use DB, Validator;
 
@@ -250,7 +251,7 @@ class BlogController extends Controller
         return response()->json(['message' => "Blog uğurla yeniləndi"]);
     }
 
-    public function aiGenerate()
+    public function aiGenerate(Request $request)
     {
         $apiKey = DB::table('settings')->where('key', 'openai_api_key')->value('value');
         if (!$apiKey) {
@@ -269,45 +270,40 @@ class BlogController extends Controller
         $dateEn = now()->format('F j, Y');
         $dateRu = now()->day . ' ' . ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'][now()->month - 1] . ' ' . now()->year . ' г.';
 
-        $system = 'Sən RS Code şirkəti üçün peşəkar SEO blog müəllifisin. RS Code — Azərbaycanda veb sayt hazırlama, POS sistemləri, proqramlaşdırma dərsləri, mobil tətbiqlər, SEO xidmətləri sahəsindəki IT şirkətidir. Yazdığın məqalələr insanın yazdığından fərqlənməməlidir — təbii, canlı, peşəkar üslub.';
+        $system = 'Sən RS Code şirkəti üçün peşəkar SEO blog müəllifisin. RS Code — Azərbaycanda veb sayt hazırlama, POS sistemləri, LMS/onlayn təhsil, proqramlaşdırma dərsləri, SEO xidmətləri sahəsindəki IT şirkətidir. Effektiv SEO düsturu: [Xidmət] + [Azərbaycanda/Lokal] + [2026] + [Konkret sual/qiymət/müqayisə]. Yazdığın məqalələr dönüşüm yönümlüdür — oxucu sonda RS Code-a müraciət etməlidi. Canlı, peşəkar, insanın yazdığı kimi üslub.';
+
+        $topicHint = trim($request->input('topic', ''));
+
+        if ($topicHint) {
+            $topicBlock = "Mövzu: \"{$topicHint}\"\nBu mövzuya uyğun blog yaz. SEO düsturuna riayət et: lokal keyword (Azərbaycanda/Bakıda/Gəncədə) + il (2026) + spesifik sual/qiymət/müqayisə.\n\nMövcud bloglara bax, eyni mövzunu təkrar etmə:\n{$existingTitles}";
+        } else {
+            $topicBlock = "Aşağıdakı mövcud blog başlıqlarına BAX, fərqli mövzu seç:\n{$existingTitles}\n\nGüclü mövzu sahələri (bu sahələrdən seç):\n- POS sistemləri: restoran/kafe/mağaza üçün qiymət, seçim, müqayisə (Azərbaycanda 2026)\n- LMS / onlayn kurs platformaları: hazır vs fərdi hazırlanma, qiymət, necə yaradılır\n- Veb sayt: qiymət, növlər, hazır vs sifarişlə (Bakı, Gəncə, Sumqayıt, Azərbaycan 2026)\n- SEO xidməti: Azərbaycanda, qiymət, necə işləyir, niyə vacibdir\n- Proqramlaşdırma: hansı dil seçmək, maaş, Azərbaycanda başlamaq\n- E-ticarət / onlayn mağaza: Azərbaycanda açmaq, qiymət, addımlar\n- Müqayisə yazıları: Laravel vs WordPress, Moodle vs Fərdi LMS, Wix vs Sifarişlə Sayt\n\nQaçınılacaq mövzular (YAZMA):\n- Ümumi trend yazıları (UI/UX trendləri, AI trendləri, Mobil trendlər)\n- Lokal element olmayan qlobal mövzular\n- Dönüşümsüz mövzular: \"Kibertəhlükəsizlik əsasları\", \"Süni zəka inqilabı\"";
+        }
 
         $user = <<<PROMPT
-Aşağıdakı mövcud blog başlıqlarına BAX, FƏRQLI bir mövzu seç:
-{$existingTitles}
-
-Mövzu sahələri (seçim üçün):
-- Veb sayt hazırlama (növləri, xərcləri, texnologiyaları)
-- POS sistemləri / restoran, mağaza proqramları
-- Proqramlaşdırma dilləri (PHP, Python, JavaScript, vs.)
-- SEO optimallaşdırma texnikaları
-- Mobil tətbiq hazırlama (iOS/Android)
-- E-ticarət / onlayn mağaza qurma
-- Kibertəhlükəsizlik əsasları
-- Süni zəka biznes həllərində
-- UI/UX dizayn prinsipləri
-- Veb hosting / domain seçimi
+{$topicBlock}
 
 3 dildə tam blog yazısı yaz. Cavabı YALNIZ JSON formatında ver:
 
 {
-  "title_az": "Azərbaycanca başlıq (cəlbedici, 50-70 simvol)",
-  "title_en": "English title (50-70 chars)",
-  "title_ru": "Русский заголовок (50-70 символов)",
+  "title_az": "Başlıq — SEO düsturu: [Xidmət]+[Azərbaycanda/Lokal]+[2026]+[Konkret sual], 50-70 simvol",
+  "title_en": "English title following SEO formula, 50-70 chars",
+  "title_ru": "Русский заголовок по формуле, 50-70 символов",
   "slug_az": "kicik-herf-tire-ile-ayrilmis-az",
   "slug_en": "lowercase-hyphenated-en",
   "slug_ru": "strochnyye-bukvy-cherez-tire-ru",
-  "dalle_prompt": "DALL-E 3 image prompt in English for this blog cover. Photorealistic or modern illustration style, professional tech imagery, no text, no letters, 16:9 blog header composition.",
+  "dalle_prompt": "DALL-E 3 image prompt in English. Photorealistic or modern illustration, professional tech theme, no text, no letters, 16:9 blog header.",
   "review_az": "Cəlbedici 2-3 cümlə xülasə (150-200 simvol)",
   "review_en": "Engaging 2-3 sentence summary (150-200 chars)",
   "review_ru": "Привлекательное резюме 2-3 предложения (150-200 символов)",
-  "text_az": "HTML formatında ən az 700 söz (<h2>,<p>,<ul><li>,<strong> istifadə et)",
-  "text_en": "HTML formatted min 700 words (<h2>,<p>,<ul><li>,<strong>)",
-  "text_ru": "HTML формат минимум 700 слов (<h2>,<p>,<ul><li>,<strong>)",
-  "meta_title_az": "55-60 simvol, əsas keyword daxil",
-  "meta_title_en": "55-60 chars, main keyword included",
-  "meta_title_ru": "55-60 символов, основной ключевик",
-  "meta_description_az": "150-160 simvol, cəlbedici, keyword-lər daxil",
-  "meta_description_en": "150-160 chars, compelling, keywords included",
+  "text_az": "Minimum 1500 söz, HTML format. Struktur: H2 başlıqlar (5-7 ədəd), <p>, <ul><li>, <strong>, müqayisə <table> (uyğunsa), FAQ bölməsi (4-6 sual <h3> ilə), sonda CTA (<p><strong>RS Code ilə əlaqə...</strong></p>), sonda FAQ JSON-LD <script type='application/ld+json'>...</script>",
+  "text_en": "Minimum 1500 words, HTML. Structure: 5-7 H2, paragraphs, lists, comparison <table> (if applicable), FAQ section (4-6 Q&A with <h3>), CTA at end, FAQ JSON-LD schema at end (<script type='application/ld+json'>...</script>)",
+  "text_ru": "Минимум 1500 слов, HTML. Структура: 5-7 H2, параграфы, списки, таблица сравнения (если уместно), FAQ (4-6 вопросов <h3>), CTA в конце, FAQ JSON-LD схема в конце (<script type='application/ld+json'>...</script>)",
+  "meta_title_az": "55-60 simvol, lokal keyword + 2026 daxil",
+  "meta_title_en": "55-60 chars, local keyword + 2026 included",
+  "meta_title_ru": "55-60 символов, локальный ключевик + 2026",
+  "meta_description_az": "150-160 simvol, cəlbedici, keyword-lər daxil, dönüşüm yönümlü",
+  "meta_description_en": "150-160 chars, compelling, keywords, conversion-focused",
   "meta_description_ru": "150-160 символов, убедительно, ключевые слова",
   "meta_keywords_az": "açar söz 1, açar söz 2, açar söz 3, açar söz 4, açar söz 5",
   "meta_keywords_en": "keyword 1, keyword 2, keyword 3, keyword 4, keyword 5",
@@ -315,11 +311,16 @@ Mövzu sahələri (seçim üçün):
 }
 
 Tələblər:
-- text sahələrindəki HTML: strukturlu (<h2> başlıqlar, <p> paraqraflar, <ul><li> siyahılar, <strong> vurğular)
-- Azərbaycan mətni Azərbaycan türkcəsi ilə (Latın əlifbası)
-- Rus mətni Kirill əlifbası ilə
-- SEO meta: Google-da irəli çıxmaq üçün optimallaşdırılmış
-- İnsan tərəfindən yazılmış kimi — rəsmi deyil, canlı üslub
+- Hər dil üçün minimum 1500 söz (Google qısa yazıları pis mövqeləndirir)
+- Müqayisə mövzularında mütləq 1 HTML <table> cədvəl
+- Mütləq FAQ bölməsi (4-6 sual, <h3> ilə)
+- Mütləq FAQ JSON-LD Schema (text sonunda, <script type="application/ld+json"> ilə)
+- Sonda CTA: RS Code ilə əlaqəyə dəvət
+- Başlıqda lokal keyword (Azərbaycanda/Bakıda/Gəncədə) + 2026 il
+- Mətnin içindən lokal keyword + ən azı 1 konkret statistika
+- Azərbaycan mətni: Latın əlifbası ilə
+- Rus mətni: Kirill əlifbası ilə
+- Canlı, insan kimi üslub — "SEO optimizasiya edilmiş mətn" deyil
 PROMPT;
 
         $payload = [
@@ -329,7 +330,7 @@ PROMPT;
                 ['role' => 'system', 'content' => $system],
                 ['role' => 'user',   'content' => $user],
             ],
-            'max_tokens'  => 4000,
+            'max_tokens'  => 8000,
             'temperature' => 0.82,
         ];
 
@@ -370,62 +371,23 @@ PROMPT;
         $blog['date_en'] = $dateEn;
         $blog['date_ru'] = $dateRu;
 
-        // ── DALL-E image generation ───────────────────────────────────────────
-        $imageFiles  = null;
+        // ── Blog cover image generation (PHP GD, no external API) ────────────
+        $imageFiles   = null;
         $imagePreview = null;
 
-        $dallePrompt = trim($blog['dalle_prompt'] ?? '');
-        if (!$dallePrompt) {
-            $dallePrompt = 'A professional modern blog cover image about: ' . ($blog['title_en'] ?? 'IT technology');
-        }
-        $dallePrompt .= '. Professional photography, clean background, tech theme, no text, no letters, no words.';
+        try {
+            $imgSvc   = new BlogImageService();
+            $slugHint = $blog['slug_az'] ?? ($blog['slug_en'] ?? '');
+            $catHint  = $topicHint ?: ($blog['title_az'] ?? '');
 
-        $dalleBody = json_encode([
-            'model'   => 'dall-e-3',
-            'prompt'  => $dallePrompt,
-            'n'       => 1,
-            'size'    => '1792x1024',
-            'quality' => 'standard',
-        ]);
+            $fileAz = $imgSvc->generate($blog['title_az'] ?? '', 'az', $catHint, $slugHint);
+            $fileEn = $imgSvc->generate($blog['title_en'] ?? '', 'en', $catHint, $slugHint);
+            $fileRu = $imgSvc->generate($blog['title_ru'] ?? '', 'ru', $catHint, $slugHint);
 
-        $ch2 = curl_init('https://api.openai.com/v1/images/generations');
-        curl_setopt_array($ch2, [
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT        => 60,
-            CURLOPT_POST           => true,
-            CURLOPT_POSTFIELDS     => $dalleBody,
-            CURLOPT_HTTPHEADER     => [
-                'Authorization: Bearer ' . $apiKey,
-                'Content-Type: application/json',
-            ],
-        ]);
-        $imgRaw  = curl_exec($ch2);
-        $imgCode = curl_getinfo($ch2, CURLINFO_HTTP_CODE);
-        curl_close($ch2);
-
-        if ($imgCode === 200) {
-            $imgData = json_decode($imgRaw, true);
-            $tmpUrl  = $imgData['data'][0]['url'] ?? null;
-
-            if ($tmpUrl) {
-                $imgContent = file_get_contents($tmpUrl);
-                if ($imgContent !== false) {
-                    $dir = public_path('images/blog');
-                    if (!is_dir($dir)) mkdir($dir, 0755, true);
-
-                    $ts   = time() . '_' . substr(uniqid(), -6);
-                    $fileAz = 'ai_' . $ts . '_az.jpg';
-                    $fileEn = 'ai_' . $ts . '_en.jpg';
-                    $fileRu = 'ai_' . $ts . '_ru.jpg';
-
-                    file_put_contents($dir . '/' . $fileAz, $imgContent);
-                    file_put_contents($dir . '/' . $fileEn, $imgContent);
-                    file_put_contents($dir . '/' . $fileRu, $imgContent);
-
-                    $imageFiles   = ['az' => $fileAz, 'en' => $fileEn, 'ru' => $fileRu];
-                    $imagePreview = asset('images/blog/' . $fileAz);
-                }
-            }
+            $imageFiles   = ['az' => $fileAz, 'en' => $fileEn, 'ru' => $fileRu];
+            $imagePreview = asset('images/blog/' . $fileAz);
+        } catch (\Throwable $e) {
+            \Log::error('BlogImageService failed: ' . $e->getMessage());
         }
 
         unset($blog['dalle_prompt']);

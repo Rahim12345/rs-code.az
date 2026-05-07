@@ -18,10 +18,15 @@
         <a href="/admin/blogs" class="px-4 py-2 text-sm text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
             Ləğv et
         </a>
-        <button id="aiBlogBtn" type="button" onclick="generateWithAI()"
-                class="btn-outline shadow-sm">
-            <i class="fa fa-wand-magic-sparkles"></i> AI ilə yenilə
-        </button>
+        <div class="flex items-center gap-2">
+            <input type="text" id="aiTopicHint"
+                   placeholder="Mövzu (istəyə bağlı): POS Sistemi Qiyməti 2026..."
+                   class="text-sm border border-gray-300 rounded-lg px-3 py-2 w-72 focus:outline-none focus:ring-2 focus:ring-indigo-300">
+            <button id="aiBlogBtn" type="button" onclick="generateWithAI()"
+                    class="btn-outline shadow-sm whitespace-nowrap">
+                <i class="fa fa-wand-magic-sparkles"></i> AI ilə yenilə
+            </button>
+        </div>
         <button id="submitBtn" type="button" onclick="submitBlog()" class="btn-primary shadow-lg shadow-indigo-100">
             <i class="fa fa-floppy-disk"></i> Yadda Saxla
         </button>
@@ -277,12 +282,14 @@ async function generateWithAI() {
     btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> AI yazır...';
 
     try {
+        const topicHint = (document.getElementById('aiTopicHint')?.value || '').trim();
         const res = await fetch('/admin/blogs/ai-generate', {
             method: 'POST',
             headers: {
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
                 'Content-Type': 'application/json',
             },
+            body: JSON.stringify({ topic: topicHint }),
         });
         const result = await res.json();
 

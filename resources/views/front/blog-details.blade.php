@@ -135,7 +135,7 @@
                     {{ strip_tags($review) }}
                 </p>
                 @endif
-                <div class="prose prose-invert prose-violet max-w-none
+                <div class="prose prose-invert prose-violet max-w-none blog-content
                             prose-headings:font-bold prose-headings:text-white
                             prose-p:text-zinc-400 prose-p:leading-relaxed
                             prose-a:text-violet-400 prose-a:no-underline hover:prose-a:text-violet-300
@@ -144,6 +144,26 @@
                             prose-img:rounded-xl">
                     {!! $body !!}
                 </div>
+                <style>
+                .blog-content table{width:100%;border-collapse:collapse;font-size:.875rem;min-width:480px}
+                .blog-content thead th{background:#27272a;color:#fff;padding:.6rem .875rem;text-align:left;border:1px solid #3f3f46;font-weight:600;white-space:nowrap}
+                .blog-content tbody td{padding:.6rem .875rem;border:1px solid #3f3f46;color:#a1a1aa;vertical-align:top}
+                .blog-content tbody tr:nth-child(even) td{background:rgba(39,39,42,.4)}
+                .blog-content .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.5rem 0;border-radius:.5rem;border:1px solid #3f3f46}
+                .blog-content .tbl-wrap table{margin:0;border:none;min-width:0;width:100%}
+                .blog-content .tbl-wrap th,.blog-content .tbl-wrap td{border-left:none;border-right:none}
+                .blog-content .tbl-wrap thead tr:first-child th:first-child{border-radius:.5rem 0 0 0}
+                .blog-content .tbl-wrap thead tr:first-child th:last-child{border-radius:0 .5rem 0 0}
+                .blog-content .tbl-wrap tbody tr:last-child td{border-bottom:none}
+                </style>
+                <script>
+                document.querySelectorAll('.blog-content table').forEach(function(t){
+                    if(!t.closest('.tbl-wrap')){
+                        var w=document.createElement('div');w.className='tbl-wrap';
+                        t.parentNode.insertBefore(w,t);w.appendChild(t);
+                    }
+                });
+                </script>
                 {{-- Share --}}
                 <div class="mt-10 pt-8 border-t border-zinc-800/50 flex items-center gap-4">
                     <span class="text-zinc-500 text-sm">{{ ['az'=>'Paylaş:','en'=>'Share:','ru'=>'Поделиться:'][$lang] ?? 'Paylaş:' }}</span>
