@@ -165,11 +165,12 @@ class DeployBlogs extends Command
         }
 
         // Pack all images into a tar, upload once, extract on server
-        $tarLocal  = sys_get_temp_dir() . '/blog_images_' . time() . '.tar.gz';
-        $tarRemote = '/tmp/blog_images_' . time() . '.tar.gz';
+        $tarLocal    = $this->msysPath(sys_get_temp_dir()) . '/blog_images_' . time() . '.tar.gz';
+        $tarRemote   = '/tmp/blog_images_' . time() . '.tar.gz';
+        $localDirFwd = $this->msysPath($localDir);
 
         $fileArgs = implode(' ', array_map(fn($f) => escapeshellarg($f), $toUpload));
-        $packCmd  = "tar -czf \"{$tarLocal}\" -C \"{$localDir}\" {$fileArgs}";
+        $packCmd  = "tar -czf \"{$tarLocal}\" -C \"{$localDirFwd}\" {$fileArgs}";
         exec($packCmd, $out, $exit);
 
         if ($exit !== 0) {
@@ -253,5 +254,13 @@ class DeployBlogs extends Command
     private function sshBase(array $cfg): string
     {
         return "ssh -p {$cfg['port']} -o StrictHostKeyChecking=no {$cfg['user']}@{$cfg['host']}";
+    }
+
+    // Convert Windows path (C:\foo or C:/foo) to MSYS /c/foo so Git-for-Windows tar
+    // does not interpret the drive letter as a remote hostname.
+    private function msysPath(string $path): string
+    {
+        $path = str_replace('\\', '/', $path);
+        return preg_replace_callback('/^([A-Za-z]):/', fn($m) => '/' . strtolower($m[1]), $path);
     }
 }
