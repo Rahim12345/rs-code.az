@@ -97,6 +97,12 @@ Route::prefix('admin')->middleware('isLogout')->group(function () {
     Route::get('/seo',            'App\Http\Controllers\Admin\SeoSettingsController@index');
     Route::post('/seo/robots',    'App\Http\Controllers\Admin\SeoSettingsController@saveRobots');
 
+    Route::get('/settings',                   'App\Http\Controllers\Admin\SystemSettingsController@index')->name('admin.settings');
+    Route::post('/settings/ai',               'App\Http\Controllers\Admin\SystemSettingsController@saveAi')->name('admin.settings.ai');
+    Route::post('/settings/institution',      'App\Http\Controllers\Admin\SystemSettingsController@saveInstitution')->name('admin.settings.institution');
+    Route::post('/settings/test-openai',      'App\Http\Controllers\Admin\SystemSettingsController@testOpenai')->name('admin.settings.test-openai');
+    Route::post('/settings/maintenance',      'App\Http\Controllers\Admin\SystemSettingsController@toggleMaintenance')->name('admin.settings.maintenance');
+
     Route::get('/projects', 'App\Http\Controllers\Admin\ProjectController@index');
     Route::get('/add-project', 'App\Http\Controllers\Admin\ProjectController@index_add');
     Route::post('/add-project', 'App\Http\Controllers\Admin\ProjectController@store');
@@ -107,6 +113,7 @@ Route::prefix('admin')->middleware('isLogout')->group(function () {
     Route::delete('/project-image-delete/{id}', 'App\Http\Controllers\Admin\ProjectController@deleteImage');
 
     Route::get('/blogs', 'App\Http\Controllers\Admin\BlogController@index');
+    Route::post('/blogs/ai-generate', 'App\Http\Controllers\Admin\BlogController@aiGenerate')->name('admin.blogs.ai-generate');
     Route::get('/add-blog', 'App\Http\Controllers\Admin\BlogController@index_add');
     Route::get('/edit-blog/{id}', 'App\Http\Controllers\Admin\BlogController@index_edit');
     Route::post('/edit-blog/{id}', 'App\Http\Controllers\Admin\BlogController@update');

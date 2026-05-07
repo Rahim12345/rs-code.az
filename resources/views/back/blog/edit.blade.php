@@ -18,6 +18,10 @@
         <a href="/admin/blogs" class="px-4 py-2 text-sm text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
             Ləğv et
         </a>
+        <button id="aiBlogBtn" type="button" onclick="generateWithAI()"
+                class="btn-outline shadow-sm">
+            <i class="fa fa-wand-magic-sparkles"></i> AI ilə yenilə
+        </button>
         <button id="submitBtn" type="button" onclick="submitBlog()" class="btn-primary shadow-lg shadow-indigo-100">
             <i class="fa fa-floppy-disk"></i> Yadda Saxla
         </button>
@@ -26,6 +30,9 @@
 
 <form id="blogForm" action="/admin/edit-blog/{{ $blog->id }}" method="POST" enctype="multipart/form-data">
 @csrf
+<input type="hidden" name="ai_photo"    id="ai_photo_az">
+<input type="hidden" name="ai_photo_en" id="ai_photo_en">
+<input type="hidden" name="ai_photo_ru" id="ai_photo_ru">
 <div class="grid grid-cols-1 gap-6">
 
     <div class="space-y-5">
@@ -114,7 +121,7 @@
                         <label class="relative flex flex-col items-center justify-center h-28 rounded-xl border-2 border-dashed border-gray-200 hover:border-indigo-400 cursor-pointer overflow-hidden group transition-colors">
                             <input type="file" name="{{ $photoField }}" id="{{ $photoField }}" accept="image/*"
                                    class="absolute inset-0 opacity-0 cursor-pointer"
-                                   onchange="previewImgLang(this,'covPrev_{{ $l }}','covPh_{{ $l }}','currentPhotoWrap_{{ $l }}')">
+                                   onchange="previewImgLang(this,'covPrev_{{ $l }}','covPh_{{ $l }}','currentPhotoWrap_{{ $l }}'); clearAiPhoto('{{ $l }}')">
                             <div id="covPh_{{ $l }}" class="flex flex-col items-center gap-2 text-gray-400 group-hover:text-indigo-500 transition-colors p-4">
                                 <i class="fa fa-arrow-up-from-bracket text-2xl"></i>
                                 <span class="text-xs font-semibold">{{ $existingPhotoSrc ? 'Yenilə' : 'Şəkil seç' }}</span>
@@ -262,6 +269,72 @@ function showErrors(errors) {
         const root = document.querySelector('[x-data]');
         if (root && root._x_dataStack) root._x_dataStack[0].lang = firstLang;
     }
+}
+
+async function generateWithAI() {
+    const btn = document.getElementById('aiBlogBtn');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> AI yazır...';
+
+    try {
+        const res = await fetch('/admin/blogs/ai-generate', {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                'Content-Type': 'application/json',
+            },
+        });
+        const result = await res.json();
+
+        if (!result.ok) {
+            toastr.error(result.message);
+            return;
+        }
+
+        const d = result.data;
+        ['az','en','ru'].forEach(l => {
+            const set = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ''; };
+            set('title_'            + l, d['title_'            + l]);
+            set('slug_'             + l, d['slug_'             + l]);
+            set('review_'           + l, d['review_'           + l]);
+            set('date_'             + l, d['date_'             + l]);
+            set('meta_title_'       + l, d['meta_title_'       + l]);
+            set('meta_description_' + l, d['meta_description_' + l]);
+            set('meta_keywords_'    + l, d['meta_keywords_'    + l]);
+
+            const key = 'text_' + l;
+            if (_editors[key]) _editors[key].setData(d[key] || '');
+            else set(key, d[key]);
+        });
+
+        if (result.image_preview && result.image_files) {
+            const f = result.image_files;
+            document.getElementById('ai_photo_az').value = f.az || '';
+            document.getElementById('ai_photo_en').value = f.en || '';
+            document.getElementById('ai_photo_ru').value = f.ru || '';
+
+            ['az','en','ru'].forEach(l => {
+                const prev = document.getElementById('covPrev_' + l);
+                const ph   = document.getElementById('covPh_'   + l);
+                if (prev) { prev.src = result.image_preview; prev.classList.remove('hidden'); }
+                if (ph)   ph.classList.add('hidden');
+            });
+            toastr.success('Blog və şəkil AI tərəfindən yeniləndi!');
+        } else {
+            toastr.success('Blog AI tərəfindən yeniləndi!');
+        }
+    } catch (e) {
+        toastr.error('Şəbəkə xətası baş verdi');
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fa fa-wand-magic-sparkles"></i> AI ilə yenilə';
+    }
+}
+
+function clearAiPhoto(lang) {
+    const map = { az: 'ai_photo_az', en: 'ai_photo_en', ru: 'ai_photo_ru' };
+    const el = document.getElementById(map[lang]);
+    if (el) el.value = '';
 }
 
 function submitBlog() {
