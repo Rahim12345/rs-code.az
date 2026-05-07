@@ -86,43 +86,46 @@
 @section('content')
 
 {{-- Hero --}}
-<section class="relative pt-32 pb-12 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-violet-950/20 to-transparent pointer-events-none"></div>
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div class="text-center">
-            @php
-                $blogListUrl   = ['az' => '/bloqlar', 'en' => '/blogs', 'ru' => '/blogi'][$lang] ?? '/bloqlar';
-                $blogBackLabel = ['az' => 'Bloga qayıt', 'en' => 'Back to Blog', 'ru' => 'Назад к блогу'][$lang] ?? 'Bloga qayıt';
-            @endphp
-            <a href="{{ $blogListUrl }}" class="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm mb-6 transition-colors group">
-                <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+@php
+    $blogListUrl   = ['az' => '/bloqlar', 'en' => '/blogs', 'ru' => '/blogi'][$lang] ?? '/bloqlar';
+    $blogBackLabel = ['az' => 'Bloga qayıt', 'en' => 'Back to Blog', 'ru' => 'Назад к блогу'][$lang] ?? 'Bloga qayıt';
+@endphp
+<section class="pt-28 pb-6">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {{-- Back + meta row --}}
+        <div class="flex items-center justify-between mb-5">
+            <a href="{{ $blogListUrl }}"
+               class="inline-flex items-center gap-1.5 text-violet-400 hover:text-violet-300 text-xs font-medium transition-colors group">
+                <svg class="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"/>
                 </svg>
                 {{ $blogBackLabel }}
             </a>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6" style="font-family:'Bricolage Grotesque',sans-serif">
-                {{ $title }}
-            </h1>
-            <div class="flex items-center justify-center gap-4 text-zinc-500 text-sm">
-                <span class="flex items-center gap-1.5">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                    {{ $date }}
-                </span>
+            <div class="flex items-center gap-2 text-zinc-600 text-xs">
+                <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <span>{{ $date }}</span>
                 <span class="w-1 h-1 rounded-full bg-zinc-700"></span>
                 <span>RS Code</span>
             </div>
         </div>
+
+        {{-- Title --}}
+        <h1 class="text-2xl sm:text-3xl lg:text-[2.2rem] font-bold leading-snug text-white mb-6"
+            style="font-family:'Bricolage Grotesque',sans-serif">
+            {{ $title }}
+        </h1>
+
+        {{-- Featured image --}}
+        <img src="{{ $imgSrc }}" alt="{{ $title }}"
+             class="w-full rounded-xl object-cover max-h-80 shadow-xl shadow-black/50">
     </div>
 </section>
 
-{{-- Featured image --}}
-<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-    <img src="{{ $imgSrc }}" alt="{{ $title }}"
-         class="w-full rounded-2xl object-cover max-h-96 shadow-2xl shadow-black/50">
-</div>
-
 {{-- Content --}}
-<section class="pb-20">
+<section class="pt-8 pb-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
             {{-- Article body --}}
