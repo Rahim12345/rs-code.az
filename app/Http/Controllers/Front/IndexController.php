@@ -23,7 +23,7 @@ class IndexController extends Controller
     }
 
 
-    public function lang($lang)
+    public function lang($lang, \Illuminate\Http\Request $request)
     {
         \Session::put('lang', $lang);
 
@@ -104,8 +104,10 @@ class IndexController extends Controller
             'kontent-marketing' => ['az' => '/kontent-marketinq', 'en' => '/content-marketing', 'ru' => '/kontent-marketing'],
         ];
 
-        // Detect current page from referrer
-        $refPath      = trim(parse_url(url()->previous(), PHP_URL_PATH), '/');
+        // ?from= parametri varsa istifadə et, yoxdursa Referer-ə bax
+        $fromParam    = $request->input('from', '');
+        $refPath      = $fromParam ?: trim(parse_url(url()->previous(), PHP_URL_PATH), '/');
+        $refPath      = trim($refPath, '/');
         $segments     = explode('/', $refPath);
         $firstSegment = $segments[0];
 
