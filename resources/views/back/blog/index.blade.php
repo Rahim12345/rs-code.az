@@ -24,6 +24,7 @@
                     <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Başlıq</th>
                     <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider hidden md:table-cell">Xülasə</th>
                     <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider hidden lg:table-cell">Tarix</th>
+                    <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider hidden lg:table-cell">Baxış</th>
                     <th class="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider w-20">Foto</th>
                     <th class="px-4 py-3 w-28"></th>
                 </tr>
@@ -39,6 +40,12 @@
                         <div class="line-clamp-1 text-xs">{{ strip_tags(Str::limit($blog->review_az, 80)) }}</div>
                     </td>
                     <td class="px-4 py-3 text-gray-500 text-xs hidden lg:table-cell">{{ $blog->date_az }}</td>
+                    <td class="px-4 py-3 hidden lg:table-cell">
+                        <span class="inline-flex items-center gap-1 text-xs font-medium {{ ($blog->views ?? 0) > 0 ? 'text-indigo-600' : 'text-gray-400' }}">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                            {{ number_format($blog->views ?? 0) }}
+                        </span>
+                    </td>
                     <td class="px-4 py-3">
                         @php
                             $photo = $blog->photo;
@@ -65,7 +72,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="6" class="px-4 py-12 text-center text-gray-400 text-sm">
+                    <td colspan="7" class="px-4 py-12 text-center text-gray-400 text-sm">
                         Hələlik heç bir blog yazısı yoxdur
                     </td>
                 </tr>

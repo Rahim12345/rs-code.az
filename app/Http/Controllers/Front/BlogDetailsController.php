@@ -21,6 +21,8 @@ class BlogDetailsController extends Controller
             abort(404);
         }
 
+        DB::table('blogs')->where('id', $blog->id)->increment('views');
+
         session(['blog_lang_slugs' => [
             'az' => $blog->slug_az,
             'en' => $blog->slug_en,
