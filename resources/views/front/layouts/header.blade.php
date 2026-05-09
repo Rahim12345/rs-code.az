@@ -121,7 +121,7 @@
                 {{-- Language --}}
                 <div class="flex items-center gap-1 bg-zinc-800/40 rounded-lg p-1">
                     @foreach(['az','ru','en'] as $l)
-                    <a href="{{ route('front.lang', ['lang' => $l, 'from' => request()->path()]) }}"
+                    <a href="{{ isset($blogLangLinks) ? $blogLangLinks[$l] : route('front.lang', ['lang' => $l, 'from' => request()->path()]) }}"
                        class="px-2.5 py-1 text-xs font-semibold rounded-md transition-all
                               {{ $lang === $l ? 'bg-violet-600 text-white' : 'text-zinc-500 hover:text-zinc-200' }}">
                         {{ strtoupper($l) }}
@@ -181,7 +181,7 @@
         <div class="flex items-center justify-between px-4 py-5 border-t border-zinc-800/60 shrink-0">
             <div class="flex items-center gap-1 bg-zinc-800/60 rounded-lg p-1">
                 @foreach(['az','ru','en'] as $l)
-                <a href="{{ route('front.lang', ['lang' => $l, 'from' => request()->path()]) }}"
+                <a href="{{ isset($blogLangLinks) ? $blogLangLinks[$l] : route('front.lang', ['lang' => $l, 'from' => request()->path()]) }}"
                    class="px-2.5 py-1 text-xs font-semibold rounded-md transition-all
                           {{ $lang === $l ? 'bg-violet-600 text-white' : 'text-zinc-500 hover:text-zinc-200' }}">
                     {{ strtoupper($l) }}

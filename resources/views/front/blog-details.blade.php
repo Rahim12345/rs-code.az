@@ -246,3 +246,11 @@
 </section>
 
 @endsection
+
+@push('scripts')
+<script>
+if (window.location.search.includes('lang=')) {
+    history.replaceState({}, '', window.location.pathname);
+}
+</script>
+@endpush
