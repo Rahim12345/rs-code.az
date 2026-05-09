@@ -109,16 +109,20 @@ class IndexController extends Controller
         $segments     = explode('/', $refPath);
         $firstSegment = $segments[0];
 
-        // Blog-details: session-dan slug map-i oxu (yalnız referrer blog-details-dirsə)
-        if ($firstSegment === 'blog-details' && session()->has('blog_lang_slugs')) {
-            $slugs      = session()->pull('blog_lang_slugs'); // oxu və sil
-            $targetSlug = $slugs[$lang] ?? $slugs['az'] ?? null;
-            if ($targetSlug) {
+        // Blog-details: referrer slug-dan DB-də 3 dilin slug-larını tap, session lazım deyil
+        if ($firstSegment === 'blog-details' && !empty($segments[1])) {
+            $currentSlug = $segments[1];
+            $blog = DB::table('blogs')
+                ->where('slug_az', $currentSlug)
+                ->orWhere('slug_en', $currentSlug)
+                ->orWhere('slug_ru', $currentSlug)
+                ->first();
+            if ($blog) {
+                $targetSlug = $blog->{'slug_' . $lang} ?? $blog->slug_az;
                 return redirect('/blog-details/' . $targetSlug);
             }
         }
 
-        // Başqa səhifədədirsə session-u təmizlə
         session()->forget('blog_lang_slugs');
 
         // Static slug map lookup

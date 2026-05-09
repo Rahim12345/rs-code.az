@@ -23,12 +23,6 @@ class BlogDetailsController extends Controller
 
         DB::table('blogs')->where('id', $blog->id)->increment('views');
 
-        session(['blog_lang_slugs' => [
-            'az' => $blog->slug_az,
-            'en' => $blog->slug_en,
-            'ru' => $blog->slug_ru,
-        ]]);
-
         return view('front.blog-details', compact('blog'));
     }
 }
