@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
-@section('title', __('index.contact') . ' | RS Code')
-@section('description', 'RS Code ilə əlaqə saxlayın. Pulsuz konsultasiya və sifariş üçün bizimlə əlaqə saxlaya bilərsiniz.')
+@section('title', __('meta.contact.title'))
+@section('description', __('meta.contact.desc'))
 
 @section('content')
 

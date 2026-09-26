@@ -1,5 +1,6 @@
 @extends('front.layouts.master')
-@section('title', __('ssl.veb') . ' | RS Code')
+@section('title', __('meta.ssl.title'))
+@section('description', __('meta.ssl.desc'))
 @section('content')
 
 {{-- Hero --}}

@@ -40,6 +40,13 @@ class setLocale
         'domen-nedir'                      => 'az',
         'ssl-sertifikati-nedir'            => 'az',
         'kontent-marketinq'                => 'az',
+        // English slugs — main pages
+        'about'      => 'en',
+        'contact'    => 'en',
+        'services'   => 'en',
+        'portfolio'  => 'en',
+        'blogs'      => 'en',
+        'faq'        => 'en',
         // English slugs — service pages
         'website-development'     => 'en',
         'seo-services'            => 'en',

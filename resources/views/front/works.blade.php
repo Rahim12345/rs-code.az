@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
-@section('title', __('index.projects') . ' | RS Code')
-@section('description', 'RS Code portfolio — veb sayt, brendinq, loqo, SEO layihələri. 150+ uğurlu iş.')
+@section('title', __('meta.works.title'))
+@section('description', __('meta.works.desc'))
 
 @section('content')
 @php $lang = session('lang','az'); @endphp

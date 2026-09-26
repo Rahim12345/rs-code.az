@@ -22,7 +22,6 @@
 
         // Hreflang map — every AZ / EN / RU path triple
         $hreflangMap = [
-            '/'                                 => ['az'=>'/',                                  'en'=>'/',                             'ru'=>'/'],
             '/haqqimizda'                       => ['az'=>'/haqqimizda',                       'en'=>'/about',                        'ru'=>'/o-nas'],
             '/about'                            => ['az'=>'/haqqimizda',                       'en'=>'/about',                        'ru'=>'/o-nas'],
             '/o-nas'                            => ['az'=>'/haqqimizda',                       'en'=>'/about',                        'ru'=>'/o-nas'],
@@ -81,7 +80,7 @@
         $lookupPath   = rtrim($curPath, '/') ?: '/';
         $hreflangAlts = $hreflangMap[$lookupPath] ?? null;
     @endphp
-    <title>@yield('title', 'RS Code') — Proqram Yazılması & Veb Sayt | Bakı</title>
+    <title>@yield('title', 'RS Code')</title>
     <meta name="description"         content="@yield('description', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri. Biznesinizi rəqəmsal dünyaya daşıyırıq.')">
     @if($__env->yieldContent('keywords'))<meta name="keywords" content="@yield('keywords')">@endif
     @if($__env->yieldContent('author'))<meta name="author"   content="@yield('author')">@endif
@@ -93,16 +92,11 @@
     <link rel="alternate" hreflang="en"        href="{{ $siteBase . $hreflangAlts['en'] }}">
     <link rel="alternate" hreflang="ru"        href="{{ $siteBase . $hreflangAlts['ru'] }}">
     <link rel="alternate" hreflang="x-default" href="{{ $siteBase . $hreflangAlts['az'] }}">
-    @else
-    <link rel="alternate" hreflang="az"        href="{{ $siteBase . $curPath }}">
-    <link rel="alternate" hreflang="en"        href="{{ $siteBase . $curPath }}">
-    <link rel="alternate" hreflang="ru"        href="{{ $siteBase . $curPath }}">
-    <link rel="alternate" hreflang="x-default" href="{{ $siteBase . $curPath }}">
     @endif
     <meta property="og:type"         content="@yield('og_type', 'website')">
     <meta property="og:url"          content="@yield('canonical', $siteBase . $curPath)">
-    <meta property="og:title"        content="@yield('og_title', 'RS Code — Proqram Yazılması & Veb Sayt | Bakı')">
-    <meta property="og:description"  content="@yield('og_desc', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri. Biznesinizi rəqəmsal dünyaya daşıyırıq.')">
+    <meta property="og:title"        content="{!! $__env->yieldContent('og_title') ?: $__env->yieldContent('title', 'RS Code') !!}">
+    <meta property="og:description"  content="{!! $__env->yieldContent('og_desc') ?: $__env->yieldContent('description', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri.') !!}">
     <meta property="og:image"        content="@yield('og_image', $siteBase . '/img/og-default.jpg')">
     <meta property="og:image:width"  content="1200">
     <meta property="og:image:height" content="630">
@@ -118,8 +112,8 @@
     @stack('head_extra')
     <meta name="twitter:card"        content="summary_large_image">
     <meta name="twitter:site"        content="@rscodeaz">
-    <meta name="twitter:title"       content="@yield('og_title', 'RS Code — Proqram Yazılması & Veb Sayt | Bakı')">
-    <meta name="twitter:description" content="@yield('og_desc', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri. Biznesinizi rəqəmsal dünyaya daşıyırıq.')">
+    <meta name="twitter:title"       content="{!! $__env->yieldContent('og_title') ?: $__env->yieldContent('title', 'RS Code') !!}">
+    <meta name="twitter:description" content="{!! $__env->yieldContent('og_desc') ?: $__env->yieldContent('description', 'RS Code — Bakıda proqram yazılması, veb sayt, mobil tətbiq, CRM/ERP, loqo dizaynı, SMM və SEO xidmətləri.') !!}">
     <meta name="twitter:image"       content="@yield('og_image', $siteBase . '/img/og-default.jpg')">
 
     {{-- PWA --}}

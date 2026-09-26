@@ -1,5 +1,6 @@
 @extends('front.layouts.master')
-@section('title', __('seo.seoTitle') . ' | RS Code')
+@section('title', __('meta.seo.title'))
+@section('description', __('meta.seo.desc'))
 @section('content')
 
 {{-- Hero --}}

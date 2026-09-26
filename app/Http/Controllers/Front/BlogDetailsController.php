@@ -30,6 +30,15 @@ class BlogDetailsController extends Controller
             }
         }
 
+        // Slug hansı dilə aiddirsə, səhifə o dildə göstərilir (Google EN/RU URL-ləri ayrıca indeksləsin)
+        foreach (['az', 'en', 'ru'] as $l) {
+            if ($blog->{'slug_' . $l} === $slug) {
+                session(['lang' => $l]);
+                app()->setLocale($l);
+                break;
+            }
+        }
+
         DB::table('blogs')->where('id', $blog->id)->increment('views');
 
         // Header üçün birbaşa dil linklərini paylaş

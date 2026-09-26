@@ -50,28 +50,40 @@ class SitemapController extends Controller
             ['/smm-uslugi', 0.7, 'monthly'],
             ['/google-reklamlari', 0.7, 'monthly'],
             ['/google-ads', 0.7, 'monthly'],
+            ['/reklama-google', 0.7, 'monthly'],
             ['/loqo-hazirlanmasi', 0.7, 'monthly'],
             ['/logo-design', 0.7, 'monthly'],
+            ['/razrabotka-logo', 0.7, 'monthly'],
             ['/facebook-ve-instagram-reklamlari', 0.7, 'monthly'],
             ['/facebook-instagram-ads', 0.7, 'monthly'],
+            ['/reklama-facebook-instagram', 0.7, 'monthly'],
             ['/texniki-destek', 0.6, 'monthly'],
             ['/technical-support', 0.6, 'monthly'],
+            ['/tekhnicheskaya-podderzhka', 0.6, 'monthly'],
             ['/korporativ-email', 0.6, 'monthly'],
             ['/corporate-email', 0.6, 'monthly'],
+            ['/korporativnaya-pochta', 0.6, 'monthly'],
             ['/domen-nedir', 0.6, 'monthly'],
             ['/what-is-domain', 0.6, 'monthly'],
+            ['/chto-takoe-domen', 0.6, 'monthly'],
             ['/ssl-sertifikati-nedir', 0.6, 'monthly'],
             ['/what-is-ssl-certificate', 0.6, 'monthly'],
+            ['/chto-takoe-ssl-sertifikat', 0.6, 'monthly'],
             ['/backlink-nedir', 0.6, 'monthly'],
             ['/what-is-backlink', 0.6, 'monthly'],
+            ['/chto-takoe-backlink', 0.6, 'monthly'],
             ['/kontent-marketinq', 0.6, 'monthly'],
             ['/content-marketing', 0.6, 'monthly'],
+            ['/kontent-marketing', 0.6, 'monthly'],
         ];
+
+        // Real lastmod: son bloq yenilənməsi (hər gün "bu gün" yazmaq Google-da etibarı azaldır)
+        $staticMod = Carbon::parse(DB::table('blogs')->max('updated_at') ?? now())->toDateString();
 
         foreach ($statics as [$path, $priority, $freq]) {
             $urls[] = [
                 'loc'        => $base . $path,
-                'lastmod'    => now()->toDateString(),
+                'lastmod'    => $staticMod,
                 'changefreq' => $freq,
                 'priority'   => $priority,
             ];

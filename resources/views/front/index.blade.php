@@ -1,5 +1,6 @@
 @extends('front.layouts.master')
-@section('title', 'RS Code')
+@section('title', __('meta.home.title'))
+@section('description', __('meta.home.desc'))
 @section('content')
 @php $lang = session('lang', 'az'); @endphp
 

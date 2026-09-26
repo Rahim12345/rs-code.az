@@ -16,6 +16,7 @@ class ProjectDetailsController extends Controller
             $data['project'] = Project::where('slug', $slug)->first();
             return view('front.project-details', $data);
         }
-        
+
+        abort(404);
     }
 }

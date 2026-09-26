@@ -1,5 +1,6 @@
 @extends('front.layouts.master')
-@section('title', __('index.faq') . ' | RS Code')
+@section('title', __('meta.faq.title'))
+@section('description', __('meta.faq.desc'))
 
 @section('content')
 

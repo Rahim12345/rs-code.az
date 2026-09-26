@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
-@section('title', __('index.blog') . ' | RS Code')
-@section('description', 'RS Code bloqu — dizayn, SEO, veb sayt, brendinq mövzularında faydalı məqalələr.')
+@section('title', __('meta.blogs.title'))
+@section('description', __('meta.blogs.desc'))
 
 @section('content')
 @php $lang = session('lang','az'); @endphp

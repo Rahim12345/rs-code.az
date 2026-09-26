@@ -1,5 +1,6 @@
 @extends('front.layouts.master')
-@section('title', __('facebook.facebookTitle') . ' | RS Code')
+@section('title', __('meta.facebook.title'))
+@section('description', __('meta.facebook.desc'))
 @section('content')
 
 {{-- Hero --}}

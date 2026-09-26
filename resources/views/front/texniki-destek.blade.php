@@ -1,5 +1,6 @@
 @extends('front.layouts.master')
-@section('title', __('texniki.title') . ' | RS Code')
+@section('title', __('meta.support.title'))
+@section('description', __('meta.support.desc'))
 @section('content')
 
 {{-- Hero --}}

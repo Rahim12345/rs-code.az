@@ -1,5 +1,6 @@
 @extends('front.layouts.master')
-@section('title', __('backlink.backlinkTitle') . ' | RS Code')
+@section('title', __('meta.backlink.title'))
+@section('description', __('meta.backlink.desc'))
 @section('content')
 
 {{-- Hero --}}

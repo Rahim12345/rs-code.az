@@ -1,5 +1,6 @@
 @extends('front.layouts.master')
-@section('title', __('domen.domenTitle') . ' | RS Code')
+@section('title', __('meta.domain.title'))
+@section('description', __('meta.domain.desc'))
 @section('content')
 
 {{-- Hero --}}

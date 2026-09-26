@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
-@section('title', __('index.services') . ' | RS Code')
-@section('description', 'RS Code xidmətləri — veb sayt, brendinq, SEO, SMM, loqo, korporativ email, texniki dəstək.')
+@section('title', __('meta.services.title'))
+@section('description', __('meta.services.desc'))
 
 @section('content')
 @php
