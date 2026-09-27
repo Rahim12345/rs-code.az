@@ -36,6 +36,9 @@
 @section('author',         'RS Code')
 @section('canonical',      $canonical)
 @section('og_type',        'article')
+@if(!empty($blog->noindex))
+@section('robots', 'noindex, follow')
+@endif
 @section('og_title',       strip_tags($metaTitle))
 @section('og_desc',        strip_tags($metaDesc))
 @section('og_image',       $imgSrc)

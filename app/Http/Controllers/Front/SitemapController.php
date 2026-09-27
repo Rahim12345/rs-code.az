@@ -90,7 +90,7 @@ class SitemapController extends Controller
         }
 
         // ── Blogs ─────────────────────────────────────────────────────
-        $blogs = DB::table('blogs')->orderByDesc('id')->get(['slug_az', 'slug_en', 'slug_ru', 'updated_at']);
+        $blogs = DB::table('blogs')->where('noindex', false)->orderByDesc('id')->get(['slug_az', 'slug_en', 'slug_ru', 'updated_at']);
         foreach ($blogs as $blog) {
             $mod = Carbon::parse($blog->updated_at)->toDateString();
             foreach (['slug_az', 'slug_en', 'slug_ru'] as $col) {

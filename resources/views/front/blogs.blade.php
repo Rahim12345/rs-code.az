@@ -1,6 +1,7 @@
 @extends('front.layouts.master')
 @section('title', __('meta.blogs.title'))
 @section('description', __('meta.blogs.desc'))
+@include('front.partials.page-schema', ['key' => 'blogs', 'service' => false])
 
 @section('content')
 @php $lang = session('lang','az'); @endphp
@@ -81,7 +82,7 @@
         <div class="bg-gradient-to-br from-violet-900/30 to-zinc-900/30 border border-violet-500/20 rounded-3xl p-10">
             <h2 class="text-2xl font-bold mb-3" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('index.blog_cta_heading') }}</h2>
             <p class="text-zinc-500 text-sm mb-6">{{ __('index.blog_cta_text') }}</p>
-            <a href="/contact" class="bg-violet-700 hover:bg-violet-600 text-white font-semibold px-8 py-3 rounded-xl transition-all hover:scale-105 inline-block">
+            <a href="{{ lurl('contact') }}" class="bg-violet-700 hover:bg-violet-600 text-white font-semibold px-8 py-3 rounded-xl transition-all hover:scale-105 inline-block">
                 {{ __('index.blog_cta_btn') }}
             </a>
         </div>

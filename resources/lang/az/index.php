@@ -168,10 +168,10 @@ return [
     'seoadiut7' => 'Müraciətiniz uğurla göndərildi, gün ərzində geri dönüş ediləcək. Təşəkkür edirik.',
 
     // Hero
-    'hero_h1_line1' => 'Brendinizi',
-    'hero_h1_line2' => 'Rəqəmsal Gücünüzə',
-    'hero_h1_line3' => 'Çeviririk',
-    'hero_subtitle' => 'Logo dizaynı, korporativ üslub, veb sayt, SMM — bütün brendinq xidmətləri bir yerdə.',
+    'hero_h1_line1' => 'Bakıda Veb Sayt',
+    'hero_h1_line2' => 'və Proqram',
+    'hero_h1_line3' => 'Hazırlanması',
+    'hero_subtitle' => 'Korporativ sayt, onlayn mağaza, POS/CRM/LMS sistemləri, SEO və SMM — biznesinizi rəqəmsal gücə çeviririk.',
     'hero_portfolio_btn' => 'Portfolioya Bax',
     'hero_contact_btn' => 'Bizimlə Əlaqə',
     'stat_clients' => 'Müştəri',

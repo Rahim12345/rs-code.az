@@ -119,6 +119,7 @@ Route::prefix('admin')->middleware('isLogout')->group(function () {
     Route::post('/edit-blog/{id}', 'App\Http\Controllers\Admin\BlogController@update');
     Route::post('/add-blog', 'App\Http\Controllers\Admin\BlogController@store');
     Route::post('/delete-blog', 'App\Http\Controllers\Admin\BlogController@delete');
+    Route::post('/toggle-blog-noindex/{id}', 'App\Http\Controllers\Admin\BlogController@toggleNoindex');
 
     Route::get('/comments', 'App\Http\Controllers\Admin\CommentController@index');
     Route::get('/edit-comment/{id}', 'App\Http\Controllers\Admin\CommentController@index_edit');

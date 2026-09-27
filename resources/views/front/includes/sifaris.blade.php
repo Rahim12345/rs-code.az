@@ -73,7 +73,7 @@
             </div>
             <div class="mt-6 pt-5 border-t border-zinc-800 flex items-center justify-between">
                 <p class="text-zinc-600 text-xs">Ətraflı məlumat üçün bizimlə əlaqə saxlayın</p>
-                <a href="/contact" @click="orderModal=false" class="text-violet-400 hover:text-violet-300 text-xs font-medium transition-colors">{{ __('index.contact') }}</a>
+                <a href="{{ lurl('contact') }}" @click="orderModal=false" class="text-violet-400 hover:text-violet-300 text-xs font-medium transition-colors">{{ __('index.contact') }}</a>
             </div>
         </div>
 

@@ -251,6 +251,17 @@ class BlogController extends Controller
         return response()->json(['message' => "Blog uğurla yeniləndi"]);
     }
 
+    public function toggleNoindex($id)
+    {
+        $blog = DB::table('blogs')->where('id', $id)->first();
+        abort_unless($blog, 404);
+
+        $noindex = $blog->noindex ? 0 : 1;
+        DB::table('blogs')->where('id', $id)->update(['noindex' => $noindex]);
+
+        return response()->json(['noindex' => $noindex]);
+    }
+
     public function aiGenerate(Request $request)
     {
         $apiKey = DB::table('settings')->where('key', 'openai_api_key')->value('value');

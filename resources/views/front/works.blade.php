@@ -1,6 +1,7 @@
 @extends('front.layouts.master')
 @section('title', __('meta.works.title'))
 @section('description', __('meta.works.desc'))
+@include('front.partials.page-schema', ['key' => 'works', 'service' => false])
 
 @section('content')
 @php $lang = session('lang','az'); @endphp
@@ -194,7 +195,7 @@
             </h2>
             <p class="text-zinc-400 mb-8">{{ __('projects.cta_text') }}</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" class="bg-violet-700 hover:bg-violet-600 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-violet-700/30">{{ __('projects.cta_btn1') }}</a>
+                <a href="{{ lurl('contact') }}" class="bg-violet-700 hover:bg-violet-600 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-violet-700/30">{{ __('projects.cta_btn1') }}</a>
                 <button @click="orderModal = true" class="border border-zinc-700 hover:border-violet-500 text-zinc-300 hover:text-white font-semibold px-8 py-3.5 rounded-xl transition-all">{{ __('projects.cta_btn2') }}</button>
             </div>
         </div>

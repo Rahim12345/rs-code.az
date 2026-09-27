@@ -77,7 +77,7 @@
             </h2>
             <div>
                 <a href="/works" class="animated shake slower btn-get-started scrollto">{{__('index.layihe')}}</a>
-                <a href="/services" class="animated shake slower btn-services scrollto">{{__('index.xidm')}}</a>
+                <a href="{{ lurl('services') }}" class="animated shake slower btn-services scrollto">{{__('index.xidm')}}</a>
             </div>
         </div>
 background: url(../img/main_bg.webp) center bottom no-repeat;
@@ -123,7 +123,7 @@ background: url(../img/main_bg.webp) center bottom no-repeat;
         </div>
     </div>
        <div class="btna mb-30">
-        <a href="/services" class="butn dark curve mt-30">
+        <a href="{{ lurl('services') }}" class="butn dark curve mt-30">
             <span>{{__('index.allservices')}}</span>
         </a>
     </div>
@@ -237,7 +237,7 @@ background: url(../img/main_bg.webp) center bottom no-repeat;
 
 </div>
 <div class="btna mb-10">
-<a href="/blogs" class="butn curve mt-30">
+<a href="{{ lurl('blogs') }}" class="butn curve mt-30">
     <span>{{__('index.allblogs')}}</span>
 </a>
 </div>

@@ -1,6 +1,7 @@
 @extends('front.layouts.master')
 @section('title', __('meta.about.title'))
 @section('description', __('meta.about.desc'))
+@include('front.partials.page-schema', ['key' => 'about', 'service' => false])
 
 @section('content')
 @php $lang = session('lang','az'); @endphp
@@ -157,7 +158,7 @@
             <h2 class="text-3xl lg:text-4xl font-bold mb-4" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('about.cta_heading') }}</h2>
             <p class="text-zinc-400 mb-8">{{ __('about.cta_text') }}</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact" class="bg-violet-700 hover:bg-violet-600 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-violet-700/30">{{ __('about.cta_btn1') }}</a>
+                <a href="{{ lurl('contact') }}" class="bg-violet-700 hover:bg-violet-600 text-white font-semibold px-8 py-3.5 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-violet-700/30">{{ __('about.cta_btn1') }}</a>
                 <button @click="orderModal = true" class="border border-zinc-700 hover:border-violet-500 text-zinc-300 hover:text-white font-semibold px-8 py-3.5 rounded-xl transition-all">{{ __('about.cta_btn2') }}</button>
             </div>
         </div>

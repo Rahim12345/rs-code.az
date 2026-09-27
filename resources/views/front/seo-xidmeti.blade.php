@@ -1,6 +1,7 @@
 @extends('front.layouts.master')
 @section('title', __('meta.seo.title'))
 @section('description', __('meta.seo.desc'))
+@include('front.partials.page-schema', ['key' => 'seo', 'service' => true])
 @section('content')
 
 {{-- Hero --}}
@@ -90,7 +91,7 @@
         <div class="bg-gradient-to-br from-violet-900/30 to-violet-800/10 border border-violet-500/20 rounded-2xl p-8 text-center">
             <h3 class="text-xl font-bold text-white mb-3" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('index.cta_h1_line1') }}</h3>
             <p class="text-zinc-400 text-sm mb-6">{{ __('index.cta_text') }}</p>
-            <a href="/contact" class="inline-flex items-center gap-2 bg-violet-700 hover:bg-violet-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-violet-700/30">
+            <a href="{{ lurl('contact') }}" class="inline-flex items-center gap-2 bg-violet-700 hover:bg-violet-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-violet-700/30">
                 {{ __('index.contact') }}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
@@ -98,5 +99,7 @@
 
     </div>
 </section>
+
+@include('front.partials.related-posts', ['slugs' => ['seo-xidmeti-azerbaycan-2026', 'mobil-uygun-sayt-niye-vacibdir-2026', 'veb-sayt-qiymeti-azerbaycan-2026']])
 
 @endsection

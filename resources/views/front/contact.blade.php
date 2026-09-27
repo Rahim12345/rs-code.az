@@ -1,6 +1,7 @@
 @extends('front.layouts.master')
 @section('title', __('meta.contact.title'))
 @section('description', __('meta.contact.desc'))
+@include('front.partials.page-schema', ['key' => 'contact', 'service' => false])
 
 @section('content')
 

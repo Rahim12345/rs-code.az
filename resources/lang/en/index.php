@@ -165,10 +165,10 @@ return [
     'seoadiut7' => 'Your application has been successfully submitted and will be returned within a day. Thank you.',
 
     // Hero
-    'hero_h1_line1' => 'We Turn Your',
-    'hero_h1_line2' => 'Brand Into',
-    'hero_h1_line3' => 'Digital Power',
-    'hero_subtitle' => 'Logo design, corporate identity, website, SMM — all branding services in one place.',
+    'hero_h1_line1' => 'Websites &',
+    'hero_h1_line2' => 'Custom Software',
+    'hero_h1_line3' => 'in Baku',
+    'hero_subtitle' => 'Corporate websites, online stores, POS/CRM/LMS systems, SEO and SMM — we turn your business into digital power.',
     'hero_portfolio_btn' => 'View Portfolio',
     'hero_contact_btn' => 'Contact Us',
     'stat_clients' => 'Clients',

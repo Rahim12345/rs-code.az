@@ -96,7 +96,7 @@
         {{-- Bottom --}}
         <div class="border-t border-zinc-800/50 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-zinc-400 text-sm">RS Code © {{ date('Y') }}. {{ __('footer.huquq') }}</p>
-            <a href="/contact" class="text-zinc-400 hover:text-violet-400 text-sm transition-colors">{{ __('footer.contact_us') }}</a>
+            <a href="{{ lurl('contact') }}" class="text-zinc-400 hover:text-violet-400 text-sm transition-colors">{{ __('footer.contact_us') }}</a>
         </div>
     </div>
 </footer>

@@ -1,6 +1,7 @@
 @extends('front.layouts.master')
 @section('title', __('meta.faq.title'))
 @section('description', __('meta.faq.desc'))
+@include('front.partials.page-schema', ['key' => 'faq', 'service' => false])
 
 @section('content')
 

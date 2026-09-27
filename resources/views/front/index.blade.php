@@ -22,7 +22,7 @@
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4 mb-20">
             <a href="{{ route('front.portfolio') }}" class="bg-violet-700 hover:bg-violet-600 text-white font-semibold px-7 py-3.5 rounded-xl transition-all hover:scale-105 hover:shadow-xl hover:shadow-violet-700/25">{{ __('index.hero_portfolio_btn') }}</a>
-            <a href="/contact" class="border border-zinc-700 hover:border-violet-600/50 text-zinc-300 hover:text-white font-semibold px-7 py-3.5 rounded-xl transition-all hover:bg-zinc-800/50">{{ __('index.hero_contact_btn') }}</a>
+            <a href="{{ lurl('contact') }}" class="border border-zinc-700 hover:border-violet-600/50 text-zinc-300 hover:text-white font-semibold px-7 py-3.5 rounded-xl transition-all hover:bg-zinc-800/50">{{ __('index.hero_contact_btn') }}</a>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-xl mx-auto">
             <div class="text-center"><div class="font-display font-black text-4xl text-white">150<span class="text-violet-400">+</span></div><div class="text-zinc-400 text-sm mt-1">{{ __('index.stat_clients') }}</div></div>
@@ -46,7 +46,7 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             @foreach($services->where('on_home',1)->sortBy('order_no') as $service)
-            <a href="/services" class="group bg-zinc-900/60 border border-zinc-800/60 hover:border-violet-700/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 block">
+            <a href="{{ lurl('services') }}" class="group bg-zinc-900/60 border border-zinc-800/60 hover:border-violet-700/40 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 block">
                 <div class="w-11 h-11 bg-violet-700/15 rounded-xl flex items-center justify-center mb-5 group-hover:bg-violet-700/25 transition-colors">
                     <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 </div>
@@ -58,7 +58,7 @@
             @endforeach
         </div>
         <div class="text-center mt-10">
-            <a href="/services" class="inline-flex items-center gap-2 text-zinc-400 hover:text-violet-400 text-sm transition-colors">
+            <a href="{{ lurl('services') }}" class="inline-flex items-center gap-2 text-zinc-400 hover:text-violet-400 text-sm transition-colors">
                 {{ __('index.services_all') }} <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
         </div>
@@ -111,7 +111,7 @@
                 <span class="text-violet-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4 block">{{ __('index.about_eyebrow') }}</span>
                 <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6 leading-tight">{{ __('index.about_h1_line1') }}<br>{{ __('index.about_h1_line2') }}</h2>
                 <p class="text-zinc-400 leading-relaxed mb-8">{{ $about ? strip_tags($about->{'about_'.$lang}) : '' }}</p>
-                <a href="/about" class="inline-flex items-center gap-2 bg-violet-700 hover:bg-violet-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:scale-105">
+                <a href="{{ lurl('about') }}" class="inline-flex items-center gap-2 bg-violet-700 hover:bg-violet-600 text-white font-semibold px-6 py-3 rounded-xl transition-all hover:scale-105">
                     {{ __('index.about_btn') }} <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                 </a>
             </div>
@@ -216,7 +216,7 @@
                 <span class="text-violet-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3 block">{{ __('index.blog_eyebrow') }}</span>
                 <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">{{ __('index.blog_heading') }}</h2>
             </div>
-            <a href="/blogs" class="shrink-0 flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm font-medium">
+            <a href="{{ lurl('blogs') }}" class="shrink-0 flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm font-medium">
                 {{ __('index.blog_all') }} <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
         </div>
@@ -256,7 +256,7 @@
             {{ __('index.cta_text') }}
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4">
-            <a href="/contact" class="bg-violet-700 hover:bg-violet-600 text-white font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 hover:shadow-xl hover:shadow-violet-700/30">
+            <a href="{{ lurl('contact') }}" class="bg-violet-700 hover:bg-violet-600 text-white font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 hover:shadow-xl hover:shadow-violet-700/30">
                 {{ __('index.cta_contact') }}
             </a>
             <button @click="orderModal = true" class="border border-zinc-700 hover:border-violet-600/50 text-zinc-300 hover:text-white font-semibold px-8 py-4 rounded-xl transition-all hover:bg-zinc-800/50">
