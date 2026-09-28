@@ -33,11 +33,6 @@
 
                 @php $seg1 = Request::segment(1); @endphp
 
-                {{-- Ana Səhifə --}}
-                <a href="/"
-                   class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 {{ $seg1 === '' ? 'text-violet-400 bg-violet-500/10' : 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60' }}">
-                    {{ __('index.main') }}
-                </a>
 
 @php
     $products = [
@@ -48,7 +43,7 @@
 @endphp
                 {{-- Xidmətlər dropdown — ikinci sırada --}}
                 <div class="relative" x-data="{ open: false }" @mouseenter="open=true" @mouseleave="open=false">
-                    <button class="px-4 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 rounded-lg transition-all flex items-center gap-1">
+                    <button class="whitespace-nowrap px-4 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 rounded-lg transition-all flex items-center gap-1">
                         {{ __('index.services') }}
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
@@ -107,7 +102,7 @@
 
                 {{-- Məhsullar dropdown --}}
                 <div class="relative" x-data="{ open: false }" @mouseenter="open=true" @mouseleave="open=false">
-                    <button class="px-4 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 rounded-lg transition-all flex items-center gap-1">
+                    <button class="whitespace-nowrap px-4 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 rounded-lg transition-all flex items-center gap-1">
                         {{ $productsLabel }}
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
@@ -137,7 +132,7 @@
                                    || ($item['seg'] === 'contact'   && in_array($seg1, ['contact','elaqe','kontakty']));
                         @endphp
                         <a href="{{ $item['url'] }}"
-                           class="px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200
+                           class="whitespace-nowrap px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200
                                   {{ $active ? 'text-violet-400 bg-violet-500/10' : 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60' }}">
                             {{ $item['label'] }}
                         </a>
@@ -160,7 +155,7 @@
 
                 {{-- CTA --}}
                 <button @click="orderModal = true"
-                        class="bg-violet-700 hover:bg-violet-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-violet-700/30">
+                        class="whitespace-nowrap bg-violet-700 hover:bg-violet-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all hover:scale-105 hover:shadow-lg hover:shadow-violet-700/30">
                     {{ __('index.order') }}
                 </button>
             </div>
@@ -198,7 +193,6 @@
 
         {{-- Nav links --}}
         <nav class="flex flex-col gap-0.5 px-3 py-4 flex-1 overflow-y-auto">
-            <a href="/"                     @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.main') }}</a>
             <a href="{{ $nu['about'] }}"    @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.about') }}</a>
             <a href="{{ $nu['portfolio'] }}" @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.projects') }}</a>
             @foreach($products as [$href, $title, $sub])
@@ -221,7 +215,7 @@
                 @endforeach
             </div>
             <button @click="orderModal = true; open = false"
-                    class="bg-violet-700 hover:bg-violet-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all">
+                    class="whitespace-nowrap bg-violet-700 hover:bg-violet-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-all">
                 {{ __('index.order') }}
             </button>
         </div>
