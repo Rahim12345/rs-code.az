@@ -193,11 +193,24 @@
 
         {{-- Nav links --}}
         <nav class="flex flex-col gap-0.5 px-3 py-4 flex-1 overflow-y-auto">
-            <a href="{{ $nu['about'] }}"    @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.about') }}</a>
+            <div x-data="{ sub: false }">
+                <button @click="sub = !sub" class="w-full flex items-center justify-between px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.services') }} <svg class="w-4 h-4 transition-transform" :class="sub ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                <div x-show="sub" x-transition class="pl-4 flex flex-col gap-0.5 pb-1">
+                    @foreach($services as [$href, $label])
+                    <a href="{{ $href }}" @click="open=false" class="px-4 py-2.5 text-sm text-zinc-400 hover:text-violet-400 hover:bg-violet-500/10 rounded-lg transition-all">{{ $label }}</a>
+                    @endforeach
+                </div>
+            </div>
+            <div x-data="{ sub: false }">
+                <button @click="sub = !sub" class="w-full flex items-center justify-between px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ $productsLabel }} <svg class="w-4 h-4 transition-transform" :class="sub ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+                <div x-show="sub" x-transition class="pl-4 flex flex-col gap-0.5 pb-1">
+                    @foreach($products as [$href, $title, $sub])
+                    <a href="{{ $href }}" @click="open=false" class="px-4 py-2.5 rounded-lg hover:bg-violet-500/10 transition-all"><span class="block text-sm text-zinc-300">{{ $title }}</span><span class="block text-xs text-zinc-500">{{ $sub }}</span></a>
+                    @endforeach
+                </div>
+            </div>
             <a href="{{ $nu['portfolio'] }}" @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.projects') }}</a>
-            @foreach($products as [$href, $title, $sub])
-            <a href="{{ $href }}" @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ $title }} <span class="text-xs text-zinc-500">— {{ $sub }}</span></a>
-            @endforeach
+            <a href="{{ $nu['about'] }}"    @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.about') }}</a>
             <a href="{{ $nu['blogs'] }}"    @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.blog') }}</a>
             <a href="{{ $nu['faq'] }}"      @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.faq') }}</a>
             <a href="{{ $nu['contact'] }}"  @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.contact') }}</a>
