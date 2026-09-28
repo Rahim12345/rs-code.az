@@ -36,8 +36,8 @@
 
 @php
     $products = [
-        ['https://rspos.az/', 'RS POS', ['az' => 'Bulud əsaslı POS və kassa proqramı', 'en' => 'Cloud POS and cash register software', 'ru' => 'Облачная POS и кассовая программа'][$lang] ?? 'Bulud əsaslı POS və kassa proqramı'],
-        ['https://kursometr.com/', 'Kursometr', ['az' => 'Müəllimlər üçün dərs idarəetmə platforması', 'en' => 'Class management platform for teachers', 'ru' => 'Платформа управления уроками для учителей'][$lang] ?? 'Müəllimlər üçün dərs idarəetmə platforması'],
+        ['/mehsullar/rs-pos', 'RS POS', ['az' => 'Bulud əsaslı POS və kassa proqramı', 'en' => 'Cloud POS and cash register software', 'ru' => 'Облачная POS и кассовая программа'][$lang] ?? 'Bulud əsaslı POS və kassa proqramı'],
+        ['/mehsullar/kursometr', 'Kursometr', ['az' => 'Müəllimlər üçün dərs idarəetmə platforması', 'en' => 'Class management platform for teachers', 'ru' => 'Платформа управления уроками для учителей'][$lang] ?? 'Müəllimlər üçün dərs idarəetmə platforması'],
     ];
     $productsLabel = ['az' => 'Məhsullar', 'en' => 'Products', 'ru' => 'Продукты'][$lang] ?? 'Məhsullar';
 @endphp
@@ -110,7 +110,7 @@
                          class="absolute top-full left-0 w-72 pt-2 z-50">
                         <div class="bg-zinc-900 border border-zinc-800 rounded-xl shadow-2xl shadow-black/50 p-2">
                         @foreach($products as [$href, $title, $sub])
-                        <a href="{{ $href }}" target="_blank" rel="noopener" class="flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-violet-500/10 transition-all group">
+                        <a href="{{ $href }}" class="flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-violet-500/10 transition-all group">
                             <span class="w-1.5 h-1.5 mt-2 rounded-full bg-violet-500 shrink-0"></span>
                             <span>
                                 <span class="block text-sm font-medium text-zinc-200 group-hover:text-violet-400">{{ $title }}</span>
@@ -196,7 +196,7 @@
             <a href="{{ $nu['about'] }}"    @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.about') }}</a>
             <a href="{{ $nu['portfolio'] }}" @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.projects') }}</a>
             @foreach($products as [$href, $title, $sub])
-            <a href="{{ $href }}" target="_blank" rel="noopener" @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ $title }} <span class="text-xs text-zinc-500">— {{ $sub }}</span></a>
+            <a href="{{ $href }}" @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ $title }} <span class="text-xs text-zinc-500">— {{ $sub }}</span></a>
             @endforeach
             <a href="{{ $nu['blogs'] }}"    @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.blog') }}</a>
             <a href="{{ $nu['faq'] }}"      @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.faq') }}</a>

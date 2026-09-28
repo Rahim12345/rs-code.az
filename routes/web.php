@@ -260,6 +260,9 @@ Route::middleware('locale')->group(static function () {
 
     Route::get('/seoblank', [PagesController::class, 'seoblank']);
 
+    // Öz məhsullarımız — informasiya səhifələri
+    Route::get('/mehsullar/{slug}', 'App\Http\Controllers\Front\ProductController@show');
+
     // Dev Notes (manual access only — not in nav)
     Route::get('/dev-notes',      'App\Http\Controllers\Front\NoteController@index');
     Route::get('/dev-notes/{id}', 'App\Http\Controllers\Front\NoteController@show');
