@@ -22,6 +22,17 @@ class FigmaProjectsSeeder extends Seeder
                     ['Главная', 'О компании', 'Продукция', 'Референсы', 'Обучение', 'Блог', 'Сертификаты'],
                     ['UI/UX дизайн (Figma)', 'Корпоративная визуальная концепция', 'Структура каталога продукции', 'Разделы обучения и сертификатов']],
             ]],
+            'mm-logistics' => ['MM Logistics', '', '2026', [
+                'az' => ['Beynəlxalq logistika və gömrük xidmətləri şirkəti üçün yeni korporativ sayt dizaynı.',
+                    ['Ana səhifə', 'Haqqımızda', 'Xidmətlər (7 səhifə)', 'Gömrük təmsilçiliyi', 'Beynəlxalq logistika', 'Sertifikatlar', 'Bloq', 'Əlaqə'],
+                    ['UI/UX dizayn (Figma)', 'Hər xidmət üçün ayrıca səhifə strukturu', 'Etibar yaradan korporativ vizual', 'Sertifikat və bloq bölmələri']],
+                'en' => ['New corporate website design for an international logistics and customs services company.',
+                    ['Home', 'About', 'Services (7 pages)', 'Customs representation', 'International logistics', 'Certificates', 'Blog', 'Contact'],
+                    ['UI/UX design (Figma)', 'A dedicated page structure for every service', 'Trust-building corporate visuals', 'Certificates and blog sections']],
+                'ru' => ['Новый дизайн корпоративного сайта компании международной логистики и таможенных услуг.',
+                    ['Главная', 'О компании', 'Услуги (7 страниц)', 'Таможенное представительство', 'Международная логистика', 'Сертификаты', 'Блог', 'Контакты'],
+                    ['UI/UX дизайн (Figma)', 'Отдельная структура страницы для каждой услуги', 'Корпоративный визуал, вызывающий доверие', 'Разделы сертификатов и блога']],
+            ]],
             'alza-fish' => ['Alza Fish', 'https://alzafish.az', '2025', [
                 'az' => ['Akvakultura və balıq məhsulları brendi üçün desktop və mobil dizaynlı sayt: məhsullar, media və bloq.',
                     ['Ana səhifə', 'Balıqlar', 'Kürü', 'Foto qalereya', 'Video', 'Bloq', 'Bloq daxili səhifə'],
