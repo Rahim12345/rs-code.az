@@ -39,6 +39,13 @@
                     {{ __('index.main') }}
                 </a>
 
+@php
+    $products = [
+        ['https://rspos.az/', 'RS POS', ['az' => 'Bulud əsaslı POS və kassa proqramı', 'en' => 'Cloud POS and cash register software', 'ru' => 'Облачная POS и кассовая программа'][$lang] ?? 'Bulud əsaslı POS və kassa proqramı'],
+        ['https://kursometr.com/', 'Kursometr', ['az' => 'Müəllimlər üçün dərs idarəetmə platforması', 'en' => 'Class management platform for teachers', 'ru' => 'Платформа управления уроками для учителей'][$lang] ?? 'Müəllimlər üçün dərs idarəetmə platforması'],
+    ];
+    $productsLabel = ['az' => 'Məhsullar', 'en' => 'Products', 'ru' => 'Продукты'][$lang] ?? 'Məhsullar';
+@endphp
                 {{-- Xidmətlər dropdown — ikinci sırada --}}
                 <div class="relative" x-data="{ open: false }" @mouseenter="open=true" @mouseleave="open=false">
                     <button class="px-4 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 rounded-lg transition-all flex items-center gap-1">
@@ -92,6 +99,28 @@
                         <a href="{{ $href }}" class="flex items-center gap-3 px-3 py-2.5 text-sm text-zinc-400 hover:text-violet-400 hover:bg-violet-500/10 rounded-lg transition-all">
                             <span class="w-1.5 h-1.5 rounded-full bg-violet-500 shrink-0"></span>
                             {{ $label }}
+                        </a>
+                        @endforeach
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Məhsullar dropdown --}}
+                <div class="relative" x-data="{ open: false }" @mouseenter="open=true" @mouseleave="open=false">
+                    <button class="px-4 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 rounded-lg transition-all flex items-center gap-1">
+                        {{ $productsLabel }}
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                         class="absolute top-full left-0 w-72 pt-2 z-50">
+                        <div class="bg-zinc-900 border border-zinc-800 rounded-xl shadow-2xl shadow-black/50 p-2">
+                        @foreach($products as [$href, $title, $sub])
+                        <a href="{{ $href }}" target="_blank" rel="noopener" class="flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-violet-500/10 transition-all group">
+                            <span class="w-1.5 h-1.5 mt-2 rounded-full bg-violet-500 shrink-0"></span>
+                            <span>
+                                <span class="block text-sm font-medium text-zinc-200 group-hover:text-violet-400">{{ $title }}</span>
+                                <span class="block text-xs text-zinc-500">{{ $sub }}</span>
+                            </span>
                         </a>
                         @endforeach
                         </div>
@@ -172,6 +201,9 @@
             <a href="/"                     @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.main') }}</a>
             <a href="{{ $nu['about'] }}"    @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.about') }}</a>
             <a href="{{ $nu['portfolio'] }}" @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.projects') }}</a>
+            @foreach($products as [$href, $title, $sub])
+            <a href="{{ $href }}" target="_blank" rel="noopener" @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ $title }} <span class="text-xs text-zinc-500">— {{ $sub }}</span></a>
+            @endforeach
             <a href="{{ $nu['blogs'] }}"    @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.blog') }}</a>
             <a href="{{ $nu['faq'] }}"      @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.faq') }}</a>
             <a href="{{ $nu['contact'] }}"  @click="open=false" class="px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ __('index.contact') }}</a>
