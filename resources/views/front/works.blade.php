@@ -92,7 +92,8 @@
                      next() { this.cur = (this.cur + 1) % this.imgs.length; }
                  }"
                  @mouseenter="start()" @mouseleave="stop()"
-                 class="group bg-zinc-900/40 border border-zinc-800/50 rounded-2xl overflow-hidden hover:border-violet-500/30 transition-all duration-300 hover:-translate-y-1">
+                 @click="window.location = '/project-details/{{ $project->slug }}'"
+                 class="cursor-pointer group bg-zinc-900/40 border border-zinc-800/50 rounded-2xl overflow-hidden hover:border-violet-500/30 transition-all duration-300 hover:-translate-y-1">
 
                 {{-- Slide image area --}}
                 <div class="aspect-video relative overflow-hidden">
@@ -161,15 +162,11 @@
                     @if($desc)
                     <p class="text-zinc-500 text-sm leading-relaxed line-clamp-2">{{ strip_tags($desc) }}</p>
                     @endif
-                    @if($project->link)
-                    <a href="{{ $project->link }}" target="_blank" rel="noopener noreferrer"
+                    <a href="/project-details/{{ $project->slug }}" @click.stop
                        class="inline-flex items-center gap-1.5 mt-3 text-xs text-violet-400 hover:text-violet-300 transition-colors">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                        </svg>
-                        Sayta keç
+                        {{ __('index.blog_read_more') }}
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
-                    @endif
                 </div>
             </div>
             @empty
