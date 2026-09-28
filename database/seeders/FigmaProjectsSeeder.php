@@ -9,63 +9,84 @@ class FigmaProjectsSeeder extends Seeder
 {
     public function run(): void
     {
+        // slug => [ad, link, il, [az, en, ru]] — hər dil: [giriş, [səhifələr], [görülən işlər]]
         $new = [
-            'as-technologies' => ['AS Technologies', '', '2026',
-                'Ağıllı ev və bina avtomatlaşdırma şirkəti üçün korporativ sayt: məhsul kataloqu, təlim və sertifikat bölmələri.',
-                'Corporate website for a smart home and building automation company: product catalogue, training and certificates.',
-                'Корпоративный сайт компании по автоматизации умных домов и зданий: каталог продукции, обучение и сертификаты.'],
-            'alza-fish' => ['Alza Fish', 'https://alzafish.az', '2025',
-                'Akvakultura və balıq məhsulları brendi üçün desktop və mobil dizaynlı sayt: məhsullar, media və bloq.',
-                'Website for an aquaculture and fish products brand with desktop and mobile design: products, media and blog.',
-                'Сайт бренда аквакультуры и рыбной продукции с десктопным и мобильным дизайном: продукция, медиа и блог.'],
-            'gospeak' => ['GoSpeak', '', '2025',
-                'Onlayn dil öyrənmə platforması: şəxsi kabinet, speaking club və tədris materialları.',
-                'Online language learning platform: personal dashboard, speaking club and learning materials.',
-                'Онлайн-платформа для изучения языков: личный кабинет, speaking club и учебные материалы.'],
-            'agilli-nagillar' => ['Ağıllı Nağıllar', '', '2023',
-                'Kreativ agentlik üçün mobil yönümlü sayt dizaynı: xidmətlər, portfolio və partnyorlar.',
-                'Mobile-first website design for a creative agency: services, portfolio and partners.',
-                'Мобильный дизайн сайта для креативного агентства: услуги, портфолио и партнёры.'],
+            'as-technologies' => ['AS Technologies', '', '2026', [
+                'az' => ['Ağıllı ev və bina avtomatlaşdırma şirkəti üçün korporativ sayt: məhsul kataloqu, təlim və sertifikat bölmələri.',
+                    ['Ana səhifə', 'Haqqımızda', 'Məhsullar', 'Referanslar', 'Təlim', 'Bloq', 'Sertifikatlar'],
+                    ['UI/UX dizayn (Figma)', 'Korporativ üslubda vizual konsepsiya', 'Məhsul kataloqu strukturu', 'Təlim və sertifikat bölmələri']],
+                'en' => ['Corporate website for a smart home and building automation company: product catalogue, training and certificates.',
+                    ['Home', 'About', 'Products', 'References', 'Training', 'Blog', 'Certificates'],
+                    ['UI/UX design (Figma)', 'Corporate visual concept', 'Product catalogue structure', 'Training and certificate sections']],
+                'ru' => ['Корпоративный сайт компании по автоматизации умных домов и зданий: каталог продукции, обучение и сертификаты.',
+                    ['Главная', 'О компании', 'Продукция', 'Референсы', 'Обучение', 'Блог', 'Сертификаты'],
+                    ['UI/UX дизайн (Figma)', 'Корпоративная визуальная концепция', 'Структура каталога продукции', 'Разделы обучения и сертификатов']],
+            ]],
+            'alza-fish' => ['Alza Fish', 'https://alzafish.az', '2025', [
+                'az' => ['Akvakultura və balıq məhsulları brendi üçün desktop və mobil dizaynlı sayt: məhsullar, media və bloq.',
+                    ['Ana səhifə', 'Balıqlar', 'Kürü', 'Foto qalereya', 'Video', 'Bloq', 'Bloq daxili səhifə'],
+                    ['UI/UX dizayn (Figma)', 'Bütün səhifələrin mobil adaptasiyası', 'Premium brend vizualı', 'Məhsul və media bölmələri']],
+                'en' => ['Website for an aquaculture and fish products brand with desktop and mobile design: products, media and blog.',
+                    ['Home', 'Fish', 'Caviar', 'Photo gallery', 'Video', 'Blog', 'Blog article'],
+                    ['UI/UX design (Figma)', 'Mobile adaptation of every page', 'Premium brand visuals', 'Product and media sections']],
+                'ru' => ['Сайт бренда аквакультуры и рыбной продукции с десктопным и мобильным дизайном: продукция, медиа и блог.',
+                    ['Главная', 'Рыба', 'Икра', 'Фотогалерея', 'Видео', 'Блог', 'Статья блога'],
+                    ['UI/UX дизайн (Figma)', 'Мобильная адаптация всех страниц', 'Премиальный визуал бренда', 'Разделы продукции и медиа']],
+            ]],
+            'gospeak' => ['GoSpeak', '', '2025', [
+                'az' => ['Onlayn dil öyrənmə platforması: şəxsi kabinet, speaking club və tədris materialları.',
+                    ['Ana səhifə', 'Giriş və qeydiyyat', 'Şifrənin bərpası', 'Speaking Club', 'Tədris materialları'],
+                    ['Platforma üçün UI/UX dizayn (Figma)', 'İstifadəçi axınları: giriş, xəta halları, bərpa', 'Şəxsi kabinet interfeysi', 'Parlaq, gənc auditoriyaya uyğun stil']],
+                'en' => ['Online language learning platform: personal dashboard, speaking club and learning materials.',
+                    ['Home', 'Sign in and sign up', 'Password recovery', 'Speaking Club', 'Learning materials'],
+                    ['Platform UI/UX design (Figma)', 'User flows: sign-in, error states, recovery', 'Personal dashboard interface', 'Bright style for a young audience']],
+                'ru' => ['Онлайн-платформа для изучения языков: личный кабинет, speaking club и учебные материалы.',
+                    ['Главная', 'Вход и регистрация', 'Восстановление пароля', 'Speaking Club', 'Учебные материалы'],
+                    ['UI/UX дизайн платформы (Figma)', 'Пользовательские сценарии: вход, ошибки, восстановление', 'Интерфейс личного кабинета', 'Яркий стиль для молодой аудитории']],
+            ]],
+            'agilli-nagillar' => ['Ağıllı Nağıllar', '', '2023', [
+                'az' => ['Kreativ agentlik üçün mobil yönümlü sayt dizaynı: xidmətlər, portfolio və partnyorlar.',
+                    ['Ana səhifə', 'İşlər (portfolio)'],
+                    ['Mobile-first UI/UX dizayn (Figma)', 'Cəsarətli tipoqrafiya və rəng həlli', 'Portfolio və keys təqdimatı', 'Partnyorlar bölməsi']],
+                'en' => ['Mobile-first website design for a creative agency: services, portfolio and partners.',
+                    ['Home', 'Works (portfolio)'],
+                    ['Mobile-first UI/UX design (Figma)', 'Bold typography and colour system', 'Portfolio and case presentation', 'Partners section']],
+                'ru' => ['Мобильный дизайн сайта для креативного агентства: услуги, портфолио и партнёры.',
+                    ['Главная', 'Работы (портфолио)'],
+                    ['Mobile-first UI/UX дизайн (Figma)', 'Смелая типографика и цветовая система', 'Презентация портфолио и кейсов', 'Раздел партнёров']],
+            ]],
+        ];
+
+        $labels = [
+            'az' => ['Dizayn olunan səhifələr', 'Görülən işlər'],
+            'en' => ['Designed pages', 'What we did'],
+            'ru' => ['Спроектированные страницы', 'Что сделано'],
         ];
 
         $order = (int) DB::table('projects')->max('order_no');
 
-        foreach ($new as $slug => [$name, $link, $year, $az, $en, $ru]) {
+        foreach ($new as $slug => [$name, $link, $year, $texts]) {
             $data = [
                 'name' => $name, 'name_az' => $name, 'name_en' => $name, 'name_ru' => $name,
                 'link' => $link, 'kateqoriya' => 'websites',
                 'tarix' => $year, 'tarix_az' => $year, 'tarix_en' => $year, 'tarix_ru' => $year,
                 'slug_az' => $slug, 'slug_en' => $slug, 'slug_ru' => $slug,
-                'description_az' => "<p>$az</p>", 'description_en' => "<p>$en</p>", 'description_ru' => "<p>$ru</p>",
-                'photo1' => "$slug-mockup-1.jpg", 'updated_at' => now(),
+                'photo1' => "$slug-cover.jpg", 'updated_at' => now(),
             ];
+            foreach ($texts as $l => [$lead, $pages, $works]) {
+                $li = fn ($items) => '<ul><li>' . implode('</li><li>', $items) . '</li></ul>';
+                $data['description_' . $l] = "<p>$lead</p><h3>{$labels[$l][0]}</h3>" . $li($pages) . "<h3>{$labels[$l][1]}</h3>" . $li($works);
+            }
             if (!DB::table('projects')->where('slug', $slug)->exists()) {
                 $data += ['order_no' => ++$order, 'home' => 0, 'created_at' => now()];
             }
             DB::table('projects')->updateOrInsert(['slug' => $slug], $data);
-            $this->setImages($slug, []);
-        }
 
-        // Mövcud layihələr: mockup-lar əvvələ, köhnə şəkillər sonra
-        foreach (['crea-az', 'mm-logistics'] as $slug) {
             $id = DB::table('projects')->where('slug', $slug)->value('id');
-            if (!$id) {
-                continue;
+            DB::table('project_images')->where('project_id', $id)->delete();
+            foreach (["$slug-cover.jpg", "$slug-mockup-2.jpg"] as $photo) {
+                DB::table('project_images')->insert(['project_id' => $id, 'photo' => $photo, 'created_at' => now(), 'updated_at' => now()]);
             }
-            $old = DB::table('project_images')->where('project_id', $id)
-                ->whereNotIn('photo', ["$slug-mockup-1.jpg", "$slug-mockup-2.jpg"])
-                ->orderBy('id')->pluck('photo')->all();
-            DB::table('projects')->where('id', $id)->update(['photo1' => "$slug-mockup-1.jpg", 'updated_at' => now()]);
-            $this->setImages($slug, $old);
-        }
-    }
-
-    private function setImages(string $slug, array $extra): void
-    {
-        $id = DB::table('projects')->where('slug', $slug)->value('id');
-        DB::table('project_images')->where('project_id', $id)->delete();
-        foreach (array_merge(["$slug-mockup-1.jpg", "$slug-mockup-2.jpg"], $extra) as $photo) {
-            DB::table('project_images')->insert(['project_id' => $id, 'photo' => $photo, 'created_at' => now(), 'updated_at' => now()]);
         }
     }
 }

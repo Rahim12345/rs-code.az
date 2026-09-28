@@ -1,6 +1,6 @@
 @extends('front.layouts.master')
 @section('title', ($project->{'name_'.session('lang','az')} ?? $project->name) . ' | RS Code')
-@section('description', $project->{'description_'.session('lang','az')} ?? $project->description_az ?? '')
+@section('description', Str::limit(strip_tags($project->{'description_'.session('lang','az')} ?? $project->description_az ?? ''), 160))
 @section('canonical', 'https://rs-code.az/project-details/' . ($project->slug_az ?? $project->slug))
 @section('og_type',      'article')
 @section('og_title',     ($project->{'name_'.session('lang','az')} ?? $project->name) . ' | RS Code Portfolio')
@@ -15,6 +15,10 @@
     $name     = $project->{'name_'.$lang}        ?? $project->name;
     $desc     = $project->{'description_'.$lang} ?? $project->description_az ?? '';
     $tarix    = $project->{'tarix_'.$lang}        ?? $project->tarix ?? '';
+    // Sağ panel üçün ilk abzas, slider-in altında isə tam təsvir
+    $lead     = preg_match('/<p[^>]*>(.*?)<\/p>/s', $desc, $m) ? strip_tags($m[1]) : strip_tags($desc);
+    $hasMore  = trim(strip_tags($desc)) !== trim($lead);
+    $aboutLbl = ['az' => 'Layihə haqqında', 'en' => 'About the project', 'ru' => 'О проекте'][$lang] ?? 'Layihə haqqında';
     $catLabels = [
         'veb'    => 'Veb Sayt',
         'logo'   => 'Logo Dizayn',
@@ -113,6 +117,21 @@
                     </template>
                 </div>
                 @endif
+
+                {{-- Layihə haqqında --}}
+                @if($hasMore)
+                <div class="mt-8 bg-zinc-900/50 border border-zinc-800/50 rounded-2xl p-6 sm:p-8">
+                    <h2 class="text-xl font-bold text-white mb-4" style="font-family:'Bricolage Grotesque',sans-serif">{{ $aboutLbl }}</h2>
+                    <div class="project-about text-zinc-400 text-sm leading-relaxed">{!! $desc !!}</div>
+                </div>
+                <style>
+                    .project-about p{margin-bottom:.9rem}
+                    .project-about h3{color:#e4e4e7;font-weight:600;font-size:1rem;margin:1.25rem 0 .6rem}
+                    .project-about ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.5rem 1.25rem}
+                    .project-about li{position:relative;padding-left:1.1rem}
+                    .project-about li:before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:#8b5cf6}
+                </style>
+                @endif
             </div>
 
             {{-- RIGHT: Project info --}}
@@ -127,7 +146,7 @@
                         {{ $name }}
                     </h1>
                     @if($desc)
-                    <p class="text-zinc-400 text-sm leading-relaxed">{{ strip_tags($desc) }}</p>
+                    <p class="text-zinc-400 text-sm leading-relaxed">{{ $lead }}</p>
                     @endif
                 </div>
 

@@ -160,7 +160,7 @@
                 <div class="p-5">
                     <h3 class="text-white font-bold mb-2 group-hover:text-violet-300 transition-colors">{{ $name }}</h3>
                     @if($desc)
-                    <p class="text-zinc-500 text-sm leading-relaxed line-clamp-2">{{ strip_tags($desc) }}</p>
+                    <p class="text-zinc-500 text-sm leading-relaxed line-clamp-2">{{ preg_match('/<p[^>]*>(.*?)<\/p>/s', $desc, $dm) ? strip_tags($dm[1]) : strip_tags($desc) }}</p>
                     @endif
                     <a href="/project-details/{{ $project->slug }}" @click.stop
                        class="inline-flex items-center gap-1.5 mt-3 text-xs text-violet-400 hover:text-violet-300 transition-colors">
