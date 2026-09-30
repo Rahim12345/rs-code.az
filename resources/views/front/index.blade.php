@@ -226,7 +226,7 @@
                 <div class="relative overflow-hidden h-48">
                     @php $bPhoto = ($lang !== 'az' && !empty($blog->{'photo_'.$lang})) ? $blog->{'photo_'.$lang} : $blog->photo; @endphp
                     <img src="{{ str_starts_with($bPhoto, 'http') || str_starts_with($bPhoto, '/') ? $bPhoto : asset('images/blog/'.$bPhoto) }}" alt="{{ $blog->{'title_'.$lang} }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent"></div>
+                    <div class="img-shade absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent"></div>
                 </div>
                 <div class="p-5">
                     <span class="text-zinc-400 text-xs">{{ $blog->{'date_'.$lang} }}</span>
