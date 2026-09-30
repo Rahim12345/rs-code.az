@@ -57,7 +57,7 @@ return [
   'numeric'              => ' :attribute rəqəmlərdən ibarət olmalıdır',
   'present'              => ' :attribute iştirak etməlidir',
   'regex'                => ' :attribute formatı yanlışdır',
-  'required'             => ' :attribute mütləqdir',
+  'required'             => ':attribute mütləqdir',
   'required_if'          => ' :attribute (:other :value ikən) mütləqdir',
   'required_unless'      => ' :attribute (:other :values \'ə daxil ikən) mütləqdir',
   'required_with'        => ' :attribute (:values var ikən) mütləqdir',

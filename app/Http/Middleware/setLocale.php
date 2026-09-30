@@ -86,7 +86,8 @@ class setLocale
     {
         $path = trim($request->path(), '/');
 
-        if (isset($this->slugLang[$path])) {
+        // Yalnız səhifə açılışında (GET) URL dili təyin edir; POST /contact kimi formalar sessiya dilində qalır
+        if ($request->isMethod('GET') && isset($this->slugLang[$path])) {
             $lang = $this->slugLang[$path];
             session(['lang' => $lang]);
             app()->setLocale($lang);
