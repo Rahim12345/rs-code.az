@@ -123,7 +123,7 @@
 
         {{-- Featured image --}}
         <img src="{{ $imgSrc }}" alt="{{ $title }}"
-             class="w-full rounded-xl object-cover max-h-80 shadow-xl shadow-black/50">
+             width="1200" height="630" class="w-full h-auto rounded-xl shadow-xl shadow-black/50">
     </div>
 </section>
 
