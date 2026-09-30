@@ -223,10 +223,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($blogs->take(3) as $blog)
             <a href="/blog-details/{{ $blog->{'slug_'.$lang} ?? $blog->slug_az ?? $blog->id }}" class="group bg-zinc-900/50 border border-zinc-800/60 rounded-2xl overflow-hidden hover:border-violet-700/30 transition-all hover:-translate-y-1 block">
-                <div class="relative overflow-hidden h-48">
+                <div class="relative overflow-hidden aspect-[1200/630]">
                     @php $bPhoto = ($lang !== 'az' && !empty($blog->{'photo_'.$lang})) ? $blog->{'photo_'.$lang} : $blog->photo; @endphp
-                    <img src="{{ str_starts_with($bPhoto, 'http') || str_starts_with($bPhoto, '/') ? $bPhoto : asset('images/blog/'.$bPhoto) }}" alt="{{ $blog->{'title_'.$lang} }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-                    <div class="img-shade absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent"></div>
+                    <img src="{{ str_starts_with($bPhoto, 'http') || str_starts_with($bPhoto, '/') ? $bPhoto : asset('images/blog/'.$bPhoto) }}" alt="{{ $blog->{'title_'.$lang} }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
                 </div>
                 <div class="p-5">
                     <span class="text-zinc-400 text-xs">{{ $blog->{'date_'.$lang} }}</span>

@@ -35,7 +35,7 @@
                 $blogSlug = $blog->{'slug_'.$lang} ?? $blog->slug_az ?? $blog->id;
             @endphp
             <article class="group bg-zinc-900/40 border border-zinc-800/50 rounded-2xl overflow-hidden hover:border-violet-500/30 transition-all duration-300 hover:-translate-y-1">
-                <a href="/blog-details/{{ $blogSlug }}" class="block overflow-hidden aspect-video">
+                <a href="/blog-details/{{ $blogSlug }}" class="block overflow-hidden aspect-[1200/630]">
                     <img src="{{ $imgSrc }}" alt="{{ $title }}"
                          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 </a>

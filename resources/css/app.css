@@ -218,5 +218,3 @@ html.light .grid-overlay {
 .blog-content [itemtype*="FAQPage"] > div { border: 1px solid var(--color-zinc-800); border-radius: .75rem; padding: 1rem 1.25rem; margin-top: .9rem; }
 .blog-content [itemtype*="FAQPage"] h3 { margin-top: 0; }
 .blog-content [itemtype*="FAQPage"] p { margin-top: .4em; }
-/* Şəkil üzərindəki tünd kölgə açıq rejimdə ağ dumana çevrilməsin */
-html.light .img-shade { display: none; }
