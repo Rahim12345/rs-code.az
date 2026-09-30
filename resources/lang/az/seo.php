@@ -12,7 +12,7 @@ return [
     'seo8' => 'Backlink saytları və rəqib saytları tərəfindən alınan bağlantıları izləmək və buna uyğun bir metod hazırlamaq.',
     'seo9' => 'Axtarış motorları tərəfindən bəyəniləcək şəkildə saytı sürətləndirmək.',
     'seo10' => 'Şəkillərə həm ölçü, həm də orijinallıq baxımından nəzarət etmək.',
-    'seo11' => 'Məqalə (kontent) yazma qaydalarına uyğun</a> məzmunu redaktə etmək.',
+    'seo11' => 'Məqalə (kontent) yazma qaydalarına uyğun məzmunu redaktə etmək.',
     'seo12' => 'Təbii backlink ilə saytınıza daha çox istinad təmin etmək.',
     'seo13' => 'Zəngin parça (Struktur məlumat istifadəsi).',
     'seo14' => 'Açar sözlərin məzmununu tapmaq, təhlil etmək və istiqamətləndirmək.',

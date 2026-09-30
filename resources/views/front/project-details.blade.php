@@ -126,7 +126,7 @@
                 </div>
                 <style>
                     .project-about p{margin-bottom:.9rem}
-                    .project-about h3{color:#e4e4e7;font-weight:600;font-size:1rem;margin:1.25rem 0 .6rem}
+                    .project-about h3{color:var(--color-zinc-200);font-weight:600;font-size:1rem;margin:1.25rem 0 .6rem}
                     .project-about ul{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.5rem 1.25rem}
                     .project-about li{position:relative;padding-left:1.1rem}
                     .project-about li:before{content:"";position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:#8b5cf6}
