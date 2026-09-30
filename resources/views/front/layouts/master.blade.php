@@ -11,6 +11,8 @@
 <html lang="{{ $lang }}" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+    {{-- Tema: seçim yadda saxlanır, səhifə açılmazdan əvvəl tətbiq olunur (yanıb-sönmə olmasın) --}}
+    <script>try{var q=new URLSearchParams(location.search).get('theme');if(q)localStorage.setItem('theme',q);if(localStorage.getItem('theme')==='light')document.documentElement.classList.add('light')}catch(e){}</script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="google-site-verification" content="VUYowyHre6ewr9gpY1xcdfhkeZS4_JMKO52DzOTko1w">

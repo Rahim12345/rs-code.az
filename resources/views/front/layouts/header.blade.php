@@ -142,6 +142,13 @@
 
             {{-- Right: Lang + CTA --}}
             <div class="hidden lg:flex items-center gap-4">
+                {{-- Tema --}}
+                <button type="button" onclick="(function(){var r=document.documentElement;r.classList.toggle('light');try{localStorage.setItem('theme',r.classList.contains('light')?'light':'dark')}catch(e){}})()"
+                        aria-label="Açıq / tünd rejim" title="Açıq / tünd rejim"
+                        class="p-2 rounded-lg text-zinc-400 hover:text-violet-400 hover:bg-zinc-800/60 transition-all">
+                    <svg class="theme-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    <svg class="theme-sun w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </button>
                 {{-- Language --}}
                 <div class="flex items-center gap-1 bg-zinc-800/40 rounded-lg p-1">
                     @foreach(['az','ru','en'] as $l)
@@ -160,6 +167,13 @@
                 </button>
             </div>
 
+            {{-- Tema (mobil) --}}
+            <button type="button" onclick="(function(){var r=document.documentElement;r.classList.toggle('light');try{localStorage.setItem('theme',r.classList.contains('light')?'light':'dark')}catch(e){}})()"
+                        aria-label="Açıq / tünd rejim" title="Açıq / tünd rejim"
+                        class="lg:hidden ml-auto mr-1 p-2 rounded-lg text-zinc-400 hover:text-violet-400 hover:bg-zinc-800/60 transition-all">
+                    <svg class="theme-moon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    <svg class="theme-sun w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </button>
             {{-- Mobile burger --}}
             <button @click="open = !open" :aria-expanded="open.toString()" aria-controls="mobile-menu" aria-label="Menyunu aç/bağla" class="lg:hidden text-zinc-400 hover:text-white p-2">
                 <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>

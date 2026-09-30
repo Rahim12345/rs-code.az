@@ -151,3 +151,70 @@ body {
 ::-webkit-scrollbar-track { background: #09090b; }
 ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+
+/* ─── Light mode ─────────────────────────────────────────────────────────────
+   Sayt tünd rənglərlə yazılıb; html.light olanda zinc palitrası tərsinə çevrilir,
+   text-white tünd olur. Rəngli fonlarda (düymə, şəkil overlay) ağ mətn saxlanılır. */
+html.light {
+    color-scheme: light;
+    --color-zinc-50:  oklch(14.1% .005 285.823);
+    --color-zinc-100: oklch(21% .006 285.885);
+    --color-zinc-200: oklch(27.4% .006 286.033);
+    --color-zinc-300: oklch(37% .013 285.805);
+    --color-zinc-400: oklch(44.2% .017 285.786);
+    --color-zinc-500: oklch(52% .016 285.938);
+    --color-zinc-600: oklch(70.5% .015 286.067);
+    --color-zinc-700: oklch(87.1% .006 286.286);
+    --color-zinc-800: oklch(92% .004 286.32);
+    --color-zinc-900: oklch(96.7% .001 286.375);
+    --color-zinc-950: oklch(98.5% 0 0);
+    --color-white:    #111114;
+    --color-violet-300: oklch(49.1% .27 292.581);
+    --color-violet-400: oklch(54.1% .281 293.009);
+}
+html.light body { background-color: #ffffff; color: #18181b; }
+html.light .bg-\[\#09090b\], html.light .bg-\[\#0a0a0d\], html.light .bg-\[\#060609\] { background-color: #ffffff; }
+html.light .bg-\[\#09090b\]\/90 { background-color: rgb(255 255 255 / .9); }
+html.light .shadow-black\/20, html.light .shadow-black\/50, html.light .shadow-black\/60, html.light .shadow-black\/70 { --tw-shadow-color: rgb(24 24 27 / .08); }
+
+/* Rəngli və ya tünd fon üzərində mətn ağ qalır */
+html.light [class*="bg-violet-6"], html.light [class*="bg-violet-7"], html.light [class*="bg-violet-8"],
+html.light [class*="bg-green-6"], html.light [class*="bg-red-6"], html.light [class*="bg-black"],
+html.light [class*="from-black"], html.light [class*="from-violet-6"], html.light [class*="from-violet-7"] {
+    --color-white: #ffffff;
+}
+
+/* Bloq məzmunu (prose + inline cədvəl stilləri) */
+html.light .blog-content thead th { background: #f4f4f5 !important; color: #18181b !important; border-color: #e4e4e7 !important; }
+html.light .blog-content tbody td { color: #3f3f46 !important; border-color: #e4e4e7 !important; }
+html.light .blog-content tbody tr:nth-child(even) td { background: #fafafa !important; }
+html.light .blog-content .tbl-wrap { border-color: #e4e4e7 !important; }
+
+/* Tema düyməsi ikonları */
+.theme-sun { display: none; }
+html.light .theme-sun { display: block; }
+html.light .theme-moon { display: none; }
+html.light .grid-overlay {
+    background-image:
+        linear-gradient(to right, rgba(24,24,27,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(24,24,27,0.05) 1px, transparent 1px);
+}
+
+/* ─── Bloq məzmunu (typography plugin olmadan) — rəng dəyişənləri ilə hər iki rejimdə işləyir ─── */
+.blog-content { color: var(--color-zinc-400); font-size: 1.0625rem; line-height: 1.8; }
+.blog-content > * + * { margin-top: 1.1em; }
+.blog-content h2 { color: var(--color-white); font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; line-height: 1.3; margin-top: 2.2em; margin-bottom: .2em; }
+.blog-content h3 { color: var(--color-white); font-weight: 600; font-size: 1.2rem; line-height: 1.4; margin-top: 1.6em; }
+.blog-content p { color: var(--color-zinc-400); }
+.blog-content strong { color: var(--color-zinc-200); font-weight: 600; }
+.blog-content a { color: var(--color-violet-400); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: color-mix(in oklab, var(--color-violet-400) 40%, transparent); }
+.blog-content a:hover { color: var(--color-violet-300); }
+.blog-content ul, .blog-content ol { padding-left: 1.4em; }
+.blog-content ul { list-style: disc; }
+.blog-content ol { list-style: decimal; }
+.blog-content li { margin-top: .45em; padding-left: .2em; }
+.blog-content li::marker { color: var(--color-violet-400); }
+.blog-content em { color: var(--color-zinc-500); }
+.blog-content [itemtype*="FAQPage"] > div { border: 1px solid var(--color-zinc-800); border-radius: .75rem; padding: 1rem 1.25rem; margin-top: .9rem; }
+.blog-content [itemtype*="FAQPage"] h3 { margin-top: 0; }
+.blog-content [itemtype*="FAQPage"] p { margin-top: .4em; }
