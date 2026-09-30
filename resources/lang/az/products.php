@@ -5,7 +5,7 @@ return [
     'features' => 'Əsas imkanlar',
     'visit'    => 'Sayta keçid',
     'items' => [
-        'rs-pos' => [
+        'rspos' => [
             'name'    => 'RS POS',
             'url'     => 'https://rspos.az/',
             'tagline' => 'Bulud əsaslı POS və kassa proqramı',

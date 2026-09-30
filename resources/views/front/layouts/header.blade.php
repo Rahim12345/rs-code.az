@@ -36,7 +36,7 @@
 
 @php
     $products = [
-        ['/mehsullar/rs-pos', 'RS POS', ['az' => 'Bulud əsaslı POS və kassa proqramı', 'en' => 'Cloud POS and cash register software', 'ru' => 'Облачная POS и кассовая программа'][$lang] ?? 'Bulud əsaslı POS və kassa proqramı'],
+        ['/mehsullar/rspos', 'RS POS', ['az' => 'Bulud əsaslı POS və kassa proqramı', 'en' => 'Cloud POS and cash register software', 'ru' => 'Облачная POS и кассовая программа'][$lang] ?? 'Bulud əsaslı POS və kassa proqramı'],
         ['/mehsullar/kursometr', 'Kursometr', ['az' => 'Müəllimlər üçün dərs idarəetmə platforması', 'en' => 'Class management platform for teachers', 'ru' => 'Платформа управления уроками для учителей'][$lang] ?? 'Müəllimlər üçün dərs idarəetmə platforması'],
     ];
     $productsLabel = ['az' => 'Məhsullar', 'en' => 'Products', 'ru' => 'Продукты'][$lang] ?? 'Məhsullar';

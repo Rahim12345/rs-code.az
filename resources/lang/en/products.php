@@ -5,7 +5,7 @@ return [
     'features' => 'Key features',
     'visit'    => 'Visit website',
     'items' => [
-        'rs-pos' => [
+        'rspos' => [
             'name'    => 'RS POS',
             'url'     => 'https://rspos.az/',
             'tagline' => 'Cloud POS and cash register software',

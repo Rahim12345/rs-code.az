@@ -5,7 +5,7 @@ return [
     'features' => 'Основные возможности',
     'visit'    => 'Перейти на сайт',
     'items' => [
-        'rs-pos' => [
+        'rspos' => [
             'name'    => 'RS POS',
             'url'     => 'https://rspos.az/',
             'tagline' => 'Облачная POS и кассовая программа',
