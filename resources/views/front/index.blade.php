@@ -21,7 +21,7 @@
             {{ __('index.hero_subtitle') }}
         </p>
         <div class="flex flex-wrap items-center justify-center gap-4 mb-20">
-            <a href="{{ route('front.portfolio') }}" class="bg-violet-700 hover:bg-violet-600 text-white font-semibold px-7 py-3.5 rounded-xl transition-all hover:scale-105 hover:shadow-xl hover:shadow-violet-700/25">{{ __('index.hero_portfolio_btn') }}</a>
+            <a href="{{ lurl('portfolio') }}" class="bg-violet-700 hover:bg-violet-600 text-white font-semibold px-7 py-3.5 rounded-xl transition-all hover:scale-105 hover:shadow-xl hover:shadow-violet-700/25">{{ __('index.hero_portfolio_btn') }}</a>
             <a href="{{ lurl('contact') }}" class="border border-zinc-700 hover:border-violet-600/50 text-zinc-300 hover:text-white font-semibold px-7 py-3.5 rounded-xl transition-all hover:bg-zinc-800/50">{{ __('index.hero_contact_btn') }}</a>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-xl mx-auto">
@@ -73,7 +73,7 @@
                 <span class="text-violet-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3 block">{{ __('index.portfolio_eyebrow') }}</span>
                 <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white">{{ __('index.portfolio_heading') }}</h2>
             </div>
-            <a href="{{ route('front.portfolio') }}" class="shrink-0 flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm font-medium transition-colors">
+            <a href="{{ lurl('portfolio') }}" class="shrink-0 flex items-center gap-2 text-violet-400 hover:text-violet-300 text-sm font-medium transition-colors">
                 {{ __('index.portfolio_all') }} <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
         </div>

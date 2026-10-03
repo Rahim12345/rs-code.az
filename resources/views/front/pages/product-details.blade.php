@@ -10,8 +10,8 @@
                         <div class="content">
                             <div class="group-menu">
 
-                                <a href="{{ route('front.portfolio') }}">{{ __('index.projects') }}</a> <i class="fas fa-chevron-right"></i>
-                                <a href="{{ route('front.portfolio',['slug'=>$product->service->{'slug_'.app()->getLocale()}]) }}">{{ $product->service->{'name_'.app()->getLocale()} }}</a>
+                                <a href="{{ lurl('portfolio') }}">{{ __('index.projects') }}</a> <i class="fas fa-chevron-right"></i>
+                                <a href="{{ lurl('portfolio') . '/' . $product->service->{'slug_'.app()->getLocale()} }}">{{ $product->service->{'name_'.app()->getLocale()} }}</a>
 {{--                                <a href="#0" class="active">{{ $product->company->name }}</a>--}}
                             </div>
 

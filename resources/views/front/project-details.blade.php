@@ -43,9 +43,9 @@
 <section class="relative pt-28 pb-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav class="flex items-center gap-2 text-xs text-zinc-500 mb-6">
-            <a href="/" class="hover:text-violet-400 transition-colors">Ana Səhifə</a>
+            <a href="/" class="hover:text-violet-400 transition-colors">{{ __('index.main') }}</a>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            <a href="{{ route('front.portfolio') }}" class="hover:text-violet-400 transition-colors">İşlər</a>
+            <a href="{{ lurl('portfolio') }}" class="hover:text-violet-400 transition-colors">{{ __('index.projects') }}</a>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             <span class="text-zinc-300">{{ $name }}</span>
         </nav>
