@@ -4,6 +4,11 @@ return [
     'label'    => 'Məhsullar',
     'features' => 'Əsas imkanlar',
     'visit'    => 'Sayta keçid',
+    'index_title' => 'Məhsullar — RS POS və Kursometr | RS Code',
+    'index_desc'  => 'RS Code məhsulları: RS POS — bulud əsaslı POS və kassa proqramı, Kursometr — müəllimlər üçün dərs idarəetmə platforması.',
+    'index_h1'    => 'Məhsullarımız',
+    'index_sub'   => 'Azərbaycan biznesləri və müəllimləri üçün hazırladığımız hazır proqram həlləri',
+    'more'        => 'Ətraflı',
     'items' => [
         'rspos' => [
             'name'    => 'RS POS',

@@ -102,10 +102,10 @@
 
                 {{-- Məhsullar dropdown --}}
                 <div class="relative" x-data="{ open: false }" @mouseenter="open=true" @mouseleave="open=false">
-                    <button class="whitespace-nowrap px-4 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 rounded-lg transition-all flex items-center gap-1">
+                    <a href="/mehsullar" class="whitespace-nowrap px-4 py-2 text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 rounded-lg transition-all flex items-center gap-1">
                         {{ $productsLabel }}
                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </button>
+                    </a>
                     <div x-show="open" x-transition:enter="transition ease-out duration-150" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                          class="absolute top-full left-0 w-72 pt-2 z-50">
                         <div class="bg-zinc-900 border border-zinc-800 rounded-xl shadow-2xl shadow-black/50 p-2">
@@ -218,6 +218,7 @@
             <div x-data="{ sub: false }">
                 <button @click="sub = !sub" class="w-full flex items-center justify-between px-4 py-3.5 text-sm font-medium text-zinc-300 hover:text-violet-400 hover:bg-violet-500/10 rounded-xl transition-all">{{ $productsLabel }} <svg class="w-4 h-4 transition-transform" :class="sub ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
                 <div x-show="sub" x-transition class="pl-4 flex flex-col gap-0.5 pb-1">
+                    <a href="/mehsullar" @click="open=false" class="px-4 py-2.5 text-sm text-violet-400 hover:bg-violet-500/10 rounded-lg transition-all">{{ ['az' => 'Bütün məhsullar', 'en' => 'All products', 'ru' => 'Все продукты'][$lang] ?? 'Bütün məhsullar' }} →</a>
                     @foreach($products as [$href, $title, $sub])
                     <a href="{{ $href }}" @click="open=false" class="px-4 py-2.5 rounded-lg hover:bg-violet-500/10 transition-all"><span class="block text-sm text-zinc-300">{{ $title }}</span><span class="block text-xs text-zinc-500">{{ $sub }}</span></a>
                     @endforeach

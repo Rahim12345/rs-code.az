@@ -261,6 +261,7 @@ Route::middleware('locale')->group(static function () {
     Route::get('/seoblank', [PagesController::class, 'seoblank']);
 
     // Öz məhsullarımız — informasiya səhifələri
+    Route::get('/mehsullar', 'App\Http\Controllers\Front\ProductController@index');
     Route::permanentRedirect('/mehsullar/rs-pos', '/mehsullar/rspos');
     Route::get('/mehsullar/{slug}', 'App\Http\Controllers\Front\ProductController@show');
 

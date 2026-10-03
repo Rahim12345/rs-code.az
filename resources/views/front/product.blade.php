@@ -13,9 +13,19 @@
         'operatingSystem'     => 'Web',
         'publisher'           => ['@type' => 'Organization', 'name' => 'RS Code', 'url' => 'https://rs-code.az'],
     ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    $crumbSchema = json_encode([
+        '@context'        => 'https://schema.org',
+        '@type'           => 'BreadcrumbList',
+        'itemListElement' => [
+            ['@type' => 'ListItem', 'position' => 1, 'name' => 'RS Code', 'item' => 'https://rs-code.az/'],
+            ['@type' => 'ListItem', 'position' => 2, 'name' => __('products.label'), 'item' => 'https://rs-code.az/mehsullar'],
+            ['@type' => 'ListItem', 'position' => 3, 'name' => $product['name'], 'item' => 'https://rs-code.az/mehsullar/' . $slug],
+        ],
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 @endphp
 @push('head_extra')
 <script type="application/ld+json">{!! $productSchema !!}</script>
+<script type="application/ld+json">{!! $crumbSchema !!}</script>
 @endpush
 @section('content')
 
@@ -25,7 +35,7 @@
         <nav class="flex items-center gap-2 text-xs text-zinc-500 mb-8">
             <a href="/" class="hover:text-violet-400 transition-colors">RS Code</a>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            <span>{{ __('products.label') }}</span>
+            <a href="/mehsullar" class="hover:text-violet-400 transition-colors">{{ __('products.label') }}</a>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             <span class="text-zinc-300">{{ $product['name'] }}</span>
         </nav>

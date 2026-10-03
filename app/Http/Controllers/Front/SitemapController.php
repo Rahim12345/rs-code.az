@@ -72,6 +72,7 @@ class SitemapController extends Controller
             ['/backlink-nedir', 0.6, 'monthly'],
             ['/what-is-backlink', 0.6, 'monthly'],
             ['/chto-takoe-backlink', 0.6, 'monthly'],
+            ['/mehsullar', 0.8, 'monthly'],
             ['/mehsullar/rspos', 0.8, 'monthly'],
             ['/mehsullar/kursometr', 0.8, 'monthly'],
             ['/kontent-marketinq', 0.6, 'monthly'],

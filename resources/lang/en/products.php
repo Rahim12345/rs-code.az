@@ -4,6 +4,11 @@ return [
     'label'    => 'Products',
     'features' => 'Key features',
     'visit'    => 'Visit website',
+    'index_title' => 'Products — RS POS and Kursometr | RS Code',
+    'index_desc'  => 'RS Code products: RS POS — cloud POS and cash register software, Kursometr — class management platform for teachers.',
+    'index_h1'    => 'Our products',
+    'index_sub'   => 'Ready-made software we built for businesses and teachers in Azerbaijan',
+    'more'        => 'Learn more',
     'items' => [
         'rspos' => [
             'name'    => 'RS POS',

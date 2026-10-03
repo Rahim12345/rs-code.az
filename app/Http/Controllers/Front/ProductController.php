@@ -6,6 +6,11 @@ use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
+    public function index()
+    {
+        return view('front.products', ['products' => __('products.items')]);
+    }
+
     public function show(string $slug)
     {
         $product = __('products.items.' . $slug);
