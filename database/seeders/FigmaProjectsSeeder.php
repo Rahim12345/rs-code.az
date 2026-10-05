@@ -44,6 +44,17 @@ class FigmaProjectsSeeder extends Seeder
                     ['Главная', 'О компании', 'Услуги (9 направлений)', 'Страницы услуг', 'Блог и статьи', 'Контакты'],
                     ['UI/UX дизайн и разработка', 'Мобильная адаптация', 'Форма онлайн-записи', 'Категории, теги и живой поиск в блоге', 'Мультиязычная структура (AZ/EN)']],
             ]],
+            'thermo-impulse' => ['Thermo Impulse', '', '2026', [
+                'az' => ['İstilik, soyutma və iqlim sistemləri şirkəti üçün korporativ sayt dizaynı: brend kataloqu, məhsullar və layihələr.',
+                    ['Ana səhifə', 'Haqqımızda', 'Brendlər (DEVI, Danfoss, FENIX, REHAU)', 'Brend və məhsul səhifələri', 'Layihələr', 'Bloq', 'Əlaqə'],
+                    ['UI/UX dizayn (Figma)', 'Brend və məhsul kataloqu strukturu', 'Layihələr portfoliosu', 'Premium interyer vizualı', 'Çoxdilli struktur']],
+                'en' => ['Corporate website design for a heating, cooling and climate systems company: brand catalogue, products and projects.',
+                    ['Home', 'About', 'Brands (DEVI, Danfoss, FENIX, REHAU)', 'Brand and product pages', 'Projects', 'Blog', 'Contact'],
+                    ['UI/UX design (Figma)', 'Brand and product catalogue structure', 'Projects portfolio', 'Premium interior visuals', 'Multilingual structure']],
+                'ru' => ['Дизайн корпоративного сайта компании по системам отопления, охлаждения и климата: каталог брендов, продукция и проекты.',
+                    ['Главная', 'О компании', 'Бренды (DEVI, Danfoss, FENIX, REHAU)', 'Страницы брендов и продукции', 'Проекты', 'Блог', 'Контакты'],
+                    ['UI/UX дизайн (Figma)', 'Структура каталога брендов и продукции', 'Портфолио проектов', 'Премиальный интерьерный визуал', 'Мультиязычная структура']],
+            ]],
             'alza-fish' => ['Alza Fish', 'https://alzafish.az', '2025', [
                 'az' => ['Akvakultura və balıq məhsulları brendi üçün desktop və mobil dizaynlı sayt: məhsullar, media və bloq.',
                     ['Ana səhifə', 'Balıqlar', 'Kürü', 'Foto qalereya', 'Video', 'Bloq', 'Bloq daxili səhifə'],

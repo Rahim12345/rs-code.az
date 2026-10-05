@@ -20,7 +20,7 @@ body{width:1920px;height:1080px;overflow:hidden;font-family:Arial,Helvetica,sans
 .win{position:absolute;border-radius:14px;overflow:hidden;background:#111;box-shadow:0 40px 90px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.08)}
 .bar{height:34px;background:#1c1c22;display:flex;align-items:center;gap:8px;padding:0 14px}
 .bar i{width:11px;height:11px;border-radius:50%} .url{margin-left:14px;flex:1;max-width:340px;height:20px;border-radius:10px;background:#0c0c10;color:#a1a1aa;font:12px monospace;line-height:20px;padding-left:12px}
-.shot{background-size:100% auto;background-repeat:no-repeat;background-position:top center}
+.shot{background-color:#fff;background-size:100% auto;background-repeat:no-repeat;background-position:top center}
 .phone{position:absolute;border-radius:46px;background:#0a0a0a;padding:12px;box-shadow:0 40px 90px rgba(0,0,0,.7),0 0 0 2px #2a2a30}
 .phone .shot{width:100%;height:100%;border-radius:36px}
 .notch{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:110px;height:28px;border-radius:14px;background:#0a0a0a;z-index:2}
