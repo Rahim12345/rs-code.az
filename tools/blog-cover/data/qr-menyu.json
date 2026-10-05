@@ -1,0 +1,4 @@
+{"name": "qr-menyu",
+ "az": ["Kafe və Restoran", "üçün QR Menyu", "Necə Hazırlanır?", "Anında qiymət, foto və çoxdilli menyu", "RESTORAN", [["Menyu", "AZ/RU", "EN"], ["Qiymət ★", "⚡", "anında"], ["Sifariş", "✓", "masadan"]]],
+ "en": ["QR Menu for", "Cafés & Restaurants", "How to Build One", "Instant prices, photos and multiple languages", "RESTAURANT", [["Menu", "AZ/RU", "EN"], ["Prices ★", "⚡", "instant"], ["Orders", "✓", "from table"]]],
+ "ru": ["QR-меню", "для кафе и ресторана", "как сделать", "Мгновенные цены, фото и языки", "РЕСТОРАН", [["Меню", "AZ/RU", "EN"], ["Цены ★", "⚡", "мгновенно"], ["Заказ", "✓", "со стола"]]]}
