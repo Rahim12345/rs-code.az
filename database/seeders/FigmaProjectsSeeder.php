@@ -33,6 +33,17 @@ class FigmaProjectsSeeder extends Seeder
                     ['Главная', 'О компании', 'Услуги (7 страниц)', 'Таможенное представительство', 'Международная логистика', 'Сертификаты', 'Блог', 'Контакты'],
                     ['UI/UX дизайн (Figma)', 'Отдельная структура страницы для каждой услуги', 'Корпоративный визуал, вызывающий доверие', 'Разделы сертификатов и блога']],
             ]],
+            'affidacons' => ['AFFIDACONS', 'https://affidacons.com', '2026', [
+                'az' => ['Hüquqi xidmətlər şirkəti üçün korporativ sayt: xidmətlər kataloqu, hüquqi bloq və onlayn görüş təyini.',
+                    ['Ana səhifə', 'Haqqımızda', 'Xidmətlər (9 istiqamət)', 'Xidmət daxili səhifələri', 'Bloq və bloq daxili səhifə', 'Əlaqə'],
+                    ['UI/UX dizayn və proqramlaşdırma', 'Mobil adaptasiya', 'Onlayn görüş təyini forması', 'Bloqda kateqoriya, teq və canlı axtarış', 'Çoxdilli struktur (AZ/EN)']],
+                'en' => ['Corporate website for a legal services firm: service catalogue, legal blog and online appointment booking.',
+                    ['Home', 'About', 'Services (9 practice areas)', 'Service detail pages', 'Blog and article pages', 'Contact'],
+                    ['UI/UX design and development', 'Mobile adaptation', 'Online appointment form', 'Blog categories, tags and live search', 'Multilingual structure (AZ/EN)']],
+                'ru' => ['Корпоративный сайт юридической компании: каталог услуг, юридический блог и онлайн-запись на консультацию.',
+                    ['Главная', 'О компании', 'Услуги (9 направлений)', 'Страницы услуг', 'Блог и статьи', 'Контакты'],
+                    ['UI/UX дизайн и разработка', 'Мобильная адаптация', 'Форма онлайн-записи', 'Категории, теги и живой поиск в блоге', 'Мультиязычная структура (AZ/EN)']],
+            ]],
             'alza-fish' => ['Alza Fish', 'https://alzafish.az', '2025', [
                 'az' => ['Akvakultura və balıq məhsulları brendi üçün desktop və mobil dizaynlı sayt: məhsullar, media və bloq.',
                     ['Ana səhifə', 'Balıqlar', 'Kürü', 'Foto qalereya', 'Video', 'Bloq', 'Bloq daxili səhifə'],
