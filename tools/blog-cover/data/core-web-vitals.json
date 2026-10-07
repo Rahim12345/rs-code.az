@@ -1,0 +1,4 @@
+{"name": "core-web-vitals",
+ "az": ["Saytın Sürəti", "Core Web Vitals", "3 Göstərici, 10 Düzəliş", "LCP, INP və CLS sadə dillə", "SEO", [["LCP", "2.5s", "yaxşı"], ["INP ★", "200ms", "yaxşı"], ["CLS", "0.1", "yaxşı"]]],
+ "en": ["Website Speed", "Core Web Vitals", "3 Metrics, 10 Fixes", "LCP, INP and CLS in plain language", "SEO", [["LCP", "2.5s", "good"], ["INP ★", "200ms", "good"], ["CLS", "0.1", "good"]]],
+ "ru": ["Скорость сайта", "Core Web Vitals", "3 показателя, 10 решений", "LCP, INP и CLS простыми словами", "SEO", [["LCP", "2,5с", "хорошо"], ["INP ★", "200мс", "хорошо"], ["CLS", "0,1", "хорошо"]]]}
