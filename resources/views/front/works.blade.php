@@ -67,7 +67,7 @@
                     $imgFiles = collect([$project->photo1]);
                 }
                 $imgsJson = json_encode(
-                    $imgFiles->map(fn($f) => asset('images/projects/'.$f))->values()->all()
+                    $imgFiles->map(fn($f) => pimg($f))->values()->all()
                 );
             @endphp
 

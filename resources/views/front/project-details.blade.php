@@ -61,7 +61,7 @@
             <div class="lg:col-span-2"
                  x-data="{
                      cur: 0,
-                     imgs: {{ json_encode($allImgs->map(fn($f) => asset('images/projects/'.$f))->values()->all()) }},
+                     imgs: {{ json_encode($allImgs->map(fn($f) => pimg($f))->values()->all()) }},
                      prev() { this.cur = (this.cur - 1 + this.imgs.length) % this.imgs.length },
                      next() { this.cur = (this.cur + 1) % this.imgs.length }
                  }">
@@ -206,7 +206,7 @@
             <a href="/project-details/{{ $other->slug_az ?? $other->slug }}"
                class="group relative overflow-hidden rounded-2xl aspect-video block border border-zinc-800/50 hover:border-violet-500/30 transition-all">
                 @if($oImg)
-                <img src="{{ asset('images/projects/'.$oImg) }}" alt="{{ $oName }}"
+                <img src="{{ pimg($oImg) }}" alt="{{ $oName }}"
                      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                 @endif
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4">

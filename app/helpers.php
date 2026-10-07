@@ -17,3 +17,15 @@ if (!function_exists('lurl')) {
         return $lang[$page] ?? '/';
     }
 }
+
+if (!function_exists('pimg')) {
+    /**
+     * Layihə şəklinin URL-i + dəyişmə vaxtı versiyası (şəkil yenilənəndə CDN keşi köhnəni göstərməsin)
+     */
+    function pimg(?string $file): string
+    {
+        $path = public_path('images/projects/' . $file);
+
+        return asset('images/projects/' . $file) . (is_file($path) ? '?v=' . filemtime($path) : '');
+    }
+}

@@ -55,6 +55,17 @@ class FigmaProjectsSeeder extends Seeder
                     ['Главная', 'О компании', 'Бренды (DEVI, Danfoss, FENIX, REHAU)', 'Страницы брендов и продукции', 'Проекты', 'Блог', 'Контакты'],
                     ['UI/UX дизайн (Figma)', 'Структура каталога брендов и продукции', 'Портфолио проектов', 'Премиальный интерьерный визуал', 'Мультиязычная структура']],
             ]],
+            'kashgarli' => ['Mahmud Kaşğarlı', 'https://kashgarli.az', '2026', [
+                'az' => ['"Mahmud Kaşğarlı" beynəlxalq elmi jurnalının saytı: jurnal nömrələri, məqalələr, arxiv və onlayn məqalə qəbulu.',
+                    ['Ana səhifə', 'Arxiv', 'Jurnal nömrəsi səhifəsi', 'Məqalə səhifəsi (PDF baxış, istinad)', 'Redaksiya heyəti', 'Müəlliflər üçün', 'Məqalə göndər', 'Xəbərlər', 'Əlaqə'],
+                    ['UI/UX dizayn və proqramlaşdırma', 'Mobil adaptasiya', 'Məqalələr üçün PDF baxış və istinad', 'Arxiv və axtarış', 'Onlayn məqalə göndərmə forması', 'Çoxdilli interfeys (AZ/EN/RU) və tünd rejim']],
+                'en' => ['Website of the "Mahmud Kashgarli" international scientific journal: issues, articles, archive and online submission.',
+                    ['Home', 'Archive', 'Issue page', 'Article page (PDF view, citation)', 'Editorial board', 'For authors', 'Submit an article', 'News', 'Contact'],
+                    ['UI/UX design and development', 'Mobile adaptation', 'PDF viewer and citation for articles', 'Archive and search', 'Online article submission form', 'Multilingual interface (AZ/EN/RU) and dark mode']],
+                'ru' => ['Сайт международного научного журнала «Махмуд Кашгари»: выпуски, статьи, архив и онлайн-приём статей.',
+                    ['Главная', 'Архив', 'Страница выпуска', 'Страница статьи (просмотр PDF, цитирование)', 'Редакционная коллегия', 'Авторам', 'Отправить статью', 'Новости', 'Контакты'],
+                    ['UI/UX дизайн и разработка', 'Мобильная адаптация', 'Просмотр PDF и цитирование статей', 'Архив и поиск', 'Форма онлайн-подачи статьи', 'Мультиязычный интерфейс (AZ/EN/RU) и тёмная тема']],
+            ]],
             'alza-fish' => ['Alza Fish', 'https://alzafish.az', '2025', [
                 'az' => ['Akvakultura və balıq məhsulları brendi üçün desktop və mobil dizaynlı sayt: məhsullar, media və bloq.',
                     ['Ana səhifə', 'Balıqlar', 'Kürü', 'Foto qalereya', 'Video', 'Bloq', 'Bloq daxili səhifə'],
