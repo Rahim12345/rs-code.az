@@ -10,9 +10,9 @@ class LinkClickController extends Controller
 {
     public function track(Request $request)
     {
-        $href = substr($request->input('href', ''), 0, 500);
-        $page = substr($request->input('page', ''), 0, 500);
-        $text = substr(trim(strip_tags($request->input('text', ''))), 0, 200);
+        $href = mb_substr($request->input('href', ''), 0, 500);
+        $page = mb_substr($request->input('page', ''), 0, 500);
+        $text = mb_substr(trim(strip_tags($request->input('text', ''))), 0, 200);
 
         if (! $href) {
             return response()->json(['ok' => false]);

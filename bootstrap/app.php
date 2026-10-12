@@ -37,5 +37,14 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        // MySQL qısa müddətə əlçatmaz olanda 500 əvəzinə 503 + Retry-After qaytar —
+        // Google bunu müvəqqəti hesab edir və səhifəni sonra yenidən yoxlayır
+        $exceptions->render(function (\Illuminate\Database\QueryException $e) {
+            // 2002 bağlantı yoxdur, 2006 server getdi, 2013 bağlantı itdi, 1040 çox bağlantı
+            if (! preg_match('/SQLSTATE\[(HY000|08\d{3})\] \[(2002|2006|2013|1040)\]/', $e->getMessage())) {
+                return null;
+            }
+
+            return response('Service temporarily unavailable', 503, ['Retry-After' => '120']);
+        });
     })->create();

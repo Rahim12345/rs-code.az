@@ -22,6 +22,18 @@ class TrackVisitor
             return $next($request);
         }
 
+        // Statistika xətası səhifəni heç vaxt 500-ə salmamalıdır
+        try {
+            $this->track($request);
+        } catch (\Throwable $e) {
+            report($e);
+        }
+
+        return $next($request);
+    }
+
+    private function track(Request $request): void
+    {
         $ip   = $request->ip();
         $date = now()->toDateString();
 
@@ -42,16 +54,14 @@ class TrackVisitor
 
             DB::table('visitors')->insert([
                 'ip'         => $ip,
-                'url'        => substr($request->fullUrl(), 0, 500),
-                'referer'    => substr($request->header('referer', ''), 0, 500),
-                'user_agent' => substr($ua, 0, 500),
+                'url'        => mb_substr($request->fullUrl(), 0, 500),
+                'referer'    => mb_substr($request->header('referer', ''), 0, 500),
+                'user_agent' => mb_substr($ua, 0, 500),
                 'device'     => $device,
                 'date'       => $date,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
         }
-
-        return $next($request);
     }
 }
