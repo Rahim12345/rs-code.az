@@ -66,6 +66,17 @@ class FigmaProjectsSeeder extends Seeder
                     ['Главная', 'Архив', 'Страница выпуска', 'Страница статьи (просмотр PDF, цитирование)', 'Редакционная коллегия', 'Авторам', 'Отправить статью', 'Новости', 'Контакты'],
                     ['UI/UX дизайн и разработка', 'Мобильная адаптация', 'Просмотр PDF и цитирование статей', 'Архив и поиск', 'Форма онлайн-подачи статьи', 'Мультиязычный интерфейс (AZ/EN/RU) и тёмная тема']],
             ]],
+            'musiqielmi' => ['Musiqi Elmi', '', '2026', [
+                'az' => ['Azərbaycan Dövlət Pedaqoji Universitetinin "Musiqi elmi, mədəniyyəti və təhsilinin aktual problemləri" elmi jurnalının saytı: səhnə pərdəsi ilə açılan giriş, fon musiqisi pleyeri, jurnal nömrələri, məqalələr və arxiv.',
+                    ['Ana səhifə (səhnə pərdəsi və musiqi pleyeri)', 'Arxiv', 'Jurnal nömrəsi səhifəsi', 'Jurnalı vərəqlə (onlayn oxu)', 'Məqalə səhifəsi (PDF, istinad)', 'Müəlliflər', 'Redaksiya heyəti', 'Müəlliflər üçün', 'Məqalə göndər', 'Xəbərlər', 'Əlaqə'],
+                    ['UI/UX dizayn və proqramlaşdırma', 'Musiqi mövzulu vizual konsepsiya (məxmər pərdə, not xətləri)', 'Bütün səhifələrdə davam edən musiqi pleyeri', 'Jurnalın onlayn vərəqlənməsi və PDF', 'Məqalə və müəllif axtarışı', 'Onlayn məqalə göndərmə forması', 'Çoxdilli interfeys (AZ/EN/RU) və tünd rejim', 'İki mərhələli girişli admin panel']],
+                'en' => ['Website of the "Actual Problems of Music Science, Culture and Education" scientific journal of Azerbaijan State Pedagogical University: a stage-curtain intro, background music player, issues, articles and archive.',
+                    ['Home (stage curtain and music player)', 'Archive', 'Issue page', 'Flip-through journal reader', 'Article page (PDF, citation)', 'Authors', 'Editorial board', 'For authors', 'Submit an article', 'News', 'Contact'],
+                    ['UI/UX design and development', 'Music-themed visual concept (velvet curtain, staff lines)', 'Music player that continues across all pages', 'Online flip-through reader and PDF', 'Article and author search', 'Online article submission form', 'Multilingual interface (AZ/EN/RU) and dark mode', 'Admin panel with two-factor login']],
+                'ru' => ['Сайт научного журнала «Актуальные проблемы музыкальной науки, культуры и образования» Азербайджанского государственного педагогического университета: вход со сценическим занавесом, фоновый музыкальный плеер, выпуски, статьи и архив.',
+                    ['Главная (сценический занавес и музыкальный плеер)', 'Архив', 'Страница выпуска', 'Онлайн-листание журнала', 'Страница статьи (PDF, цитирование)', 'Авторы', 'Редакционная коллегия', 'Авторам', 'Отправить статью', 'Новости', 'Контакты'],
+                    ['UI/UX дизайн и разработка', 'Музыкальная визуальная концепция (бархатный занавес, нотный стан)', 'Музыкальный плеер, продолжающий играть на всех страницах', 'Онлайн-листание журнала и PDF', 'Поиск по статьям и авторам', 'Форма онлайн-подачи статьи', 'Мультиязычный интерфейс (AZ/EN/RU) и тёмная тема', 'Админ-панель с двухфакторным входом']],
+            ]],
             'alza-fish' => ['Alza Fish', 'https://alzafish.az', '2025', [
                 'az' => ['Akvakultura və balıq məhsulları brendi üçün desktop və mobil dizaynlı sayt: məhsullar, media və bloq.',
                     ['Ana səhifə', 'Balıqlar', 'Kürü', 'Foto qalereya', 'Video', 'Bloq', 'Bloq daxili səhifə'],
