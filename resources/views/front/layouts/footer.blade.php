@@ -7,7 +7,7 @@
             {{-- Brand --}}
             <div class="lg:col-span-1">
                 <a href="/" class="block mb-4">
-                    <img src="{{ asset('img/rs-code.png') }}" alt="RS Code" class="h-9 w-auto" width="709" height="144">
+                    <img src="{{ asset('img/rs-code.png') }}?v=2" alt="RS Code" class="logo-dark h-9 w-auto" width="793" height="192"><img src="{{ asset('img/rs-code-light.png') }}?v=2" alt="RS Code" class="logo-light h-9 w-auto" width="793" height="192">
                 </a>
                 <p class="text-zinc-400 text-sm leading-relaxed mb-5">
                     {{ __('footer.brand_desc') }}

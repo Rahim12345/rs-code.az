@@ -125,9 +125,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="RS Code">
-    <link rel="apple-touch-icon"     href="{{ asset('img/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon"     href="{{ asset('img/apple-touch-icon.png') }}?v=2">
     {{-- Favicon --}}
-    <link rel="icon" type="image/png" href="{{ asset('img/132.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/132.png') }}?v=2">
     <script type="application/ld+json">
     @verbatim
     {
