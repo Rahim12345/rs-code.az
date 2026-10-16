@@ -199,6 +199,14 @@ Route::middleware('locale')->group(static function () {
     Route::permanentRedirect('/blog-details/kibertehlukesizlik-kicik-biznes-ucun-esaslar', '/blog-details/sayt-tehlukesizliyi-yoxlama-siyahisi-2026');
     Route::permanentRedirect('/blog-details/cybersecurity-essentials-small-businesses', '/blog-details/website-security-checklist-small-business-2026');
     Route::permanentRedirect('/blog-details/osnovy-kiberbezopasnosti-dlya-malogo-biznesa', '/blog-details/bezopasnost-sajta-chek-list-2026');
+    // #20 "Mobil tətbiqlərin gələcəyi" → #46 mobil tətbiq vs PWA
+    Route::permanentRedirect('/blog-details/mobil-tetbiqlerin-geleceyi-2026', '/blog-details/mobil-tetbiq-yoxsa-mobil-sayt-2026');
+    Route::permanentRedirect('/blog-details/future-of-mobile-apps-2026', '/blog-details/mobile-app-vs-mobile-website-2026');
+    Route::permanentRedirect('/blog-details/budushchee-mobilnykh-prilozheniy-2026', '/blog-details/mobilnoe-prilozhenie-ili-sajt-2026');
+    // #22 "Süni zəka biznes həlləri" → #51 AI çatbot
+    Route::permanentRedirect('/blog-details/suni-zeka-biznes-helleri', '/blog-details/biznes-ucun-ai-chatbot-2026');
+    Route::permanentRedirect('/blog-details/ai-business-solutions', '/blog-details/ai-chatbot-for-business-2026');
+    Route::permanentRedirect('/blog-details/ii-biznes-resheniya', '/blog-details/ii-chat-bot-dlya-biznesa-2026');
     Route::get('/blog-details/{slug}', "App\Http\Controllers\Front\BlogDetailsController@index");
     Route::get('/project-details/{slug}', "App\Http\Controllers\Front\ProjectDetailsController@index");
 
