@@ -1,0 +1,4 @@
+{"name": "sayt-tehlukesizliyi",
+ "az": ["Sayt", "Təhlükəsizliyi", "12 addımlıq yoxlama siyahısı", "Kiçik biznes saytını sındırılmadan qoruyun", "SECURITY", [["Parol + 2FA", "🔒", "giriş qorunur"], ["Yeniləmə ★", "✓", "plagin, PHP"], ["Backup", "24h", "gündəlik nüsxə"]]],
+ "en": ["Website", "Security", "a 12-step checklist", "Protect your small business site from hacks", "SECURITY", [["Password + 2FA", "🔒", "secure login"], ["Updates ★", "✓", "plugins, PHP"], ["Backup", "24h", "daily copy"]]],
+ "ru": ["Безопасность", "сайта", "чек-лист из 12 шагов", "Защитите сайт малого бизнеса от взлома", "SECURITY", [["Пароль + 2FA", "🔒", "защита входа"], ["Обновления ★", "✓", "плагины, PHP"], ["Бэкап", "24h", "ежедневно"]]]}

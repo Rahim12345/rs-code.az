@@ -195,6 +195,10 @@ Route::middleware('locale')->group(static function () {
     Route::get('/suallar',                    "App\Http\Controllers\Front\FaqController@index");
     Route::get('/faq',                        "App\Http\Controllers\Front\FaqController@index");
     Route::get('/chasto-zadavaemye-voprosy',  "App\Http\Controllers\Front\FaqController@index");
+    // Köhnə zəif bloq (#21) yeni təhlükəsizlik yazısı ilə əvəzləndi — 301
+    Route::permanentRedirect('/blog-details/kibertehlukesizlik-kicik-biznes-ucun-esaslar', '/blog-details/sayt-tehlukesizliyi-yoxlama-siyahisi-2026');
+    Route::permanentRedirect('/blog-details/cybersecurity-essentials-small-businesses', '/blog-details/website-security-checklist-small-business-2026');
+    Route::permanentRedirect('/blog-details/osnovy-kiberbezopasnosti-dlya-malogo-biznesa', '/blog-details/bezopasnost-sajta-chek-list-2026');
     Route::get('/blog-details/{slug}', "App\Http\Controllers\Front\BlogDetailsController@index");
     Route::get('/project-details/{slug}', "App\Http\Controllers\Front\ProjectDetailsController@index");
 
