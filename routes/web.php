@@ -207,6 +207,10 @@ Route::middleware('locale')->group(static function () {
     Route::permanentRedirect('/blog-details/suni-zeka-biznes-helleri', '/blog-details/biznes-ucun-ai-chatbot-2026');
     Route::permanentRedirect('/blog-details/ai-business-solutions', '/blog-details/ai-chatbot-for-business-2026');
     Route::permanentRedirect('/blog-details/ii-biznes-resheniya', '/blog-details/ii-chat-bot-dlya-biznesa-2026');
+    // #23 "UI/UX trendləri" → #52 UX/konversiya auditi
+    Route::permanentRedirect('/blog-details/ui-ux-dizayninda-2026-trendleri', '/blog-details/sayt-niye-muraciet-getirmir-ux-audit-2026');
+    Route::permanentRedirect('/blog-details/ui-ux-design-trends-2026', '/blog-details/website-not-generating-leads-ux-audit-2026');
+    Route::permanentRedirect('/blog-details/trendy-ui-ux-dizayna-2026', '/blog-details/pochemu-sajt-ne-prinosit-zayavki-ux-audit-2026');
     Route::get('/blog-details/{slug}', "App\Http\Controllers\Front\BlogDetailsController@index");
     Route::get('/project-details/{slug}', "App\Http\Controllers\Front\ProjectDetailsController@index");
 
