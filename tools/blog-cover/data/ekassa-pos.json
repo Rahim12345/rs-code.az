@@ -1,0 +1,4 @@
+{"name": "ekassa-pos",
+ "az": ["E-kassa və", "POS proqramı", "inteqrasiya bələdçisi", "Satışı bir dəfə vurun, çek avtomatik çıxsın", "POS", [["Çek", "Avto", "fiskal ID + QR"], ["Satış ★", "1x", "ikiqat iş yox"], ["Cərimə", "₼1.000+", "çeksiz satış"]]],
+ "en": ["E-kassa &", "POS software", "integration guide", "Enter each sale once, receipt prints automatically", "POS", [["Receipt", "Auto", "fiscal ID + QR"], ["Sale ★", "1x", "no double entry"], ["Penalty", "₼1,000+", "no receipt"]]],
+ "ru": ["E-kassa и", "POS-программа", "гид по интеграции", "Продажа вводится один раз, чек печатается сам", "POS", [["Чек", "Авто", "фискальный ID + QR"], ["Продажа ★", "1x", "без двойного ввода"], ["Штраф", "₼1 000+", "продажа без чека"]]]}
