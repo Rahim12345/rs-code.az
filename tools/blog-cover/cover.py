@@ -10,16 +10,18 @@ from PIL import Image
 root = pathlib.Path(__file__).resolve().parents[2]
 tpl = (pathlib.Path(__file__).parent / 'template.html').read_text(encoding='utf-8')
 chrome = r'C:\Program Files\Google\Chrome\Application\chrome.exe'
-BADGE = {'az': 'BLOQ • 2026', 'en': 'BLOG • 2026', 'ru': 'БЛОГ • 2026'}
+BADGE = {'az': 'BLOQ • {y}', 'en': 'BLOG • {y}', 'ru': 'БЛОГ • {y}'}
 TAG = {'az': 'rs-code.az • Rəqəmsal həllər', 'en': 'rs-code.az • Digital solutions', 'ru': 'rs-code.az • Цифровые решения'}
 
 data = json.loads(pathlib.Path(sys.argv[1]).read_text(encoding='utf-8'))
+year = str(data.get('year', '2026'))  # JSON-da "year" verilməsə 2026
+tpl = tpl.replace('<div class="year">2026</div>', f'<div class="year">{year}</div>')
 for lang in ('az', 'en', 'ru'):
     t1, t2, acc, sub, pin, cards = data[lang]
     title = f'{t1} {t2} {acc}'
-    html = (tpl.replace('%%LANG%%', lang.upper()).replace('%%BADGE%%', BADGE[lang]).replace('%%T1%%', t1)
+    html = (tpl.replace('%%LANG%%', lang.upper()).replace('%%BADGE%%', BADGE[lang].replace('{y}', year)).replace('%%T1%%', t1)
             .replace('%%T2%%', t2).replace('%%ACC%%', acc).replace('%%SUB%%', sub).replace('%%Q%%', title.lower())
-            .replace('%%R1%%', title if '2026' in title else title + ' 2026').replace('%%R2%%', sub[:38] + '…')
+            .replace('%%R1%%', title if year in title else f'{title} {year}').replace('%%R2%%', sub[:38] + '…')
             .replace('%%PIN%%', pin).replace('%%TAG%%', TAG[lang])
             .replace('%%CARDS%%', ''.join(f'<div class="card{" hl" if i == 1 else ""}"><small>{a}</small><b>{b}</b><em>{c}</em></div>' for i, (a, b, c) in enumerate(cards))))
     longest = max(len(t1), len(t2))
