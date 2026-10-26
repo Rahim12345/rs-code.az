@@ -132,33 +132,68 @@
     @verbatim
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "RS Code",
-      "url": "https://rs-code.az",
-      "logo": "https://rs-code.az/img/rs-code.png",
-      "image": "https://rs-code.az/img/og-default.jpg",
-      "description": "RS Code — Azərbaycanın aparıcı proqram, veb sayt, mobil tətbiq və brendinq agentliyi. Bakı.",
-      "telephone": "+994775829989",
-      "email": "info@rs-code.az",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bakı",
-        "addressCountry": "AZ"
-      },
-      "areaServed": "AZ",
-      "priceRange": "$$",
-      "sameAs": [
-        "https://www.instagram.com/rscode.az",
-        "https://www.linkedin.com/company/rscode"
-      ],
-      "serviceType": [
-        "Proqram yazılması",
-        "Veb sayt hazırlanması",
-        "Mobil tətbiq hazırlanması",
-        "CRM sistemi",
-        "ERP sistemi",
-        "Loqo dizaynı",
-        "SMM xidməti"
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://rs-code.az/#organization",
+          "name": "RS Code",
+          "url": "https://rs-code.az",
+          "logo": "https://rs-code.az/img/rs-code.png",
+          "image": "https://rs-code.az/img/og-default.jpg",
+          "description": "RS Code — Bakıda veb sayt, mobil tətbiq, POS və LMS sistemləri, sifarişlə proqram təminatı, SEO, Google reklamı və brendinq xidmətləri göstərən IT şirkəti.",
+          "telephone": "+994775829989",
+          "email": "info@rs-code.az",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bakı",
+            "addressCountry": "AZ"
+          },
+          "areaServed": { "@type": "Country", "name": "Azerbaijan" },
+          "priceRange": "$$",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+994775829989",
+            "email": "info@rs-code.az",
+            "contactType": "customer service",
+            "availableLanguage": ["az", "ru", "en"]
+          },
+          "sameAs": [
+            "https://www.instagram.com/rs_code.az",
+            "https://www.linkedin.com/company/rscode"
+          ],
+          "knowsAbout": [
+            "Veb sayt hazırlanması",
+            "Landing page",
+            "Mobil tətbiq hazırlanması",
+            "POS sistemi",
+            "LMS və onlayn kurs platforması",
+            "Laravel",
+            "SEO",
+            "Google Ads",
+            "SMM",
+            "Loqo dizaynı",
+            "Korporativ üslub"
+          ],
+          "serviceType": [
+            "Proqram yazılması",
+            "Veb sayt hazırlanması",
+            "Mobil tətbiq hazırlanması",
+            "CRM sistemi",
+            "ERP sistemi",
+            "Loqo dizaynı",
+            "SMM xidməti",
+            "SEO xidməti",
+            "Google reklamları"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://rs-code.az/#website",
+          "url": "https://rs-code.az",
+          "name": "RS Code",
+          "inLanguage": ["az", "en", "ru"],
+          "publisher": { "@id": "https://rs-code.az/#organization" }
+        }
       ]
     }
     @endverbatim

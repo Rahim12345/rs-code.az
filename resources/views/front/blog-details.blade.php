@@ -65,25 +65,41 @@
         'url'             => $canonical,
         'datePublished'   => $publishedAt,
         'dateModified'    => $modifiedAt,
+        'inLanguage'      => $lang,
         'author'          => [
             '@type' => 'Organization',
+            '@id'   => 'https://rs-code.az/#organization',
             'name'  => 'RS Code',
             'url'   => 'https://rs-code.az',
             'logo'  => ['@type' => 'ImageObject', 'url' => 'https://rs-code.az/img/rs-code.png'],
         ],
         'publisher'       => [
             '@type' => 'Organization',
+            '@id'   => 'https://rs-code.az/#organization',
             'name'  => 'RS Code',
             'url'   => 'https://rs-code.az',
             'logo'  => ['@type' => 'ImageObject', 'url' => 'https://rs-code.az/img/rs-code.png'],
         ],
+        'isPartOf'        => ['@id' => 'https://rs-code.az/#website'],
         'mainEntityOfPage' => ['@type' => 'WebPage', '@id' => $canonical],
     ];
     if ($metaKw) $ldJson['keywords'] = $metaKw;
+
+    $blogListUrl = ['az' => '/bloqlar', 'en' => '/blogs', 'ru' => '/blogi'][$lang] ?? '/bloqlar';
+    $crumbJson = [
+        '@context'        => 'https://schema.org',
+        '@type'           => 'BreadcrumbList',
+        'itemListElement' => [
+            ['@type' => 'ListItem', 'position' => 1, 'name' => ['az' => 'Ana səhifə', 'en' => 'Home', 'ru' => 'Главная'][$lang] ?? 'Ana səhifə', 'item' => 'https://rs-code.az/'],
+            ['@type' => 'ListItem', 'position' => 2, 'name' => ['az' => 'Bloq', 'en' => 'Blog', 'ru' => 'Блог'][$lang] ?? 'Bloq', 'item' => 'https://rs-code.az' . $blogListUrl],
+            ['@type' => 'ListItem', 'position' => 3, 'name' => strip_tags($title), 'item' => $canonical],
+        ],
+    ];
 @endphp
 
 @push('head_extra')
 <script type="application/ld+json">{!! json_encode($ldJson, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES) !!}</script>
+<script type="application/ld+json">{!! json_encode($crumbJson, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES) !!}</script>
 @endpush
 
 @section('content')
