@@ -113,7 +113,7 @@
                 <div class="relative mb-4 mx-auto w-36 h-36 sm:w-44 sm:h-44">
                     <div class="absolute inset-0 bg-gradient-to-br from-violet-600/20 to-transparent rounded-2xl group-hover:from-violet-600/40 transition-all duration-300"></div>
                     <img src="{{ $member->src ? asset($member->src) : 'https://picsum.photos/seed/member-'.$member->id.'/200/200' }}"
-                         alt="{{ $member->full_name }}"
+                         alt="{{ $member->full_name }}" loading="lazy" decoding="async"
                          class="w-full h-full object-cover rounded-2xl">
                 </div>
                 <h3 class="text-white font-semibold text-sm">{{ $member->full_name }}</h3>
@@ -138,7 +138,7 @@
                 @foreach($partners->concat($partners) as $partner)
                 <div class="shrink-0 flex items-center justify-center w-36 h-16 bg-zinc-900/60 border border-zinc-800/50 rounded-xl px-4 hover:border-violet-500/30 transition-all">
                     @if($partner->logo)
-                        <img src="{{ asset('images/partners/'.$partner->logo) }}" alt="{{ $partner->name }}"
+                        <img src="{{ asset('images/partners/'.$partner->logo) }}" alt="{{ $partner->name }}" loading="lazy" decoding="async"
                              class="max-h-8 w-auto object-contain filter grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100">
                     @else
                         <span class="text-zinc-500 text-xs font-semibold truncate">{{ $partner->name }}</span>
