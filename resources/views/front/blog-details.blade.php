@@ -7,7 +7,7 @@
     $date     = $blog->{'date_'.$lang}   ?? $blog->date_az;
     $photo    = ($lang !== 'az' && !empty($blog->{'photo_'.$lang})) ? $blog->{'photo_'.$lang} : $blog->photo;
     $imgSrc   = ($photo && !str_starts_with($photo,'http'))
-                ? asset('images/blog/'.$photo)
+                ? bimg($photo)
                 : ($photo ?: 'https://picsum.photos/seed/blog-'.$blog->id.'/1200/600');
 
     // Admin-dən daxil edilmiş meta sahələr, yoxdursa əsas məlumatdan fallback

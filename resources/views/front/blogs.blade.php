@@ -30,7 +30,7 @@
                 $review  = $blog->{'review_'.$lang} ?? $blog->review_az ?? '';
                 $photo   = ($lang !== 'az' && !empty($blog->{'photo_'.$lang})) ? $blog->{'photo_'.$lang} : $blog->photo;
                 $imgSrc  = ($photo && !str_starts_with($photo,'http'))
-                           ? asset('images/blog/'.$photo)
+                           ? bimg($photo)
                            : ($photo ?: 'https://picsum.photos/seed/blog-'.$blog->id.'/600/400');
                 $blogSlug = $blog->{'slug_'.$lang} ?? $blog->slug_az ?? $blog->id;
             @endphp

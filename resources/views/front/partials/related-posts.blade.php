@@ -18,7 +18,7 @@
                 $pSlug  = $post->{'slug_' . $rpLang} ?: $post->slug_az;
                 $pTitle = $post->{'title_' . $rpLang} ?: $post->title_az;
                 $pPhoto = ($rpLang !== 'az' && !empty($post->{'photo_' . $rpLang})) ? $post->{'photo_' . $rpLang} : $post->photo;
-                $pImg   = ($pPhoto && !str_starts_with($pPhoto, 'http')) ? asset('images/blog/' . $pPhoto) : $pPhoto;
+                $pImg   = ($pPhoto && !str_starts_with($pPhoto, 'http')) ? bimg($pPhoto) : $pPhoto;
             @endphp
             <a href="/blog-details/{{ $pSlug }}" class="group block bg-zinc-900/40 border border-zinc-800/50 rounded-2xl overflow-hidden hover:border-violet-500/30 transition-all duration-300 hover:-translate-y-1">
                 @if($pImg)

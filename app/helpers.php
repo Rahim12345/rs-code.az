@@ -29,3 +29,15 @@ if (!function_exists('pimg')) {
         return asset('images/projects/' . $file) . (is_file($path) ? '?v=' . filemtime($path) : '');
     }
 }
+
+if (!function_exists('bimg')) {
+    /**
+     * Bloq şəklinin URL-i + dəyişmə vaxtı versiyası (CDN köhnə və ya xətalı keşi göstərməsin)
+     */
+    function bimg(?string $file): string
+    {
+        $path = public_path('images/blog/' . $file);
+
+        return asset('images/blog/' . $file) . (is_file($path) ? '?v=' . filemtime($path) : '');
+    }
+}
