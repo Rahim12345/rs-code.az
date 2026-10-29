@@ -63,17 +63,33 @@
                      cur: 0,
                      imgs: {{ json_encode($allImgs->map(fn($f) => pimg($f))->values()->all()) }},
                      prev() { this.cur = (this.cur - 1 + this.imgs.length) % this.imgs.length },
-                     next() { this.cur = (this.cur + 1) % this.imgs.length }
-                 }">
+                     next() { this.cur = (this.cur + 1) % this.imgs.length },
+                     full: false, tx: 0,
+                     openFull() { this.full = true; document.documentElement.style.overflow = 'hidden' },
+                     closeFull() { this.full = false; document.documentElement.style.overflow = '' },
+                     swipe(x) { const d = x - this.tx; if (Math.abs(d) > 50) d < 0 ? this.next() : this.prev() }
+                 }"
+                 @keydown.window.escape="full && closeFull()"
+                 @keydown.window.arrow-left="full && prev()"
+                 @keydown.window.arrow-right="full && next()">
 
                 {{-- Main image --}}
                 <div class="relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800/50 aspect-video mb-3">
                     <template x-for="(img, i) in imgs" :key="i">
                         <img :src="img" alt="{{ $name }}"
-                             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
-                             :class="cur === i ? 'opacity-100' : 'opacity-0'"
+                             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 cursor-zoom-in"
+                             :class="cur === i ? 'opacity-100' : 'opacity-0 pointer-events-none'"
+                             @click="openFull()"
                              loading="lazy">
                     </template>
+
+                    {{-- Tam ekran düyməsi --}}
+                    <button type="button" @click="openFull()" aria-label="Tam ekran"
+                            class="absolute top-3 left-3 z-10 w-9 h-9 rounded-full bg-black/60 backdrop-blur-sm text-white flex items-center justify-center hover:bg-violet-600/80 transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4h4M20 8V4h-4M4 16v4h4M20 16v4h-4"/>
+                        </svg>
+                    </button>
 
                     {{-- Nav arrows --}}
                     <template x-if="imgs.length > 1">
@@ -101,6 +117,38 @@
                             <div class="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-full">
                                 <span x-text="(cur + 1) + ' / ' + imgs.length"></span>
                             </div>
+                        </div>
+                    </template>
+                </div>
+
+                {{-- Tam ekran baxış --}}
+                <div x-show="full" x-transition.opacity style="display:none"
+                     class="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center"
+                     @click.self="closeFull()"
+                     @touchstart.passive="tx = $event.changedTouches[0].clientX"
+                     @touchend.passive="swipe($event.changedTouches[0].clientX)">
+                    <img :src="imgs[cur]" alt="{{ $name }}"
+                         class="max-w-[96vw] max-h-[90vh] object-contain select-none rounded-lg shadow-2xl">
+
+                    <button type="button" @click="closeFull()" aria-label="Bağla"
+                            class="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-violet-600/80 transition-all">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    <div class="absolute top-6 left-1/2 -translate-x-1/2 text-white/80 text-sm" x-show="imgs.length > 1">
+                        <span x-text="(cur + 1) + ' / ' + imgs.length"></span>
+                    </div>
+                    <template x-if="imgs.length > 1">
+                        <div>
+                            <button type="button" @click="prev()" aria-label="Əvvəlki"
+                                    class="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-violet-600/80 transition-all">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <button type="button" @click="next()" aria-label="Növbəti"
+                                    class="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-violet-600/80 transition-all">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </button>
                         </div>
                     </template>
                 </div>
