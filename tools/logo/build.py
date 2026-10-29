@@ -1,5 +1,5 @@
 # RS Code loqo faylları: python tools/logo/build.py
-# Konsepsiya: "Fikirdən məhsula" — S xətti iki nöqtəni birləşdirir (ideya → hazır məhsul)
+# 2026-10-29: WhatsApp möhürü ilə eyni üslub — tünd yaşıl dairə, gümüşü halqa, ağ "RS", nanə xətt
 import pathlib, subprocess, tempfile, io
 from PIL import Image
 
@@ -7,11 +7,13 @@ root = pathlib.Path(__file__).resolve().parents[2]
 img = root / 'public' / 'img'
 chrome = r'C:\Program Files\Google\Chrome\Application\chrome.exe'
 
-GRAD = '<linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#d946ef"/></linearGradient>'
-# İşarə: 64×64 koordinatda S xətti + iki düyün
-MARK = ('<path d="M44 17H28a8 8 0 0 0 0 16h8a8 8 0 0 1 0 16H20" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>'
-        '<circle cx="44" cy="17" r="5" fill="#22d3ee"/><circle cx="20" cy="49" r="5" fill="#fff"/>')
-FONT = '<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">'
+GREEN, DEEP, SILVER, MINT = '#0B3B2E', '#06231B', '#D9E4DF', '#34D399'
+GRAD = f'<radialGradient id="g" cx="50%" cy="35%" r="70%"><stop offset="0" stop-color="#0F4A3A"/><stop offset="1" stop-color="{GREEN}"/></radialGradient>'
+# İşarə: 64×64 koordinatda halqa + "RS" + nanə xətt
+MARK = (f'<circle cx="32" cy="32" r="26.5" fill="none" stroke="{SILVER}" stroke-width="1.3" stroke-opacity=".85"/>'
+        f'<text x="32" y="37.5" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="21" letter-spacing="-.4" fill="#fff">RS</text>'
+        f'<rect x="24" y="42" width="16" height="2.2" rx="1.1" fill="{MINT}"/>')
+FONT = '<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@500;600&display=swap" rel="stylesheet">'
 
 
 def icon_svg(shape):
@@ -24,7 +26,7 @@ def render(html, w, h, transparent=True):
         p = pathlib.Path(d) / 'p.html'
         p.write_text(f'<!doctype html><html><head><meta charset="utf-8">{FONT}<style>*{{margin:0}}html,body{{background:transparent}}</style></head><body>{html}</body></html>', encoding='utf-8')
         out = pathlib.Path(d) / 'o.png'
-        args = [chrome, '--headless=new', '--disable-gpu', '--hide-scrollbars', '--virtual-time-budget=4000',
+        args = [chrome, '--headless=new', '--disable-gpu', '--hide-scrollbars', '--virtual-time-budget=7000',
                 f'--window-size={w},{h}', f'--screenshot={out}']
         if transparent:
             args.append('--default-background-color=00000000')
@@ -32,19 +34,19 @@ def render(html, w, h, transparent=True):
         return Image.open(io.BytesIO(out.read_bytes())).convert('RGBA')
 
 
-def wordmark(rs_color):
+def wordmark(rs_color, code_color=MINT):
     # 3x ölçüdə çəkilir, sonra boşluqlar kəsilir
-    html = (f'<div style="display:flex;align-items:center;gap:36px;padding:30px;font-family:\'Space Grotesk\',sans-serif">'
+    html = (f'<div style="display:flex;align-items:center;gap:40px;padding:30px;font-family:Montserrat,sans-serif">'
             f'<div style="width:192px;height:192px">{icon_svg("circle")}</div>'
-            f'<div style="font-size:150px;font-weight:700;letter-spacing:-4px;line-height:1;color:{rs_color}">RS '
-            f'<span style="background:linear-gradient(90deg,#8b5cf6,#d946ef);-webkit-background-clip:text;color:transparent">Code</span></div></div>')
+            f'<div style="font-size:140px;font-weight:800;letter-spacing:-3px;line-height:1;color:{rs_color}">RS '
+            f'<span style="color:{code_color}">Code</span></div></div>')
     im = render(html, 1300, 260)
     return im.crop(im.getbbox())
 
 
 # Header/footer wordmark: tünd və açıq rejim
-for name, color in [('rs-code.png', '#ffffff'), ('rs-code-light.png', '#18181b')]:
-    wm = wordmark(color)
+for name, color, code in [('rs-code.png', '#ffffff', MINT), ('rs-code-light.png', '#18181b', '#047857')]:
+    wm = wordmark(color, code)
     wm.save(img / name, optimize=True)
     print(name, wm.size)
 
@@ -52,8 +54,8 @@ for name, color in [('rs-code.png', '#ffffff'), ('rs-code-light.png', '#18181b')
 circle = render(f'<div style="width:512px;height:512px">{icon_svg("circle")}</div>', 512, 512)
 square = render(f'<div style="width:512px;height:512px">{icon_svg("square")}</div>', 512, 512, transparent=False)
 # Maskable: işarə təhlükəsiz zonada (80%) qalsın — dairə yox, tam kvadrat fon
-safe = render(f'<div style="width:512px;height:512px;background:linear-gradient(135deg,#7c3aed,#d946ef);display:flex;align-items:center;justify-content:center">'
-              f'<svg viewBox="8 8 48 48" width="330" height="330">{MARK}</svg></div>', 512, 512, transparent=False)
+safe = render(f'<div style="width:512px;height:512px;background:radial-gradient(circle at 50% 35%,#0F4A3A,{GREEN});display:flex;align-items:center;justify-content:center">'
+              f'<svg viewBox="0 0 64 64" width="400" height="400">{MARK}</svg></div>', 512, 512, transparent=False)
 
 circle.resize((144, 144), Image.LANCZOS).save(img / '132.png', optimize=True)
 safe.resize((192, 192), Image.LANCZOS).save(img / 'icon-192.png', optimize=True)
@@ -63,15 +65,15 @@ circle.save(root / 'public' / 'favicon.ico', sizes=[(16, 16), (32, 32), (48, 48)
 print('icons ok')
 
 # Sosial paylaşım şəkli 1200×630
-og = render(f'''<div style="width:1200px;height:630px;position:relative;overflow:hidden;font-family:'Space Grotesk',sans-serif;
- background:radial-gradient(circle at 80% 15%,#7c3aed55 0,transparent 45%),radial-gradient(circle at 10% 90%,#d946ef33 0,transparent 40%),linear-gradient(135deg,#09090b,#18122b 60%,#0b0b12)">
- <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px"></div>
- <div style="position:absolute;left:90px;top:170px;display:flex;align-items:center;gap:40px">
-  <div style="width:200px;height:200px">{icon_svg("circle")}</div>
-  <div><div style="font-size:120px;font-weight:700;letter-spacing:-3px;line-height:1;color:#fff">RS <span style="background:linear-gradient(90deg,#8b5cf6,#d946ef);-webkit-background-clip:text;color:transparent">Code</span></div>
-  <div style="margin-top:18px;font-size:34px;color:#a1a1aa">Fikirdən hazır məhsula</div></div></div>
- <div style="position:absolute;left:90px;bottom:70px;font-size:24px;color:#d4d4d8;letter-spacing:.5px">Veb sayt · Proqram təminatı · Mobil tətbiq · SEO</div>
- <div style="position:absolute;right:90px;bottom:70px;font-size:24px;color:#22d3ee;font-weight:700">rs-code.az</div>
+og = render(f'''<div style="width:1200px;height:630px;position:relative;overflow:hidden;font-family:Inter,sans-serif;
+ background:radial-gradient(ellipse at 25% 50%,#0F4A3A 0%,{GREEN} 45%,{DEEP} 100%)">
+ <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px"></div>
+ <div style="position:absolute;left:90px;top:165px;display:flex;align-items:center;gap:44px">
+  <div style="width:210px;height:210px">{icon_svg("circle")}</div>
+  <div><div style="font-family:Montserrat;font-size:112px;font-weight:800;letter-spacing:-3px;line-height:1;color:#fff">RS <span style="color:{MINT}">Code</span></div>
+  <div style="margin-top:20px;font-family:Montserrat;font-weight:600;font-size:34px;color:#E8EFEC">Biznesiniz üçün rəqəmsal həllər</div></div></div>
+ <div style="position:absolute;left:90px;bottom:70px;font-size:24px;font-weight:500;color:#A7C4B8">Veb sayt · Mobil tətbiq · POS · LMS · SEO</div>
+ <div style="position:absolute;right:90px;bottom:70px;font-size:24px;color:{MINT};font-weight:600">rs-code.az</div>
 </div>''', 1200, 630, transparent=False)
 og.convert('RGB').save(img / 'og-default.jpg', quality=88, optimize=True)
 print('og ok')

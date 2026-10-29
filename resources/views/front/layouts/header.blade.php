@@ -9,7 +9,7 @@
 
             {{-- Logo --}}
             <a href="/" class="flex items-center gap-2 shrink-0">
-                <img src="{{ asset('img/rs-code.png') }}?v=2" alt="RS Code" class="logo-dark h-8 lg:h-9 w-auto" width="793" height="192"><img src="{{ asset('img/rs-code-light.png') }}?v=2" alt="RS Code" class="logo-light h-8 lg:h-9 w-auto" width="793" height="192">
+                <img src="{{ asset('img/rs-code.png') }}?v=3" alt="RS Code" class="logo-dark h-8 lg:h-9 w-auto" width="827" height="192"><img src="{{ asset('img/rs-code-light.png') }}?v=3" alt="RS Code" class="logo-light h-8 lg:h-9 w-auto" width="827" height="192">
             </a>
 
             {{-- Desktop Nav --}}
@@ -196,7 +196,7 @@
         {{-- Top bar --}}
         <div class="flex items-center justify-between h-16 px-4 border-b border-zinc-800/60 shrink-0">
             <a href="/" class="flex items-center gap-2">
-                <img src="{{ asset('img/rs-code.png') }}?v=2" alt="RS Code" class="logo-dark h-8 w-auto" width="793" height="192"><img src="{{ asset('img/rs-code-light.png') }}?v=2" alt="RS Code" class="logo-light h-8 w-auto" width="793" height="192">
+                <img src="{{ asset('img/rs-code.png') }}?v=3" alt="RS Code" class="logo-dark h-8 w-auto" width="827" height="192"><img src="{{ asset('img/rs-code-light.png') }}?v=3" alt="RS Code" class="logo-light h-8 w-auto" width="827" height="192">
             </a>
             <button @click="open = false" class="text-zinc-400 hover:text-white p-2 transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

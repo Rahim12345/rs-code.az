@@ -120,14 +120,14 @@
 
     {{-- PWA --}}
     <link rel="manifest"             href="/manifest.json">
-    <meta name="theme-color"         content="#6d28d9">
+    <meta name="theme-color"         content="#0B3B2E">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="RS Code">
-    <link rel="apple-touch-icon"     href="{{ asset('img/apple-touch-icon.png') }}?v=2">
+    <link rel="apple-touch-icon"     href="{{ asset('img/apple-touch-icon.png') }}?v=3">
     {{-- Favicon --}}
-    <link rel="icon" type="image/png" href="{{ asset('img/132.png') }}?v=2">
+    <link rel="icon" type="image/png" href="{{ asset('img/132.png') }}?v=3">
     <script type="application/ld+json">
     @verbatim
     {
