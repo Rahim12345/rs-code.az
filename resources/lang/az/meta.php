@@ -4,9 +4,9 @@
 return [
     'home'     => ['title' => 'Veb Sayt Hazırlanması və Proqram Yazılması Bakıda | RS Code',
                    'desc'  => 'Bakıda veb sayt hazırlanması, POS/CRM/LMS proqram yazılması, SEO və Google reklamı. Sərfəli qiymət, daimi dəstək. Pulsuz konsultasiya üçün yazın!'],
-    'web'      => ['title' => 'Veb Sayt Hazırlanması Bakıda — Qiymət 2026 | RS Code',
+    'web'      => ['title' => 'Veb Sayt Hazırlanması Bakıda — Qiymət 300 ₼-dən | RS Code',
                    'desc'  => 'Korporativ sayt, landing page və onlayn mağaza hazırlanması. Mobil uyğun, sürətli, SEO-ya hazır. Qiymətlər və pulsuz konsultasiya — RS Code, Bakı.'],
-    'seo'      => ['title' => 'SEO Xidməti Bakıda — Saytı Google-da Önə Çıxarın | RS Code',
+    'seo'      => ['title' => 'SEO Xidməti Bakıda — Audit 150 ₼-dən, Qiymətlər | RS Code',
                    'desc'  => 'Peşəkar SEO xidməti: texniki audit, açar söz araşdırması, kontent və backlink. Saytınızı Google-da önə çıxarırıq. Pulsuz SEO audit üçün müraciət edin.'],
     'smm'      => ['title' => 'SMM Xidməti Bakıda — Instagram və Facebook | RS Code',
                    'desc'  => 'Sosial media idarəçiliyi: kontent planı, dizayn, reels və hədəfli reklam. Brendinizi Instagram və Facebook-da böyüdürük. Qiymət üçün yazın.'],

@@ -4,9 +4,9 @@
 return [
     'home'     => ['title' => 'Website & Software Development in Baku | RS Code',
                    'desc'  => 'Website development, custom POS/CRM/LMS software, SEO and Google Ads in Baku, Azerbaijan. Fair prices, ongoing support. Get a free consultation!'],
-    'web'      => ['title' => 'Website Development in Baku — Prices 2026 | RS Code',
+    'web'      => ['title' => 'Website Development in Baku — From AZN 300 | RS Code',
                    'desc'  => 'Corporate websites, landing pages and online stores. Mobile-friendly, fast and SEO-ready. Pricing and free consultation — RS Code, Baku.'],
-    'seo'      => ['title' => 'SEO Services in Baku — Rank Higher on Google | RS Code',
+    'seo'      => ['title' => 'SEO Services in Baku — Audit from AZN 150 | RS Code',
                    'desc'  => 'Professional SEO: technical audit, keyword research, content and link building. We grow your Google rankings. Request a free SEO audit.'],
     'smm'      => ['title' => 'SMM Services in Baku — Instagram & Facebook | RS Code',
                    'desc'  => 'Social media management: content plans, design, reels and targeted ads. We grow your brand on Instagram and Facebook. Ask for pricing.'],

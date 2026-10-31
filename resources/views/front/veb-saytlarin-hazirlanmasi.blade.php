@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 @section('title', __('meta.web.title'))
 @section('description', __('meta.web.desc'))
-@include('front.partials.page-schema', ['key' => 'web', 'service' => true])
+@include('front.partials.page-schema', ['key' => 'web', 'service' => true, 'faq' => 'development.x_faq'])
 @section('content')
 
 {{-- Hero --}}
@@ -17,6 +17,8 @@
 {{-- Content --}}
 <section class="py-12 pb-28">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+        @include('front.partials.service-extras', ['key' => 'development', 'only' => 'short'])
 
         {{-- Intro paragraphs --}}
         <p class="text-zinc-400 leading-relaxed text-base">{{ __('development.muasir') }}</p>
@@ -69,6 +71,8 @@
                 @endforeach
             </div>
         </div>
+
+        @include('front.partials.service-extras', ['key' => 'development', 'only' => 'rest'])
 
         {{-- CTA --}}
         <div class="bg-gradient-to-br from-violet-900/30 to-violet-800/10 border border-violet-500/20 rounded-2xl p-8 text-center">

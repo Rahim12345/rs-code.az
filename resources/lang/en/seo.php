@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'seoTitle' => 'SEO Service',
+    'seoTitle' => 'SEO Services in Baku',
     'seo1' => 'What is an SEO service and why do you need it?',
     'seo2' => 'Search Engine Optimization ”is translated into Azerbaijani as“ Search Engine Optimization ”. The main goal of SEO service is to make websites rank first in search engines without advertising. Search engines include not only Google, but also Yandex, Yahoo, Bingo, and even Youtube. So, to the question of what is SEO - SEO is a set of technical, analytical and creative efforts to increase the visibility of the site during search.',
     'seo3' => ' Why is SEO service important?',
@@ -42,4 +42,13 @@ return [
     'seo38' => 'Need to optimize for a few words',
     'seo39' => 'The current status of your site on google  and how it is Seo',
     'seo40' => 'Competition in your sector',
+
+    // Xidmət səhifəsi əlavələri (service-extras partial)
+    'x_short' => '<strong>Short answer:</strong> SEO is the technical, content and local work that gets your site higher in Google\'s organic (unpaid) results. Results usually show within <strong>3–6 months</strong>. An SEO audit costs <strong>AZN 150–500</strong> (one-off), monthly SEO <strong>AZN 300–1,000</strong>, more in competitive niches.',
+    'x_prices_title' => 'SEO prices',
+    'x_prices_head' => ['Service', 'Price (AZN)', 'What is included'],
+    'x_prices' => [['SEO audit', '150 – 500, one-off', 'Technical check, speed, indexing, prioritised task list'], ['Monthly SEO', '300 – 1,000 / month', 'Keyword research, on-page optimisation, content, local SEO'], ['Competitive niches', '1,000 – 3,000+ / month', 'Extended content plan, link earning, several languages and regions']],
+    'x_prices_note' => 'Prices are estimates and depend on competition and the current state of the site. More: <a href="/blog-details/why-you-need-seo-services-2026" class="text-violet-300 underline">SEO services guide</a>.',
+    'x_faq_title' => 'Frequently asked questions',
+    'x_faq' => [['When does SEO start working?', 'Usually within 3–6 months. Technical fixes can help quickly; competitive keywords take longer.'], ['Do you guarantee the #1 spot on Google?', 'No. Google itself states that no one can guarantee a specific ranking. We are accountable for measurable work: technical health, traffic and leads.'], ['What does SEO pricing depend on?', 'Competition in your niche, the technical state of the site, the number of pages and languages, target regions and how much new content is needed.'], ['SEO or Google Ads?', 'Ads bring traffic immediately but stop when you stop paying. SEO starts slower but brings long-term free traffic. We often run both together: <a href="/google-ads" class="text-violet-300 underline">Google Ads</a>.'], ['What is local SEO?', 'Work on your Google Business Profile, consistent address and contact details and reviews, so you appear on the map and in "near me" searches. See: <a href="/blog-details/how-to-create-google-business-profile-2026" class="text-violet-300 underline">how to create a Google Business Profile</a>.'], ['Is anything extra needed to appear in Google\'s AI answers?', 'According to Google\'s official guidance, AI Overviews and AI Mode have no special requirements: the page must be indexed and eligible to be shown in search results. Good SEO is exactly that work.']],
 ];

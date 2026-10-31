@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 @section('title', __('meta.seo.title'))
 @section('description', __('meta.seo.desc'))
-@include('front.partials.page-schema', ['key' => 'seo', 'service' => true])
+@include('front.partials.page-schema', ['key' => 'seo', 'service' => true, 'faq' => 'seo.x_faq'])
 @section('content')
 
 {{-- Hero --}}
@@ -17,6 +17,8 @@
 {{-- Content --}}
 <section class="py-12 pb-28">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+        @include('front.partials.service-extras', ['key' => 'seo', 'only' => 'short'])
 
         {{-- What is SEO --}}
         <div class="bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-8">
@@ -86,6 +88,8 @@
                 @endforeach
             </ul>
         </div>
+
+        @include('front.partials.service-extras', ['key' => 'seo', 'only' => 'rest'])
 
         {{-- CTA --}}
         <div class="bg-gradient-to-br from-violet-900/30 to-violet-800/10 border border-violet-500/20 rounded-2xl p-8 text-center">

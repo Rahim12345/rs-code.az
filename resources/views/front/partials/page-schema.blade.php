@@ -29,6 +29,18 @@
         ];
     }
 
+    // İstəyə görə FAQPage: ['faq' => 'development.x_faq'] — [[sual, cavab], ...]
+    if (!empty($faq) && is_array($faqItems = __($faq))) {
+        $graph[] = [
+            '@type'      => 'FAQPage',
+            'mainEntity' => array_map(fn ($qa) => [
+                '@type'          => 'Question',
+                'name'           => $qa[0],
+                'acceptedAnswer' => ['@type' => 'Answer', 'text' => strip_tags($qa[1])],
+            ], $faqItems),
+        ];
+    }
+
     $schemaJson = json_encode(['@context' => 'https://schema.org', '@graph' => $graph], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 @endphp
 @push('head_extra')

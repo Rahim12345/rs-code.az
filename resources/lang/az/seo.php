@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'seoTitle' => 'SEO Xidməti',
+    'seoTitle' => 'SEO Xidməti Bakıda',
     'seo1' => 'SEO xidməti nədir və nə üçün lazımdır ?',
     'seo2' => 'Search Engine Optimization” Azərbaycan dilində “ Axtarış Mühərriki Optimaziyası” kimi tərcümə olunur. SEO xidmətinin əsas məqsədi axtarış motorlarında veb saytların reklamsız ilk sıraya çıxmasına nail olmaqdır. Axtarış motorlarına isə təkcə Google deyil, Yandex, Yahoo, Bingo, hətta Youtube da daxildir. Beləliklə, SEO nədir sualına - SEO saytın axtarış zamanı görünürlüyünü artırmaq üçün texniki, analitik və yaradıcı çalışmaların məcmusudur.',
     'seo3' => ' SEO xidməti nə üçün önəmlidir ?',
@@ -42,4 +42,13 @@ return [
     'seo38' => 'Neçə söz üçün optimizasiya etmək lazımdır',
     'seo39' => 'Googleda saytınızın hal-hazırki vəziyyəti və SEO-su necədir',
     'seo40' => 'Sektorunuzdakı rəqabət',
+
+    // Xidmət səhifəsi əlavələri (service-extras partial)
+    'x_short' => '<strong>Qısa cavab:</strong> SEO saytınızın Google-da reklamsız, təbii nəticələrdə yuxarı çıxması üçün texniki, məzmun və lokal işlərdir. Nəticə adətən <strong>3–6 aya</strong> görünür. SEO auditi <strong>150–500 AZN</strong> (birdəfəlik), aylıq SEO <strong>300–1 000 AZN</strong>, rəqabətli sahələrdə daha çox.',
+    'x_prices_title' => 'SEO qiymətləri',
+    'x_prices_head' => ['Xidmət', 'Qiymət (AZN)', 'Nə daxildir'],
+    'x_prices' => [['SEO auditi', '150 – 500, birdəfəlik', 'Texniki yoxlama, sürət, indeksləmə, prioritetli tapşırıq siyahısı'], ['Aylıq SEO', '300 – 1 000 / ay', 'Açar söz araşdırması, səhifə optimizasiyası, kontent, lokal SEO'], ['Rəqabətli sahələr', '1 000 – 3 000+ / ay', 'Geniş kontent planı, link qazanma, bir neçə dil və bölgə']],
+    'x_prices_note' => 'Qiymətlər təxminidir və sahənin rəqabətindən, saytın vəziyyətindən asılıdır. Ətraflı: <a href="/blog-details/seo-xidmeti-azerbaycan-2026" class="text-violet-300 underline">SEO xidməti bələdçisi</a>.',
+    'x_faq_title' => 'Tez-tez verilən suallar',
+    'x_faq' => [['SEO nə vaxt nəticə verir?', 'Adətən 3–6 ay ərzində. Texniki düzəlişlər tez təsir edə bilər, rəqabətli açar sözlərdə isə daha uzun vaxt lazımdır.'], ['Google-da birinci yerə zəmanət verirsinizmi?', 'Xeyr. Google özü də bildirir ki, heç kim konkret mövqeyə zəmanət verə bilməz. Biz ölçülə bilən işə — texniki vəziyyətə, trafikə və müraciətlərə — cavabdehik.'], ['SEO qiyməti nədən asılıdır?', 'Sahənin rəqabətindən, saytın texniki vəziyyətindən, səhifə və dil sayından, hədəf bölgələrdən və nə qədər yeni məzmun lazım olduğundan.'], ['SEO, yoxsa Google reklamı?', 'Reklam dərhal trafik verir, amma ödəniş dayananda dayanır. SEO yavaş başlayır, amma uzunmüddətli pulsuz trafik gətirir. Çox vaxt ikisini birlikdə işlədirik: <a href="/google-reklamlari" class="text-violet-300 underline">Google reklamları</a>.'], ['Lokal SEO nədir?', 'Xəritədə və "yaxınlıqda" axtarışlarda görünmək üçün Google Business Profile, ünvan və əlaqə məlumatlarının ardıcıllığı və rəylər üzərində iş. Bax: <a href="/blog-details/google-business-profile-nece-yaradilir-2026" class="text-violet-300 underline">Google Business Profile necə yaradılır</a>.'], ['Google AI cavablarında görünmək üçün ayrıca nəsə lazımdır?', 'Google-un rəsmi izahına görə AI Overviews və AI Mode üçün xüsusi tələb yoxdur: səhifə indekslənməli və axtarış nəticəsində göstərilməyə uyğun olmalıdır. Yəni keyfiyyətli SEO elə bu işdir.']],
 ];
