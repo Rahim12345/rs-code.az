@@ -1,0 +1,4 @@
+{"name": "parents-payments", "year": "2027",
+ "az": ["Valideyn", "hesabatı", "davamiyyət və ödəniş", "Repetitor və kurs mərkəzi üçün dərs haqqı izləmə", "EDU", [["Davamiyyət", "✓", "hər dərs"], ["Hesabat ★", "1/ay", "valideynə"], ["Ödəniş", "AZN", "kim ödəyib"]]],
+ "en": ["Parent", "reports", "attendance and fees", "Lesson fee tracking for tutors and course centres", "EDU", [["Attendance", "✓", "every lesson"], ["Report ★", "1/mo", "to parents"], ["Payments", "AZN", "who has paid"]]],
+ "ru": ["Отчёты", "родителям", "посещаемость и оплата", "Учёт оплат для репетиторов и учебных курсов", "EDU", [["Посещаемость", "✓", "каждое занятие"], ["Отчёт ★", "1/мес", "родителям"], ["Оплата", "AZN", "кто оплатил"]]]}
