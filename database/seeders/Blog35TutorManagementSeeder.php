@@ -109,6 +109,14 @@ class Blog35TutorManagementSeeder extends Seeder
   </div>
 </div>
 
+<h3>Kursometr ilə bağlı digər bələdçilər</h3>
+<ul>
+  <li><a href="/blog-details/google-classroom-whatsapp-excel-yoxsa-kursometr-2027">Google Classroom, WhatsApp, Excel, yoxsa Kursometr: müqayisə</a></li>
+  <li><a href="/blog-details/onlayn-test-nece-hazirlanir-muellim-ucun-2027">Onlayn test necə hazırlanır: vaxtlı sınaq və avtomatik nəticə</a></li>
+  <li><a href="/blog-details/muellim-repetitor-ucun-sexsi-sayt-2027">Müəllim və repetitor üçün şəxsi sayt</a></li>
+  <li><a href="/blog-details/repetitor-valideyn-hesabati-ve-odenis-izleme-2027">Valideyn hesabatı, davamiyyət və dərs haqqı ödənişlərinin izlənməsi</a></li>
+</ul>
+
 <h2>Nəticə</h2>
 <p>WhatsApp və Excel başlanğıc üçün işləyir, amma tələbə sayı artdıqca müəllimin vaxtını inzibati işlər yeyir. Qruplar, davamiyyət, sınaq, tapşırıq, ödəniş və valideyn əlaqəsini bir platformaya toplamaq həm vaxta qənaət edir, həm də tələbə və valideynlərin gözündə peşəkarlığınızı artırır.</p>
 <p><strong><a href="/mehsullar/kursometr">Kursometr haqqında ətraflı</a></strong> və ya fərdi sistem üçün <a href="/elaqe">bizimlə əlaqə saxlayın</a>.</p>
@@ -214,6 +222,14 @@ HTML;
   </div>
 </div>
 
+<h3>More guides for teachers and tutors</h3>
+<ul>
+  <li><a href="/blog-details/google-classroom-vs-whatsapp-vs-excel-vs-kursometr-2027">Google Classroom vs WhatsApp vs Excel vs Kursometr: comparison</a></li>
+  <li><a href="/blog-details/how-to-create-online-tests-for-teachers-2027">How to create online tests: timed mock exams and automatic results</a></li>
+  <li><a href="/blog-details/personal-website-for-teachers-tutors-2027">Personal website for teachers and tutors</a></li>
+  <li><a href="/blog-details/tutor-parent-reports-and-payment-tracking-2027">Parent progress reports, attendance and fee tracking</a></li>
+</ul>
+
 <h2>Conclusion</h2>
 <p>WhatsApp and Excel work at the start, but as the number of students grows, admin eats into a teacher's time. Bringing groups, attendance, tests, homework, payments and parent communication onto one platform saves time and makes you look more professional to students and parents.</p>
 <p><strong><a href="/mehsullar/kursometr">Learn more about Kursometr</a></strong> or <a href="/contact">contact us</a> for a custom system.</p>
@@ -318,6 +334,14 @@ HTML;
     </div>
   </div>
 </div>
+
+<h3>Другие руководства для учителей и репетиторов</h3>
+<ul>
+  <li><a href="/blog-details/google-classroom-whatsapp-excel-ili-kursometr-2027">Google Classroom, WhatsApp, Excel или Kursometr: сравнение</a></li>
+  <li><a href="/blog-details/kak-sozdat-onlajn-test-dlya-uchitelya-2027">Как создать онлайн-тест: пробный экзамен с таймером и автопроверкой</a></li>
+  <li><a href="/blog-details/lichnyj-sajt-dlya-uchitelya-repetitora-2027">Личный сайт для учителя и репетитора</a></li>
+  <li><a href="/blog-details/repetitor-otchety-roditelyam-i-uchet-oplat-2027">Отчёты родителям, посещаемость и учёт оплат</a></li>
+</ul>
 
 <h2>Итог</h2>
 <p>WhatsApp и Excel подходят для старта, но с ростом числа учеников администрирование съедает время преподавателя. Группы, посещаемость, тесты, задания, оплаты и связь с родителями на одной платформе экономят время и делают вас профессиональнее в глазах учеников и родителей.</p>

@@ -22,10 +22,25 @@
             ['@type' => 'ListItem', 'position' => 3, 'name' => $product['name'], 'item' => 'https://rs-code.az/mehsullar/' . $slug],
         ],
     ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    // İstəyə görə: məhsulun 'faq' => [[sual, cavab], ...] və 'guides' => [[url, başlıq], ...] açarları
+    $faqItems   = $product['faq'] ?? [];
+    $guideItems = $product['guides'] ?? [];
+    $faqSchema  = $faqItems ? json_encode([
+        '@context'   => 'https://schema.org',
+        '@type'      => 'FAQPage',
+        'mainEntity' => array_map(fn ($qa) => [
+            '@type'          => 'Question',
+            'name'           => $qa[0],
+            'acceptedAnswer' => ['@type' => 'Answer', 'text' => $qa[1]],
+        ], $faqItems),
+    ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) : null;
 @endphp
 @push('head_extra')
 <script type="application/ld+json">{!! $productSchema !!}</script>
 <script type="application/ld+json">{!! $crumbSchema !!}</script>
+@if($faqSchema)
+<script type="application/ld+json">{!! $faqSchema !!}</script>
+@endif
 @endpush
 @section('content')
 
@@ -78,6 +93,33 @@
             </div>
             @endforeach
         </div>
+
+        @if($faqItems)
+        <h2 class="text-2xl font-bold text-white mt-16 mb-6" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('products.faq_title') }}</h2>
+        <div class="space-y-3">
+            @foreach($faqItems as [$q, $a])
+            <details class="group bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-5 open:border-violet-500/30">
+                <summary class="cursor-pointer list-none flex items-center justify-between gap-4 font-semibold text-zinc-200 text-sm">
+                    {{ $q }}
+                    <span class="text-violet-400 transition-transform group-open:rotate-45 text-lg leading-none">+</span>
+                </summary>
+                <p class="text-zinc-400 text-sm leading-relaxed mt-3">{{ $a }}</p>
+            </details>
+            @endforeach
+        </div>
+        @endif
+
+        @if($guideItems)
+        <h2 class="text-2xl font-bold text-white mt-16 mb-6" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('products.guides_title') }}</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            @foreach($guideItems as [$gUrl, $gTitle])
+            <a href="{{ $gUrl }}" class="group flex items-center justify-between gap-3 bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-5 hover:border-violet-500/40 transition-colors">
+                <span class="text-zinc-200 text-sm font-medium group-hover:text-violet-300 transition-colors">{{ $gTitle }}</span>
+                <svg class="w-4 h-4 text-violet-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+            @endforeach
+        </div>
+        @endif
 
         <div class="mt-12 bg-gradient-to-br from-violet-900/30 to-zinc-900/30 border border-violet-500/20 rounded-2xl p-8 text-center">
             <p class="text-zinc-300 mb-5">{{ $product['badge'] }} — {{ $product['tagline'] }}</p>

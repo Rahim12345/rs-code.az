@@ -183,6 +183,9 @@ class Blog66ClassroomVsKursometrSeeder extends Seeder
   <li><a href="/blog-details/repetitor-ders-idareetme-proqrami-2026">Repetitorlar üçün dərs idarəetməsi: WhatsApp və Excel-dən platformaya keçid</a></li>
   <li><a href="/blog-details/tedris-merkezi-idareetme-proqrami-2026">Tədris mərkəzi idarəetmə proqramı</a></li>
   <li><a href="/blog-details/onlayn-kurs-nece-yaradilir-2026">Onlayn kurs necə yaradılır?</a></li>
+  <li><a href="/blog-details/onlayn-test-nece-hazirlanir-muellim-ucun-2027">Onlayn test necə hazırlanır: vaxtlı sınaq və avtomatik nəticə</a></li>
+  <li><a href="/blog-details/muellim-repetitor-ucun-sexsi-sayt-2027">Müəllim və repetitor üçün şəxsi sayt</a></li>
+  <li><a href="/blog-details/repetitor-valideyn-hesabati-ve-odenis-izleme-2027">Valideyn hesabatı, davamiyyət və dərs haqqı ödənişlərinin izlənməsi</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -350,6 +353,9 @@ HTML;
   <li><a href="/blog-details/tutor-class-management-software-2026">Class management for tutors: moving from WhatsApp and Excel to a platform</a></li>
   <li><a href="/blog-details/training-centre-management-software-2026">Training centre management software</a></li>
   <li><a href="/blog-details/how-to-create-and-sell-online-course-2026">How to create an online course</a></li>
+  <li><a href="/blog-details/how-to-create-online-tests-for-teachers-2027">How to create online tests: timed mock exams and automatic results</a></li>
+  <li><a href="/blog-details/personal-website-for-teachers-tutors-2027">Personal website for teachers and tutors</a></li>
+  <li><a href="/blog-details/tutor-parent-reports-and-payment-tracking-2027">Parent progress reports, attendance and fee tracking</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -517,6 +523,9 @@ HTML;
   <li><a href="/blog-details/programma-dlya-repetitorov-2026">Управление занятиями для репетиторов: от WhatsApp и Excel к платформе</a></li>
   <li><a href="/blog-details/programma-dlya-uchebnogo-centra-2026">Программа для учебного центра</a></li>
   <li><a href="/blog-details/kak-sozdat-i-prodavat-onlajn-kurs-2026">Как создать онлайн-курс</a></li>
+  <li><a href="/blog-details/kak-sozdat-onlajn-test-dlya-uchitelya-2027">Как создать онлайн-тест: пробный экзамен с таймером и автопроверкой</a></li>
+  <li><a href="/blog-details/lichnyj-sajt-dlya-uchitelya-repetitora-2027">Личный сайт для учителя и репетитора</a></li>
+  <li><a href="/blog-details/repetitor-otchety-roditelyam-i-uchet-oplat-2027">Отчёты родителям, посещаемость и учёт оплат</a></li>
 </ul>
 
 <h2>Итог</h2>
