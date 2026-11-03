@@ -77,6 +77,8 @@ return [
                 ['/blog-details/repetitor-valideyn-hesabati-ve-odenis-izleme-2027', 'Valideyn hesabatı və ödəniş izləmə'],
                 ['/blog-details/repetitor-ders-idareetme-proqrami-2026', 'Repetitorlar üçün dərs idarəetməsi'],
                 ['/blog-details/tedris-merkezi-idareetme-proqrami-2026', 'Tədris mərkəzi idarəetmə proqramı'],
+                ['/blog-details/abituriyent-hazirligi-kurs-merkezi-idareetme-2027', 'Abituriyent hazırlığı kurs mərkəzi necə idarə olunur'],
+                ['/blog-details/dil-kursu-ucun-idareetme-proqrami-2027', 'Dil kursu üçün idarəetmə proqramı'],
             ],
         ],
     ],

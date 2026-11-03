@@ -77,6 +77,8 @@ return [
                 ['/blog-details/repetitor-otchety-roditelyam-i-uchet-oplat-2027', 'Отчёты родителям и учёт оплат'],
                 ['/blog-details/programma-dlya-repetitorov-2026', 'Управление занятиями для репетиторов'],
                 ['/blog-details/programma-dlya-uchebnogo-centra-2026', 'Программа для учебного центра'],
+                ['/blog-details/upravlenie-kursami-podgotovki-k-ekzamenam-2027', 'Как управлять курсами подготовки к экзаменам'],
+                ['/blog-details/programma-dlya-yazykovyh-kursov-2027', 'Программа для языковых курсов'],
             ],
         ],
     ],

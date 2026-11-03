@@ -1,0 +1,4 @@
+{"name": "exam-prep-centre", "year": "2027",
+ "az": ["Hazırlıq", "kursu", "sınaq və nəticə analizi", "Abituriyent mərkəzi üçün qruplar, sınaqlar, hesabat", "EDU", [["Sınaq", "1/ay", "real şərait"], ["Reytinq ★", "bal", "qrup üzrə"], ["Valideyn", "✓", "kabinet"]]],
+ "en": ["Exam prep", "centre", "mock exams and results", "Groups, mock exams and reports for prep centres", "EDU", [["Mock exam", "1/mo", "real conditions"], ["Ranking ★", "score", "by group"], ["Parents", "✓", "portal"]]],
+ "ru": ["Курсы", "подготовки", "пробники и анализ", "Группы, пробные экзамены и отчёты для курсов", "EDU", [["Пробник", "1/мес", "как на экзамене"], ["Рейтинг ★", "балл", "по группе"], ["Родители", "✓", "кабинет"]]]}

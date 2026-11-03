@@ -1,0 +1,4 @@
+{"name": "language-course", "year": "2027",
+ "az": ["Dil kursu", "üçün proqram", "səviyyə və qruplar", "Səviyyə testi, davamiyyət, ev tapşırığı və ödəniş", "EDU", [["Səviyyə", "A1–C2", "CEFR"], ["Qruplar ★", "✓", "cədvəl üzrə"], ["Ödəniş", "AZN", "kim ödəyib"]]],
+ "en": ["Language", "course software", "levels and groups", "Placement tests, attendance, homework and fees", "EDU", [["Levels", "A1–C2", "CEFR"], ["Groups ★", "✓", "by schedule"], ["Payments", "AZN", "who has paid"]]],
+ "ru": ["Программа", "для языковых", "курсов и групп", "Тест уровня, посещаемость, задания и оплата", "EDU", [["Уровни", "A1–C2", "CEFR"], ["Группы ★", "✓", "по расписанию"], ["Оплата", "AZN", "кто оплатил"]]]}

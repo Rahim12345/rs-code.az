@@ -77,6 +77,8 @@ return [
                 ['/blog-details/tutor-parent-reports-and-payment-tracking-2027', 'Parent reports and payment tracking'],
                 ['/blog-details/tutor-class-management-software-2026', 'Class management for tutors'],
                 ['/blog-details/training-centre-management-software-2026', 'Training centre management software'],
+                ['/blog-details/exam-prep-course-centre-management-2027', 'How to run an exam-prep course centre'],
+                ['/blog-details/language-course-management-software-2027', 'Language course management software'],
             ],
         ],
     ],
