@@ -1,0 +1,4 @@
+{"name": "homework-system", "year": "2027",
+ "az": ["Ev tapşırığı", "sistemi", "ver, yoxla, izlə", "Tapşırıq, avtomatik test, rəy və valideyn kabineti", "EDU", [["Tapşırıq", "✓", "kabinetdə"], ["Test ★", "avto", "qapalı suallar"], ["Valideyn", "✓", "nəticələr"]]],
+ "en": ["Homework", "system", "set, check, track", "Tasks, auto-graded tests, feedback and parent portal", "EDU", [["Tasks", "✓", "in the account"], ["Tests ★", "auto", "closed questions"], ["Parents", "✓", "results"]]],
+ "ru": ["Система", "домашних заданий", "задать, проверить", "Задания, автотесты, обратная связь и кабинет родителя", "EDU", [["Задания", "✓", "в кабинете"], ["Тесты ★", "авто", "закрытые вопросы"], ["Родители", "✓", "результаты"]]]}
