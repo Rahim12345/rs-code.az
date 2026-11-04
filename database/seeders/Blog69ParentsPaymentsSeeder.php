@@ -226,6 +226,7 @@ class Blog69ParentsPaymentsSeeder extends Seeder
   <li><a href="/blog-details/google-classroom-whatsapp-excel-yoxsa-kursometr-2027">Google Classroom, WhatsApp, Excel, yoxsa Kursometr: müqayisə</a></li>
   <li><a href="/blog-details/onlayn-test-nece-hazirlanir-muellim-ucun-2027">Onlayn test necə hazırlanır: vaxtlı sınaq və avtomatik nəticə</a></li>
   <li><a href="/blog-details/muellim-repetitor-ucun-sexsi-sayt-2027">Müəllim və repetitor üçün şəxsi sayt</a></li>
+  <li><a href="/blog-details/elektron-davamiyyet-ucotu-kurs-merkezi-2027">Elektron davamiyyət uçotu: jurnal, Excel, yoxsa Kursometr</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -443,6 +444,7 @@ HTML;
   <li><a href="/blog-details/google-classroom-vs-whatsapp-vs-excel-vs-kursometr-2027">Google Classroom vs WhatsApp vs Excel vs Kursometr: comparison</a></li>
   <li><a href="/blog-details/how-to-create-online-tests-for-teachers-2027">How to create online tests: timed mock exams and automatic results</a></li>
   <li><a href="/blog-details/personal-website-for-teachers-tutors-2027">Personal website for teachers and tutors</a></li>
+  <li><a href="/blog-details/attendance-tracking-for-course-centres-2027">Electronic attendance tracking: paper register, Excel or Kursometr</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -660,6 +662,7 @@ HTML;
   <li><a href="/blog-details/google-classroom-whatsapp-excel-ili-kursometr-2027">Google Classroom, WhatsApp, Excel или Kursometr: сравнение</a></li>
   <li><a href="/blog-details/kak-sozdat-onlajn-test-dlya-uchitelya-2027">Как создать онлайн-тест: пробный экзамен с таймером и автопроверкой</a></li>
   <li><a href="/blog-details/lichnyj-sajt-dlya-uchitelya-repetitora-2027">Личный сайт для учителя и репетитора</a></li>
+  <li><a href="/blog-details/uchet-poseshchaemosti-uchebnyj-centr-2027">Электронный учёт посещаемости: журнал, Excel или Kursometr</a></li>
 </ul>
 
 <h2>Итог</h2>

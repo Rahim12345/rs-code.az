@@ -1,0 +1,4 @@
+{"name": "attendance", "year": "2027",
+ "az": ["Elektron", "davamiyyət", "uçotu", "Kurs mərkəzi və repetitor: jurnal, Excel, yoxsa Kursometr", "EDU", [["Dərs", "✓", "hər dərsdə qeyd"], ["Valideyn ★", "✓", "kabinetdə görür"], ["Ödəniş", "AZN", "davamiyyətlə birlikdə"]]],
+ "en": ["Attendance", "tracking", "for course centres", "Course centres and tutors: paper, Excel or Kursometr", "EDU", [["Lessons", "✓", "marked every lesson"], ["Parents ★", "✓", "see it in the portal"], ["Payments", "AZN", "next to attendance"]]],
+ "ru": ["Учёт", "посещаемости", "в учебном центре", "Учебный центр и репетитор: журнал, Excel или Kursometr", "EDU", [["Занятия", "✓", "отметка на уроке"], ["Родители ★", "✓", "видят в кабинете"], ["Оплата", "AZN", "рядом с посещаемостью"]]]}

@@ -201,6 +201,7 @@ class Blog74HomeworkSeeder extends Seeder
   <li><a href="/blog-details/dil-kursu-ucun-idareetme-proqrami-2027">Dil kursu üçün idarəetmə proqramı</a></li>
   <li><a href="/blog-details/onlayn-ders-nece-teskil-olunur-2027">Onlayn dərs necə təşkil olunur</a></li>
   <li><a href="/blog-details/repetitor-ders-haqqi-nece-teyin-olunur-2027">Repetitor dərs haqqını necə müəyyənləşdirsin</a></li>
+  <li><a href="/blog-details/elektron-davamiyyet-ucotu-kurs-merkezi-2027">Elektron davamiyyət uçotu: jurnal, Excel, yoxsa Kursometr</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -389,6 +390,7 @@ HTML;
   <li><a href="/blog-details/language-course-management-software-2027">Language course management software</a></li>
   <li><a href="/blog-details/how-to-run-online-lessons-2027">How to run online lessons</a></li>
   <li><a href="/blog-details/how-tutors-should-set-lesson-prices-2027">How tutors should set lesson prices</a></li>
+  <li><a href="/blog-details/attendance-tracking-for-course-centres-2027">Electronic attendance tracking: paper register, Excel or Kursometr</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -577,6 +579,7 @@ HTML;
   <li><a href="/blog-details/programma-dlya-yazykovyh-kursov-2027">Программа для языковых курсов</a></li>
   <li><a href="/blog-details/kak-provodit-onlajn-uroki-2027">Как проводить онлайн-уроки</a></li>
   <li><a href="/blog-details/kak-repetitoru-ustanovit-cenu-za-urok-2027">Как репетитору установить цену за урок</a></li>
+  <li><a href="/blog-details/uchet-poseshchaemosti-uchebnyj-centr-2027">Электронный учёт посещаемости: журнал, Excel или Kursometr</a></li>
 </ul>
 
 <h2>Итог</h2>
