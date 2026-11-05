@@ -199,6 +199,7 @@ class Blog78KidsCentreSeeder extends Seeder
   <li><a href="/blog-details/elektron-davamiyyet-ucotu-kurs-merkezi-2027">Elektron davamiyyət uçotu</a></li>
   <li><a href="/blog-details/dil-kursu-ucun-idareetme-proqrami-2027">Dil kursu üçün idarəetmə proqramı</a></li>
   <li><a href="/blog-details/google-classroom-whatsapp-excel-yoxsa-kursometr-2027">Google Classroom, WhatsApp, Excel, yoxsa Kursometr: müqayisə</a></li>
+  <li><a href="/blog-details/it-ve-proqramlasdirma-kursu-ucun-idareetme-proqrami-2027">İT və proqramlaşdırma kursu üçün idarəetmə proqramı</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -386,6 +387,7 @@ HTML;
   <li><a href="/blog-details/attendance-tracking-for-course-centres-2027">Electronic attendance tracking</a></li>
   <li><a href="/blog-details/language-course-management-software-2027">Language course management software</a></li>
   <li><a href="/blog-details/google-classroom-vs-whatsapp-vs-excel-vs-kursometr-2027">Google Classroom vs WhatsApp vs Excel vs Kursometr: comparison</a></li>
+  <li><a href="/blog-details/management-software-for-it-and-coding-courses-2027">Management software for IT and coding courses</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -573,6 +575,7 @@ HTML;
   <li><a href="/blog-details/uchet-poseshchaemosti-uchebnyj-centr-2027">Электронный учёт посещаемости</a></li>
   <li><a href="/blog-details/programma-dlya-yazykovyh-kursov-2027">Программа для языковых курсов</a></li>
   <li><a href="/blog-details/google-classroom-whatsapp-excel-ili-kursometr-2027">Google Classroom, WhatsApp, Excel или Kursometr: сравнение</a></li>
+  <li><a href="/blog-details/programma-dlya-it-kursov-i-kursov-programmirovaniya-2027">Программа для IT-курсов и курсов программирования</a></li>
 </ul>
 
 <h2>Итог</h2>
