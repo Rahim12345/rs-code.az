@@ -196,6 +196,7 @@ class Blog76AttendanceSeeder extends Seeder
   <li><a href="/blog-details/repetitor-ders-idareetme-proqrami-2026">Repetitorlar üçün dərs idarəetmə proqramı</a></li>
   <li><a href="/blog-details/tedris-merkezi-idareetme-proqrami-2026">Tədris mərkəzi üçün idarəetmə proqramı</a></li>
   <li><a href="/blog-details/abituriyent-hazirligi-kurs-merkezi-idareetme-2027">Abituriyent hazırlığı kurs mərkəzi necə idarə olunur</a></li>
+  <li><a href="/blog-details/kurs-merkezi-nece-acilir-2027">Kurs mərkəzi necə açılır: addım-addım bələdçi</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -381,6 +382,7 @@ HTML;
   <li><a href="/blog-details/tutor-class-management-software-2026">Class management software for tutors</a></li>
   <li><a href="/blog-details/training-centre-management-software-2026">Training centre management software</a></li>
   <li><a href="/blog-details/exam-prep-course-centre-management-2027">How to run an exam prep course centre</a></li>
+  <li><a href="/blog-details/how-to-open-a-course-centre-2027">How to open a course centre: a step-by-step guide</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -566,6 +568,7 @@ HTML;
   <li><a href="/blog-details/programma-dlya-repetitorov-2026">Программа для репетиторов</a></li>
   <li><a href="/blog-details/programma-dlya-uchebnogo-centra-2026">Программа для учебного центра</a></li>
   <li><a href="/blog-details/upravlenie-kursami-podgotovki-k-ekzamenam-2027">Как управлять курсами подготовки к экзаменам</a></li>
+  <li><a href="/blog-details/kak-otkryt-uchebnyj-centr-2027">Как открыть учебный центр: пошаговое руководство</a></li>
 </ul>
 
 <h2>Итог</h2>
