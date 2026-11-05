@@ -204,6 +204,7 @@ class Blog79ItCourseSeeder extends Seeder
   <li><a href="/blog-details/onlayn-test-nece-hazirlanir-muellim-ucun-2027">Onlayn test necə hazırlanır: vaxtlı sınaq və avtomatik nəticə</a></li>
   <li><a href="/blog-details/usaq-inkisaf-merkezi-ucun-idareetme-proqrami-2027">Uşaq inkişaf mərkəzi üçün idarəetmə proqramı</a></li>
   <li><a href="/blog-details/onlayn-kurs-nece-yaradilir-2026">Onlayn kurs necə yaradılır və satılır</a></li>
+  <li><a href="/blog-details/musiqi-reqs-ve-resm-studiyasi-ucun-idareetme-proqrami-2027">Musiqi, rəqs və rəsm studiyası üçün idarəetmə proqramı</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -395,6 +396,7 @@ HTML;
   <li><a href="/blog-details/how-to-create-online-tests-for-teachers-2027">How to create online tests: timed mock exams and automatic results</a></li>
   <li><a href="/blog-details/management-software-for-kids-development-centres-2027">Management software for kids' development centres</a></li>
   <li><a href="/blog-details/how-to-create-and-sell-online-course-2026">How to create and sell an online course</a></li>
+  <li><a href="/blog-details/management-software-for-music-dance-and-art-studios-2027">Management software for music, dance and art studios</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -586,6 +588,7 @@ HTML;
   <li><a href="/blog-details/kak-sozdat-onlajn-test-dlya-uchitelya-2027">Как создать онлайн-тест: пробный экзамен с таймером и автопроверкой</a></li>
   <li><a href="/blog-details/programma-dlya-detskogo-razvivayushchego-centra-2027">Программа для детского развивающего центра</a></li>
   <li><a href="/blog-details/kak-sozdat-i-prodavat-onlajn-kurs-2026">Как создать и продавать онлайн-курс</a></li>
+  <li><a href="/blog-details/programma-dlya-muzykalnoj-tanczevalnoj-i-hudozhestvennoj-studii-2027">Программа для музыкальной, танцевальной и художественной студии</a></li>
 </ul>
 
 <h2>Итог</h2>
