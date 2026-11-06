@@ -189,6 +189,7 @@ class Blog80ArtStudioSeeder extends Seeder
   <li><a href="/blog-details/repetitor-valideyn-hesabati-ve-odenis-izleme-2027">Valideyn hesabatı və ödəniş izləmə</a></li>
   <li><a href="/blog-details/ev-tapsirigi-sistemi-muellim-ucun-2027">Ev tapşırığı sistemi: ver, yoxla, izlə</a></li>
   <li><a href="/blog-details/it-ve-proqramlasdirma-kursu-ucun-idareetme-proqrami-2027">İT və proqramlaşdırma kursu üçün idarəetmə proqramı</a></li>
+  <li><a href="/blog-details/surucu-kursu-ucun-idareetme-proqrami-2027">Sürücü kursu üçün idarəetmə proqramı</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -364,6 +365,7 @@ HTML;
   <li><a href="/blog-details/tutor-parent-reports-and-payment-tracking-2027">Parent reports and payment tracking</a></li>
   <li><a href="/blog-details/homework-system-for-teachers-2027">Homework system for teachers</a></li>
   <li><a href="/blog-details/management-software-for-it-and-coding-courses-2027">Management software for IT and coding courses</a></li>
+  <li><a href="/blog-details/management-software-for-driving-schools-2027">Management software for driving schools</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -539,6 +541,7 @@ HTML;
   <li><a href="/blog-details/repetitor-otchety-roditelyam-i-uchet-oplat-2027">Отчёты родителям и учёт оплат</a></li>
   <li><a href="/blog-details/sistema-domashnih-zadanij-dlya-uchitelya-2027">Система домашних заданий для учителя</a></li>
   <li><a href="/blog-details/programma-dlya-it-kursov-i-kursov-programmirovaniya-2027">Программа для IT-курсов и курсов программирования</a></li>
+  <li><a href="/blog-details/programma-dlya-avtoshkoly-2027">Программа для автошколы</a></li>
 </ul>
 
 <h2>Итог</h2>

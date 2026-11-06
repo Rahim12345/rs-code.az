@@ -192,6 +192,7 @@ class Blog67OnlineTestSeeder extends Seeder
   <li><a href="/blog-details/google-classroom-whatsapp-excel-yoxsa-kursometr-2027">Google Classroom, WhatsApp, Excel, yoxsa Kursometr: müqayisə</a></li>
   <li><a href="/blog-details/muellim-repetitor-ucun-sexsi-sayt-2027">Müəllim və repetitor üçün şəxsi sayt</a></li>
   <li><a href="/blog-details/repetitor-valideyn-hesabati-ve-odenis-izleme-2027">Valideyn hesabatı, davamiyyət və dərs haqqı ödənişlərinin izlənməsi</a></li>
+  <li><a href="/blog-details/surucu-kursu-ucun-idareetme-proqrami-2027">Sürücü kursu üçün idarəetmə proqramı</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -373,6 +374,7 @@ HTML;
   <li><a href="/blog-details/google-classroom-vs-whatsapp-vs-excel-vs-kursometr-2027">Google Classroom vs WhatsApp vs Excel vs Kursometr: comparison</a></li>
   <li><a href="/blog-details/personal-website-for-teachers-tutors-2027">Personal website for teachers and tutors</a></li>
   <li><a href="/blog-details/tutor-parent-reports-and-payment-tracking-2027">Parent progress reports, attendance and fee tracking</a></li>
+  <li><a href="/blog-details/management-software-for-driving-schools-2027">Management software for driving schools</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -554,6 +556,7 @@ HTML;
   <li><a href="/blog-details/google-classroom-whatsapp-excel-ili-kursometr-2027">Google Classroom, WhatsApp, Excel или Kursometr: сравнение</a></li>
   <li><a href="/blog-details/lichnyj-sajt-dlya-uchitelya-repetitora-2027">Личный сайт для учителя и репетитора</a></li>
   <li><a href="/blog-details/repetitor-otchety-roditelyam-i-uchet-oplat-2027">Отчёты родителям, посещаемость и учёт оплат</a></li>
+  <li><a href="/blog-details/programma-dlya-avtoshkoly-2027">Программа для автошколы</a></li>
 </ul>
 
 <h2>Заключение</h2>
