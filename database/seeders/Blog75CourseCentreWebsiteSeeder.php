@@ -253,6 +253,7 @@ class Blog75CourseCentreWebsiteSeeder extends Seeder
   <li><a href="/blog-details/klinika-tibb-merkezi-ucun-sayt-2027">Klinika və tibb mərkəzi üçün sayt</a> — başqa sahədə eyni yanaşma</li>
   <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb sayt qiyməti Azərbaycanda</a></li>
   <li><a href="/blog-details/kurs-merkezi-nece-acilir-2027">Kurs mərkəzi necə açılır: addım-addım bələdçi</a></li>
+  <li><a href="/blog-details/kurs-merkezine-telebe-celb-etmek-ve-saxlamaq-2027">Kurs mərkəzinə tələbə necə cəlb olunur və saxlanılır</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -495,6 +496,7 @@ HTML;
   <li><a href="/blog-details/clinic-medical-centre-website-azerbaijan-2027">Clinic and medical centre website</a> — the same approach in another sector</li>
   <li><a href="/blog-details/website-cost-azerbaijan-2026">Website cost in Azerbaijan</a></li>
   <li><a href="/blog-details/how-to-open-a-course-centre-2027">How to open a course centre: a step-by-step guide</a></li>
+  <li><a href="/blog-details/how-to-attract-and-retain-students-course-centre-2027">How a course centre attracts and retains students</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -737,6 +739,7 @@ HTML;
   <li><a href="/blog-details/sajt-dlya-kliniki-medicinskogo-centra-2027">Сайт для клиники и медицинского центра</a> — тот же подход в другой сфере</li>
   <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта в Азербайджане</a></li>
   <li><a href="/blog-details/kak-otkryt-uchebnyj-centr-2027">Как открыть учебный центр: пошаговое руководство</a></li>
+  <li><a href="/blog-details/kak-privlech-i-uderzhat-uchenikov-uchebnyj-centr-2027">Как учебному центру привлечь и удержать учеников</a></li>
 </ul>
 
 <h2>Итог</h2>

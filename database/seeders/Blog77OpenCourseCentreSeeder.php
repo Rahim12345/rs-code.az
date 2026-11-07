@@ -224,6 +224,7 @@ class Blog77OpenCourseCentreSeeder extends Seeder
   <li><a href="/blog-details/dil-kursu-ucun-idareetme-proqrami-2027">Dil kursu üçün idarəetmə proqramı</a></li>
   <li><a href="/blog-details/repetitor-ders-haqqi-nece-teyin-olunur-2027">Repetitor dərs haqqını necə müəyyənləşdirsin</a></li>
   <li><a href="/blog-details/usaq-inkisaf-merkezi-ucun-idareetme-proqrami-2027">Uşaq inkişaf mərkəzi üçün idarəetmə proqramı</a></li>
+  <li><a href="/blog-details/kurs-merkezine-telebe-celb-etmek-ve-saxlamaq-2027">Kurs mərkəzinə tələbə necə cəlb olunur və saxlanılır</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -436,6 +437,7 @@ HTML;
   <li><a href="/blog-details/language-course-management-software-2027">Language course management software</a></li>
   <li><a href="/blog-details/how-tutors-should-set-lesson-prices-2027">How tutors should set lesson prices</a></li>
   <li><a href="/blog-details/management-software-for-kids-development-centres-2027">Management software for kids' development centres</a></li>
+  <li><a href="/blog-details/how-to-attract-and-retain-students-course-centre-2027">How a course centre attracts and retains students</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -648,6 +650,7 @@ HTML;
   <li><a href="/blog-details/programma-dlya-yazykovyh-kursov-2027">Программа для языковых курсов</a></li>
   <li><a href="/blog-details/kak-repetitoru-ustanovit-cenu-za-urok-2027">Как репетитору установить цену за урок</a></li>
   <li><a href="/blog-details/programma-dlya-detskogo-razvivayushchego-centra-2027">Программа для детского развивающего центра</a></li>
+  <li><a href="/blog-details/kak-privlech-i-uderzhat-uchenikov-uchebnyj-centr-2027">Как учебному центру привлечь и удержать учеников</a></li>
 </ul>
 
 <h2>Итог</h2>
