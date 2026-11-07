@@ -186,6 +186,7 @@ class Blog81DrivingSchoolSeeder extends Seeder
   <li><a href="/blog-details/repetitor-valideyn-hesabati-ve-odenis-izleme-2027">Valideyn hesabatı və ödəniş izləmə</a></li>
   <li><a href="/blog-details/abituriyent-hazirligi-kurs-merkezi-idareetme-2027">Abituriyent hazırlığı kurs mərkəzi necə idarə olunur</a></li>
   <li><a href="/blog-details/musiqi-reqs-ve-resm-studiyasi-ucun-idareetme-proqrami-2027">Musiqi, rəqs və rəsm studiyası üçün idarəetmə proqramı</a></li>
+  <li><a href="/blog-details/korporativ-telim-ucun-platforma-2027">Korporativ təlim üçün platforma</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -356,6 +357,7 @@ HTML;
   <li><a href="/blog-details/tutor-parent-reports-and-payment-tracking-2027">Parent reports and payment tracking</a></li>
   <li><a href="/blog-details/exam-prep-course-centre-management-2027">How to run an exam prep course centre</a></li>
   <li><a href="/blog-details/management-software-for-music-dance-and-art-studios-2027">Management software for music, dance and art studios</a></li>
+  <li><a href="/blog-details/corporate-training-platform-for-companies-2027">Corporate training platform for companies</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -526,6 +528,7 @@ HTML;
   <li><a href="/blog-details/repetitor-otchety-roditelyam-i-uchet-oplat-2027">Отчёты родителям и учёт оплат</a></li>
   <li><a href="/blog-details/upravlenie-kursami-podgotovki-k-ekzamenam-2027">Как управлять курсами подготовки к экзаменам</a></li>
   <li><a href="/blog-details/programma-dlya-muzykalnoj-tanczevalnoj-i-hudozhestvennoj-studii-2027">Программа для музыкальной, танцевальной и художественной студии</a></li>
+  <li><a href="/blog-details/platforma-dlya-korporativnogo-obucheniya-2027">Платформа для корпоративного обучения</a></li>
 </ul>
 
 <h2>Итог</h2>

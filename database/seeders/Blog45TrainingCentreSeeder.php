@@ -115,6 +115,7 @@ class Blog45TrainingCentreSeeder extends Seeder
   <li><a href="/blog-details/onlayn-test-nece-hazirlanir-muellim-ucun-2027">Onlayn test necə hazırlanır: vaxtlı sınaq və avtomatik nəticə</a></li>
   <li><a href="/blog-details/muellim-repetitor-ucun-sexsi-sayt-2027">Müəllim və repetitor üçün şəxsi sayt</a></li>
   <li><a href="/blog-details/repetitor-valideyn-hesabati-ve-odenis-izleme-2027">Valideyn hesabatı, davamiyyət və dərs haqqı ödənişlərinin izlənməsi</a></li>
+  <li><a href="/blog-details/korporativ-telim-ucun-platforma-2027">Korporativ təlim üçün platforma: onboarding, şöbə qrupları və testlər</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -228,6 +229,7 @@ HTML;
   <li><a href="/blog-details/how-to-create-online-tests-for-teachers-2027">How to create online tests: timed mock exams and automatic results</a></li>
   <li><a href="/blog-details/personal-website-for-teachers-tutors-2027">Personal website for teachers and tutors</a></li>
   <li><a href="/blog-details/tutor-parent-reports-and-payment-tracking-2027">Parent progress reports, attendance and fee tracking</a></li>
+  <li><a href="/blog-details/corporate-training-platform-for-companies-2027">Corporate training platform: onboarding, department groups and tests</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -341,6 +343,7 @@ HTML;
   <li><a href="/blog-details/kak-sozdat-onlajn-test-dlya-uchitelya-2027">Как создать онлайн-тест: пробный экзамен с таймером и автопроверкой</a></li>
   <li><a href="/blog-details/lichnyj-sajt-dlya-uchitelya-repetitora-2027">Личный сайт для учителя и репетитора</a></li>
   <li><a href="/blog-details/repetitor-otchety-roditelyam-i-uchet-oplat-2027">Отчёты родителям, посещаемость и учёт оплат</a></li>
+  <li><a href="/blog-details/platforma-dlya-korporativnogo-obucheniya-2027">Платформа для корпоративного обучения: онбординг, группы по отделам и тесты</a></li>
 </ul>
 
 <h2>Итог</h2>

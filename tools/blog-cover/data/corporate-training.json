@@ -1,0 +1,4 @@
+{"name": "corporate-training", "year": "2027",
+ "az": ["Korporativ təlim", "üçün", "platforma", "Onboarding, şöbə qrupları, testlər və tapşırıqlar", "EDU", [["Onboarding", "✓", "yalnız qrupa görünür"], ["Testlər ★", "ABC", "avtomatik yoxlama"], ["Telefon", "✓", "sahə işçiləri üçün"]]],
+ "en": ["Corporate", "training", "platform", "Onboarding, department groups, tests and assignments", "EDU", [["Onboarding", "✓", "visible to the group only"], ["Tests ★", "ABC", "graded automatically"], ["Phone", "✓", "for field staff"]]],
+ "ru": ["Платформа", "корпоративного", "обучения", "Онбординг, группы по отделам, тесты и задания", "EDU", [["Онбординг", "✓", "только для группы"], ["Тесты ★", "ABC", "автопроверка"], ["Телефон", "✓", "для полевых сотрудников"]]]}
