@@ -1,0 +1,4 @@
+{"name": "market-pos", "year": "2027",
+ "az": ["Market üçün", "kassa proqramı", "barkod, tərəzi, anbar və nisyə", "Çəki malları, etiket, qalıq, gün sonu və real mənfəət", "POS", [["Tərəzi", "PLU", "barkodla kassada"], ["Qalıq ★", "✓", "az qalanlar siyahısı"], ["Mənfəət", "FIFO", "real maya dəyəri"]]],
+ "en": ["Grocery store", "POS software", "barcodes, scales, stock and credit", "Weighed goods, labels, stock, end of day and real profit", "POS", [["Scales", "PLU", "scanned at the till"], ["Stock ★", "✓", "low-stock list"], ["Profit", "FIFO", "real cost"]]],
+ "ru": ["Кассовая программа", "для магазина", "штрихкод, весы, склад и долги", "Весовой товар, этикетки, остатки, конец дня и прибыль", "POS", [["Весы", "PLU", "штрихкод на кассе"], ["Остатки ★", "✓", "список заканчивающихся"], ["Прибыль", "FIFO", "реальная себестоимость"]]]}

@@ -43,6 +43,7 @@ return [
                 ['/blog-details/fifo-maya-deyeri-nedir-2026', 'FIFO maya dəyəri nədir?'],
                 ['/blog-details/nisye-satis-borc-defteri-2026', 'Nisyə satış və borc dəftəri'],
                 ['/blog-details/e-kassa-pos-inteqrasiyasi-2026', 'E-kassa və POS proqramı'],
+                ['/blog-details/market-ucun-kassa-proqrami-2027', 'Market üçün kassa proqramı'],
             ],
         ],
         'kursometr' => [

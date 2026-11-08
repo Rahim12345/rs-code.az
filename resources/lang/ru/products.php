@@ -43,6 +43,7 @@ return [
                 ['/blog-details/chto-takoe-fifo-sebestoimost-2026', 'Что такое себестоимость по FIFO?'],
                 ['/blog-details/prodazhi-v-dolg-dolgovaya-kniga-2026', 'Продажи в долг и долговая книга'],
                 ['/blog-details/e-kassa-integraciya-s-pos-2026', 'E-kassa и POS-программа'],
+                ['/blog-details/kassovaya-programma-dlya-produktovogo-magazina-2027', 'Кассовая программа для продуктового магазина'],
             ],
         ],
         'kursometr' => [
