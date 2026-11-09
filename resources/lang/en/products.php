@@ -44,6 +44,7 @@ return [
                 ['/blog-details/customer-debt-book-credit-sales-2026', 'Credit sales and the customer debt book'],
                 ['/blog-details/e-kassa-pos-integration-azerbaijan-2026', 'E-kassa and POS software'],
                 ['/blog-details/grocery-store-pos-software-2027', 'POS software for a grocery store'],
+                ['/blog-details/clothing-store-pos-software-2027', 'POS software for a clothing store'],
             ],
         ],
         'kursometr' => [

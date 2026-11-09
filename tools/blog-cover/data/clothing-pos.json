@@ -1,0 +1,4 @@
+{"name": "clothing-pos", "year": "2027",
+ "az": ["Geyim mağazası", "üçün proqram", "ölçü, rəng, qaytarma və endirim", "Variant barkodu, etiket, mövsüm hesabatı və onlayn satış", "POS", [["Variant", "S·M·L", "öz barkodu və qalığı"], ["Qaytarma ★", "✓", "çekə bağlı"], ["Mövsüm", "-30%", "satılmayan modellər"]]],
+ "en": ["Clothing store", "POS software", "sizes, colours, returns and sales", "Variant barcodes, labels, season reports and online sales", "POS", [["Variant", "S·M·L", "own barcode and stock"], ["Returns ★", "✓", "linked to receipt"], ["Season", "-30%", "slow-moving models"]]],
+ "ru": ["Программа для", "магазина одежды", "размеры, цвета, возвраты и скидки", "Штрихкод варианта, этикетки, отчёт по сезону и онлайн-продажи", "POS", [["Вариант", "S·M·L", "свой штрихкод и остаток"], ["Возврат ★", "✓", "по чеку"], ["Сезон", "-30%", "непроданные модели"]]]}

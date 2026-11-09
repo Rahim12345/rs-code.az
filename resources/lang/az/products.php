@@ -44,6 +44,7 @@ return [
                 ['/blog-details/nisye-satis-borc-defteri-2026', 'Nisyə satış və borc dəftəri'],
                 ['/blog-details/e-kassa-pos-inteqrasiyasi-2026', 'E-kassa və POS proqramı'],
                 ['/blog-details/market-ucun-kassa-proqrami-2027', 'Market üçün kassa proqramı'],
+                ['/blog-details/geyim-magazasi-ucun-proqram-2027', 'Geyim mağazası üçün proqram'],
             ],
         ],
         'kursometr' => [

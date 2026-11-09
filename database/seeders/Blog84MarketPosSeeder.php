@@ -193,6 +193,7 @@ class Blog84MarketPosSeeder extends Seeder
   <li><a href="/blog-details/nisye-satis-borc-defteri-2026">Nisyə satış və borc dəftəri</a></li>
   <li><a href="/blog-details/e-kassa-pos-inteqrasiyasi-2026">E-kassa və POS proqramı</a></li>
   <li><a href="/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026">POS sistemi qiyməti: hazır vs sifarişlə</a></li>
+  <li><a href="/blog-details/geyim-magazasi-ucun-proqram-2027">Geyim mağazası üçün proqram</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -377,6 +378,7 @@ HTML;
   <li><a href="/blog-details/customer-debt-book-credit-sales-2026">Credit Sales and the Debt Book</a></li>
   <li><a href="/blog-details/e-kassa-pos-integration-azerbaijan-2026">E-kassa and POS Software</a></li>
   <li><a href="/blog-details/pos-system-price-azerbaijan-2026">POS System Price: Off-the-Shelf vs Custom-Built</a></li>
+  <li><a href="/blog-details/clothing-store-pos-software-2027">POS software for a clothing store</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -561,6 +563,7 @@ HTML;
   <li><a href="/blog-details/prodazhi-v-dolg-dolgovaya-kniga-2026">Продажа в долг и долговая книга</a></li>
   <li><a href="/blog-details/e-kassa-integraciya-s-pos-2026">E-kassa и POS-программа</a></li>
   <li><a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026">Цена POS-системы: готовая или на заказ</a></li>
+  <li><a href="/blog-details/programma-dlya-magazina-odezhdy-2027">Программа для магазина одежды</a></li>
 </ul>
 
 <h2>Итог</h2>

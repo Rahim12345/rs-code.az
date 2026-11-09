@@ -44,6 +44,7 @@ return [
                 ['/blog-details/prodazhi-v-dolg-dolgovaya-kniga-2026', 'Продажи в долг и долговая книга'],
                 ['/blog-details/e-kassa-integraciya-s-pos-2026', 'E-kassa и POS-программа'],
                 ['/blog-details/kassovaya-programma-dlya-produktovogo-magazina-2027', 'Кассовая программа для продуктового магазина'],
+                ['/blog-details/programma-dlya-magazina-odezhdy-2027', 'Программа для магазина одежды'],
             ],
         ],
         'kursometr' => [
