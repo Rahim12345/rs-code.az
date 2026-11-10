@@ -74,6 +74,7 @@ return [
                 ['Köməkçi müəllim əlavə etmək olarmı?', 'Bəli, köməkçi müəllimlər üçün mentor hesabı var. Kursometr-də hər şeyi müəllim özü qurur, administratoru gözləmək lazım deyil.'],
             ],
             'guides' => [
+                ['/blog-details/lms-nedir-2027', 'LMS nədir? Sadə izah'],
                 ['/blog-details/google-classroom-whatsapp-excel-yoxsa-kursometr-2027', 'Google Classroom, WhatsApp, Excel, yoxsa Kursometr?'],
                 ['/blog-details/onlayn-test-nece-hazirlanir-muellim-ucun-2027', 'Onlayn test necə hazırlanır'],
                 ['/blog-details/muellim-repetitor-ucun-sexsi-sayt-2027', 'Müəllim və repetitor üçün şəxsi sayt'],

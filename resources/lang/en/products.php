@@ -74,6 +74,7 @@ return [
                 ['Can I add an assistant teacher?', 'Yes, there are mentor accounts for assistant teachers. In Kursometr the teacher sets everything up without waiting for an administrator.'],
             ],
             'guides' => [
+                ['/blog-details/what-is-an-lms-2027', 'What is an LMS? A simple guide'],
                 ['/blog-details/google-classroom-vs-whatsapp-vs-excel-vs-kursometr-2027', 'Google Classroom, WhatsApp, Excel or Kursometr?'],
                 ['/blog-details/how-to-create-online-tests-for-teachers-2027', 'How to create online tests'],
                 ['/blog-details/personal-website-for-teachers-tutors-2027', 'Personal website for teachers and tutors'],

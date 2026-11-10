@@ -74,6 +74,7 @@ return [
                 ['Можно добавить помощника?', 'Да, для помощников учителя есть аккаунт ментора. В Kursometr учитель всё настраивает сам, без ожидания администратора.'],
             ],
             'guides' => [
+                ['/blog-details/chto-takoe-lms-2027', 'Что такое LMS? Простое объяснение'],
                 ['/blog-details/google-classroom-whatsapp-excel-ili-kursometr-2027', 'Google Classroom, WhatsApp, Excel или Kursometr?'],
                 ['/blog-details/kak-sozdat-onlajn-test-dlya-uchitelya-2027', 'Как создать онлайн-тест'],
                 ['/blog-details/lichnyj-sajt-dlya-uchitelya-repetitora-2027', 'Личный сайт для учителя и репетитора'],
