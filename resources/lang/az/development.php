@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'veb' => 'Veb Sayt Hazırlanması Bakıda',
+    'veb' => 'Veb Saytların Hazırlanması Bakıda',
     'muasir' => 'Müasir dövrdə internet insanlar arasında ən çox istifadə olunan ünsiyyət və paylaşım vasitələrindən biridir. Təşkilatlar, özəl müəssisələr, şirkətlər internet vasitəsilə müştəriləri, xidmət etdikləri şəxslər ilə əlaqə saxlayır, öz xidmətlərini təqdim edirlər.',
     'teskilat' => 'Nə üçün təşkilat və ya şirkətin veb saytını hazırlatmalıdır? Veb sayt dövrümüzdə təşkilatın və şirkətin əsas marka və prestij göstəricilərindən biri olaraq qəbul olunur . İlk dəfə sizin təşkilatın adının eşidən bir şəxsin, ilk edəcəyi iş internetdə sizin haqqında araşdırma aparmaq olacaqdır. Bu zaman onun qarşısına çıxan cəlbedici dizaynlı, funksiyanal veb sayt sizin haqqınızda müsbət fikir yaradacaqdır. Veb saytınızın hazır olması insanlarda sizə qarşı inam və etibarlılıq hissini formalaşdırır. Markalaşma yolunda veb saytınızın olması vacibdir. Bu sizin öz yerini tutmuş, prestiji bir təşkilat və ya şirkət olduğunuzu göstərir. Veb sayt ilə xidmət göstərdiyiniz insanlarla daha sürətli məlumat mübadiləsi apara bilirsiniz. İnternet sizin üçün daha geniş və ucuz başa gələn reklam vasitəsidir. Buna görə də veb saytınız sizə daha çox müştəri cəlb edəcəkdir.',
     'xidmet' => 'Veb saytın hazırlanması xidmətinə daxildir:',
@@ -16,11 +16,11 @@ return [
     'dizayn' => 'Veb sayt dizaynının istəyinizə uyğunlaşdırılması;',
     'merhele' => 'Veb Saytın Hazırlanma Mərhələləri',
     'first' => '1. Veb Sayt hazırlanması üçün Məlumatların Toplanması və Təhlili.',
-    'firstp' => 'Veb saytların ilkin yığılması mərhələsində sayta bütün lazım olan və olmayan məlumatları dəqiqləşdirilir. Nümunə saytlar təhlil edilir. Saytda olmağını istədiyiniz funksyalar qeyd edilir.',
+    'firstp' => 'Veb saytların ilkin yığılması mərhələsində sayta bütün lazım olan və olmayan məlumatları dəqiqləşdirilir. Nümunə saytlar təhlil edilir. Saytda olmağını istədiyiniz funksiyalar qeyd edilir.',
     'second' => '2. Veb sayt üçün texniki Tapşırığın Hazırlanması.',
-    'secondp' => 'Veb saytın hazırlanması üçün texniki tapşırıq ətraflı şəkildə yazılıb hazırlanır və sayt üçün lazım olan bütün material (şəkil, video, document) əldə edilir.Veb Saytın hazırlanması komandamız tərəfindən müzakirə edilir və uyğun texnologya seçilir.',
+    'secondp' => 'Veb saytın hazırlanması üçün texniki tapşırıq ətraflı şəkildə yazılıb hazırlanır və sayt üçün lazım olan bütün material (şəkil, video, sənəd) əldə edilir. Veb saytın hazırlanması komandamız tərəfindən müzakirə edilir və uyğun texnologiya seçilir.',
     'thrid' => '3. Veb Saytın İdarəsi.',
-    'thridp' => 'Veb saytın müştərilərimiz tərəfindən asanlıqla idarə edilə bilməsi üçün idarə paneli hazırlanır. İdarə panelinə telefon, planşetlərdə də daxil ola bilərsiniz. Bu panel vasitəsi ilə siz saytınıza yeni materiallar əlavə edə,redaktə və silə bilərsiniz.',
+    'thridp' => 'Veb saytın müştərilərimiz tərəfindən asanlıqla idarə edilə bilməsi üçün idarə paneli hazırlanır. İdarə panelinə telefon, planşetlərdə də daxil ola bilərsiniz. Bu panel vasitəsi ilə siz saytınıza yeni materiallar əlavə edə,redaktə edə və silə bilərsiniz.',
     'four' => '4. Veb Saytın Dizaynının Hazırlanması.',
     'fourp' => 'Yuxarıda qeyd olunan bəndlər diqqətlə nəzərdən keçirildikdən sonra əsas səhifənin və saytın sonrakı səhifələrinin yığılması başlanır. Şirkətin korporativ rənglərində icra edilən real məzmun, fotoşəkil və şirkət loqosu olan səhifələrin maketi hazırlanır və vizual yerləşdirilməsi həyata keçirilir. Dəyişikliklər etmək üçün bu mərhələdən istifadə edin. Bundan sonra, işin müxtəlif mərhələlərində təsdiq üçün sizə müxtəlif maket və prototipləri təqdim edəcəyik. Sayt sifarişi zamanı sonrakı mərhələlərdə dəyişikliklər etmək çox səy və zaman tələb edəcək. Buna görə də, bu mərhələdə hər şeyi diqqətlə nəzərdən keçirməyiniz xahiş olunur.',
     'five' => '5. Layihənin Başa Çatdırılması və İstifadəyə Verilməsi.',

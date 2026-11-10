@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 @section('title', __('meta.email.title'))
 @section('description', __('meta.email.desc'))
-@include('front.partials.page-schema', ['key' => 'email', 'service' => true])
+@include('front.partials.page-schema', ['key' => 'email', 'service' => true, 'faq' => 'koperativ.x_faq'])
 @section('content')
 
 {{-- Hero --}}
@@ -21,6 +21,8 @@
 {{-- Content --}}
 <section class="py-12 pb-28">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+        @include('front.partials.service-extras', ['key' => 'koperativ', 'only' => 'short'])
 
         <p class="text-zinc-400 leading-relaxed text-sm">{{ __('koperativ.kop1') }}</p>
         <p class="text-zinc-400 leading-relaxed text-sm">{{ __('koperativ.kop2') }}</p>
@@ -64,6 +66,49 @@
             </ul>
         </div>
 
+        {{-- Options --}}
+        <div>
+            <h2 class="text-2xl font-bold text-white mb-5" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('koperativ.opt_title') }}</h2>
+            <div class="overflow-x-auto rounded-2xl border border-zinc-800/60">
+                <table class="w-full text-sm">
+                    <thead class="bg-zinc-900/80 text-zinc-300">
+                        <tr>@foreach(__('koperativ.opt_head') as $h)<th class="text-left font-semibold px-4 py-3">{{ $h }}</th>@endforeach</tr>
+                    </thead>
+                    <tbody class="divide-y divide-zinc-800/60">
+                        @foreach(__('koperativ.opt_rows') as $row)
+                        <tr class="text-zinc-400">
+                            @foreach($row as $i => $cell)<td class="px-4 py-3 {{ $i === 0 ? 'text-zinc-200 font-medium whitespace-nowrap' : '' }}">{{ $cell }}</td>@endforeach
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-zinc-500 text-xs mt-3 leading-relaxed">{{ __('koperativ.opt_note') }}</p>
+        </div>
+
+        {{-- DNS --}}
+        <div class="bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-8">
+            <h2 class="text-xl font-bold text-white mb-3" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('koperativ.dns_title') }}</h2>
+            <p class="text-zinc-400 text-sm leading-relaxed mb-5">{{ __('koperativ.dns_intro') }}</p>
+            <ul class="space-y-3">
+                @foreach(__('koperativ.dns_rows') as [$k, $d])
+                <li class="text-zinc-400 text-sm leading-relaxed"><span class="font-mono font-semibold text-violet-300">{{ $k }}</span> — {{ $d }}</li>
+                @endforeach
+            </ul>
+            <p class="text-zinc-400 text-sm leading-relaxed mt-4">{{ __('koperativ.dns_note') }}</p>
+        </div>
+
+        {{-- Setup steps --}}
+        <div class="bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-8">
+            <h2 class="text-xl font-bold text-white mb-4" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('koperativ.steps_title') }}</h2>
+            <ol class="space-y-3 list-decimal list-inside text-zinc-300 text-sm leading-relaxed">
+                @foreach(__('koperativ.steps') as $step)<li>{{ $step }}</li>@endforeach
+            </ol>
+            <p class="text-zinc-400 text-sm leading-relaxed mt-4">{{ __('koperativ.steps_note') }}</p>
+        </div>
+
+        @include('front.partials.service-extras', ['key' => 'koperativ', 'only' => 'rest'])
+
         {{-- CTA --}}
         <div class="bg-gradient-to-br from-violet-900/30 to-violet-800/10 border border-violet-500/20 rounded-2xl p-8 text-center">
             <h3 class="text-xl font-bold text-white mb-3" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('index.cta_h1_line1') }}</h3>
@@ -77,6 +122,6 @@
     </div>
 </section>
 
-@include('front.partials.related-posts', ['slugs' => ['veb-sayt-hazirlatmazdan-evvel-12-sual', 'veb-sayt-qiymeti-azerbaycan-2026', 'crm-erp-sistemleri-azerbaycanda-2026']])
+@include('front.partials.related-posts', ['slugs' => ['veb-sayt-hazirlatmazdan-evvel-12-sual', 'veb-sayt-qiymeti-azerbaycan-2026', 'seo-xidmeti-azerbaycan-2026']])
 
 @endsection

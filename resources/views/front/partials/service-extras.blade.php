@@ -4,7 +4,7 @@
 @php
     $prices = __($key . '.x_prices');
     $faq    = __($key . '.x_faq');
-    $cases  = (array) __($key . '.x_cases');
+    $cases  = is_array(__($key . '.x_cases')) ? __($key . '.x_cases') : [];
     $caseTx = __('cases');
     $only   = $only ?? null;               // 'short' — yalnız qısa cavab, 'rest' — qalanları
     $showShort = $only !== 'rest';
