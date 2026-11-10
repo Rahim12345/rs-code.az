@@ -1,0 +1,4 @@
+{"name": "phone-pos", "year": "2027",
+ "az": ["Telefon mağazası", "üçün proqram", "IMEI, kredit və borc nəzarəti", "Seriya nömrəsi, ödəniş cədvəli, zamin və cihaz üzrə mənfəət", "POS", [["IMEI", "15", "rəqəm çekdə"], ["Kredit ★", "6 ay", "avtomatik cədvəl"], ["Gecikmə", "!", "ayrıca siyahı"]]],
+ "en": ["Phone store", "POS software", "IMEI, instalments and debt control", "Serial numbers, payment schedules, guarantors and profit per device", "POS", [["IMEI", "15", "digits on receipt"], ["Instalments ★", "6 mo", "automatic schedule"], ["Overdue", "!", "separate list"]]],
+ "ru": ["Программа для", "магазина телефонов", "IMEI, рассрочка и контроль долгов", "Серийные номера, график платежей, поручитель и прибыль с устройства", "POS", [["IMEI", "15", "цифр в чеке"], ["Рассрочка ★", "6 мес", "автоматический график"], ["Просрочка", "!", "отдельный список"]]]}

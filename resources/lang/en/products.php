@@ -45,6 +45,7 @@ return [
                 ['/blog-details/e-kassa-pos-integration-azerbaijan-2026', 'E-kassa and POS software'],
                 ['/blog-details/grocery-store-pos-software-2027', 'POS software for a grocery store'],
                 ['/blog-details/clothing-store-pos-software-2027', 'POS software for a clothing store'],
+                ['/blog-details/phone-store-pos-software-2027', 'POS software for a phone store'],
             ],
         ],
         'kursometr' => [

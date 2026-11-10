@@ -45,6 +45,7 @@ return [
                 ['/blog-details/e-kassa-pos-inteqrasiyasi-2026', 'E-kassa və POS proqramı'],
                 ['/blog-details/market-ucun-kassa-proqrami-2027', 'Market üçün kassa proqramı'],
                 ['/blog-details/geyim-magazasi-ucun-proqram-2027', 'Geyim mağazası üçün proqram'],
+                ['/blog-details/telefon-magazasi-ucun-proqram-2027', 'Telefon mağazası üçün proqram'],
             ],
         ],
         'kursometr' => [
