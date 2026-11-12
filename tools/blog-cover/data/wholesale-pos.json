@@ -1,0 +1,4 @@
+{"name": "wholesale-pos", "year": "2027",
+ "az": ["Topdan satış", "proqramı", "qiymət, agent və borc nəzarəti", "Müştəriyə görə qiymət, agent tətbiqi, qaimə və mağaza borcları", "POS", [["Qiymət", "3", "müştəri siyahısı"], ["Agent ★", "✓", "yolda satış"], ["Borc", "−", "mağaza və tədarükçü"]]],
+ "en": ["Wholesale", "POS software", "prices, sales agents and debts", "Customer price lists, agent app, invoices and store debts", "POS", [["Prices", "3", "customer lists"], ["Agents ★", "✓", "on-road sales"], ["Debts", "−", "stores and suppliers"]]],
+ "ru": ["Программа для", "оптовой торговли", "цены, агенты и контроль долгов", "Цены по клиентам, приложение агента, накладные и долги магазинов", "POS", [["Цены", "3", "прайс по клиенту"], ["Агенты ★", "✓", "продажи в пути"], ["Долги", "−", "магазины и поставщики"]]]}
