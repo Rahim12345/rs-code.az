@@ -47,6 +47,7 @@ return [
                 ['/blog-details/programma-dlya-magazina-odezhdy-2027', 'Программа для магазина одежды'],
                 ['/blog-details/programma-dlya-magazina-telefonov-2027', 'Программа для магазина телефонов'],
                 ['/blog-details/programma-dlya-optovoj-torgovli-2027', 'Программа для оптовой торговли'],
+                ['/blog-details/programma-dlya-magazina-strojmaterialov-2027', 'Программа для магазина стройматериалов'],
             ],
         ],
         'kursometr' => [

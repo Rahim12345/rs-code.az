@@ -47,6 +47,7 @@ return [
                 ['/blog-details/geyim-magazasi-ucun-proqram-2027', 'Geyim mağazası üçün proqram'],
                 ['/blog-details/telefon-magazasi-ucun-proqram-2027', 'Telefon mağazası üçün proqram'],
                 ['/blog-details/topdan-satis-proqrami-2027', 'Topdan satış proqramı'],
+                ['/blog-details/tikinti-materiallari-magazasi-ucun-proqram-2027', 'Tikinti materialları mağazası üçün proqram'],
             ],
         ],
         'kursometr' => [

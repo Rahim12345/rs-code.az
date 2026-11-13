@@ -1,0 +1,4 @@
+{"name": "construction-pos", "year": "2027",
+ "az": ["Tikinti materialları", "mağazası üçün proqram", "metr, kisə, rulon və usta qiyməti", "Kəsrli miqdar, qablaşdırma satışı, podratçı borcu və sınma uçotu", "POS", [["Kabel", "12,5 m", "kəsrli miqdar"], ["Rulon ★", "100 m", "qablaşdırma satışı"], ["Usta", "✓", "xüsusi qiymət"]]],
+ "en": ["Construction materials", "store POS software", "metres, sacks, rolls and trade prices", "Decimal quantities, pack sales, contractor debts and breakage", "POS", [["Cable", "12.5 m", "decimal quantity"], ["Roll ★", "100 m", "pack sale"], ["Trade", "✓", "special price"]]],
+ "ru": ["Программа для", "магазина стройматериалов", "метры, мешки, бухты и цены мастеров", "Дробные количества, продажа упаковками, долги подрядчиков и списание боя", "POS", [["Кабель", "12,5 м", "дробное количество"], ["Бухта ★", "100 м", "продажа упаковкой"], ["Мастер", "✓", "особая цена"]]]}

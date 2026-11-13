@@ -179,6 +179,7 @@ class Blog88WholesalePosSeeder extends Seeder
 <h3>Bunları da oxuyun</h3>
 <ul>
   <li><a href="/blog-details/telefon-magazasi-ucun-proqram-2027">Telefon mağazası üçün proqram</a></li>
+  <li><a href="/blog-details/tikinti-materiallari-magazasi-ucun-proqram-2027">Tikinti materialları mağazası üçün proqram</a></li>
   <li><a href="/blog-details/market-ucun-kassa-proqrami-2027">Market üçün kassa proqramı</a></li>
   <li><a href="/blog-details/nisye-satis-borc-defteri-2026">Nisyə satış və borc dəftəri</a></li>
   <li><a href="/blog-details/fifo-maya-deyeri-nedir-2026">FIFO maya dəyəri nədir?</a></li>
@@ -354,6 +355,7 @@ HTML;
 <h3>Read also</h3>
 <ul>
   <li><a href="/blog-details/phone-store-pos-software-2027">Software for Phone Shops</a></li>
+  <li><a href="/blog-details/construction-materials-store-pos-software-2027">POS Software for a Construction Materials Store</a></li>
   <li><a href="/blog-details/grocery-store-pos-software-2027">POS Software for Grocery Stores</a></li>
   <li><a href="/blog-details/customer-debt-book-credit-sales-2026">Credit Sales and the Debt Book</a></li>
   <li><a href="/blog-details/what-is-fifo-cost-method-2026">What Is the FIFO Cost Method?</a></li>
@@ -529,6 +531,7 @@ HTML;
 <h3>Читайте также</h3>
 <ul>
   <li><a href="/blog-details/programma-dlya-magazina-telefonov-2027">Программа для магазина телефонов</a></li>
+  <li><a href="/blog-details/programma-dlya-magazina-strojmaterialov-2027">Программа для магазина стройматериалов</a></li>
   <li><a href="/blog-details/kassovaya-programma-dlya-produktovogo-magazina-2027">Кассовая программа для продуктового магазина</a></li>
   <li><a href="/blog-details/prodazhi-v-dolg-dolgovaya-kniga-2026">Продажа в долг и долговая книга</a></li>
   <li><a href="/blog-details/chto-takoe-fifo-sebestoimost-2026">Что такое себестоимость по FIFO?</a></li>
