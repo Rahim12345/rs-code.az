@@ -48,6 +48,7 @@ return [
                 ['/blog-details/programma-dlya-magazina-telefonov-2027', 'Программа для магазина телефонов'],
                 ['/blog-details/programma-dlya-optovoj-torgovli-2027', 'Программа для оптовой торговли'],
                 ['/blog-details/programma-dlya-magazina-strojmaterialov-2027', 'Программа для магазина стройматериалов'],
+                ['/blog-details/programma-dlya-magazina-avtozapchastej-2027', 'Программа для магазина автозапчастей'],
             ],
         ],
         'kursometr' => [

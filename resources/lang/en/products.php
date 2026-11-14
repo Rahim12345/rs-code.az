@@ -48,6 +48,7 @@ return [
                 ['/blog-details/phone-store-pos-software-2027', 'POS software for a phone store'],
                 ['/blog-details/wholesale-pos-software-2027', 'Wholesale POS software'],
                 ['/blog-details/construction-materials-store-pos-software-2027', 'POS software for a construction materials store'],
+                ['/blog-details/auto-parts-store-pos-software-2027', 'POS software for an auto parts store'],
             ],
         ],
         'kursometr' => [
