@@ -1,7 +1,7 @@
 @extends('front.layouts.master')
 @section('title', __('meta.smm.title'))
 @section('description', __('meta.smm.desc'))
-@include('front.partials.page-schema', ['key' => 'smm', 'service' => true])
+@include('front.partials.page-schema', ['key' => 'smm', 'service' => true, 'faq' => 'smm.x_faq'])
 @section('content')
 
 {{-- Hero --}}
@@ -18,39 +18,66 @@
 <section class="py-12 pb-28">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
 
+        @include('front.partials.service-extras', ['key' => 'smm', 'only' => 'short'])
+
         {{-- What is SMM --}}
         <div class="bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-8">
-            <h2 class="text-xl font-bold text-white mb-3" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('smm.smm1') }}</h2>
-            <p class="text-zinc-400 leading-relaxed text-sm mb-3">{{ __('smm.smm2') }}</p>
-            <p class="text-zinc-400 leading-relaxed text-sm">{{ __('smm.smm3') }}</p>
+            <h2 class="text-xl font-bold text-white mb-4" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('smm.what_title') }}</h2>
+            <div class="space-y-3">
+                @foreach(__('smm.what') as $p)
+                    <p class="text-zinc-400 text-sm leading-relaxed">{{ $p }}</p>
+                @endforeach
+            </div>
         </div>
 
-        {{-- Platforms --}}
+        {{-- What's included --}}
+        <div>
+            <h2 class="text-2xl font-bold text-white mb-5" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('smm.inc_title') }}</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                @foreach(__('smm.inc') as [$t, $d])
+                <div class="bg-zinc-900/40 border border-zinc-800/50 rounded-xl p-5">
+                    <h3 class="font-semibold text-zinc-200 text-sm mb-1">{{ $t }}</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">{{ $d }}</p>
+                </div>
+                @endforeach
+            </div>
+            <p class="text-zinc-500 text-xs mt-3 leading-relaxed">{{ __('smm.inc_note') }}</p>
+        </div>
+
+        {{-- Measurement --}}
+        <div>
+            <h2 class="text-2xl font-bold text-white mb-5" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('smm.measure_title') }}</h2>
+            <div class="overflow-x-auto rounded-2xl border border-zinc-800/60">
+                <table class="w-full text-sm">
+                    <thead class="bg-zinc-900/80 text-zinc-300">
+                        <tr>@foreach(__('smm.measure_head') as $h)<th class="text-left font-semibold px-4 py-3">{{ $h }}</th>@endforeach</tr>
+                    </thead>
+                    <tbody class="divide-y divide-zinc-800/60">
+                        @foreach(__('smm.measure_rows') as $row)
+                        <tr class="text-zinc-400">
+                            @foreach($row as $i => $cell)<td class="px-4 py-3 {{ $i === 0 ? 'text-zinc-200 font-medium' : '' }}">{{ $cell }}</td>@endforeach
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-zinc-500 text-xs mt-3 leading-relaxed">{{ __('smm.measure_note') }}</p>
+        </div>
+
+        {{-- Process --}}
         <div class="bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-8">
-            <h2 class="text-xl font-bold text-white mb-5" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('smm.smm4') }}</h2>
-            <ul class="space-y-3">
-                @foreach([__('smm.smm5'), __('smm.smm6'), __('smm.smm7'), __('smm.smm8')] as $item)
-                <li class="flex items-start gap-3 text-zinc-300 text-sm leading-relaxed">
-                    <span class="w-5 h-5 rounded-full bg-violet-600/20 flex items-center justify-center shrink-0 mt-0.5">
-                        <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
-                    </span>
-                    {{ $item }}
-                </li>
-                @endforeach
-            </ul>
+            <h2 class="text-xl font-bold text-white mb-4" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('smm.steps_title') }}</h2>
+            <ol class="space-y-3 list-decimal list-inside text-zinc-300 text-sm leading-relaxed">
+                @foreach(__('smm.steps') as $step)<li>{{ $step }}</li>@endforeach
+            </ol>
+            <p class="text-zinc-400 text-sm leading-relaxed mt-4">{{ __('smm.steps_note') }}</p>
         </div>
 
-        <p class="text-zinc-400 leading-relaxed text-sm">{{ __('smm.smm9') }}</p>
-        <p class="text-zinc-400 leading-relaxed text-sm">{{ __('smm.smm10') }}</p>
-
-        {{-- Main instruments --}}
+        {{-- Red flags --}}
         <div class="bg-zinc-900/50 border border-zinc-800/60 rounded-2xl p-8">
-            <h2 class="text-xl font-bold text-white mb-5" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('smm.smm11') }}</h2>
+            <h2 class="text-xl font-bold text-white mb-4" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('smm.red_title') }}</h2>
             <ul class="space-y-3">
-                @foreach([
-                    __('smm.smm12'), __('smm.smm13'), __('smm.smm14'),
-                    __('smm.smm15'), __('smm.smm16'), __('smm.smm17'), __('smm.smm18'),
-                ] as $item)
+                @foreach(__('smm.red') as $item)
                 <li class="flex items-start gap-3 text-zinc-300 text-sm leading-relaxed">
                     <span class="w-5 h-5 rounded-full bg-violet-600/20 flex items-center justify-center shrink-0 mt-0.5">
                         <span class="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
@@ -61,8 +88,7 @@
             </ul>
         </div>
 
-        <p class="text-zinc-400 leading-relaxed text-sm">{{ __('smm.smm19') }}</p>
-        <p class="text-zinc-400 leading-relaxed text-sm">{{ __('smm.smm20') }}</p>
+        @include('front.partials.service-extras', ['key' => 'smm', 'only' => 'rest'])
 
         {{-- CTA --}}
         <div class="bg-gradient-to-br from-violet-900/30 to-violet-800/10 border border-violet-500/20 rounded-2xl p-8 text-center">
@@ -77,6 +103,6 @@
     </div>
 </section>
 
-@include('front.partials.related-posts', ['slugs' => ['seo-xidmeti-azerbaycan-2026', 'veb-sayt-qiymeti-azerbaycan-2026', 'mobil-uygun-sayt-niye-vacibdir-2026']])
+@include('front.partials.related-posts', ['slugs' => ['smm-xidmeti-qiymeti-2026', 'instagram-facebook-reklami-qiymeti-2027', 'instagram-magaza-ve-sayt-2026']])
 
 @endsection

@@ -160,7 +160,7 @@ class Blog60MetaAdsCostSeeder extends Seeder
 
 <h2>Nəticə</h2>
 <p>Instagram və Facebook reklamının qiyməti büdcə, kreativ və idarəetmədən ibarətdir, 2026-cı ildən isə buna 18% ƏDV də əlavə olunub. Büdcəni lazım olan müraciət sayından hesablayın, ilk 1–2 həftəni test kimi qəbul edin və nəticəni bəyənmə ilə yox, bir müştərinin qiyməti ilə ölçün.</p>
-<p><strong>Reklamınızı müraciət gətirən formada quraq? <a href="/facebook-ve-instagram-reklamlari">Facebook və Instagram reklamı xidməti</a></strong> və ya <a href="/elaqe">bizimlə əlaqə saxlayın</a>.</p>
+<p><strong>Reklamınızı müraciət gətirən formada quraq? <a href="/facebook-ve-instagram-reklamlari">Facebook və Instagram reklamı xidməti</a></strong>, səhifələrin tam idarəsi üçün <a href="/smm-xidmeti">SMM xidməti</a>, və ya <a href="/elaqe">bizimlə əlaqə saxlayın</a>.</p>
 <p><small><em>Minimum büdcə, öyrənmə mərhələsi və yoxlama müddəti Meta-nın rəsmi yardım səhifələrinə, ƏDV məlumatı Meta-nın açıqlamasına (Trend.az, 15.08.2026) əsaslanır. Xidmət haqqı və büdcə aralıqları Azərbaycan bazarı üzrə təxminidir (oktyabr 2026). Bu yazı vergi məsləhəti deyil.</em></small></p>
 HTML;
 
@@ -310,7 +310,7 @@ HTML;
 
 <h2>Conclusion</h2>
 <p>The cost of Instagram and Facebook ads is made up of ad spend, creative and management, and since 2026 an 18% VAT on top. Calculate the budget from the number of leads you need, treat the first 1–2 weeks as a test, and measure results by cost per customer, not likes.</p>
-<p><strong>Want ads set up to bring leads? See our <a href="/facebook-instagram-ads">Facebook and Instagram ads service</a></strong> or <a href="/contact">get in touch</a>.</p>
+<p><strong>Want ads set up to bring leads? See our <a href="/facebook-instagram-ads">Facebook and Instagram ads service</a></strong>, our <a href="/smm-services">SMM services</a> for full page management, or <a href="/contact">get in touch</a>.</p>
 <p><small><em>The minimum budget, learning phase and review time are based on Meta's official help pages; VAT information is based on Meta's announcement (Trend.az, 15 August 2026). Fee and budget ranges are estimates for the Azerbaijani market (October 2026). This article is not tax advice.</em></small></p>
 HTML;
 
@@ -460,7 +460,7 @@ HTML;
 
 <h2>Итог</h2>
 <p>Стоимость рекламы в Instagram и Facebook складывается из бюджета, креатива и ведения, а с 2026 года к ней добавился НДС 18%. Рассчитывайте бюджет от нужного числа заявок, считайте первые 1–2 недели тестом и оценивайте результат по цене клиента, а не по лайкам.</p>
-<p><strong>Настроим рекламу так, чтобы она приносила заявки? <a href="/reklama-facebook-instagram">Услуга рекламы в Facebook и Instagram</a></strong> или <a href="/kontakty">напишите нам</a>.</p>
+<p><strong>Настроим рекламу так, чтобы она приносила заявки? <a href="/reklama-facebook-instagram">Услуга рекламы в Facebook и Instagram</a></strong>, <a href="/smm-uslugi">SMM-ведение страниц</a> или <a href="/kontakty">напишите нам</a>.</p>
 <p><small><em>Минимальный бюджет, этап обучения и срок проверки основаны на официальных справочных страницах Meta; информация о НДС — на заявлении Meta (Trend.az, 15.08.2026). Диапазоны оплаты услуг и бюджета — ориентировочные для рынка Азербайджана (октябрь 2026). Статья не является налоговой консультацией.</em></small></p>
 HTML;
 

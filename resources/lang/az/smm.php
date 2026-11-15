@@ -1,25 +1,74 @@
 <?php
 
 return [
-    'smmTitle' => 'SMM Xidməti',
-    'smm1' => 'SMM xidməti (Sosial Media Marketing)',
-    'smm2' => 'Sosial mediya vasitəsilə marketinqdir. SMM xidməti sosial media, əsasəndə sosial şəbəkələrdən təbii trafikin cəlb edilməsi, brendin və produktun reklamı üçün istifadə olunan internet marketinq mexanizmidir. Sosial şəbəkələrin artan rolu SMM xidməti daha da vacib, praktik və onlayn marketinqin vazkeçilməz bir hissəsi edir.',
-    'smm3' => 'Sosial mediya (social media) marketinqində önəmli rolu kontent oynayır, hansını ki artıq istifadəçilər bölüşərək populyarlaşdırır. Kontent aktual və cəlbedici olmalıdır. SMM xidməti lazımi auditoriya seçimində çox faydalıdır. Marketinqdən əlavə, bu mexanizm KİV tərəfindəndə istifadə olunur. SMM xidmətinin praktikliyi onun pulsuz olan böyük reklam potensialıdır. Bu potensial sosial şəbəkələrin (social network) hesabına yaranır. Ən populyar və iri sosial şəbəkə Facebook 1.2 mldr. çox insanı birləşdirir, bu isə reklam üçün çöx əlverişli şərait yaradır. Digər populyar şəbəkələrin sırasına Twitter, Badoo, İnstagram, Google+, Vkontakte və sarələri daxildir. 10-dan çox sosial şəbəkə 100 mln. çox istifadəçiyə sahibdir.',
-    'smm4' => 'SMM xidməti növbəti platformalarda aktiv istifadə olunur:',
-    'smm5' => 'Sosial şəbəkələr: Facebook, Google+, Vkontakte.',
-    'smm6' => 'Profesional sosial şəbəkələr: Linkedİn.',
-    'smm7' => 'Bloqlar: Twitter, LiveJournal.',
-    'smm8' => 'Video və foto bloqlar: YouTube, Instagram, Pinterest',
-    'smm9' => 'SMM xidməti sosial şəbəklərdə saytın səhifəsinin yaxud qrupunun yaradılması, reklamın, laykların alınması, digər qruplarda reklamın yerləşdirilməsi və sarə mexanizimlər daxildir. SMM iki cür istifadə edilir: passiv və aktiv.',
-    'smm10' => 'Passiv SMM xidməti informasiya paylaşmaq və toplamaqda istifadə olunur. Həmçinin bura istifadəçinin fikri və bazarın analizi daxildir. Aktiv SMM xidməti isə, passivdən əlavə olaraq, istifadəçilə birbaşa əlaqə qurulmasıdır.',
-    'smm11' => 'SMM xidmətinin əsas instrumentləri:',
-    'smm12' => 'Kompaniyanın/brendin qrupunun yaradılması',
-    'smm13' => 'Facebook da Fan Page yaradılması',
-    'smm14' => 'Şəxsi sosial şəbəkənin yaradılması',
-    'smm15' => 'Korporotiv bloqun yaradılması',
-    'smm16' => 'Videobloqun yaradılması',
-    'smm17' => 'Memlərin yaradılması və aktiv yayılması',
-    'smm18' => 'İstifadəçi ilə daimi kontakt və s.',
-    'smm19' => 'Google 10 əsas təbii axtarış amillərindən yeddisi sosial media əsaslıdır. Bu isə o deməkdir ki, əgər brend sosial mediyada yoxdursa yaxud aktiv deyilsə Google axtarış nəticələrində o az görsənəcək. Bir çox kompaniyalar Facebook, Twitter, YouTube və Instagramdan daha çox istifadə edir. Bu onlara daha böyük audiensiyaya çıxış imkanı verir, və çox az resurs hesabına.',
-    'smm20' => ' Sosial medianın inkişafı, SMM aktiv istifadəsi və artan rolu, SMO yaranmasına səbəb oldu. SMO, ingilis dilindən Sosial Media Optimization, yəni Sosial mediya optimizasiyası kimi tərcümə olunur. SMO sosial mediyadan sayta təbii trafikin cəlb edilməsi üçün istifadə olunan mexanizimlərin cəmidir. SMO və SEO demək olarki eyni mexanizmdir, yeganə fərq onların istifadə edildiyi sahələrdir. SEO axtarış sisteminə yönəldilmiş proses olduğu halda, SMO ancaq sosial mediyanı, onun istifadəçilərini əhatə edir.',
+    'smmTitle' => 'SMM Xidməti Bakıda: Instagram və Facebook Səhifələrinin İdarə Olunması',
+
+    'x_short' => '<strong>Qısa cavab:</strong> SMM xidməti biznesinizin sosial şəbəkə səhifələrinin idarə olunmasıdır: strategiya, kontent planı, post, story və Reels hazırlanması, hədəfli reklam və aylıq hesabat. Azərbaycanda SMM xidmətinin bazar qiyməti adətən <strong>ayda 300–1 200 AZN</strong> arasındadır. Reklam büdcəsi bu məbləğə daxil deyil, ayrıca ödənilir. Nəticə izləyici sayı ilə yox, <strong>müraciət sayı</strong> ilə ölçülməlidir.',
+
+    'what_title' => 'SMM xidməti nədir?',
+    'what' => [
+        'SMM (Social Media Marketing) sosial şəbəkələr vasitəsilə müştəri cəlb etməkdir. Azərbaycanda biznes üçün əsas platformalar Instagram, Facebook və TikTok-dur. B2B şirkətlər üçün LinkedIn də vacibdir.',
+        'SMM sadəcə post paylaşmaq deyil. Məqsəd səhifəyə gələn insanı müştəriyə çevirməkdir: DM yazsın, zəng etsin, WhatsApp-a keçsin, sayta daxil olub sifariş versin. Ona görə yaxşı SMM kontent, reklam və satış prosesini bir yerdə düşünür.',
+    ],
+
+    'inc_title' => 'SMM xidmətinə nələr daxildir',
+    'inc' => [
+        ['Audit və strategiya', 'Hazırkı səhifənin, rəqiblərin və auditoriyanın təhlili, məqsədin müəyyənləşdirilməsi: satış, müraciət, rezervasiya və ya brend tanınması.'],
+        ['Kontent planı', 'Ay başlamazdan əvvəl təsdiqlənən plan: mövzular, formatlar, paylaşım tarixləri.'],
+        ['Dizayn və vizual üslub', 'Loqo, rəng və şriftlərinizlə uyğun şablonlar, profil şəkli, highlight örtükləri.'],
+        ['Post, story və Reels', 'Mətnlər, başlıqlar, hashtag-lar, qısa videoların montajı. Lazım olduqda çəkiliş.'],
+        ['Hədəfli reklam', 'Instagram və Facebook reklamının qurulması, auditoriya testi, büdcənin ən yaxşı nəticə verən reklamlara yönləndirilməsi.'],
+        ['Aylıq hesabat', 'Müraciət sayı, bir müraciətin qiyməti, əhatə və keçidlər, növbəti ay üçün nəticələr.'],
+    ],
+    'inc_note' => 'Şərhlərə və mesajlara cavab vermə (community management) hər paketə daxil olmur. Bunu əvvəlcədən razılaşdırırıq, çünki mesaja gec cavab birbaşa satış itkisidir.',
+
+    'x_prices_title' => 'SMM xidməti qiymətləri',
+    'x_prices_head' => ['Paket', 'Qiymət (AZN / ay)', 'Adətən nə daxildir'],
+    'x_prices' => [
+        ['Yalnız dizayn', '150 – 350', '8–12 post dizaynı. Mətn və paylaşım sizdə qalır.'],
+        ['Başlanğıc', '300 – 600', '12 post, 8–12 story, mətnlər, kontent planı, paylaşım'],
+        ['Standart', '600 – 1 200', 'Başlanğıc + 4–6 Reels, hədəfli reklamın idarəsi, aylıq hesabat'],
+        ['Geniş', '1 200 – 3 000', 'Standart + peşəkar çəkiliş, 8+ Reels, bir neçə platforma'],
+    ],
+    'x_prices_note' => 'Qiymətlər Azərbaycan bazarı üçün təxmini diapazonlardır, dəqiq qiymət platforma sayından, kontentin həcmindən və çəkilişdən asılıdır. Reklam büdcəsi ayrıca ödənilir və birbaşa Meta-ya gedir. Ətraflı: <a href="/blog-details/smm-xidmeti-qiymeti-2026" class="text-violet-300 underline">SMM xidməti qiyməti 2026</a>.',
+
+    'measure_title' => 'Nəticəni necə ölçürük',
+    'measure_head' => ['Göstərici', 'Nəyi göstərir', 'Əhəmiyyəti'],
+    'measure_rows' => [
+        ['Müraciət sayı', 'DM, zəng, WhatsApp və formadan gələn real maraq', 'Ən vacib'],
+        ['Bir müraciətin qiyməti', 'Reklam büdcəsi ÷ müraciət sayı', 'Ən vacib'],
+        ['Sayta keçid', 'Profildən və reklamdan sayta gələn trafik', 'Yüksək'],
+        ['Yadda saxlama və paylaşım', 'Kontentin faydalı olub-olmaması', 'Orta'],
+        ['İzləyici və bəyənmə', 'Populyarlıq', 'Aşağı'],
+    ],
+    'measure_note' => 'Sayta gedən linklərə UTM etiketləri əlavə edirik ki, hansı post və reklamın müraciət gətirdiyi Google Analytics-də görünsün.',
+
+    'steps_title' => 'İş necə qurulur',
+    'steps' => [
+        'Tanışlıq görüşü: biznesiniz, müştəriniz və məqsədiniz.',
+        'Səhifənin və rəqiblərin auditi, strategiya və paket təklifi.',
+        'Vizual üslubun və ilk ayın kontent planının təsdiqi.',
+        'Kontentin hazırlanması və paylaşılması, reklamın işə salınması.',
+        'Ay sonu hesabat: nə işlədi, nə dəyişməlidir.',
+    ],
+    'steps_note' => 'Səhifə və reklam kabineti həmişə sizin biznes hesabınızda qalır, biz yalnız lazımi girişlə işləyirik. Belə olanda reklama xərclənən hər manatı özünüz görürsünüz.',
+
+    'red_title' => 'SMM agentliyi seçərkən diqqət edin',
+    'red' => [
+        'İzləyici sayına zəmanət verir, amma müraciət və satışdan danışmır.',
+        '"1 000 izləyici 10 manata" kimi paketlər təklif edir. Instagram saxta izləyici və bəyənmələri silir və bunu qaydaların pozuntusu sayır.',
+        'Səhifənin və reklam kabinetinin admin girişini öz adına götürür.',
+        'Reklam büdcəsini öz kartından ödəyib real xərci göstərmir.',
+        'Kontent planı və aylıq hesabat yoxdur.',
+    ],
+
+    'x_faq_title' => 'Tez-tez verilən suallar',
+    'x_faq' => [
+        ['SMM xidməti nədir?', 'SMM xidməti biznesin Instagram, Facebook, TikTok kimi sosial şəbəkə səhifələrinin idarə olunmasıdır: strategiya, kontent planı, post, story və Reels hazırlanması, hədəfli reklam və nəticələrin ölçülməsi.'],
+        ['SMM xidməti neçəyə başa gəlir?', 'Azərbaycanda bazar qiyməti adətən ayda 300–1 200 AZN arasındadır. Yalnız dizayn 150–350 AZN, çəkiliş və bir neçə platforma daxil olan geniş paketlər 1 200–3 000 AZN olur. Reklam büdcəsi ayrıca ödənilir.'],
+        ['Reklam büdcəsi SMM qiymətinə daxildirmi?', 'Adətən yox. Xidmət haqqı komandanın işidir, reklam büdcəsi isə Meta-nın reklam kabinetindən birbaşa ödənilən məbləğdir. Müqavilədə bu ikisi ayrıca göstərilməlidir. Bax: <a href="/blog-details/instagram-facebook-reklami-qiymeti-2027" class="text-violet-300 underline">Instagram və Facebook reklamı qiyməti</a>.'],
+        ['SMM nə vaxt nəticə verir?', 'Hədəfli reklamla ilk müraciətlər bir neçə gün ərzində gələ bilər. Səhifənin üslubunun, auditoriyanın və kontentin oturuşması isə adətən 2–3 ay çəkir.'],
+        ['Hansı platforma seçilməlidir?', 'Müştərinizin olduğu platforma. Azərbaycanda istehlakçı biznesləri üçün əsasən Instagram və TikTok, daha yaşlı auditoriya üçün Facebook, B2B üçün LinkedIn uyğundur.'],
+        ['SMM kifayətdir, yoxsa sayt da lazımdır?', 'SMM diqqət çəkir, amma qərar verən müştəri çox vaxt Google-da axtarır və sayta baxır. Ən yaxşı nəticə SMM, sayt və Google-da görünmə birlikdə işləyəndə alınır. Bax: <a href="/veb-saytlarin-hazirlanmasi" class="text-violet-300 underline">veb saytların hazırlanması</a>.'],
+    ],
 ];
