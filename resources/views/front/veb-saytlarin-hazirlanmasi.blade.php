@@ -87,6 +87,6 @@
     </div>
 </section>
 
-@include('front.partials.related-posts', ['slugs' => ['veb-sayt-qiymeti-azerbaycan-2026', 'gencede-veb-sayt-hazirlanmasi-2026', 'veb-sayt-hazirlatmazdan-evvel-12-sual']])
+@include('front.partials.related-posts', ['slugs' => ['veb-sayt-qiymeti-azerbaycan-2027', 'gencede-veb-sayt-hazirlanmasi-2026', 'sayt-sifarisinden-evvel-15-sual-2027']])
 
 @endsection

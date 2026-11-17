@@ -64,7 +64,7 @@ class Blog40BriefSeeder extends Seeder
   <li>Büdcə aralığım və son tarixim nədir?</li>
   <li>Son təsdiqi kim verəcək?</li>
 </ul>
-<p>Podratçı seçərkən ona veriləcək suallar üçün: <a href="/blog-details/sayt-sifarisinden-evvel-15-sual-2027">Veb Sayt Hazırlatmazdan Əvvəl 15 Sual</a>. Qiymət aralıqları üçün: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb Sayt Qiyməti 2026</a>.</p>
+<p>Podratçı seçərkən ona veriləcək suallar üçün: <a href="/blog-details/sayt-sifarisinden-evvel-15-sual-2027">Veb Sayt Hazırlatmazdan Əvvəl 15 Sual</a>. Qiymət aralıqları üçün: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb Sayt Qiyməti 2026</a>.</p>
 
 <h2>RS Code-da Brif Necə Doldurulur?</h2>
 <p>Saytımızda yuxarıdakı <strong>"Sifariş et"</strong> düyməsini basın və xidmət növünü seçin: loqo, sayt, SMM və digər xidmətlər üçün hazır brif formaları var. Suallar bu yazıdakı bölmələrə əsaslanır; doldurmaq 10–15 dəqiqə çəkir. Brifi aldıqdan sonra sizinlə əlaqə saxlayıb dəqiq qiymət və iş planı təqdim edirik. Ətraflı: <a href="/veb-saytlarin-hazirlanmasi">veb sayt hazırlanması</a>, <a href="/loqo-hazirlanmasi">loqo hazırlanması</a>, <a href="/smm-xidmeti">SMM xidməti</a>.</p>
@@ -163,7 +163,7 @@ HTML;
   <li>What is my budget range and deadline?</li>
   <li>Who gives final approval?</li>
 </ul>
-<p>Questions to ask a contractor: <a href="/blog-details/questions-to-ask-before-hiring-web-developer-2027">15 Questions Before Building a Website</a>. Price ranges: <a href="/blog-details/website-cost-azerbaijan-2026">Website Cost 2026</a>.</p>
+<p>Questions to ask a contractor: <a href="/blog-details/questions-to-ask-before-hiring-web-developer-2027">15 Questions Before Building a Website</a>. Price ranges: <a href="/blog-details/website-cost-azerbaijan-2027">Website Cost 2026</a>.</p>
 
 <h2>How to Fill In a Brief at RS Code</h2>
 <p>Click the <strong>"Order Now"</strong> button at the top of our site and choose the service: there are ready brief forms for logo, website, SMM and other services. The questions follow the sections in this article and take 10–15 minutes. Once we receive your brief, we contact you with an exact quote and project plan. More: <a href="/website-development">website development</a>, <a href="/logo-design">logo design</a>, <a href="/smm-services">SMM services</a>.</p>
@@ -262,7 +262,7 @@ HTML;
   <li>Какой у меня диапазон бюджета и дедлайн?</li>
   <li>Кто даёт финальное одобрение?</li>
 </ul>
-<p>Вопросы, которые стоит задать подрядчику: <a href="/blog-details/voprosy-pered-zakazom-sajta-2027">15 вопросов перед созданием сайта</a>. Диапазоны цен: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта 2026</a>.</p>
+<p>Вопросы, которые стоит задать подрядчику: <a href="/blog-details/voprosy-pered-zakazom-sajta-2027">15 вопросов перед созданием сайта</a>. Диапазоны цен: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта 2026</a>.</p>
 
 <h2>Как заполнить бриф в RS Code?</h2>
 <p>Нажмите кнопку <strong>«Заказать»</strong> вверху сайта и выберите услугу: для логотипа, сайта, SMM и других услуг есть готовые формы брифа. Вопросы основаны на разделах этой статьи, заполнение занимает 10–15 минут. Получив бриф, мы свяжемся с вами и предложим точную цену и план работ. Подробнее: <a href="/razrabotka-sajtov">разработка сайтов</a>, <a href="/razrabotka-logo">разработка логотипа</a>, <a href="/smm-uslugi">SMM-продвижение</a>.</p>

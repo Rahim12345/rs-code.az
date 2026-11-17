@@ -109,7 +109,7 @@ class Blog46AppVsWebSeeder extends Seeder
 
 <h2>Nəticə</h2>
 <p>Mobil sayt, PWA və native tətbiq rəqib deyil, fərqli mərhələlərin alətləridir. Əksər bizneslər üçün düzgün başlanğıc sürətli mobil saytdır; tətbiq isə real tələbat və gündəlik istifadə olanda dəyər yaradır.</p>
-<p><strong>Hansı variantın sizə uyğun olduğunu öyrənmək üçün <a href="/elaqe">bizə yazın</a></strong>. Ətraflı: <a href="/xidmetler">xidmətlərimiz</a>, <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb Sayt Qiyməti 2026</a>.</p>
+<p><strong>Hansı variantın sizə uyğun olduğunu öyrənmək üçün <a href="/elaqe">bizə yazın</a></strong>. Ətraflı: <a href="/xidmetler">xidmətlərimiz</a>, <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb Sayt Qiyməti 2026</a>.</p>
 HTML;
 
         $textEn = <<<'HTML'
@@ -212,7 +212,7 @@ HTML;
 
 <h2>Conclusion</h2>
 <p>A mobile site, a PWA and a native app aren't rivals but tools for different stages. For most businesses the right start is a fast mobile site; an app creates value when there's real demand and daily use.</p>
-<p><strong><a href="/contact">Contact us</a> to find out which option suits you</strong>. More: <a href="/services">our services</a>, <a href="/blog-details/website-cost-azerbaijan-2026">Website Cost 2026</a>.</p>
+<p><strong><a href="/contact">Contact us</a> to find out which option suits you</strong>. More: <a href="/services">our services</a>, <a href="/blog-details/website-cost-azerbaijan-2027">Website Cost 2026</a>.</p>
 HTML;
 
         $textRu = <<<'HTML'
@@ -315,7 +315,7 @@ HTML;
 
 <h2>Итог</h2>
 <p>Мобильный сайт, PWA и нативное приложение — не конкуренты, а инструменты для разных этапов. Для большинства компаний правильный старт — быстрый мобильный сайт; приложение создаёт ценность при реальном спросе и ежедневном использовании.</p>
-<p><strong><a href="/kontakty">Напишите нам</a>, чтобы узнать, какой вариант подходит вам</strong>. Подробнее: <a href="/uslugi">наши услуги</a>, <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта 2026</a>.</p>
+<p><strong><a href="/kontakty">Напишите нам</a>, чтобы узнать, какой вариант подходит вам</strong>. Подробнее: <a href="/uslugi">наши услуги</a>, <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта 2026</a>.</p>
 HTML;
 
         DB::table('blogs')->updateOrInsert(

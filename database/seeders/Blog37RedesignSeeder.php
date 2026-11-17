@@ -58,7 +58,7 @@ class Blog37RedesignSeeder extends Seeder
 </ol>
 
 <h2>Saytın Yenilənməsi Neçəyə Başa Gəlir?</h2>
-<p>Qiymət saytın həcmindən və nəyin dəyişdiyindən asılıdır: vizit saytın yenilənməsi korporativ sayt və ya onlayn mağazadan xeyli ucuzdur. Paketlər və qiymət aralıqları: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb Sayt Qiyməti Azərbaycanda 2026</a>. Podratçı seçməzdən əvvəl <a href="/blog-details/sayt-sifarisinden-evvel-15-sual-2027">bu 15 sualı</a> verməyi unutmayın.</p>
+<p>Qiymət saytın həcmindən və nəyin dəyişdiyindən asılıdır: vizit saytın yenilənməsi korporativ sayt və ya onlayn mağazadan xeyli ucuzdur. Paketlər və qiymət aralıqları: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb Sayt Qiyməti Azərbaycanda 2026</a>. Podratçı seçməzdən əvvəl <a href="/blog-details/sayt-sifarisinden-evvel-15-sual-2027">bu 15 sualı</a> verməyi unutmayın.</p>
 
 <h2>Tez-tez Verilən Suallar</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -147,7 +147,7 @@ HTML;
 </ol>
 
 <h2>How Much Does a Website Update Cost?</h2>
-<p>It depends on the size of the site and what changes: updating a business card site costs much less than a corporate site or online store. Packages and price ranges: <a href="/blog-details/website-cost-azerbaijan-2026">Website Cost in Azerbaijan 2026</a>. Before choosing a developer, ask <a href="/blog-details/questions-to-ask-before-hiring-web-developer-2027">these 15 questions</a>.</p>
+<p>It depends on the size of the site and what changes: updating a business card site costs much less than a corporate site or online store. Packages and price ranges: <a href="/blog-details/website-cost-azerbaijan-2027">Website Cost in Azerbaijan 2026</a>. Before choosing a developer, ask <a href="/blog-details/questions-to-ask-before-hiring-web-developer-2027">these 15 questions</a>.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -236,7 +236,7 @@ HTML;
 </ol>
 
 <h2>Сколько стоит обновление сайта?</h2>
-<p>Зависит от объёма сайта и того, что меняется: обновление сайта-визитки стоит намного дешевле, чем корпоративного сайта или интернет-магазина. Пакеты и цены: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта в Азербайджане 2026</a>. Перед выбором подрядчика задайте <a href="/blog-details/voprosy-pered-zakazom-sajta-2027">эти 15 вопросов</a>.</p>
+<p>Зависит от объёма сайта и того, что меняется: обновление сайта-визитки стоит намного дешевле, чем корпоративного сайта или интернет-магазина. Пакеты и цены: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта в Азербайджане 2026</a>. Перед выбором подрядчика задайте <a href="/blog-details/voprosy-pered-zakazom-sajta-2027">эти 15 вопросов</a>.</p>
 
 <h2>Часто задаваемые вопросы</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">

@@ -123,7 +123,7 @@ class Blog49LaravelVsWordpressSeeder extends Seeder
 
 <h2>Nəticə</h2>
 <p>WordPress və Laravel rəqib yox, fərqli işlərin alətləridir. Məzmun saytı üçün WordPress sürətli və sərfəli başlanğıcdır; biznes prosesini avtomatlaşdıran sistem üçün isə Laravel uzunmüddətli perspektivdə daha ucuz, sürətli və təhlükəsiz olur. RS Code hər iki texnologiya ilə işləyir və layihənizə uyğun olanı tövsiyə edir — bu saytın özü də Laravel ilə hazırlanıb.</p>
-<p><strong>Layihəniz üçün hansı texnologiyanın uyğun olduğunu öyrənmək üçün <a href="/elaqe">bizə yazın</a></strong>. Ətraflı: <a href="/xidmetler">xidmətlərimiz</a>, <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb Sayt Qiyməti 2026</a>, <a href="/blog-details/sayti-yenileme-vaxti-7-elamet-2026">Saytınızı Yeniləmə Vaxtıdır</a>.</p>
+<p><strong>Layihəniz üçün hansı texnologiyanın uyğun olduğunu öyrənmək üçün <a href="/elaqe">bizə yazın</a></strong>. Ətraflı: <a href="/xidmetler">xidmətlərimiz</a>, <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb Sayt Qiyməti 2026</a>, <a href="/blog-details/sayti-yenileme-vaxti-7-elamet-2026">Saytınızı Yeniləmə Vaxtıdır</a>.</p>
 HTML;
 
         $textEn = <<<'HTML'
@@ -240,7 +240,7 @@ HTML;
 
 <h2>Conclusion</h2>
 <p>WordPress and Laravel aren't rivals; they're tools for different jobs. For a content site WordPress is a fast, affordable start; for a system that automates business processes, Laravel is cheaper, faster and more secure in the long run. RS Code works with both and recommends whichever fits your project — this very website is built with Laravel.</p>
-<p><strong><a href="/contact">Contact us</a> to find out which technology suits your project</strong>. More: <a href="/services">our services</a>, <a href="/blog-details/website-cost-azerbaijan-2026">Website Cost 2026</a>, <a href="/blog-details/signs-you-need-website-redesign-2026">Signs You Need a Website Redesign</a>.</p>
+<p><strong><a href="/contact">Contact us</a> to find out which technology suits your project</strong>. More: <a href="/services">our services</a>, <a href="/blog-details/website-cost-azerbaijan-2027">Website Cost 2026</a>, <a href="/blog-details/signs-you-need-website-redesign-2026">Signs You Need a Website Redesign</a>.</p>
 HTML;
 
         $textRu = <<<'HTML'
@@ -357,7 +357,7 @@ HTML;
 
 <h2>Итог</h2>
 <p>WordPress и Laravel — не конкуренты, а инструменты для разных задач. Для контентного сайта WordPress — быстрый и доступный старт; для системы, автоматизирующей бизнес-процессы, Laravel в долгосрочной перспективе дешевле, быстрее и безопаснее. RS Code работает с обеими технологиями и рекомендует ту, что подходит вашему проекту, — этот сайт тоже сделан на Laravel.</p>
-<p><strong><a href="/kontakty">Напишите нам</a>, чтобы узнать, какая технология подходит вашему проекту</strong>. Подробнее: <a href="/uslugi">наши услуги</a>, <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта 2026</a>, <a href="/blog-details/priznaki-chto-sajtu-nuzhen-redizajn-2026">Признаки, что сайту нужен редизайн</a>.</p>
+<p><strong><a href="/kontakty">Напишите нам</a>, чтобы узнать, какая технология подходит вашему проекту</strong>. Подробнее: <a href="/uslugi">наши услуги</a>, <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта 2026</a>, <a href="/blog-details/priznaki-chto-sajtu-nuzhen-redizajn-2026">Признаки, что сайту нужен редизайн</a>.</p>
 HTML;
 
         DB::table('blogs')->updateOrInsert(

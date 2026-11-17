@@ -161,7 +161,7 @@ class Blog61ConstructionSiteSeeder extends Seeder
 
 <h3>Bunları da oxuyun</h3>
 <ul>
-  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb sayt qiyməti Azərbaycanda</a></li>
+  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb sayt qiyməti Azərbaycanda</a></li>
   <li><a href="/blog-details/google-business-profile-nece-yaradilir-2026">Google Business Profile necə yaradılır?</a></li>
   <li><a href="/blog-details/b2b-sifaris-portali-diler-distributor-2026">Diler və distribyutorlar üçün B2B sifariş portalı</a></li>
   <li><a href="/blog-details/sayt-niye-muraciet-getirmir-ux-audit-2026">Sayt niyə müraciət gətirmir?</a></li>
@@ -321,7 +321,7 @@ HTML;
 
 <h3>Read next</h3>
 <ul>
-  <li><a href="/blog-details/website-cost-azerbaijan-2026">Website cost in Azerbaijan</a></li>
+  <li><a href="/blog-details/website-cost-azerbaijan-2027">Website cost in Azerbaijan</a></li>
   <li><a href="/blog-details/how-to-create-google-business-profile-2026">How to create a Google Business Profile</a></li>
   <li><a href="/blog-details/b2b-ordering-portal-dealers-distributors-2026">A B2B ordering portal for dealers and distributors</a></li>
   <li><a href="/blog-details/website-not-generating-leads-ux-audit-2026">Why a website doesn't generate leads</a></li>
@@ -481,7 +481,7 @@ HTML;
 
 <h3>Читайте также</h3>
 <ul>
-  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта в Азербайджане</a></li>
+  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта в Азербайджане</a></li>
   <li><a href="/blog-details/kak-sozdat-google-business-profile-2026">Как создать Google Business Profile</a></li>
   <li><a href="/blog-details/b2b-portal-zakazov-dlya-dilerov-2026">B2B-портал заказов для дилеров и дистрибьюторов</a></li>
   <li><a href="/blog-details/pochemu-sajt-ne-prinosit-zayavki-ux-audit-2026">Почему сайт не приносит заявки</a></li>

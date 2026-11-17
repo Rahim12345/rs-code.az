@@ -249,21 +249,21 @@ class BlogOldPostsSeoUpgradeSeeder extends Seeder
                 'related' => [
                     'az' => [
                         ['/blog-details/brif-nece-doldurulur-2026', 'Brif necə doldurulur?'],
-                        ['/blog-details/veb-sayt-qiymeti-azerbaycan-2026', 'Veb sayt qiyməti Azərbaycanda'],
+                        ['/blog-details/veb-sayt-qiymeti-azerbaycan-2027', 'Veb sayt qiyməti Azərbaycanda'],
                         ['/blog-details/wix-tilda-wordpress-vs-sifarisle-sayt-2026', 'Wix, Tilda, WordPress yoxsa sifarişlə sayt?'],
                         ['/blog-details/landing-page-nedir-2026', 'Landing page nədir?'],
                         ['/veb-saytlarin-hazirlanmasi', 'Veb saytların hazırlanması xidməti'],
                     ],
                     'en' => [
                         ['/blog-details/how-to-write-project-brief-2026', 'How to fill in a project brief'],
-                        ['/blog-details/website-cost-azerbaijan-2026', 'Website cost in Azerbaijan'],
+                        ['/blog-details/website-cost-azerbaijan-2027', 'Website cost in Azerbaijan'],
                         ['/blog-details/wix-vs-tilda-vs-wordpress-vs-custom-website-2026', 'Wix, Tilda, WordPress or a custom website?'],
                         ['/blog-details/what-is-a-landing-page-2026', 'What is a landing page?'],
                         ['/website-development', 'Website development service'],
                     ],
                     'ru' => [
                         ['/blog-details/kak-zapolnit-brif-2026', 'Как заполнить бриф'],
-                        ['/blog-details/stoimost-veb-sayta-azerbaydzhan-2026', 'Стоимость сайта в Азербайджане'],
+                        ['/blog-details/stoimost-veb-sayta-azerbaydzhan-2027', 'Стоимость сайта в Азербайджане'],
                         ['/blog-details/wix-tilda-wordpress-ili-sajt-na-zakaz-2026', 'Wix, Tilda, WordPress или сайт на заказ?'],
                         ['/blog-details/chto-takoe-lending-2026', 'Что такое лендинг?'],
                         ['/razrabotka-sajtov', 'Услуга разработки сайтов'],

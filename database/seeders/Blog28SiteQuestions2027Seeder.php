@@ -59,7 +59,7 @@ class Blog28SiteQuestions2027Seeder extends Seeder
 
 <h2>3. Qiymət və Ödəniş</h2>
 <h3>Sual 4. Qiymətə dəqiq nə daxildir?</h3>
-<p>Təklifdə səhifələrin sayı və adları, dillər, funksiyalar (forma, onlayn ödəniş, axtarış, filtr, bloq), dizaynın fərdi olub-olmadığı və mətnləri kimin yazacağı göstərilməlidir. "Korporativ sayt — 900 ₼" kimi bir sətirlik təklif sonradan "bu daxil deyildi" mübahisəsinə səbəb olur. Bazar qiymətlərini müqayisə etmək üçün <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">veb sayt qiyməti bələdçimizə</a> baxın.</p>
+<p>Təklifdə səhifələrin sayı və adları, dillər, funksiyalar (forma, onlayn ödəniş, axtarış, filtr, bloq), dizaynın fərdi olub-olmadığı və mətnləri kimin yazacağı göstərilməlidir. "Korporativ sayt — 900 ₼" kimi bir sətirlik təklif sonradan "bu daxil deyildi" mübahisəsinə səbəb olur. Bazar qiymətlərini müqayisə etmək üçün <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">veb sayt qiyməti bələdçimizə</a> baxın.</p>
 
 <h3>Sual 5. Hər il nə qədər ödəyəcəyəm?</h3>
 <p>Saytın birdəfəlik hazırlanma qiymətindən başqa illik xərcləri də var:</p>
@@ -202,7 +202,7 @@ class Blog28SiteQuestions2027Seeder extends Seeder
 
 <h3>Bunları da oxuyun</h3>
 <ul>
-  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb sayt qiyməti Azərbaycanda</a></li>
+  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb sayt qiyməti Azərbaycanda</a></li>
   <li><a href="/blog-details/brif-nece-doldurulur-2026">Sayt sifarişindən əvvəl brif necə doldurulur</a></li>
   <li><a href="/blog-details/wix-tilda-wordpress-vs-sifarisle-sayt-2026">Wix, Tilda, WordPress, yoxsa sifarişlə sayt?</a></li>
   <li><a href="/blog-details/sayt-niye-muraciet-getirmir-ux-audit-2026">Sayt niyə müraciət gətirmir? UX auditi</a></li>
@@ -260,7 +260,7 @@ HTML;
 
 <h2>3. Price and Payment</h2>
 <h3>Question 4. What exactly does the price include?</h3>
-<p>The proposal should list the number and names of pages, the languages, the features (forms, online payment, search, filters, blog), whether the design is custom, and who will write the copy. A one-line quote such as "Corporate website — 900 ₼" later leads to "that wasn't included" disputes. To compare market prices, see our <a href="/blog-details/website-cost-azerbaijan-2026">website cost guide</a>.</p>
+<p>The proposal should list the number and names of pages, the languages, the features (forms, online payment, search, filters, blog), whether the design is custom, and who will write the copy. A one-line quote such as "Corporate website — 900 ₼" later leads to "that wasn't included" disputes. To compare market prices, see our <a href="/blog-details/website-cost-azerbaijan-2027">website cost guide</a>.</p>
 
 <h3>Question 5. How much will I pay every year?</h3>
 <p>Besides the one-off development price, a website also has yearly costs:</p>
@@ -403,7 +403,7 @@ HTML;
 
 <h3>Read also</h3>
 <ul>
-  <li><a href="/blog-details/website-cost-azerbaijan-2026">Website cost in Azerbaijan</a></li>
+  <li><a href="/blog-details/website-cost-azerbaijan-2027">Website cost in Azerbaijan</a></li>
   <li><a href="/blog-details/how-to-write-project-brief-2026">How to write a brief before ordering a website</a></li>
   <li><a href="/blog-details/wix-vs-tilda-vs-wordpress-vs-custom-website-2026">Wix, Tilda, WordPress or a custom website?</a></li>
   <li><a href="/blog-details/website-not-generating-leads-ux-audit-2026">Why your website isn't generating leads: a UX audit</a></li>
@@ -461,7 +461,7 @@ HTML;
 
 <h2>3. Цена и оплата</h2>
 <h3>Вопрос 4. Что именно входит в цену?</h3>
-<p>В предложении должны быть указаны количество и названия страниц, языки, функции (формы, онлайн-оплата, поиск, фильтры, блог), индивидуальный ли дизайн и кто пишет тексты. Однострочное предложение вроде «Корпоративный сайт — 900 ₼» потом приводит к спорам «это не входило». Чтобы сравнить рыночные цены, смотрите наше <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">руководство по стоимости сайта</a>.</p>
+<p>В предложении должны быть указаны количество и названия страниц, языки, функции (формы, онлайн-оплата, поиск, фильтры, блог), индивидуальный ли дизайн и кто пишет тексты. Однострочное предложение вроде «Корпоративный сайт — 900 ₼» потом приводит к спорам «это не входило». Чтобы сравнить рыночные цены, смотрите наше <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">руководство по стоимости сайта</a>.</p>
 
 <h3>Вопрос 5. Сколько я буду платить каждый год?</h3>
 <p>Кроме разовой цены разработки у сайта есть ежегодные расходы:</p>
@@ -604,7 +604,7 @@ HTML;
 
 <h3>Читайте также</h3>
 <ul>
-  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта в Азербайджане</a></li>
+  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта в Азербайджане</a></li>
   <li><a href="/blog-details/kak-zapolnit-brif-2026">Как заполнить бриф перед заказом сайта</a></li>
   <li><a href="/blog-details/wix-tilda-wordpress-ili-sajt-na-zakaz-2026">Wix, Tilda, WordPress или сайт на заказ?</a></li>
   <li><a href="/blog-details/pochemu-sajt-ne-prinosit-zayavki-ux-audit-2026">Почему сайт не приносит заявки: UX-аудит</a></li>
@@ -679,8 +679,8 @@ HTML;
             foreach (['az', 'en', 'ru'] as $l) {
                 $t = $b->{"text_$l"};
                 $n = preg_replace_callback(
-                    '~<a href="/blog-details/'.preg_quote($old[$l], '~').'"([^>]*)>(.*?)</a>~u',
-                    fn ($m) => '<a href="/blog-details/'.$new[$l].'"'.$m[1].'>'.preg_replace('/12/u', '15', $m[2]).'</a>',
+                    '~<a href="/blog-details/(?:'.preg_quote($old[$l], '~').'|'.preg_quote($new[$l], '~').')"([^>]*)>(.*?)</a>~u',
+                    fn ($m) => '<a href="/blog-details/'.$new[$l].'"'.$m[1].'>'.preg_replace('/(?<!\d)12(?!\d)/u', '15', $m[2]).'</a>',
                     (string) $t
                 );
                 if ($n !== $t) {

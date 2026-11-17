@@ -106,7 +106,7 @@ class Blog68TutorWebsiteSeeder extends Seeder
 <ul>
   <li><strong>Yeni başlayırsınız, bir neçə tələbəniz var:</strong> Instagram + Kursometr ünvanı. Pulsuz başlayırsınız, həm tələbələrə göstərməyə ünvan, həm də dərsləri idarə etmək üçün alət olur.</li>
   <li><strong>Öz kabinetiniz və ya kurs otağınız var:</strong> mütləq Google Business Profile açın — addım-addım bələdçi: <a href="/blog-details/google-business-profile-nece-yaradilir-2026">Google Business Profile necə yaradılır</a>.</li>
-  <li><strong>Brend qurmaq, bir neçə müəllimlə kurs açmaq istəyirsiniz:</strong> öz domeninizlə sifarişlə sayt mənalıdır. Qiymətə nələrin təsir etdiyi barədə: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">veb sayt qiyməti Azərbaycanda</a>.</li>
+  <li><strong>Brend qurmaq, bir neçə müəllimlə kurs açmaq istəyirsiniz:</strong> öz domeninizlə sifarişlə sayt mənalıdır. Qiymətə nələrin təsir etdiyi barədə: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">veb sayt qiyməti Azərbaycanda</a>.</li>
   <li><strong>Sadəcə yoxlamaq istəyirsiniz:</strong> pulsuz konstruktor ilk addım ola bilər, amma sonradan köçürmə çətinliyini nəzərə alın.</li>
 </ul>
 
@@ -207,7 +207,7 @@ class Blog68TutorWebsiteSeeder extends Seeder
   <li><a href="/blog-details/repetitor-ders-idareetme-proqrami-2026">Repetitorlar üçün dərs idarəetməsi: WhatsApp və Excel-dən platformaya</a></li>
   <li><a href="/blog-details/google-business-profile-nece-yaradilir-2026">Google Business Profile necə yaradılır?</a></li>
   <li><a href="/blog-details/instagram-magaza-ve-sayt-2026">Instagram mağazası varkən sayt lazımdırmı?</a></li>
-  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb sayt qiyməti Azərbaycanda</a></li>
+  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb sayt qiyməti Azərbaycanda</a></li>
   <li><a href="/blog-details/google-classroom-whatsapp-excel-yoxsa-kursometr-2027">Google Classroom, WhatsApp, Excel, yoxsa Kursometr: müqayisə</a></li>
   <li><a href="/blog-details/onlayn-test-nece-hazirlanir-muellim-ucun-2027">Onlayn test necə hazırlanır: vaxtlı sınaq və avtomatik nəticə</a></li>
   <li><a href="/blog-details/repetitor-valideyn-hesabati-ve-odenis-izleme-2027">Valideyn hesabatı, davamiyyət və dərs haqqı ödənişlərinin izlənməsi</a></li>
@@ -308,7 +308,7 @@ HTML;
 <ul>
   <li><strong>You are just starting and have a few students:</strong> Instagram + a Kursometr address. You start for free and get both an address to show students and a tool to manage lessons.</li>
   <li><strong>You have your own office or classroom:</strong> definitely open a Google Business Profile — step-by-step guide: <a href="/blog-details/how-to-create-google-business-profile-2026">how to create a Google Business Profile</a>.</li>
-  <li><strong>You want to build a brand or open a course with several teachers:</strong> a custom site on your own domain makes sense. What affects the price: <a href="/blog-details/website-cost-azerbaijan-2026">website cost in Azerbaijan</a>.</li>
+  <li><strong>You want to build a brand or open a course with several teachers:</strong> a custom site on your own domain makes sense. What affects the price: <a href="/blog-details/website-cost-azerbaijan-2027">website cost in Azerbaijan</a>.</li>
   <li><strong>You just want to try:</strong> a free builder can be a first step, but keep in mind that moving away later can be hard.</li>
 </ul>
 
@@ -409,7 +409,7 @@ HTML;
   <li><a href="/blog-details/tutor-class-management-software-2026">Class management for tutors: from WhatsApp and Excel to a platform</a></li>
   <li><a href="/blog-details/how-to-create-google-business-profile-2026">How to create a Google Business Profile</a></li>
   <li><a href="/blog-details/instagram-shop-vs-website-2026">Do you need a website if you sell on Instagram?</a></li>
-  <li><a href="/blog-details/website-cost-azerbaijan-2026">Website cost in Azerbaijan</a></li>
+  <li><a href="/blog-details/website-cost-azerbaijan-2027">Website cost in Azerbaijan</a></li>
   <li><a href="/blog-details/google-classroom-vs-whatsapp-vs-excel-vs-kursometr-2027">Google Classroom vs WhatsApp vs Excel vs Kursometr: comparison</a></li>
   <li><a href="/blog-details/how-to-create-online-tests-for-teachers-2027">How to create online tests: timed mock exams and automatic results</a></li>
   <li><a href="/blog-details/tutor-parent-reports-and-payment-tracking-2027">Parent progress reports, attendance and fee tracking</a></li>
@@ -510,7 +510,7 @@ HTML;
 <ul>
   <li><strong>Вы только начинаете, учеников немного:</strong> Instagram + адрес в Kursometr. Вы начинаете бесплатно и получаете и адрес, который можно показать ученикам, и инструмент для управления занятиями.</li>
   <li><strong>У вас есть свой кабинет или класс:</strong> обязательно откройте Google Business Profile — пошаговое руководство: <a href="/blog-details/kak-sozdat-google-business-profile-2026">как создать Google Business Profile</a>.</li>
-  <li><strong>Хотите строить бренд или открыть курсы с несколькими учителями:</strong> имеет смысл сайт на заказ со своим доменом. Что влияет на цену: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">стоимость сайта в Азербайджане</a>.</li>
+  <li><strong>Хотите строить бренд или открыть курсы с несколькими учителями:</strong> имеет смысл сайт на заказ со своим доменом. Что влияет на цену: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">стоимость сайта в Азербайджане</a>.</li>
   <li><strong>Просто хотите попробовать:</strong> бесплатный конструктор может стать первым шагом, но учитывайте, что позже переехать будет сложно.</li>
 </ul>
 
@@ -611,7 +611,7 @@ HTML;
   <li><a href="/blog-details/programma-dlya-repetitorov-2026">Управление занятиями для репетиторов: от WhatsApp и Excel к платформе</a></li>
   <li><a href="/blog-details/kak-sozdat-google-business-profile-2026">Как создать Google Business Profile</a></li>
   <li><a href="/blog-details/instagram-magazin-ili-sajt-2026">Нужен ли сайт, если вы продаёте в Instagram?</a></li>
-  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта в Азербайджане</a></li>
+  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта в Азербайджане</a></li>
   <li><a href="/blog-details/google-classroom-whatsapp-excel-ili-kursometr-2027">Google Classroom, WhatsApp, Excel или Kursometr: сравнение</a></li>
   <li><a href="/blog-details/kak-sozdat-onlajn-test-dlya-uchitelya-2027">Как создать онлайн-тест: пробный экзамен с таймером и автопроверкой</a></li>
   <li><a href="/blog-details/repetitor-otchety-roditelyam-i-uchet-oplat-2027">Отчёты родителям, посещаемость и учёт оплат</a></li>

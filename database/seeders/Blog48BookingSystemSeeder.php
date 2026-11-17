@@ -126,7 +126,7 @@ class Blog48BookingSystemSeeder extends Seeder
 
 <h2>Nəticə</h2>
 <p>Onlayn rezervasiya sistemi xidmət biznesi üçün iki şey edir: boş qalan saatları azaldır və yeni müştərilərin sizi Google və Instagram-dan tapıb dərhal yazılmasını təmin edir. Telefon və dəftərlə idarə olunan cədvəldən sistemə keçid çox vaxt ilk aylarda özünü doğruldur.</p>
-<p><strong>Biznesinizə uyğun rezervasiya sistemi və sayt üçün <a href="/elaqe">bizə yazın</a></strong> — pulsuz konsultasiyada iş prosesinizə baxıb optimal həll təklif edək. Ətraflı: <a href="/xidmetler">xidmətlərimiz</a>, <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb Sayt Qiyməti 2026</a>.</p>
+<p><strong>Biznesinizə uyğun rezervasiya sistemi və sayt üçün <a href="/elaqe">bizə yazın</a></strong> — pulsuz konsultasiyada iş prosesinizə baxıb optimal həll təklif edək. Ətraflı: <a href="/xidmetler">xidmətlərimiz</a>, <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb Sayt Qiyməti 2026</a>.</p>
 HTML;
 
         $textEn = <<<'HTML'
@@ -246,7 +246,7 @@ HTML;
 
 <h2>Conclusion</h2>
 <p>An online booking system does two things for a service business: it cuts idle hours and lets new clients find you on Google and Instagram and book straight away. Moving from a phone-and-notebook schedule to a system often pays for itself within the first months.</p>
-<p><strong><a href="/contact">Contact us</a> for a booking system and website that fit your business</strong> — in a free consultation we'll review your workflow and propose the best solution. More: <a href="/services">our services</a>, <a href="/blog-details/website-cost-azerbaijan-2026">Website Cost 2026</a>.</p>
+<p><strong><a href="/contact">Contact us</a> for a booking system and website that fit your business</strong> — in a free consultation we'll review your workflow and propose the best solution. More: <a href="/services">our services</a>, <a href="/blog-details/website-cost-azerbaijan-2027">Website Cost 2026</a>.</p>
 HTML;
 
         $textRu = <<<'HTML'
@@ -366,7 +366,7 @@ HTML;
 
 <h2>Итог</h2>
 <p>Система онлайн-записи даёт бизнесу услуг две вещи: сокращает простои и позволяет новым клиентам находить вас в Google и Instagram и сразу записываться. Переход от телефона и тетради к системе часто окупается уже в первые месяцы.</p>
-<p><strong><a href="/kontakty">Напишите нам</a>, чтобы получить систему записи и сайт под ваш бизнес</strong> — на бесплатной консультации разберём ваш процесс и предложим оптимальное решение. Подробнее: <a href="/uslugi">наши услуги</a>, <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта 2026</a>.</p>
+<p><strong><a href="/kontakty">Напишите нам</a>, чтобы получить систему записи и сайт под ваш бизнес</strong> — на бесплатной консультации разберём ваш процесс и предложим оптимальное решение. Подробнее: <a href="/uslugi">наши услуги</a>, <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта 2026</a>.</p>
 HTML;
 
         DB::table('blogs')->updateOrInsert(

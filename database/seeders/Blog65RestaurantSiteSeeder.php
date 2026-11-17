@@ -188,7 +188,7 @@ class Blog65RestaurantSiteSeeder extends Seeder
     <tr><td>Fərdi sistem</td><td>Restoran şəbəkəsi, mobil tətbiq, bonus sistemi, POS və mətbəx inteqrasiyası</td><td>5 000+ AZN</td></tr>
   </tbody>
 </table>
-<p>Menyu və rezervasiya forması olan sayt adətən 2–4 həftəyə, onlayn sifarişli sayt isə 4–8 həftəyə hazırlanır. Domen, hostinq, SMS və ödəniş xidmətləri ayrıca xərcdir. Qiymətə nələrin təsir etdiyi barədə: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">veb sayt qiyməti Azərbaycanda</a>.</p>
+<p>Menyu və rezervasiya forması olan sayt adətən 2–4 həftəyə, onlayn sifarişli sayt isə 4–8 həftəyə hazırlanır. Domen, hostinq, SMS və ödəniş xidmətləri ayrıca xərcdir. Qiymətə nələrin təsir etdiyi barədə: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">veb sayt qiyməti Azərbaycanda</a>.</p>
 
 <h2>Tez-tez Edilən Səhvlər</h2>
 <ul>
@@ -265,7 +265,7 @@ class Blog65RestaurantSiteSeeder extends Seeder
   <li><a href="/blog-details/instagram-magaza-ve-sayt-2026">Instagram mağaza, yoxsa sayt?</a></li>
   <li><a href="/blog-details/onlayn-magaza-nece-acilir-2026">Onlayn mağaza necə açılır?</a></li>
   <li><a href="/blog-details/sayt-sureti-core-web-vitals-2026">Sayt sürəti və Core Web Vitals</a></li>
-  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb sayt qiyməti Azərbaycanda</a></li>
+  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb sayt qiyməti Azərbaycanda</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -445,7 +445,7 @@ HTML;
     <tr><td>Custom system</td><td>Restaurant chain, mobile app, loyalty system, POS and kitchen integration</td><td>AZN 5,000+</td></tr>
   </tbody>
 </table>
-<p>A site with a menu and reservation form usually takes 2–4 weeks, a site with online ordering 4–8 weeks. Domain, hosting, SMS and payment services are separate costs. What affects the price: <a href="/blog-details/website-cost-azerbaijan-2026">website cost in Azerbaijan</a>.</p>
+<p>A site with a menu and reservation form usually takes 2–4 weeks, a site with online ordering 4–8 weeks. Domain, hosting, SMS and payment services are separate costs. What affects the price: <a href="/blog-details/website-cost-azerbaijan-2027">website cost in Azerbaijan</a>.</p>
 
 <h2>Common Mistakes</h2>
 <ul>
@@ -522,7 +522,7 @@ HTML;
   <li><a href="/blog-details/instagram-shop-vs-website-2026">Instagram shop vs website</a></li>
   <li><a href="/blog-details/how-to-start-online-store-azerbaijan-2026">How to start an online store</a></li>
   <li><a href="/blog-details/website-speed-core-web-vitals-2026">Website speed and Core Web Vitals</a></li>
-  <li><a href="/blog-details/website-cost-azerbaijan-2026">Website cost in Azerbaijan</a></li>
+  <li><a href="/blog-details/website-cost-azerbaijan-2027">Website cost in Azerbaijan</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -702,7 +702,7 @@ HTML;
     <tr><td>Индивидуальная система</td><td>Сеть ресторанов, мобильное приложение, бонусная система, интеграция с POS и кухней</td><td>5 000+ AZN</td></tr>
   </tbody>
 </table>
-<p>Сайт с меню и формой бронирования обычно делается за 2–4 недели, сайт с онлайн-заказом — за 4–8 недель. Домен, хостинг, SMS и платёжные сервисы — отдельные расходы. Что влияет на цену: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">стоимость сайта в Азербайджане</a>.</p>
+<p>Сайт с меню и формой бронирования обычно делается за 2–4 недели, сайт с онлайн-заказом — за 4–8 недель. Домен, хостинг, SMS и платёжные сервисы — отдельные расходы. Что влияет на цену: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">стоимость сайта в Азербайджане</a>.</p>
 
 <h2>Частые ошибки</h2>
 <ul>
@@ -779,7 +779,7 @@ HTML;
   <li><a href="/blog-details/instagram-magazin-ili-sajt-2026">Instagram-магазин или сайт?</a></li>
   <li><a href="/blog-details/kak-otkryt-internet-magazin-v-azerbajdzhane-2026">Как открыть интернет-магазин</a></li>
   <li><a href="/blog-details/skorost-sajta-core-web-vitals-2026">Скорость сайта и Core Web Vitals</a></li>
-  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта в Азербайджане</a></li>
+  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта в Азербайджане</a></li>
 </ul>
 
 <h2>Итог</h2>

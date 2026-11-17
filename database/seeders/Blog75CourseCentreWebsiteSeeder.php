@@ -175,7 +175,7 @@ class Blog75CourseCentreWebsiteSeeder extends Seeder
     <tr><td>Fərdi sistem</td><td>Çox filiallı şəbəkə, tələbə kabineti, daxili inteqrasiyalar</td><td>5 000+ AZN</td></tr>
   </tbody>
 </table>
-<p>Kurs səhifələri olan tipik kurs mərkəzi saytı korporativ aralığa düşür və adətən <strong>3–5 həftəyə</strong> hazırlanır: struktur və dizayn, səhifələrin hazırlanması, məzmunun yerləşdirilməsi, schema və Google Business Profile ilə uyğunlaşdırma, test. Ən çox vaxt kurs proqramlarının, müəllim fotolarının və mətnlərin toplanmasına gedir. Hər əlavə dil qiymətə təxminən 15–25% əlavə edir; domen və hostinq ayrıca xərcdir. Qiymətə nələrin təsir etdiyi barədə: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">veb sayt qiyməti Azərbaycanda</a>. Fərdi müəllim üçün daha sadə variant: <a href="/blog-details/muellim-repetitor-ucun-sexsi-sayt-2027">müəllim və repetitor üçün şəxsi sayt</a>.</p>
+<p>Kurs səhifələri olan tipik kurs mərkəzi saytı korporativ aralığa düşür və adətən <strong>3–5 həftəyə</strong> hazırlanır: struktur və dizayn, səhifələrin hazırlanması, məzmunun yerləşdirilməsi, schema və Google Business Profile ilə uyğunlaşdırma, test. Ən çox vaxt kurs proqramlarının, müəllim fotolarının və mətnlərin toplanmasına gedir. Hər əlavə dil qiymətə təxminən 15–25% əlavə edir; domen və hostinq ayrıca xərcdir. Qiymətə nələrin təsir etdiyi barədə: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">veb sayt qiyməti Azərbaycanda</a>. Fərdi müəllim üçün daha sadə variant: <a href="/blog-details/muellim-repetitor-ucun-sexsi-sayt-2027">müəllim və repetitor üçün şəxsi sayt</a>.</p>
 
 <h2>Tez-tez Edilən Səhvlər</h2>
 <ul>
@@ -251,7 +251,7 @@ class Blog75CourseCentreWebsiteSeeder extends Seeder
   <li><a href="/blog-details/muellim-repetitor-ucun-sexsi-sayt-2027">Müəllim və repetitor üçün şəxsi sayt</a></li>
   <li><a href="/blog-details/google-business-profile-nece-yaradilir-2026">Google Business Profile necə yaradılır?</a></li>
   <li><a href="/blog-details/klinika-tibb-merkezi-ucun-sayt-2027">Klinika və tibb mərkəzi üçün sayt</a> — başqa sahədə eyni yanaşma</li>
-  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb sayt qiyməti Azərbaycanda</a></li>
+  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb sayt qiyməti Azərbaycanda</a></li>
   <li><a href="/blog-details/kurs-merkezi-nece-acilir-2027">Kurs mərkəzi necə açılır: addım-addım bələdçi</a></li>
   <li><a href="/blog-details/kurs-merkezine-telebe-celb-etmek-ve-saxlamaq-2027">Kurs mərkəzinə tələbə necə cəlb olunur və saxlanılır</a></li>
 </ul>
@@ -418,7 +418,7 @@ HTML;
     <tr><td>Custom system</td><td>Multi-branch network, student portal, internal integrations</td><td>AZN 5,000+</td></tr>
   </tbody>
 </table>
-<p>A typical course centre site with course pages falls in the corporate range and usually takes <strong>3–5 weeks</strong>: structure and design, building the pages, adding content, schema and alignment with Google Business Profile, testing. Most of the time goes into collecting course programmes, teacher photos and texts. Each extra language adds roughly 15–25% to the price; domain and hosting are separate costs. What drives the price: <a href="/blog-details/website-cost-azerbaijan-2026">website cost in Azerbaijan</a>. A simpler option for an individual teacher: <a href="/blog-details/personal-website-for-teachers-tutors-2027">a personal website for teachers and tutors</a>.</p>
+<p>A typical course centre site with course pages falls in the corporate range and usually takes <strong>3–5 weeks</strong>: structure and design, building the pages, adding content, schema and alignment with Google Business Profile, testing. Most of the time goes into collecting course programmes, teacher photos and texts. Each extra language adds roughly 15–25% to the price; domain and hosting are separate costs. What drives the price: <a href="/blog-details/website-cost-azerbaijan-2027">website cost in Azerbaijan</a>. A simpler option for an individual teacher: <a href="/blog-details/personal-website-for-teachers-tutors-2027">a personal website for teachers and tutors</a>.</p>
 
 <h2>Common Mistakes</h2>
 <ul>
@@ -494,7 +494,7 @@ HTML;
   <li><a href="/blog-details/personal-website-for-teachers-tutors-2027">A personal website for teachers and tutors</a></li>
   <li><a href="/blog-details/how-to-create-google-business-profile-2026">How to create a Google Business Profile</a></li>
   <li><a href="/blog-details/clinic-medical-centre-website-azerbaijan-2027">Clinic and medical centre website</a> — the same approach in another sector</li>
-  <li><a href="/blog-details/website-cost-azerbaijan-2026">Website cost in Azerbaijan</a></li>
+  <li><a href="/blog-details/website-cost-azerbaijan-2027">Website cost in Azerbaijan</a></li>
   <li><a href="/blog-details/how-to-open-a-course-centre-2027">How to open a course centre: a step-by-step guide</a></li>
   <li><a href="/blog-details/how-to-attract-and-retain-students-course-centre-2027">How a course centre attracts and retains students</a></li>
 </ul>
@@ -661,7 +661,7 @@ HTML;
     <tr><td>Индивидуальная система</td><td>Сеть с филиалами, кабинет ученика, внутренние интеграции</td><td>5 000+ AZN</td></tr>
   </tbody>
 </table>
-<p>Типичный сайт учебного центра со страницами курсов попадает в корпоративный диапазон и обычно делается за <strong>3–5 недель</strong>: структура и дизайн, вёрстка страниц, наполнение, schema и согласование с Google Business Profile, тестирование. Больше всего времени уходит на сбор программ курсов, фото преподавателей и текстов. Каждый дополнительный язык добавляет к цене примерно 15–25%; домен и хостинг оплачиваются отдельно. Что влияет на цену: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">стоимость сайта в Азербайджане</a>. Более простой вариант для отдельного преподавателя: <a href="/blog-details/lichnyj-sajt-dlya-uchitelya-repetitora-2027">личный сайт для учителя и репетитора</a>.</p>
+<p>Типичный сайт учебного центра со страницами курсов попадает в корпоративный диапазон и обычно делается за <strong>3–5 недель</strong>: структура и дизайн, вёрстка страниц, наполнение, schema и согласование с Google Business Profile, тестирование. Больше всего времени уходит на сбор программ курсов, фото преподавателей и текстов. Каждый дополнительный язык добавляет к цене примерно 15–25%; домен и хостинг оплачиваются отдельно. Что влияет на цену: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">стоимость сайта в Азербайджане</a>. Более простой вариант для отдельного преподавателя: <a href="/blog-details/lichnyj-sajt-dlya-uchitelya-repetitora-2027">личный сайт для учителя и репетитора</a>.</p>
 
 <h2>Частые ошибки</h2>
 <ul>
@@ -737,7 +737,7 @@ HTML;
   <li><a href="/blog-details/lichnyj-sajt-dlya-uchitelya-repetitora-2027">Личный сайт для учителя и репетитора</a></li>
   <li><a href="/blog-details/kak-sozdat-google-business-profile-2026">Как создать Google Business Profile?</a></li>
   <li><a href="/blog-details/sajt-dlya-kliniki-medicinskogo-centra-2027">Сайт для клиники и медицинского центра</a> — тот же подход в другой сфере</li>
-  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта в Азербайджане</a></li>
+  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта в Азербайджане</a></li>
   <li><a href="/blog-details/kak-otkryt-uchebnyj-centr-2027">Как открыть учебный центр: пошаговое руководство</a></li>
   <li><a href="/blog-details/kak-privlech-i-uderzhat-uchenikov-uchebnyj-centr-2027">Как учебному центру привлечь и удержать учеников</a></li>
 </ul>

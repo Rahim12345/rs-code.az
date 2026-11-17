@@ -95,7 +95,7 @@ class Blog33OnlineStoreSeeder extends Seeder
     <tr><td>Texniki dəstək</td><td>İstəyə görə aylıq paket</td></tr>
   </tbody>
 </table>
-<p>Saytın qiymətinə nələrin təsir etdiyini <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb Sayt Qiyməti 2026</a> bələdçimizdə ətraflı izah etmişik.</p>
+<p>Saytın qiymətinə nələrin təsir etdiyini <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb Sayt Qiyməti 2026</a> bələdçimizdə ətraflı izah etmişik.</p>
 
 <h2>Addım 8: İlk Müştəriləri Cəlb Edin</h2>
 <ul>
@@ -242,7 +242,7 @@ HTML;
     <tr><td>Technical support</td><td>Optional monthly plan</td></tr>
   </tbody>
 </table>
-<p>What affects the price of a website is explained in our <a href="/blog-details/website-cost-azerbaijan-2026">Website Cost 2026</a> guide.</p>
+<p>What affects the price of a website is explained in our <a href="/blog-details/website-cost-azerbaijan-2027">Website Cost 2026</a> guide.</p>
 
 <h2>Step 8: Attract Your First Customers</h2>
 <ul>
@@ -389,7 +389,7 @@ HTML;
     <tr><td>Техподдержка</td><td>Ежемесячный пакет по желанию</td></tr>
   </tbody>
 </table>
-<p>Что влияет на стоимость сайта, подробно разобрано в гиде <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта 2026</a>.</p>
+<p>Что влияет на стоимость сайта, подробно разобрано в гиде <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта 2026</a>.</p>
 
 <h2>Шаг 8: привлеките первых клиентов</h2>
 <ul>

@@ -161,7 +161,7 @@ class Blog64ClinicSiteSeeder extends Seeder
     <tr><td>Fərdi sistem</td><td>Şəbəkə klinika, pasiyent kabineti, inteqrasiyalar</td><td>5 000+ AZN</td></tr>
   </tbody>
 </table>
-<p>Onlayn növbəsi olan tipik klinika saytı korporativ aralığa düşür və adətən 3–5 həftəyə hazırlanır. Domen, hostinq və SMS xidməti ayrıca xərcdir. Qiymətə nələrin təsir etdiyi barədə: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">veb sayt qiyməti Azərbaycanda</a>.</p>
+<p>Onlayn növbəsi olan tipik klinika saytı korporativ aralığa düşür və adətən 3–5 həftəyə hazırlanır. Domen, hostinq və SMS xidməti ayrıca xərcdir. Qiymətə nələrin təsir etdiyi barədə: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">veb sayt qiyməti Azərbaycanda</a>.</p>
 
 <h2>Tez-tez Edilən Səhvlər</h2>
 <ul>
@@ -237,7 +237,7 @@ class Blog64ClinicSiteSeeder extends Seeder
   <li><a href="/blog-details/google-business-profile-nece-yaradilir-2026">Google Business Profile necə yaradılır?</a></li>
   <li><a href="/blog-details/sayt-sureti-core-web-vitals-2026">Sayt sürəti və Core Web Vitals</a></li>
   <li><a href="/blog-details/chatgpt-gemini-google-ai-cavablarinda-gorunmek-2027">ChatGPT və Google AI cavablarında görünmək</a></li>
-  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb sayt qiyməti Azərbaycanda</a></li>
+  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb sayt qiyməti Azərbaycanda</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -391,7 +391,7 @@ HTML;
     <tr><td>Custom system</td><td>Clinic chain, patient portal, integrations</td><td>AZN 5,000+</td></tr>
   </tbody>
 </table>
-<p>A typical clinic website with online booking falls into the corporate range and is usually ready in 3–5 weeks. Domain, hosting and SMS services are separate costs. What affects the price: <a href="/blog-details/website-cost-azerbaijan-2026">website cost in Azerbaijan</a>.</p>
+<p>A typical clinic website with online booking falls into the corporate range and is usually ready in 3–5 weeks. Domain, hosting and SMS services are separate costs. What affects the price: <a href="/blog-details/website-cost-azerbaijan-2027">website cost in Azerbaijan</a>.</p>
 
 <h2>Common Mistakes</h2>
 <ul>
@@ -467,7 +467,7 @@ HTML;
   <li><a href="/blog-details/how-to-create-google-business-profile-2026">How to create a Google Business Profile</a></li>
   <li><a href="/blog-details/website-speed-core-web-vitals-2026">Website speed and Core Web Vitals</a></li>
   <li><a href="/blog-details/how-to-appear-in-chatgpt-gemini-google-ai-answers-2027">How to appear in ChatGPT and Google AI answers</a></li>
-  <li><a href="/blog-details/website-cost-azerbaijan-2026">Website cost in Azerbaijan</a></li>
+  <li><a href="/blog-details/website-cost-azerbaijan-2027">Website cost in Azerbaijan</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -621,7 +621,7 @@ HTML;
     <tr><td>Индивидуальная система</td><td>Сеть клиник, личный кабинет пациента, интеграции</td><td>5 000+ AZN</td></tr>
   </tbody>
 </table>
-<p>Типичный сайт клиники с онлайн-записью попадает в корпоративный диапазон и обычно готов за 3–5 недель. Домен, хостинг и SMS-сервис — отдельные расходы. Что влияет на цену: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">стоимость сайта в Азербайджане</a>.</p>
+<p>Типичный сайт клиники с онлайн-записью попадает в корпоративный диапазон и обычно готов за 3–5 недель. Домен, хостинг и SMS-сервис — отдельные расходы. Что влияет на цену: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">стоимость сайта в Азербайджане</a>.</p>
 
 <h2>Частые ошибки</h2>
 <ul>
@@ -697,7 +697,7 @@ HTML;
   <li><a href="/blog-details/kak-sozdat-google-business-profile-2026">Как создать Google Business Profile?</a></li>
   <li><a href="/blog-details/skorost-sajta-core-web-vitals-2026">Скорость сайта и Core Web Vitals</a></li>
   <li><a href="/blog-details/kak-popast-v-otvety-chatgpt-gemini-google-ai-2027">Как попасть в ответы ChatGPT и Google AI</a></li>
-  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта в Азербайджане</a></li>
+  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта в Азербайджане</a></li>
 </ul>
 
 <h2>Итог</h2>

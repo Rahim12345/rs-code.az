@@ -70,6 +70,6 @@
     </div>
 </section>
 
-@include('front.partials.related-posts', ['slugs' => ['mobil-uygun-sayt-niye-vacibdir-2026', 'veb-sayt-hazirlatmazdan-evvel-12-sual', 'veb-sayt-qiymeti-azerbaycan-2026']])
+@include('front.partials.related-posts', ['slugs' => ['mobil-uygun-sayt-niye-vacibdir-2026', 'sayt-sifarisinden-evvel-15-sual-2027', 'veb-sayt-qiymeti-azerbaycan-2027']])
 
 @endsection

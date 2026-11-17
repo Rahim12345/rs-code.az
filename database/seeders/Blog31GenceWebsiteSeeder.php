@@ -37,7 +37,7 @@ class Blog31GenceWebsiteSeeder extends Seeder
     <tr><td>Fərdi platforma</td><td>5 000 AZN +</td><td>6 – 12 həftə</td><td>Bron sistemi, portal, LMS, CRM</td></tr>
   </tbody>
 </table>
-<p>Qiymətə nələrin daxil olduğunu və hansı amillərin onu artırdığını ətraflı <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb Sayt Qiyməti Azərbaycanda 2026</a> bələdçimizdə izah etmişik.</p>
+<p>Qiymətə nələrin daxil olduğunu və hansı amillərin onu artırdığını ətraflı <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb Sayt Qiyməti Azərbaycanda 2026</a> bələdçimizdə izah etmişik.</p>
 
 <h2>Gəncədə Hansı Biznesə Hansı Sayt Lazımdır?</h2>
 <h3>Restoran, kafe və şirniyyat evləri</h3>
@@ -164,7 +164,7 @@ HTML;
     <tr><td>Custom platform</td><td>5,000 AZN +</td><td>6 – 12 weeks</td><td>Booking system, portal, LMS, CRM</td></tr>
   </tbody>
 </table>
-<p>We explain what's included and what drives the price in our <a href="/blog-details/website-cost-azerbaijan-2026">Website Cost in Azerbaijan 2026</a> guide.</p>
+<p>We explain what's included and what drives the price in our <a href="/blog-details/website-cost-azerbaijan-2027">Website Cost in Azerbaijan 2026</a> guide.</p>
 
 <h2>Which Website Does Your Ganja Business Need?</h2>
 <h3>Restaurants, cafés and bakeries</h3>
@@ -290,7 +290,7 @@ HTML;
     <tr><td>Индивидуальная платформа</td><td>5 000 AZN +</td><td>6 – 12 недель</td><td>Бронирование, портал, LMS, CRM</td></tr>
   </tbody>
 </table>
-<p>Что входит в цену и что её повышает, мы подробно разобрали в гиде <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта в Азербайджане 2026</a>.</p>
+<p>Что входит в цену и что её повышает, мы подробно разобрали в гиде <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта в Азербайджане 2026</a>.</p>
 
 <h2>Какой сайт нужен вашему бизнесу в Гяндже?</h2>
 <h3>Рестораны, кафе и кондитерские</h3>

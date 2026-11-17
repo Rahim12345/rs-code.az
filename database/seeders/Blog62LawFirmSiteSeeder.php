@@ -69,7 +69,7 @@ class Blog62LawFirmSiteSeeder extends Seeder
   <li>Hüquqi terminlərin peşəkar tərcüməsi — maşın tərcüməsi burada etibarı birbaşa azaldır;</li>
   <li>İngiliscə bloq məqalələri — xarici müştərinin sualları yerli müştərinin suallarından fərqlidir (şirkət qeydiyyatı, vergi rezidentliyi, iş icazəsi).</li>
 </ul>
-<p>Hər əlavə dil sayt qiymətinə təxminən 15–25% əlavə edir. Ətraflı: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">veb sayt qiyməti Azərbaycanda</a>.</p>
+<p>Hər əlavə dil sayt qiymətinə təxminən 15–25% əlavə edir. Ətraflı: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">veb sayt qiyməti Azərbaycanda</a>.</p>
 
 <h2>Konsultasiya Forması və Məxfilik</h2>
 <p>Müştəri formaya çox vaxt həssas məlumat yazır: məhkəmə işi, ailə məsələsi, borc, şirkət mübahisəsi. Buna görə:</p>
@@ -165,7 +165,7 @@ class Blog62LawFirmSiteSeeder extends Seeder
 
 <h3>Bunları da oxuyun</h3>
 <ul>
-  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb sayt qiyməti Azərbaycanda</a></li>
+  <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb sayt qiyməti Azərbaycanda</a></li>
   <li><a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO xidməti niyə lazımdır?</a></li>
   <li><a href="/blog-details/google-business-profile-nece-yaradilir-2026">Google Business Profile necə yaradılır?</a></li>
   <li><a href="/blog-details/sayt-tehlukesizliyi-yoxlama-siyahisi-2026">Sayt təhlükəsizliyi: yoxlama siyahısı</a></li>
@@ -232,7 +232,7 @@ HTML;
   <li>Professional translation of legal terms — machine translation directly undermines trust here;</li>
   <li>English blog articles — foreign clients ask different questions from local ones (company registration, tax residency, work permits).</li>
 </ul>
-<p>Each extra language adds roughly 15–25% to the price. More: <a href="/blog-details/website-cost-azerbaijan-2026">website cost in Azerbaijan</a>.</p>
+<p>Each extra language adds roughly 15–25% to the price. More: <a href="/blog-details/website-cost-azerbaijan-2027">website cost in Azerbaijan</a>.</p>
 
 <h2>Consultation Form and Confidentiality</h2>
 <p>Clients often type sensitive information into a form: a court case, a family matter, debt, a corporate dispute. Therefore:</p>
@@ -328,7 +328,7 @@ HTML;
 
 <h3>Read next</h3>
 <ul>
-  <li><a href="/blog-details/website-cost-azerbaijan-2026">Website cost in Azerbaijan</a></li>
+  <li><a href="/blog-details/website-cost-azerbaijan-2027">Website cost in Azerbaijan</a></li>
   <li><a href="/blog-details/why-you-need-seo-services-2026">Why you need SEO services</a></li>
   <li><a href="/blog-details/how-to-create-google-business-profile-2026">How to create a Google Business Profile</a></li>
   <li><a href="/blog-details/website-security-checklist-small-business-2026">Website security checklist</a></li>
@@ -395,7 +395,7 @@ HTML;
   <li>Профессиональный перевод юридических терминов — машинный перевод здесь напрямую подрывает доверие;</li>
   <li>Статьи блога на английском — вопросы иностранных клиентов отличаются от вопросов местных (регистрация компании, налоговое резидентство, разрешение на работу).</li>
 </ul>
-<p>Каждый дополнительный язык добавляет к цене примерно 15–25%. Подробнее: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">стоимость сайта в Азербайджане</a>.</p>
+<p>Каждый дополнительный язык добавляет к цене примерно 15–25%. Подробнее: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">стоимость сайта в Азербайджане</a>.</p>
 
 <h2>Форма консультации и конфиденциальность</h2>
 <p>В форму клиенты часто пишут чувствительную информацию: судебное дело, семейный вопрос, долг, корпоративный спор. Поэтому:</p>
@@ -491,7 +491,7 @@ HTML;
 
 <h3>Читайте также</h3>
 <ul>
-  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта в Азербайджане</a></li>
+  <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта в Азербайджане</a></li>
   <li><a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">Зачем нужны SEO-услуги?</a></li>
   <li><a href="/blog-details/kak-sozdat-google-business-profile-2026">Как создать Google Business Profile?</a></li>
   <li><a href="/blog-details/bezopasnost-sajta-chek-list-2026">Безопасность сайта: чек-лист</a></li>

@@ -74,7 +74,7 @@ class Blog42LandingPageSeeder extends Seeder
 </ol>
 
 <h2>Landing Page Neçəyə Başa Gəlir?</h2>
-<p>Azərbaycanda landing page hazırlanması 2026-cı ildə adətən <strong>300–700 AZN</strong> və <strong>5–10 iş günü</strong>dür; qiymət dizaynın mürəkkəbliyindən, mətn və foto hazırlığından, forma və inteqrasiyalardan asılıdır. Digər sayt növləri ilə müqayisə: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb Sayt Qiyməti Azərbaycanda 2026</a>. Kurs qeydiyyatı üçün landing nümunəsi: <a href="/blog-details/onlayn-kurs-nece-yaradilir-2026">Onlayn Kurs Necə Yaradılır</a>.</p>
+<p>Azərbaycanda landing page hazırlanması 2026-cı ildə adətən <strong>300–700 AZN</strong> və <strong>5–10 iş günü</strong>dür; qiymət dizaynın mürəkkəbliyindən, mətn və foto hazırlığından, forma və inteqrasiyalardan asılıdır. Digər sayt növləri ilə müqayisə: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb Sayt Qiyməti Azərbaycanda 2026</a>. Kurs qeydiyyatı üçün landing nümunəsi: <a href="/blog-details/onlayn-kurs-nece-yaradilir-2026">Onlayn Kurs Necə Yaradılır</a>.</p>
 
 <h2>Tez-tez Verilən Suallar</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -180,7 +180,7 @@ HTML;
 </ol>
 
 <h2>How Much Does a Landing Page Cost?</h2>
-<p>In Azerbaijan in 2026 a landing page typically costs <strong>300–700 AZN</strong> and takes <strong>5–10 working days</strong>; the price depends on design complexity, copy and photo preparation, forms and integrations. Comparison with other site types: <a href="/blog-details/website-cost-azerbaijan-2026">Website Cost in Azerbaijan 2026</a>. A course sign-up landing example: <a href="/blog-details/how-to-create-and-sell-online-course-2026">How to Create an Online Course</a>.</p>
+<p>In Azerbaijan in 2026 a landing page typically costs <strong>300–700 AZN</strong> and takes <strong>5–10 working days</strong>; the price depends on design complexity, copy and photo preparation, forms and integrations. Comparison with other site types: <a href="/blog-details/website-cost-azerbaijan-2027">Website Cost in Azerbaijan 2026</a>. A course sign-up landing example: <a href="/blog-details/how-to-create-and-sell-online-course-2026">How to Create an Online Course</a>.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -286,7 +286,7 @@ HTML;
 </ol>
 
 <h2>Сколько стоит лендинг?</h2>
-<p>В Азербайджане в 2026 году лендинг обычно стоит <strong>300–700 AZN</strong> и делается за <strong>5–10 рабочих дней</strong>; цена зависит от сложности дизайна, подготовки текстов и фото, форм и интеграций. Сравнение с другими типами сайтов: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта в Азербайджане 2026</a>. Пример лендинга для записи на курс: <a href="/blog-details/kak-sozdat-i-prodavat-onlajn-kurs-2026">Как создать онлайн-курс</a>.</p>
+<p>В Азербайджане в 2026 году лендинг обычно стоит <strong>300–700 AZN</strong> и делается за <strong>5–10 рабочих дней</strong>; цена зависит от сложности дизайна, подготовки текстов и фото, форм и интеграций. Сравнение с другими типами сайтов: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта в Азербайджане 2026</a>. Пример лендинга для записи на курс: <a href="/blog-details/kak-sozdat-i-prodavat-onlajn-kurs-2026">Как создать онлайн-курс</a>.</p>
 
 <h2>Часто задаваемые вопросы</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">

@@ -88,7 +88,7 @@ class Blog32PlatformCompareSeeder extends Seeder
     <tr><td>Sifarişlə sayt</td><td>~800 AZN</td><td>1-ci il daxil, sonra ~100 AZN/il</td><td>~1 000 AZN</td></tr>
   </tbody>
 </table>
-<p>Göründüyü kimi, "pulsuz" konstruktorlar 3 il ərzində sifarişlə saytdan baha başa gələ bilər — üstəlik sayt heç vaxt sizin olmur. Qiymət paketləri haqqında ətraflı: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb Sayt Qiyməti Azərbaycanda 2026</a>.</p>
+<p>Göründüyü kimi, "pulsuz" konstruktorlar 3 il ərzində sifarişlə saytdan baha başa gələ bilər — üstəlik sayt heç vaxt sizin olmur. Qiymət paketləri haqqında ətraflı: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb Sayt Qiyməti Azərbaycanda 2026</a>.</p>
 
 <h2>SEO Baxımından Hansı Daha Yaxşıdır?</h2>
 <p>Google üçün platformanın adı yox, nəticə vacibdir: sürət, mobil uyğunluq, düzgün başlıqlar, strukturlaşdırılmış məlumat və keyfiyyətli məzmun. Konstruktorlarda bu parametrlərin bir hissəsinə nəzarət edə bilmirsiniz. WordPress-də plaginlə yaxşı nəticə almaq olar. Sifarişlə saytda isə hər texniki detal — schema, hreflang, sürət optimallaşdırması — tam nəzarətinizdədir. Ətraflı: <a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO Xidməti Azərbaycanda 2026</a>.</p>
@@ -218,7 +218,7 @@ HTML;
     <tr><td>Custom website</td><td>~800 AZN</td><td>1st year included, then ~100 AZN/yr</td><td>~1,000 AZN</td></tr>
   </tbody>
 </table>
-<p>"Free" builders can cost more than a custom site over three years — and the site is never yours. More on pricing: <a href="/blog-details/website-cost-azerbaijan-2026">Website Cost in Azerbaijan 2026</a>.</p>
+<p>"Free" builders can cost more than a custom site over three years — and the site is never yours. More on pricing: <a href="/blog-details/website-cost-azerbaijan-2027">Website Cost in Azerbaijan 2026</a>.</p>
 
 <h2>Which Is Better for SEO?</h2>
 <p>Google cares about results, not platform names: speed, mobile-friendliness, correct headings, structured data and quality content. Builders don't let you control some of these. WordPress can do well with plugins. On a custom site every technical detail — schema, hreflang, speed optimization — is fully under your control. More: <a href="/blog-details/why-you-need-seo-services-2026">Why You Need SEO Services in 2026</a>.</p>
@@ -348,7 +348,7 @@ HTML;
     <tr><td>Сайт на заказ</td><td>~800 AZN</td><td>1-й год включён, далее ~100 AZN/год</td><td>~1 000 AZN</td></tr>
   </tbody>
 </table>
-<p>«Бесплатные» конструкторы за три года могут обойтись дороже сайта на заказ — и сайт так и не станет вашим. Подробнее о ценах: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта в Азербайджане 2026</a>.</p>
+<p>«Бесплатные» конструкторы за три года могут обойтись дороже сайта на заказ — и сайт так и не станет вашим. Подробнее о ценах: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта в Азербайджане 2026</a>.</p>
 
 <h2>Что лучше для SEO?</h2>
 <p>Для Google важен результат, а не название платформы: скорость, адаптивность, правильные заголовки, структурированные данные и качественный контент. В конструкторах часть этих параметров вам недоступна. WordPress с плагинами может показывать хорошие результаты. На сайте на заказ каждая техническая деталь — schema, hreflang, оптимизация скорости — полностью под вашим контролем. Подробнее: <a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">Зачем нужны SEO-услуги в 2026</a>.</p>

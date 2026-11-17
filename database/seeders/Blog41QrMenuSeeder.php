@@ -67,7 +67,7 @@ class Blog41QrMenuSeeder extends Seeder
 
 <h2>QR Menyu və POS Sistemi</h2>
 <p>QR menyunun ən güclü forması POS ilə birlikdə işləyəndir: məhsul və qiymətlər bir yerdən idarə olunur, qalmayan məhsul menyuda avtomatik "bitib" olur, masadan gələn sifariş isə birbaşa kassaya və mətbəx ekranına düşür. Restoran üçün POS seçimi haqqında: <a href="/blog-details/restoran-ucun-pos-sistemi-nece-secilir-2026">Restoran Üçün POS Sistemi Necə Seçilir</a>. RS Code-un bulud kassa sistemi: <a href="/mehsullar/rspos">RS POS</a>.</p>
-<p>Qiymət baxımından sadə veb menyu kiçik landing səhifəsinə yaxındır; masadan sifariş və POS inteqrasiyası isə funksionallığa görə dəyişir. Aralıqlar üçün: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">Veb Sayt Qiyməti 2026</a>.</p>
+<p>Qiymət baxımından sadə veb menyu kiçik landing səhifəsinə yaxındır; masadan sifariş və POS inteqrasiyası isə funksionallığa görə dəyişir. Aralıqlar üçün: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb Sayt Qiyməti 2026</a>.</p>
 
 <h2>Tez-tez Verilən Suallar</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -166,7 +166,7 @@ HTML;
 
 <h2>QR Menu and POS</h2>
 <p>A QR menu is strongest when it works with your POS: products and prices are managed in one place, out-of-stock items become "sold out" automatically, and table orders land directly in the till and on the kitchen screen. On choosing a restaurant POS: <a href="/blog-details/how-to-choose-pos-system-for-restaurant-2026">How to Choose a Restaurant POS System</a>. RS Code's cloud cash register: <a href="/mehsullar/rspos">RS POS</a>.</p>
-<p>Price-wise, a simple web menu is close to a small landing page; table ordering and POS integration vary with functionality. For ranges: <a href="/blog-details/website-cost-azerbaijan-2026">Website Cost 2026</a>.</p>
+<p>Price-wise, a simple web menu is close to a small landing page; table ordering and POS integration vary with functionality. For ranges: <a href="/blog-details/website-cost-azerbaijan-2027">Website Cost 2026</a>.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -265,7 +265,7 @@ HTML;
 
 <h2>QR-меню и POS-система</h2>
 <p>Сильнее всего QR-меню работает вместе с POS: товары и цены управляются из одного места, закончившиеся позиции автоматически помечаются «закончилось», а заказы со стола сразу попадают в кассу и на кухонный экран. О выборе POS для ресторана: <a href="/blog-details/kak-vybrat-pos-sistemu-dlya-restorana-2026">Как выбрать POS-систему для ресторана</a>. Облачная касса RS Code: <a href="/mehsullar/rspos">RS POS</a>.</p>
-<p>По цене простое веб-меню близко к небольшому лендингу; заказ со стола и интеграция с POS зависят от функционала. Диапазоны цен: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">Стоимость сайта 2026</a>.</p>
+<p>По цене простое веб-меню близко к небольшому лендингу; заказ со стола и интеграция с POS зависят от функционала. Диапазоны цен: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта 2026</a>.</p>
 
 <h2>Часто задаваемые вопросы</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">

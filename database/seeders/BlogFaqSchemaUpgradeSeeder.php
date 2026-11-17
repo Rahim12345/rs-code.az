@@ -422,7 +422,7 @@ class BlogFaqSchemaUpgradeSeeder extends Seeder
     <tr><td>Mobil tətbiq</td><td>Ayrıca layihə</td><td>Tez-tez təkrar istifadə, bildirişlər, cihaz funksiyaları lazımdır</td></tr>
   </tbody>
 </table>
-<p>Qiymətlər sayt növünə, səhifə sayına və dil sayına görə dəyişir. Ətraflı: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">veb sayt qiyməti Azərbaycanda</a>. Saytın yenilənmə vaxtının çatdığını göstərən digər əlamətlər üçün bax: <a href="/blog-details/sayti-yenileme-vaxti-7-elamet-2026">saytı yeniləmə vaxtı: 7 əlamət</a>.</p>
+<p>Qiymətlər sayt növünə, səhifə sayına və dil sayına görə dəyişir. Ətraflı: <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">veb sayt qiyməti Azərbaycanda</a>. Saytın yenilənmə vaxtının çatdığını göstərən digər əlamətlər üçün bax: <a href="/blog-details/sayti-yenileme-vaxti-7-elamet-2026">saytı yeniləmə vaxtı: 7 əlamət</a>.</p>
 <p>RS Code-da hər layihə əvvəlcə mobil versiyadan dizayn olunur, sonra böyük ekranlara uyğunlaşdırılır. Təhvildən əvvəl sayt real telefonlarda və PageSpeed Insights-da yoxlanılır.</p>
 
 %FAQ%
@@ -511,7 +511,7 @@ HTML;
     <tr><td>Mobile app</td><td>Separate project</td><td>You need frequent repeat use, notifications or device features</td></tr>
   </tbody>
 </table>
-<p>Prices depend on site type, number of pages and languages. More: <a href="/blog-details/website-cost-azerbaijan-2026">website cost in Azerbaijan</a>. For other signs that a redesign is due, see <a href="/blog-details/signs-you-need-website-redesign-2026">7 signs you need a website redesign</a>.</p>
+<p>Prices depend on site type, number of pages and languages. More: <a href="/blog-details/website-cost-azerbaijan-2027">website cost in Azerbaijan</a>. For other signs that a redesign is due, see <a href="/blog-details/signs-you-need-website-redesign-2026">7 signs you need a website redesign</a>.</p>
 <p>At RS Code every project is designed for mobile first and then adapted to larger screens. Before handover the site is tested on real phones and in PageSpeed Insights.</p>
 
 %FAQ%
@@ -600,7 +600,7 @@ HTML;
     <tr><td>Мобильное приложение</td><td>Отдельный проект</td><td>Нужны частое повторное использование, уведомления, функции устройства</td></tr>
   </tbody>
 </table>
-<p>Цена зависит от типа сайта, количества страниц и языков. Подробнее: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">стоимость сайта в Азербайджане</a>. Другие признаки того, что сайту пора обновиться: <a href="/blog-details/priznaki-chto-sajtu-nuzhen-redizajn-2026">7 признаков, что сайту нужен редизайн</a>.</p>
+<p>Цена зависит от типа сайта, количества страниц и языков. Подробнее: <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">стоимость сайта в Азербайджане</a>. Другие признаки того, что сайту пора обновиться: <a href="/blog-details/priznaki-chto-sajtu-nuzhen-redizajn-2026">7 признаков, что сайту нужен редизайн</a>.</p>
 <p>В RS Code каждый проект сначала проектируется для мобильных, затем адаптируется к большим экранам. Перед сдачей сайт проверяется на реальных телефонах и в PageSpeed Insights.</p>
 
 %FAQ%

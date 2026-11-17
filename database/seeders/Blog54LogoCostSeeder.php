@@ -154,7 +154,7 @@ class Blog54LogoCostSeeder extends Seeder
 
 <h2>Nəticə</h2>
 <p>Loqonun qiyməti dizaynerin adından çox nə aldığınızdan asılıdır: araşdırma, bir neçə konsepsiya, düzəlişlər, tam fayl paketi və hüquqların sizə keçməsi. Ucuz variant çox vaxt sonradan yenidən çəkdirmə xərci gətirir.</p>
-<p><strong>Biznesiniz üçün loqo və ya korporativ üslub lazımdırsa, <a href="/elaqe">bizə yazın</a></strong>. Brifə əsasən qiymət və müddəti dəqiqləşdirək. Ətraflı: <a href="/loqo-hazirlanmasi">loqo hazırlanması</a>, <a href="/isler">portfolio</a>, <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2026">veb sayt qiyməti 2026</a>.</p>
+<p><strong>Biznesiniz üçün loqo və ya korporativ üslub lazımdırsa, <a href="/elaqe">bizə yazın</a></strong>. Brifə əsasən qiymət və müddəti dəqiqləşdirək. Ətraflı: <a href="/loqo-hazirlanmasi">loqo hazırlanması</a>, <a href="/isler">portfolio</a>, <a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">veb sayt qiyməti 2026</a>.</p>
 <p><small><em>Qiymətlər Azərbaycan bazarı üzrə təxmini diapazonlardır (Oktyabr 2026). Əmtəə nişanı ilə bağlı məlumat "Əmtəə nişanları və coğrafi göstəricilər haqqında" Qanunun 21-ci maddəsinə əsaslanır; hüquqi məsləhət deyil.</em></small></p>
 HTML;
 
@@ -303,7 +303,7 @@ HTML;
 
 <h2>Conclusion</h2>
 <p>The price of a logo depends less on the designer's name than on what you actually get: research, several concepts, revisions, a full file pack and transfer of rights. A cheap option often leads to paying for a redraw later.</p>
-<p><strong>Need a logo or corporate identity for your business? <a href="/contact">Write to us</a></strong> and we will confirm price and timeline based on your brief. More: <a href="/logo-design">logo design</a>, <a href="/portfolio">portfolio</a>, <a href="/blog-details/website-cost-azerbaijan-2026">website cost 2026</a>.</p>
+<p><strong>Need a logo or corporate identity for your business? <a href="/contact">Write to us</a></strong> and we will confirm price and timeline based on your brief. More: <a href="/logo-design">logo design</a>, <a href="/portfolio">portfolio</a>, <a href="/blog-details/website-cost-azerbaijan-2027">website cost 2026</a>.</p>
 <p><small><em>Prices are approximate ranges for the Azerbaijani market (October 2026). Trademark information is based on Article 21 of the Law "On Trademarks and Geographical Indications"; this is not legal advice.</em></small></p>
 HTML;
 
@@ -452,7 +452,7 @@ HTML;
 
 <h2>Итог</h2>
 <p>Цена логотипа зависит не столько от имени дизайнера, сколько от того, что вы получаете: исследование, несколько концепций, правки, полный пакет файлов и передачу прав. Дешёвый вариант часто оборачивается расходами на перерисовку.</p>
-<p><strong>Нужен логотип или фирменный стиль для бизнеса? <a href="/kontakty">Напишите нам</a></strong> — уточним цену и сроки по брифу. Подробнее: <a href="/razrabotka-logo">разработка логотипа</a>, <a href="/portfolio-ru">портфолио</a>, <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2026">стоимость сайта 2026</a>.</p>
+<p><strong>Нужен логотип или фирменный стиль для бизнеса? <a href="/kontakty">Напишите нам</a></strong> — уточним цену и сроки по брифу. Подробнее: <a href="/razrabotka-logo">разработка логотипа</a>, <a href="/portfolio-ru">портфолио</a>, <a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">стоимость сайта 2026</a>.</p>
 <p><small><em>Цены — ориентировочные диапазоны рынка Азербайджана (октябрь 2026). Информация о товарных знаках основана на статье 21 Закона «О товарных знаках и географических указаниях»; это не юридическая консультация.</em></small></p>
 HTML;
 
