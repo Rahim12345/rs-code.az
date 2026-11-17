@@ -100,7 +100,7 @@ class Blog56MobileAppCostSeeder extends Seeder
   <li>Portfeldə mağazalarda yayımlanmış tətbiqlər varmı?</li>
   <li>Ödəniş mərhələlərə bölünürmü və hər mərhələnin nəticəsi nədir?</li>
 </ol>
-<p>Ümumi sifariş sualları üçün <a href="/blog-details/veb-sayt-hazirlatmazdan-evvel-12-sual">hazırlatmazdan əvvəl 12 sual</a> yazımıza da baxın.</p>
+<p>Ümumi sifariş sualları üçün <a href="/blog-details/sayt-sifarisinden-evvel-15-sual-2027">hazırlatmazdan əvvəl 15 sual</a> yazımıza da baxın.</p>
 
 <h2>Tez-tez Verilən Suallar</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -233,7 +233,7 @@ HTML;
   <li>Does the portfolio include apps published in the stores?</li>
   <li>Is payment split into stages, and what is delivered at each?</li>
 </ol>
-<p>For general ordering questions, see our <a href="/blog-details/12-questions-before-building-website-2026">12 questions before ordering</a>.</p>
+<p>For general ordering questions, see our <a href="/blog-details/questions-to-ask-before-hiring-web-developer-2027">15 questions before ordering</a>.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -366,7 +366,7 @@ HTML;
   <li>Есть ли в портфолио приложения, опубликованные в магазинах?</li>
   <li>Оплата поэтапная, и что сдаётся на каждом этапе?</li>
 </ol>
-<p>Общие вопросы перед заказом — в статье <a href="/blog-details/12-voprosov-pered-sozdaniem-sajta-2026">12 вопросов перед заказом</a>.</p>
+<p>Общие вопросы перед заказом — в статье <a href="/blog-details/voprosy-pered-zakazom-sajta-2027">15 вопросов перед заказом</a>.</p>
 
 <h2>Часто задаваемые вопросы</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">

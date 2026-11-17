@@ -101,7 +101,7 @@ class Blog32PlatformCompareSeeder extends Seeder
   <li>Saytı özünüz idarə edəcəksiniz, yoxsa dəstək lazımdır?</li>
   <li>2–3 il sonra biznesiniz necə böyüyəcək?</li>
 </ol>
-<p>Sifariş verməzdən əvvəl podratçıya verilməli olan sualları <a href="/blog-details/veb-sayt-hazirlatmazdan-evvel-12-sual">12 Sual</a> yazımızda topladıq.</p>
+<p>Sifariş verməzdən əvvəl podratçıya verilməli olan sualları <a href="/blog-details/sayt-sifarisinden-evvel-15-sual-2027">15 Sual</a> yazımızda topladıq.</p>
 
 <h2>Tez-tez Verilən Suallar</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -231,7 +231,7 @@ HTML;
   <li>Will you manage the site yourself or need support?</li>
   <li>How will your business grow in 2–3 years?</li>
 </ol>
-<p>Questions to ask a developer before ordering are collected in our <a href="/blog-details/12-questions-before-building-website-2026">12 Questions</a> article.</p>
+<p>Questions to ask a developer before ordering are collected in our <a href="/blog-details/questions-to-ask-before-hiring-web-developer-2027">15 Questions</a> article.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -361,7 +361,7 @@ HTML;
   <li>Будете управлять сайтом сами или нужна поддержка?</li>
   <li>Как вырастет ваш бизнес через 2–3 года?</li>
 </ol>
-<p>Вопросы, которые стоит задать разработчику до заказа, собраны в статье <a href="/blog-details/12-voprosov-pered-sozdaniem-sajta-2026">12 вопросов</a>.</p>
+<p>Вопросы, которые стоит задать разработчику до заказа, собраны в статье <a href="/blog-details/voprosy-pered-zakazom-sajta-2027">15 вопросов</a>.</p>
 
 <h2>Часто задаваемые вопросы</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">

@@ -117,7 +117,7 @@ class Blog61ConstructionSiteSeeder extends Seeder
   <li>☐ Google Business Profile yaradılıb və ya yaradılması plandadır.</li>
   <li>☐ Mənbə kodu və idarə panelinə giriş sizə veriləcək — müqavilədə yazılıb.</li>
 </ul>
-<p>Sifarişdən əvvəl soruşulmalı digər suallar: <a href="/blog-details/veb-sayt-hazirlatmazdan-evvel-12-sual">veb sayt hazırlatmazdan əvvəl 12 sual</a>.</p>
+<p>Sifarişdən əvvəl soruşulmalı digər suallar: <a href="/blog-details/sayt-sifarisinden-evvel-15-sual-2027">veb sayt hazırlatmazdan əvvəl 15 sual</a>.</p>
 
 <h2>Tez-tez Verilən Suallar</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -277,7 +277,7 @@ HTML;
   <li>☐ A Google Business Profile exists or is planned.</li>
   <li>☐ Source code and admin panel access will be handed to you — it's in the contract.</li>
 </ul>
-<p>Other questions to ask before ordering: <a href="/blog-details/12-questions-before-building-website-2026">12 questions before building a website</a>.</p>
+<p>Other questions to ask before ordering: <a href="/blog-details/questions-to-ask-before-hiring-web-developer-2027">15 questions before building a website</a>.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -437,7 +437,7 @@ HTML;
   <li>☐ Google Business Profile создан или запланирован.</li>
   <li>☐ Передача исходного кода и доступа к админ-панели прописана в договоре.</li>
 </ul>
-<p>Другие вопросы, которые стоит задать до заказа: <a href="/blog-details/12-voprosov-pered-sozdaniem-sajta-2026">12 вопросов перед созданием сайта</a>.</p>
+<p>Другие вопросы, которые стоит задать до заказа: <a href="/blog-details/voprosy-pered-zakazom-sajta-2027">15 вопросов перед созданием сайта</a>.</p>
 
 <h2>Часто задаваемые вопросы</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">

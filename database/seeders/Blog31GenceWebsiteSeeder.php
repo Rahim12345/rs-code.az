@@ -65,7 +65,7 @@ class Blog31GenceWebsiteSeeder extends Seeder
     <tr><td>Görüş</td><td>Üz-üzə</td><td>Video zəng, WhatsApp, lazım olduqda səfər</td></tr>
   </tbody>
 </table>
-<p>Əsas məsələ məsafə deyil, prosesin şəffaflığıdır: yazılı müqavilə, mərhələli ödəniş, hər mərhələdə nəticəni görmək imkanı. Podratçıya verilməli olan sualların tam siyahısını <a href="/blog-details/veb-sayt-hazirlatmazdan-evvel-12-sual">Veb Sayt Hazırlatmazdan Əvvəl 12 Sual</a> yazısında topladıq.</p>
+<p>Əsas məsələ məsafə deyil, prosesin şəffaflığıdır: yazılı müqavilə, mərhələli ödəniş, hər mərhələdə nəticəni görmək imkanı. Podratçıya verilməli olan sualların tam siyahısını <a href="/blog-details/sayt-sifarisinden-evvel-15-sual-2027">Veb Sayt Hazırlatmazdan Əvvəl 15 Sual</a> yazısında topladıq.</p>
 
 <h2>Sayt Hazırlanma Prosesi: 6 Addım</h2>
 <ol>
@@ -192,7 +192,7 @@ HTML;
     <tr><td>Meetings</td><td>In person</td><td>Video calls, WhatsApp, visits when needed</td></tr>
   </tbody>
 </table>
-<p>What matters is not distance but transparency: a written contract, staged payments and visible results at every stage. See the full list of questions to ask in <a href="/blog-details/12-questions-before-building-website-2026">12 Questions Before Building a Website</a>.</p>
+<p>What matters is not distance but transparency: a written contract, staged payments and visible results at every stage. See the full list of questions to ask in <a href="/blog-details/questions-to-ask-before-hiring-web-developer-2027">15 Questions Before Building a Website</a>.</p>
 
 <h2>The Process in 6 Steps</h2>
 <ol>
@@ -318,7 +318,7 @@ HTML;
     <tr><td>Встречи</td><td>Лично</td><td>Видеозвонки, WhatsApp, выезд при необходимости</td></tr>
   </tbody>
 </table>
-<p>Главное — не расстояние, а прозрачность: письменный договор, поэтапная оплата и видимый результат на каждом этапе. Полный список вопросов разработчику — в статье <a href="/blog-details/12-voprosov-pered-sozdaniem-sajta-2026">12 вопросов перед созданием сайта</a>.</p>
+<p>Главное — не расстояние, а прозрачность: письменный договор, поэтапная оплата и видимый результат на каждом этапе. Полный список вопросов разработчику — в статье <a href="/blog-details/voprosy-pered-zakazom-sajta-2027">15 вопросов перед созданием сайта</a>.</p>
 
 <h2>Процесс создания сайта: 6 шагов</h2>
 <ol>

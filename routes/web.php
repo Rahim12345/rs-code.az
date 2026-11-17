@@ -195,6 +195,10 @@ Route::middleware('locale')->group(static function () {
     Route::get('/suallar',                    "App\Http\Controllers\Front\FaqController@index");
     Route::get('/faq',                        "App\Http\Controllers\Front\FaqController@index");
     Route::get('/chasto-zadavaemye-voprosy',  "App\Http\Controllers\Front\FaqController@index");
+    // #28 "12 sual" (2026) → 2027 versiyası "15 sual" (eyni DB sətri, yeni slug) — 301
+    Route::permanentRedirect('/blog-details/veb-sayt-hazirlatmazdan-evvel-12-sual', '/blog-details/sayt-sifarisinden-evvel-15-sual-2027');
+    Route::permanentRedirect('/blog-details/12-questions-before-building-website-2026', '/blog-details/questions-to-ask-before-hiring-web-developer-2027');
+    Route::permanentRedirect('/blog-details/12-voprosov-pered-sozdaniem-sajta-2026', '/blog-details/voprosy-pered-zakazom-sajta-2027');
     // Köhnə zəif bloq (#21) yeni təhlükəsizlik yazısı ilə əvəzləndi — 301
     Route::permanentRedirect('/blog-details/kibertehlukesizlik-kicik-biznes-ucun-esaslar', '/blog-details/sayt-tehlukesizliyi-yoxlama-siyahisi-2026');
     Route::permanentRedirect('/blog-details/cybersecurity-essentials-small-businesses', '/blog-details/website-security-checklist-small-business-2026');
