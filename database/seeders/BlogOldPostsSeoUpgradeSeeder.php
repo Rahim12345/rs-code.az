@@ -201,21 +201,21 @@ class BlogOldPostsSeoUpgradeSeeder extends Seeder
                 ],
                 'related' => [
                     'az' => [
-                        ['/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026', 'POS sistemi qiyməti: hazır vs sifarişlə'],
+                        ['/blog-details/pos-sistemi-qiymeti-azerbaycan-2027', 'POS sistemi qiyməti: hazır vs sifarişlə'],
                         ['/blog-details/fifo-maya-deyeri-nedir-2026', 'FIFO maya dəyəri nədir?'],
                         ['/blog-details/nisye-satis-borc-defteri-2026', 'Nisyə satış və borc dəftəri'],
                         ['/blog-details/e-kassa-pos-inteqrasiyasi-2026', 'E-kassa və POS inteqrasiyası'],
                         ['/mehsullar/rspos', 'RS POS — mağaza və restoran üçün POS'],
                     ],
                     'en' => [
-                        ['/blog-details/pos-system-price-azerbaijan-2026', 'POS system price: ready-made vs custom'],
+                        ['/blog-details/pos-system-price-azerbaijan-2027', 'POS system price: ready-made vs custom'],
                         ['/blog-details/what-is-fifo-cost-method-2026', 'What is the FIFO cost method?'],
                         ['/blog-details/customer-debt-book-credit-sales-2026', 'Credit sales and customer debt book'],
                         ['/blog-details/e-kassa-pos-integration-azerbaijan-2026', 'E-kassa and POS integration'],
                         ['/mehsullar/rspos', 'RS POS — POS for shops and restaurants'],
                     ],
                     'ru' => [
-                        ['/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026', 'Цена POS-системы: готовая или на заказ'],
+                        ['/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027', 'Цена POS-системы: готовая или на заказ'],
                         ['/blog-details/chto-takoe-fifo-sebestoimost-2026', 'Что такое себестоимость по FIFO?'],
                         ['/blog-details/prodazhi-v-dolg-dolgovaya-kniga-2026', 'Продажи в долг и долговая книга'],
                         ['/blog-details/e-kassa-integraciya-s-pos-2026', 'Интеграция e-kassa и POS'],

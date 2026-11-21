@@ -150,21 +150,21 @@ class BlogFaqSchemaUpgradeSeeder extends Seeder
 
         $related = [
             'az' => $this->relatedBlock('Bunları da oxuyun', [
-                ['/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026', 'POS sistemi qiyməti: hazır vs sifarişlə'],
+                ['/blog-details/pos-sistemi-qiymeti-azerbaycan-2027', 'POS sistemi qiyməti: hazır vs sifarişlə'],
                 ['/blog-details/e-kassa-pos-inteqrasiyasi-2026', 'E-kassa və POS inteqrasiyası'],
                 ['/blog-details/qr-menyu-kafe-restoran-2026', 'Kafe və restoran üçün QR menyu'],
                 ['/blog-details/fifo-maya-deyeri-nedir-2026', 'FIFO maya dəyəri nədir?'],
                 ['/mehsullar/rspos', 'RS POS — restoran və mağaza üçün POS'],
             ]),
             'en' => $this->relatedBlock('Read next', [
-                ['/blog-details/pos-system-price-azerbaijan-2026', 'POS system price: ready-made vs custom'],
+                ['/blog-details/pos-system-price-azerbaijan-2027', 'POS system price: ready-made vs custom'],
                 ['/blog-details/e-kassa-pos-integration-azerbaijan-2026', 'E-kassa and POS integration'],
                 ['/blog-details/qr-menu-for-cafe-restaurant-2026', 'QR menu for cafes and restaurants'],
                 ['/blog-details/what-is-fifo-cost-method-2026', 'What is the FIFO cost method?'],
                 ['/mehsullar/rspos', 'RS POS — POS for restaurants and shops'],
             ]),
             'ru' => $this->relatedBlock('Читайте также', [
-                ['/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026', 'Цена POS-системы: готовая или на заказ'],
+                ['/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027', 'Цена POS-системы: готовая или на заказ'],
                 ['/blog-details/e-kassa-integraciya-s-pos-2026', 'Интеграция e-kassa и POS'],
                 ['/blog-details/qr-menyu-dlya-kafe-i-restorana-2026', 'QR-меню для кафе и ресторана'],
                 ['/blog-details/chto-takoe-fifo-sebestoimost-2026', 'Что такое себестоимость по FIFO?'],

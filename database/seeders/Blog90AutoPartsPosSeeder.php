@@ -135,7 +135,7 @@ class Blog90AutoPartsPosSeeder extends Seeder
     <tr><td>Enterprise</td><td>200 ₼/ay</td><td>Limitsiz</td><td>5</td><td>Limitsiz</td></tr>
   </tbody>
 </table>
-<p>Bütün planlarda limitsiz məhsul var. Minlərlə hissə olan mağaza üçün bu vacibdir. 14 gün pulsuz sınaq var, kart məlumatı tələb olunmur. Qiymətlərin ümumi müqayisəsi: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026">POS sistemi qiyməti Azərbaycanda</a>.</p>
+<p>Bütün planlarda limitsiz məhsul var. Minlərlə hissə olan mağaza üçün bu vacibdir. 14 gün pulsuz sınaq var, kart məlumatı tələb olunmur. Qiymətlərin ümumi müqayisəsi: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycan-2027">POS sistemi qiyməti Azərbaycanda</a>.</p>
 <h3>Hər hansı avto hissə proqramını seçməzdən əvvəl yoxlayın</h3>
 <ul>
   <li>Çoxsəviyyəli kateqoriya və kateqoriyaya bağlı atributlar varmı?</li>
@@ -323,7 +323,7 @@ HTML;
     <tr><td>Enterprise</td><td>200 ₼/month</td><td>Unlimited</td><td>5</td><td>Unlimited</td></tr>
   </tbody>
 </table>
-<p>All plans include unlimited products. This matters for a store with thousands of parts. There is a 14-day free trial, and no card details are required. For a general price comparison: <a href="/blog-details/pos-system-price-azerbaijan-2026">POS system prices in Azerbaijan</a>.</p>
+<p>All plans include unlimited products. This matters for a store with thousands of parts. There is a 14-day free trial, and no card details are required. For a general price comparison: <a href="/blog-details/pos-system-price-azerbaijan-2027">POS system prices in Azerbaijan</a>.</p>
 <h3>Check before choosing any auto parts software</h3>
 <ul>
   <li>Are there multi-level categories and category-linked attributes?</li>
@@ -511,7 +511,7 @@ HTML;
     <tr><td>Enterprise</td><td>200 ₼/мес.</td><td>Без ограничений</td><td>5</td><td>Без ограничений</td></tr>
   </tbody>
 </table>
-<p>Во всех тарифах количество товаров не ограничено. Для магазина с тысячами деталей это важно. Есть 14 дней бесплатного пробного периода, данные карты не требуются. Общее сравнение цен: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026">стоимость POS-системы в Азербайджане</a>.</p>
+<p>Во всех тарифах количество товаров не ограничено. Для магазина с тысячами деталей это важно. Есть 14 дней бесплатного пробного периода, данные карты не требуются. Общее сравнение цен: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027">стоимость POS-системы в Азербайджане</a>.</p>
 <h3>Что проверить перед выбором любой программы для автозапчастей</h3>
 <ul>
   <li>Есть ли многоуровневые категории и атрибуты, привязанные к категории?</li>

@@ -38,7 +38,7 @@ return [
                 ['Мои данные в безопасности?', 'Есть роли администратора и кассира, система прав, двухфакторный вход (2FA) и журнал аудита операций; база каждого бизнеса ежедневно автоматически копируется в облако.'],
             ],
             'guides' => [
-                ['/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026', 'Стоимость POS-системы: готовая или на заказ'],
+                ['/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027', 'Стоимость POS-системы: готовая или на заказ'],
                 ['/blog-details/programma-magazin-sklad-pos-azerbajdzan-2026', 'Программа для магазина, склад и POS'],
                 ['/blog-details/chto-takoe-fifo-sebestoimost-2026', 'Что такое себестоимость по FIFO?'],
                 ['/blog-details/prodazhi-v-dolg-dolgovaya-kniga-2026', 'Продажи в долг и долговая книга'],

@@ -146,7 +146,7 @@ class Blog86PhonePosSeeder extends Seeder
     <tr><td>Enterprise</td><td>200 ₼/ay</td><td>Limitsiz</td><td>5</td><td>Limitsiz</td></tr>
   </tbody>
 </table>
-<p>Bütün planlarda limitsiz məhsul var. 14 gün pulsuz sınaq var, kart məlumatı tələb olunmur. Qiymətlərin ümumi müqayisəsi üçün: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026">POS sistemi qiyməti Azərbaycanda</a>.</p>
+<p>Bütün planlarda limitsiz məhsul var. 14 gün pulsuz sınaq var, kart məlumatı tələb olunmur. Qiymətlərin ümumi müqayisəsi üçün: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycan-2027">POS sistemi qiyməti Azərbaycanda</a>.</p>
 <h3>Hər hansı telefon mağazası proqramını seçməzdən əvvəl yoxlayın</h3>
 <ul>
   <li>Hər ədədin IMEI/seriya nömrəsi mal qəbulunda və satışda yazılırmı?</li>
@@ -207,7 +207,7 @@ class Blog86PhonePosSeeder extends Seeder
   <li><a href="/blog-details/market-ucun-kassa-proqrami-2027">Market üçün kassa proqramı</a></li>
   <li><a href="/blog-details/nisye-satis-borc-defteri-2026">Nisyə satış və borc dəftəri</a></li>
   <li><a href="/blog-details/fifo-maya-deyeri-nedir-2026">FIFO maya dəyəri nədir?</a></li>
-  <li><a href="/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026">POS sistemi qiyməti Azərbaycanda</a></li>
+  <li><a href="/blog-details/pos-sistemi-qiymeti-azerbaycan-2027">POS sistemi qiyməti Azərbaycanda</a></li>
 </ul>
 
 <h2>Nəticə</h2>
@@ -345,7 +345,7 @@ HTML;
     <tr><td>Enterprise</td><td>200 ₼/month</td><td>Unlimited</td><td>5</td><td>Unlimited</td></tr>
   </tbody>
 </table>
-<p>All plans include unlimited products. There is a 14-day free trial, and no card details are required. For a general price comparison: <a href="/blog-details/pos-system-price-azerbaijan-2026">POS system prices in Azerbaijan</a>.</p>
+<p>All plans include unlimited products. There is a 14-day free trial, and no card details are required. For a general price comparison: <a href="/blog-details/pos-system-price-azerbaijan-2027">POS system prices in Azerbaijan</a>.</p>
 <h3>Check before choosing any phone shop software</h3>
 <ul>
   <li>Is each unit's IMEI/serial number recorded at goods receiving and at the sale?</li>
@@ -406,7 +406,7 @@ HTML;
   <li><a href="/blog-details/grocery-store-pos-software-2027">POS Software for Grocery Stores</a></li>
   <li><a href="/blog-details/customer-debt-book-credit-sales-2026">Credit Sales and the Debt Book</a></li>
   <li><a href="/blog-details/what-is-fifo-cost-method-2026">What Is the FIFO Cost Method?</a></li>
-  <li><a href="/blog-details/pos-system-price-azerbaijan-2026">POS System Prices in Azerbaijan</a></li>
+  <li><a href="/blog-details/pos-system-price-azerbaijan-2027">POS System Prices in Azerbaijan</a></li>
 </ul>
 
 <h2>Conclusion</h2>
@@ -544,7 +544,7 @@ HTML;
     <tr><td>Enterprise</td><td>200 ₼/мес.</td><td>Без ограничений</td><td>5</td><td>Без ограничений</td></tr>
   </tbody>
 </table>
-<p>Во всех тарифах количество товаров не ограничено. Есть 14 дней бесплатного пробного периода, данные карты не требуются. Общее сравнение цен: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026">стоимость POS-системы в Азербайджане</a>.</p>
+<p>Во всех тарифах количество товаров не ограничено. Есть 14 дней бесплатного пробного периода, данные карты не требуются. Общее сравнение цен: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027">стоимость POS-системы в Азербайджане</a>.</p>
 <h3>Что проверить перед выбором любой программы для магазина телефонов</h3>
 <ul>
   <li>Вводится ли IMEI/серийный номер каждой единицы при приёмке товара и при продаже?</li>
@@ -605,7 +605,7 @@ HTML;
   <li><a href="/blog-details/kassovaya-programma-dlya-produktovogo-magazina-2027">Кассовая программа для продуктового магазина</a></li>
   <li><a href="/blog-details/prodazhi-v-dolg-dolgovaya-kniga-2026">Продажа в долг и долговая книга</a></li>
   <li><a href="/blog-details/chto-takoe-fifo-sebestoimost-2026">Что такое себестоимость по FIFO?</a></li>
-  <li><a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026">Стоимость POS-системы в Азербайджане</a></li>
+  <li><a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027">Стоимость POS-системы в Азербайджане</a></li>
 </ul>
 
 <h2>Итог</h2>

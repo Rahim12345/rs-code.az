@@ -131,7 +131,7 @@ class Blog84MarketPosSeeder extends Seeder
     <tr><td>Enterprise</td><td>200 ₼/ay</td><td>Limitsiz</td><td>5</td><td>Limitsiz</td></tr>
   </tbody>
 </table>
-<p>Bütün planlarda limitsiz məhsul, bulud yedəkləməsi və 14 gün pulsuz sınaq var; kart məlumatı tələb olunmur. Hazır və sifarişlə hazırlanan POS-un ümumi müqayisəsi üçün: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026">POS sistemi qiyməti</a>.</p>
+<p>Bütün planlarda limitsiz məhsul, bulud yedəkləməsi və 14 gün pulsuz sınaq var; kart məlumatı tələb olunmur. Hazır və sifarişlə hazırlanan POS-un ümumi müqayisəsi üçün: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycan-2027">POS sistemi qiyməti</a>.</p>
 <h3>Hər hansı market proqramını seçməzdən əvvəl yoxlayın</h3>
 <ul>
   <li>Tərəzi barkodu və PLU kodları dəstəklənirmi? Sizin tərəzinizlə işləyəcəkmi?</li>
@@ -192,7 +192,7 @@ class Blog84MarketPosSeeder extends Seeder
   <li><a href="/blog-details/fifo-maya-deyeri-nedir-2026">FIFO maya dəyəri nədir?</a></li>
   <li><a href="/blog-details/nisye-satis-borc-defteri-2026">Nisyə satış və borc dəftəri</a></li>
   <li><a href="/blog-details/e-kassa-pos-inteqrasiyasi-2026">E-kassa və POS proqramı</a></li>
-  <li><a href="/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026">POS sistemi qiyməti: hazır vs sifarişlə</a></li>
+  <li><a href="/blog-details/pos-sistemi-qiymeti-azerbaycan-2027">POS sistemi qiyməti: hazır vs sifarişlə</a></li>
   <li><a href="/blog-details/geyim-magazasi-ucun-proqram-2027">Geyim mağazası üçün proqram</a></li>
 </ul>
 
@@ -316,7 +316,7 @@ HTML;
     <tr><td>Enterprise</td><td>200 ₼/month</td><td>Unlimited</td><td>5</td><td>Unlimited</td></tr>
   </tbody>
 </table>
-<p>All plans include unlimited products, cloud backup and a 14-day free trial; no card details are required. For a general comparison of off-the-shelf and custom-built POS: <a href="/blog-details/pos-system-price-azerbaijan-2026">POS system price</a>.</p>
+<p>All plans include unlimited products, cloud backup and a 14-day free trial; no card details are required. For a general comparison of off-the-shelf and custom-built POS: <a href="/blog-details/pos-system-price-azerbaijan-2027">POS system price</a>.</p>
 <h3>Check before choosing any grocery store software</h3>
 <ul>
   <li>Are scale barcodes and PLU codes supported? Will it work with your scale?</li>
@@ -377,7 +377,7 @@ HTML;
   <li><a href="/blog-details/what-is-fifo-cost-method-2026">What Is the FIFO Cost Method?</a></li>
   <li><a href="/blog-details/customer-debt-book-credit-sales-2026">Credit Sales and the Debt Book</a></li>
   <li><a href="/blog-details/e-kassa-pos-integration-azerbaijan-2026">E-kassa and POS Software</a></li>
-  <li><a href="/blog-details/pos-system-price-azerbaijan-2026">POS System Price: Off-the-Shelf vs Custom-Built</a></li>
+  <li><a href="/blog-details/pos-system-price-azerbaijan-2027">POS System Price: Off-the-Shelf vs Custom-Built</a></li>
   <li><a href="/blog-details/clothing-store-pos-software-2027">POS software for a clothing store</a></li>
 </ul>
 
@@ -501,7 +501,7 @@ HTML;
     <tr><td>Enterprise</td><td>200 ₼/мес.</td><td>Без ограничений</td><td>5</td><td>Без ограничений</td></tr>
   </tbody>
 </table>
-<p>Во всех тарифах — неограниченное количество товаров, облачное резервное копирование и 14 дней бесплатного пробного периода; данные карты не требуются. Общее сравнение готового POS и POS на заказ: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026">цена POS-системы</a>.</p>
+<p>Во всех тарифах — неограниченное количество товаров, облачное резервное копирование и 14 дней бесплатного пробного периода; данные карты не требуются. Общее сравнение готового POS и POS на заказ: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027">цена POS-системы</a>.</p>
 <h3>Что проверить перед выбором любой программы для продуктового магазина</h3>
 <ul>
   <li>Поддерживаются ли штрихкод весов и PLU-коды? Будет ли программа работать с вашими весами?</li>
@@ -562,7 +562,7 @@ HTML;
   <li><a href="/blog-details/chto-takoe-fifo-sebestoimost-2026">Что такое себестоимость по FIFO?</a></li>
   <li><a href="/blog-details/prodazhi-v-dolg-dolgovaya-kniga-2026">Продажа в долг и долговая книга</a></li>
   <li><a href="/blog-details/e-kassa-integraciya-s-pos-2026">E-kassa и POS-программа</a></li>
-  <li><a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026">Цена POS-системы: готовая или на заказ</a></li>
+  <li><a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027">Цена POS-системы: готовая или на заказ</a></li>
   <li><a href="/blog-details/programma-dlya-magazina-odezhdy-2027">Программа для магазина одежды</a></li>
 </ul>
 

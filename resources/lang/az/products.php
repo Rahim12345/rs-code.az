@@ -38,7 +38,7 @@ return [
                 ['Məlumatlarım təhlükəsizdirmi?', 'Admin və kassir rolları, icazə sistemi, iki mərhələli giriş (2FA) və əməliyyat audit jurnalı var; hər biznesin bazası gündəlik avtomatik buluda yedəklənir.'],
             ],
             'guides' => [
-                ['/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026', 'POS sistemi qiyməti: hazır vs sifarişlə'],
+                ['/blog-details/pos-sistemi-qiymeti-azerbaycan-2027', 'POS sistemi qiyməti: hazır vs sifarişlə'],
                 ['/blog-details/magaza-proqrami-anbar-pos-azerbaycanda-2026', 'Mağaza proqramı, anbar və POS: tam bələdçi'],
                 ['/blog-details/fifo-maya-deyeri-nedir-2026', 'FIFO maya dəyəri nədir?'],
                 ['/blog-details/nisye-satis-borc-defteri-2026', 'Nisyə satış və borc dəftəri'],

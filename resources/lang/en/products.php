@@ -38,7 +38,7 @@ return [
                 ['Is my data secure?', 'There are admin and cashier roles, a permission system, two-factor authentication (2FA) and an operation audit log; each business’s database is backed up to the cloud automatically every day.'],
             ],
             'guides' => [
-                ['/blog-details/pos-system-price-azerbaijan-2026', 'POS system price: off-the-shelf vs custom'],
+                ['/blog-details/pos-system-price-azerbaijan-2027', 'POS system price: off-the-shelf vs custom'],
                 ['/blog-details/store-software-warehouse-pos-azerbaijan-2026', 'Store software, warehouse and POS: a full guide'],
                 ['/blog-details/what-is-fifo-cost-method-2026', 'What is FIFO cost?'],
                 ['/blog-details/customer-debt-book-credit-sales-2026', 'Credit sales and the customer debt book'],

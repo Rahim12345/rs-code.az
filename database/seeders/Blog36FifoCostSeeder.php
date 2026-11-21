@@ -70,7 +70,7 @@ class Blog36FifoCostSeeder extends Seeder
   <li>Məhsul, kateqoriya və dövr üzrə mənfəət hesabatları hazırlanır;</li>
   <li>Nisyə satışlar borc dəftərində ayrıca izlənir.</li>
 </ul>
-<p>RS Code tərəfindən hazırlanmış <a href="/mehsullar/rspos">RS POS</a> bulud kassa sistemində FIFO maya dəyəri, anbar, borc dəftəri və AI hesabatlar bir yerdədir; 14 gün pulsuz sınamaq olar. Mağaza üçün proqram seçimi haqqında ətraflı: <a href="/blog-details/magaza-proqrami-anbar-pos-azerbaycanda-2026">Mağaza Proqramı, Anbar və POS</a>, qiymətlər üçün: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026">POS Sistemi Qiyməti 2026</a>.</p>
+<p>RS Code tərəfindən hazırlanmış <a href="/mehsullar/rspos">RS POS</a> bulud kassa sistemində FIFO maya dəyəri, anbar, borc dəftəri və AI hesabatlar bir yerdədir; 14 gün pulsuz sınamaq olar. Mağaza üçün proqram seçimi haqqında ətraflı: <a href="/blog-details/magaza-proqrami-anbar-pos-azerbaycanda-2026">Mağaza Proqramı, Anbar və POS</a>, qiymətlər üçün: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycan-2027">POS Sistemi Qiyməti 2027</a>.</p>
 
 <h2>Tez-tez Verilən Suallar</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -172,7 +172,7 @@ HTML;
   <li>Profit reports are produced by product, category and period;</li>
   <li>Credit sales are tracked separately in a debt book.</li>
 </ul>
-<p><a href="/mehsullar/rspos">RS POS</a>, the cloud cash register system built by RS Code, combines FIFO costing, inventory, a debt book and AI reports, with a 14-day free trial. More on choosing store software: <a href="/blog-details/store-software-warehouse-pos-azerbaijan-2026">Store Software, Warehouse and POS</a>; on prices: <a href="/blog-details/pos-system-price-azerbaijan-2026">POS System Price 2026</a>.</p>
+<p><a href="/mehsullar/rspos">RS POS</a>, the cloud cash register system built by RS Code, combines FIFO costing, inventory, a debt book and AI reports, with a 14-day free trial. More on choosing store software: <a href="/blog-details/store-software-warehouse-pos-azerbaijan-2026">Store Software, Warehouse and POS</a>; on prices: <a href="/blog-details/pos-system-price-azerbaijan-2027">POS System Price 2027</a>.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -274,7 +274,7 @@ HTML;
   <li>формируются отчёты о прибыли по товарам, категориям и периодам;</li>
   <li>продажи в долг ведутся отдельно в долговой книге.</li>
 </ul>
-<p>В облачной кассовой системе <a href="/mehsullar/rspos">RS POS</a> от RS Code в одном месте себестоимость FIFO, склад, долговая книга и AI-отчёты; 14 дней бесплатно. Подробнее о выборе программы для магазина: <a href="/blog-details/programma-magazin-sklad-pos-azerbajdzan-2026">Программа для магазина, склад и POS</a>; о ценах: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026">Стоимость POS-системы 2026</a>.</p>
+<p>В облачной кассовой системе <a href="/mehsullar/rspos">RS POS</a> от RS Code в одном месте себестоимость FIFO, склад, долговая книга и AI-отчёты; 14 дней бесплатно. Подробнее о выборе программы для магазина: <a href="/blog-details/programma-magazin-sklad-pos-azerbajdzan-2026">Программа для магазина, склад и POS</a>; о ценах: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027">Стоимость POS-системы 2027</a>.</p>
 
 <h2>Часто задаваемые вопросы</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">

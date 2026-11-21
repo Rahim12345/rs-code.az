@@ -195,6 +195,10 @@ Route::middleware('locale')->group(static function () {
     Route::get('/suallar',                    "App\Http\Controllers\Front\FaqController@index");
     Route::get('/faq',                        "App\Http\Controllers\Front\FaqController@index");
     Route::get('/chasto-zadavaemye-voprosy',  "App\Http\Controllers\Front\FaqController@index");
+    // #24 POS sistemi qiyməti 2026 → 2027 (eyni DB sətri, yeni slug) — 301
+    Route::permanentRedirect('/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026', '/blog-details/pos-sistemi-qiymeti-azerbaycan-2027');
+    Route::permanentRedirect('/blog-details/pos-system-price-azerbaijan-2026', '/blog-details/pos-system-price-azerbaijan-2027');
+    Route::permanentRedirect('/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026', '/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027');
     // #17 veb sayt qiyməti 2026 → 2027 (eyni DB sətri, yeni slug) — 301
     Route::permanentRedirect('/blog-details/veb-sayt-qiymeti-azerbaycan-2026', '/blog-details/veb-sayt-qiymeti-azerbaycan-2027');
     Route::permanentRedirect('/blog-details/website-cost-azerbaijan-2026', '/blog-details/website-cost-azerbaijan-2027');

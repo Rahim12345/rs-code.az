@@ -82,7 +82,7 @@ class Blog53EkassaPosSeeder extends Seeder
     <tr><td>Şəbəkə və ya cihaz problemi olanda nə olur?</td><td>Satışın itməməsi və çekin təkrar göndərilə bilməsi vacibdir</td></tr>
   </tbody>
 </table>
-<p>Restoranlar üçün əlavə meyarlar: <a href="/blog-details/restoran-ucun-pos-sistemi-nece-secilir-2026">Restoran üçün POS Sistemi Necə Seçilir</a>. Qiymət müqayisəsi: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026">POS Sistemi Qiyməti Azərbaycanda</a>.</p>
+<p>Restoranlar üçün əlavə meyarlar: <a href="/blog-details/restoran-ucun-pos-sistemi-nece-secilir-2026">Restoran üçün POS Sistemi Necə Seçilir</a>. Qiymət müqayisəsi: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycan-2027">POS Sistemi Qiyməti Azərbaycanda</a>.</p>
 
 <h2>Çek Verilməməsinə Görə Cərimələr</h2>
 <p>DVX-nin məlumatına görə, nağd satış e-kassa olmadan aparıldıqda, çek verilmədikdə və ya çek ödənilən məbləğdən az vurulduqda aşağıdakı maliyyə sanksiyaları tətbiq olunur:</p>
@@ -213,7 +213,7 @@ HTML;
     <tr><td>What happens if the network or device fails?</td><td>Sales must not be lost and receipts must be re-sendable</td></tr>
   </tbody>
 </table>
-<p>Extra criteria for restaurants: <a href="/blog-details/how-to-choose-pos-system-for-restaurant-2026">How to Choose a POS System for a Restaurant</a>. Price comparison: <a href="/blog-details/pos-system-price-azerbaijan-2026">POS System Price in Azerbaijan</a>.</p>
+<p>Extra criteria for restaurants: <a href="/blog-details/how-to-choose-pos-system-for-restaurant-2026">How to Choose a POS System for a Restaurant</a>. Price comparison: <a href="/blog-details/pos-system-price-azerbaijan-2027">POS System Price in Azerbaijan</a>.</p>
 
 <h2>Penalties for Not Issuing Receipts</h2>
 <p>According to the STS, the following financial sanctions apply when cash sales are made without an e-kassa, no receipt is issued, or the receipt is for less than the amount paid:</p>
@@ -344,7 +344,7 @@ HTML;
     <tr><td>Что будет при сбое сети или устройства?</td><td>Продажи не должны теряться, а чек — отправляться повторно</td></tr>
   </tbody>
 </table>
-<p>Дополнительные критерии для ресторанов: <a href="/blog-details/kak-vybrat-pos-sistemu-dlya-restorana-2026">Как выбрать POS-систему для ресторана</a>. Сравнение цен: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026">Цена POS-системы в Азербайджане</a>.</p>
+<p>Дополнительные критерии для ресторанов: <a href="/blog-details/kak-vybrat-pos-sistemu-dlya-restorana-2026">Как выбрать POS-систему для ресторана</a>. Сравнение цен: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027">Цена POS-системы в Азербайджане</a>.</p>
 
 <h2>Штрафы за невыдачу чека</h2>
 <p>По данным ГНС, если наличные продажи ведутся без e-kassa, чек не выдаётся или пробивается на сумму меньше оплаченной, применяются следующие финансовые санкции:</p>

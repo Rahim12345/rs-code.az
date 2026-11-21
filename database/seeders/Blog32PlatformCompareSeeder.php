@@ -69,7 +69,7 @@ class Blog32PlatformCompareSeeder extends Seeder
 <h2>Sifarişlə Sayt: Nə Vaxt Özünü Doğruldur?</h2>
 <p>Sifarişlə sayt (məsələn, Laravel əsasında) biznesinizin prosesinə uyğun sıfırdan yazılır. İlkin xərc yüksəkdir, amma aşağıdakı hallarda uzunmüddətli ən sərfəli variantdır:</p>
 <ul>
-  <li>Onlayn mağazanız anbar, kassa və ya <a href="/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026">POS sistemi</a> ilə eyni bazada işləməlidir.</li>
+  <li>Onlayn mağazanız anbar, kassa və ya <a href="/blog-details/pos-sistemi-qiymeti-azerbaycan-2027">POS sistemi</a> ilə eyni bazada işləməlidir.</li>
   <li>Bron, sifariş, şəxsi kabinet, onlayn kurs və ya <a href="/blog-details/crm-erp-sistemleri-azerbaycanda-2026">CRM</a> kimi xüsusi məntiq lazımdır.</li>
   <li>Sayt 3 dildə (AZ/EN/RU), sürətli və Google-da rəqabətli olmalıdır.</li>
   <li>Abunəyə deyil, öz aktivinizə investisiya etmək istəyirsiniz.</li>
@@ -199,7 +199,7 @@ HTML;
 <h2>Custom Website: When Does It Pay Off?</h2>
 <p>A custom website (for example, built on Laravel) is written from scratch around your business processes. The upfront cost is higher, but it is the most cost-effective long-term option when:</p>
 <ul>
-  <li>Your online store must share a database with your warehouse, till or <a href="/blog-details/pos-system-price-azerbaijan-2026">POS system</a>.</li>
+  <li>Your online store must share a database with your warehouse, till or <a href="/blog-details/pos-system-price-azerbaijan-2027">POS system</a>.</li>
   <li>You need custom logic such as bookings, orders, user accounts, online courses or a <a href="/blog-details/crm-erp-systems-azerbaijan-2026">CRM</a>.</li>
   <li>The site must be trilingual (AZ/EN/RU), fast and competitive on Google.</li>
   <li>You want to invest in your own asset rather than a subscription.</li>
@@ -329,7 +329,7 @@ HTML;
 <h2>Сайт на заказ: когда он окупается?</h2>
 <p>Сайт на заказ (например, на Laravel) пишется с нуля под процессы вашего бизнеса. Стартовые затраты выше, но в долгосрочной перспективе это самый выгодный вариант, если:</p>
 <ul>
-  <li>Интернет-магазин должен работать в одной базе со складом, кассой или <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026">POS-системой</a>.</li>
+  <li>Интернет-магазин должен работать в одной базе со складом, кассой или <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027">POS-системой</a>.</li>
   <li>Нужна особая логика: бронирование, заказы, личный кабинет, онлайн-курсы или <a href="/blog-details/crm-erp-sistemy-azerbajdzan-2026">CRM</a>.</li>
   <li>Сайт должен быть на трёх языках (AZ/EN/RU), быстрым и конкурентным в Google.</li>
   <li>Вы хотите инвестировать в собственный актив, а не в подписку.</li>

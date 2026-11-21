@@ -123,7 +123,7 @@ class Blog88WholesalePosSeeder extends Seeder
     <tr><td>Enterprise</td><td>200 ₼/ay</td><td>Limitsiz</td><td>5</td><td>Limitsiz</td></tr>
   </tbody>
 </table>
-<p>Bütün planlarda limitsiz məhsul var. 14 gün pulsuz sınaq var, kart məlumatı tələb olunmur. Bir neçə anbarınız varsa, planı anbar sayına görə seçin. Qiymətlərin ümumi müqayisəsi: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026">POS sistemi qiyməti Azərbaycanda</a>.</p>
+<p>Bütün planlarda limitsiz məhsul var. 14 gün pulsuz sınaq var, kart məlumatı tələb olunmur. Bir neçə anbarınız varsa, planı anbar sayına görə seçin. Qiymətlərin ümumi müqayisəsi: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycan-2027">POS sistemi qiyməti Azərbaycanda</a>.</p>
 <h3>Hər hansı topdan satış proqramını seçməzdən əvvəl yoxlayın</h3>
 <ul>
   <li>Müştəriyə görə qiymət siyahısı varmı və satışda avtomatik tətbiq olunurmu?</li>
@@ -299,7 +299,7 @@ HTML;
     <tr><td>Enterprise</td><td>200 ₼/month</td><td>Unlimited</td><td>5</td><td>Unlimited</td></tr>
   </tbody>
 </table>
-<p>All plans include unlimited products. There is a 14-day free trial, and no card details are required. If you have several warehouses, choose your plan by the number of warehouses. For a general price comparison: <a href="/blog-details/pos-system-price-azerbaijan-2026">POS system prices in Azerbaijan</a>.</p>
+<p>All plans include unlimited products. There is a 14-day free trial, and no card details are required. If you have several warehouses, choose your plan by the number of warehouses. For a general price comparison: <a href="/blog-details/pos-system-price-azerbaijan-2027">POS system prices in Azerbaijan</a>.</p>
 <h3>Check before choosing any wholesale software</h3>
 <ul>
   <li>Are there customer-specific price lists, and are they applied automatically at the sale?</li>
@@ -475,7 +475,7 @@ HTML;
     <tr><td>Enterprise</td><td>200 ₼/мес.</td><td>Без ограничений</td><td>5</td><td>Без ограничений</td></tr>
   </tbody>
 </table>
-<p>Во всех тарифах количество товаров не ограничено. Есть 14 дней бесплатного пробного периода, данные карты не требуются. Если у вас несколько складов, выбирайте тариф по количеству складов. Общее сравнение цен: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026">стоимость POS-системы в Азербайджане</a>.</p>
+<p>Во всех тарифах количество товаров не ограничено. Есть 14 дней бесплатного пробного периода, данные карты не требуются. Если у вас несколько складов, выбирайте тариф по количеству складов. Общее сравнение цен: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027">стоимость POS-системы в Азербайджане</a>.</p>
 <h3>Что проверить перед выбором любой программы для оптовой торговли</h3>
 <ul>
   <li>Есть ли прайс-листы по клиентам и применяются ли они автоматически при продаже?</li>

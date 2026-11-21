@@ -53,7 +53,7 @@ class Blog48BookingSystemSeeder extends Seeder
 <h3>5. Ödəniş və depozit</h3>
 <p>Populyar vaxtlar və ya bahalı xidmətlər üçün onlayn depozit — gəlməmə riskini azaldır.</p>
 <h3>6. Kassa və usta faizi</h3>
-<p>Xidmət satışı, məhsul satışı, ustanın faizi və ya sabit maaşı, gün sonu hesabatı. Kassa tərəfi barədə: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycanda-2026">POS Sistemi Qiyməti 2026</a>.</p>
+<p>Xidmət satışı, məhsul satışı, ustanın faizi və ya sabit maaşı, gün sonu hesabatı. Kassa tərəfi barədə: <a href="/blog-details/pos-sistemi-qiymeti-azerbaycan-2027">POS Sistemi Qiyməti 2027</a>.</p>
 <h3>7. Hesabatlar</h3>
 <p>Doluluq faizi, ən çox gəlir gətirən xidmətlər, usta üzrə gəlir, yeni və qayıdan müştərilər.</p>
 
@@ -173,7 +173,7 @@ HTML;
 <h3>5. Payments and deposits</h3>
 <p>Online deposits for popular slots or expensive services reduce the risk of no-shows.</p>
 <h3>6. Till and staff commission</h3>
-<p>Service sales, product sales, staff commission or fixed salary, and end-of-day reports. On the till side: <a href="/blog-details/pos-system-price-azerbaijan-2026">POS System Price 2026</a>.</p>
+<p>Service sales, product sales, staff commission or fixed salary, and end-of-day reports. On the till side: <a href="/blog-details/pos-system-price-azerbaijan-2027">POS System Price 2027</a>.</p>
 <h3>7. Reports</h3>
 <p>Occupancy rate, top-earning services, revenue per specialist, new vs returning clients.</p>
 
@@ -293,7 +293,7 @@ HTML;
 <h3>5. Оплата и депозит</h3>
 <p>Онлайн-депозит на популярное время или дорогие услуги снижает риск неявки.</p>
 <h3>6. Касса и процент мастера</h3>
-<p>Продажа услуг и товаров, процент или фиксированная зарплата мастера, отчёт за день. О кассе: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2026">Стоимость POS-системы 2026</a>.</p>
+<p>Продажа услуг и товаров, процент или фиксированная зарплата мастера, отчёт за день. О кассе: <a href="/blog-details/stoimost-pos-sistemy-azerbaydzhan-2027">Стоимость POS-системы 2027</a>.</p>
 <h3>7. Отчёты</h3>
 <p>Процент загрузки, самые доходные услуги, выручка по мастерам, новые и повторные клиенты.</p>
 
