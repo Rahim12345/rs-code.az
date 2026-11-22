@@ -108,7 +108,7 @@ class Blog43CoreWebVitalsSeeder extends Seeder
 
 <h2>Nəticə</h2>
 <p>Sürətli sayt daha çox ziyarətçini saxlayır, reklam büdcəsini qoruyur və Google-da üstünlük verir. Core Web Vitals-ı PageSpeed Insights və Search Console ilə yoxlayın, şəkillərdən başlayın, lazımsız kodu təmizləyin və keyfiyyətli hostinq seçin.</p>
-<p><strong>Pulsuz sürət auditi üçün <a href="/elaqe">bizə yazın</a></strong>. Ətraflı: <a href="/texniki-destek">texniki dəstək</a>, <a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO Xidməti 2026</a>.</p>
+<p><strong>Pulsuz sürət auditi üçün <a href="/elaqe">bizə yazın</a></strong>. Ətraflı: <a href="/texniki-destek">texniki dəstək</a>, <a href="/blog-details/seo-xidmeti-azerbaycan-2027">SEO Xidməti 2027</a>.</p>
 HTML;
 
         $textEn = <<<'HTML'
@@ -210,7 +210,7 @@ HTML;
 
 <h2>Conclusion</h2>
 <p>A fast site keeps more visitors, protects your ad budget and gains an edge on Google. Check Core Web Vitals with PageSpeed Insights and Search Console, start with images, clean up unneeded code and choose quality hosting.</p>
-<p><strong><a href="/contact">Contact us</a> for a free speed audit</strong>. More: <a href="/technical-support">technical support</a>, <a href="/blog-details/why-you-need-seo-services-2026">SEO Services 2026</a>.</p>
+<p><strong><a href="/contact">Contact us</a> for a free speed audit</strong>. More: <a href="/technical-support">technical support</a>, <a href="/blog-details/seo-services-azerbaijan-2027">SEO Services 2027</a>.</p>
 HTML;
 
         $textRu = <<<'HTML'
@@ -312,7 +312,7 @@ HTML;
 
 <h2>Итог</h2>
 <p>Быстрый сайт удерживает больше посетителей, бережёт рекламный бюджет и получает преимущество в Google. Проверьте Core Web Vitals в PageSpeed Insights и Search Console, начните с изображений, уберите лишний код и выберите качественный хостинг.</p>
-<p><strong><a href="/kontakty">Напишите нам</a> для бесплатного аудита скорости</strong>. Подробнее: <a href="/tekhnicheskaya-podderzhka">техподдержка</a>, <a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">SEO-услуги 2026</a>.</p>
+<p><strong><a href="/kontakty">Напишите нам</a> для бесплатного аудита скорости</strong>. Подробнее: <a href="/tekhnicheskaya-podderzhka">техподдержка</a>, <a href="/blog-details/seo-uslugi-azerbajdzhan-2027">SEO-услуги 2027</a>.</p>
 HTML;
 
         DB::table('blogs')->updateOrInsert(

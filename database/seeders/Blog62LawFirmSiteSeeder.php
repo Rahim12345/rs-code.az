@@ -59,7 +59,7 @@ class Blog62LawFirmSiteSeeder extends Seeder
   <li><strong>Xidmət səhifəsinə link</strong> — "bu məsələdə kömək lazımdırsa" bloku ilə müvafiq təcrübə sahəsinə.</li>
   <li><strong>Disklaymer</strong> — "Bu məqalə ümumi məlumat xarakteri daşıyır və hüquqi məsləhət deyil. Konkret vəziyyətiniz üçün hüquqşünasla məsləhətləşin."</li>
 </ol>
-<p>Ayda 2–4 keyfiyyətli məqalə bir ildə saytı onlarla sorğuda görünən bilik bazasına çevirir. SEO-nun ümumi prinsipləri barədə: <a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO xidməti niyə lazımdır</a>.</p>
+<p>Ayda 2–4 keyfiyyətli məqalə bir ildə saytı onlarla sorğuda görünən bilik bazasına çevirir. SEO-nun ümumi prinsipləri barədə: <a href="/blog-details/seo-xidmeti-azerbaycan-2027">SEO xidməti niyə lazımdır</a>.</p>
 
 <h2>İkidilli Sayt: Xarici Müştərilər üçün AZ / EN</h2>
 <p>Azərbaycanda şirkət açan əcnəbi investor, xarici şirkətin yerli nümayəndəliyi və ya miqrasiya məsələsi olan əcnəbi vətəndaş hüquq firmasını ingilis dilində axtarır. İngiliscə versiya yalnız "Google Translate düyməsi" olmamalıdır:</p>
@@ -166,7 +166,7 @@ class Blog62LawFirmSiteSeeder extends Seeder
 <h3>Bunları da oxuyun</h3>
 <ul>
   <li><a href="/blog-details/veb-sayt-qiymeti-azerbaycan-2027">Veb sayt qiyməti Azərbaycanda</a></li>
-  <li><a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO xidməti niyə lazımdır?</a></li>
+  <li><a href="/blog-details/seo-xidmeti-azerbaycan-2027">SEO xidməti niyə lazımdır?</a></li>
   <li><a href="/blog-details/google-business-profile-nece-yaradilir-2026">Google Business Profile necə yaradılır?</a></li>
   <li><a href="/blog-details/sayt-tehlukesizliyi-yoxlama-siyahisi-2026">Sayt təhlükəsizliyi: yoxlama siyahısı</a></li>
   <li><a href="/blog-details/sayt-niye-muraciet-getirmir-ux-audit-2026">Sayt niyə müraciət gətirmir?</a></li>
@@ -222,7 +222,7 @@ HTML;
   <li><strong>Link to a service page</strong> — a "need help with this?" block pointing to the relevant practice area.</li>
   <li><strong>Disclaimer</strong> — "This article is for general information only and is not legal advice. Consult a lawyer about your specific situation."</li>
 </ol>
-<p>Two to four quality articles a month turn the site into a knowledge base visible for dozens of queries within a year. On SEO basics: <a href="/blog-details/why-you-need-seo-services-2026">why you need SEO services</a>.</p>
+<p>Two to four quality articles a month turn the site into a knowledge base visible for dozens of queries within a year. On SEO basics: <a href="/blog-details/seo-services-azerbaijan-2027">why you need SEO services</a>.</p>
 
 <h2>A Bilingual Site: AZ / EN for Foreign Clients</h2>
 <p>A foreign investor opening a company in Azerbaijan, a local branch of a foreign company or a foreign national with an immigration issue searches for a law firm in English. The English version should be more than a "Google Translate button":</p>
@@ -329,7 +329,7 @@ HTML;
 <h3>Read next</h3>
 <ul>
   <li><a href="/blog-details/website-cost-azerbaijan-2027">Website cost in Azerbaijan</a></li>
-  <li><a href="/blog-details/why-you-need-seo-services-2026">Why you need SEO services</a></li>
+  <li><a href="/blog-details/seo-services-azerbaijan-2027">Why you need SEO services</a></li>
   <li><a href="/blog-details/how-to-create-google-business-profile-2026">How to create a Google Business Profile</a></li>
   <li><a href="/blog-details/website-security-checklist-small-business-2026">Website security checklist</a></li>
   <li><a href="/blog-details/website-not-generating-leads-ux-audit-2026">Why a website doesn't generate leads</a></li>
@@ -385,7 +385,7 @@ HTML;
   <li><strong>Ссылка на страницу услуги</strong> — блок «нужна помощь в этом вопросе?» на соответствующую практику.</li>
   <li><strong>Дисклеймер</strong> — «Статья носит информационный характер и не является юридической консультацией. По вашей ситуации проконсультируйтесь с юристом».</li>
 </ol>
-<p>2–4 качественные статьи в месяц за год превращают сайт в базу знаний, видимую по десяткам запросов. Об основах SEO: <a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">зачем нужны SEO-услуги</a>.</p>
+<p>2–4 качественные статьи в месяц за год превращают сайт в базу знаний, видимую по десяткам запросов. Об основах SEO: <a href="/blog-details/seo-uslugi-azerbajdzhan-2027">зачем нужны SEO-услуги</a>.</p>
 
 <h2>Двуязычный сайт: AZ / EN для иностранных клиентов</h2>
 <p>Иностранный инвестор, открывающий компанию в Азербайджане, местное представительство зарубежной компании или иностранец с миграционным вопросом ищут юрфирму на английском. Английская версия — это не просто «кнопка Google Translate»:</p>
@@ -492,7 +492,7 @@ HTML;
 <h3>Читайте также</h3>
 <ul>
   <li><a href="/blog-details/stoimost-veb-sayta-azerbaydzhan-2027">Стоимость сайта в Азербайджане</a></li>
-  <li><a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">Зачем нужны SEO-услуги?</a></li>
+  <li><a href="/blog-details/seo-uslugi-azerbajdzhan-2027">Зачем нужны SEO-услуги?</a></li>
   <li><a href="/blog-details/kak-sozdat-google-business-profile-2026">Как создать Google Business Profile?</a></li>
   <li><a href="/blog-details/bezopasnost-sajta-chek-list-2026">Безопасность сайта: чек-лист</a></li>
   <li><a href="/blog-details/pochemu-sajt-ne-prinosit-zayavki-ux-audit-2026">Почему сайт не приносит заявки?</a></li>

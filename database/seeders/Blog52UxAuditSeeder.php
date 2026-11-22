@@ -128,7 +128,7 @@ class Blog52UxAuditSeeder extends Seeder
 
 <h2>Nəticə</h2>
 <p>Müraciət gətirməyən sayt çox vaxt "pis sayt" deyil — sadəcə ziyarətçinin yolunda kiçik maneələr var. Aydın təklif, bir əsas düymə, sürətli mobil versiya, etibar elementləri və qısa forma — bu beş şey əksər hallarda nəticəni hiss ediləcək dərəcədə dəyişir.</p>
-<p><strong>Saytınızın pulsuz qısa auditini istəyirsinizsə, <a href="/elaqe">bizə yazın</a></strong> — ən çox müraciət itirdiyiniz 3–5 nöqtəni göstərib həll yollarını təklif edək. Ətraflı: <a href="/xidmetler">xidmətlərimiz</a>, <a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO Xidməti Azərbaycanda</a>.</p>
+<p><strong>Saytınızın pulsuz qısa auditini istəyirsinizsə, <a href="/elaqe">bizə yazın</a></strong> — ən çox müraciət itirdiyiniz 3–5 nöqtəni göstərib həll yollarını təklif edək. Ətraflı: <a href="/xidmetler">xidmətlərimiz</a>, <a href="/blog-details/seo-xidmeti-azerbaycan-2027">SEO Xidməti Azərbaycanda</a>.</p>
 HTML;
 
         $textEn = <<<'HTML'
@@ -250,7 +250,7 @@ HTML;
 
 <h2>Conclusion</h2>
 <p>A website that doesn't generate leads is rarely a "bad website" — there are simply small obstacles on the visitor's path. A clear offer, one main button, a fast mobile version, trust signals and a short form change the results noticeably in most cases.</p>
-<p><strong>Want a free quick audit of your website? <a href="/contact">Contact us</a></strong> — we'll point out the 3–5 places where you lose the most enquiries and suggest fixes. More: <a href="/services">our services</a>, <a href="/blog-details/why-you-need-seo-services-2026">SEO Services in Azerbaijan</a>.</p>
+<p><strong>Want a free quick audit of your website? <a href="/contact">Contact us</a></strong> — we'll point out the 3–5 places where you lose the most enquiries and suggest fixes. More: <a href="/services">our services</a>, <a href="/blog-details/seo-services-azerbaijan-2027">SEO Services in Azerbaijan</a>.</p>
 HTML;
 
         $textRu = <<<'HTML'
@@ -372,7 +372,7 @@ HTML;
 
 <h2>Итог</h2>
 <p>Сайт, который не приносит заявки, редко бывает «плохим» — просто на пути посетителя есть мелкие препятствия. Понятное предложение, одна главная кнопка, быстрая мобильная версия, элементы доверия и короткая форма в большинстве случаев заметно меняют результат.</p>
-<p><strong>Хотите бесплатный экспресс-аудит сайта? <a href="/kontakty">Напишите нам</a></strong> — покажем 3–5 мест, где вы теряете больше всего заявок, и предложим решения. Подробнее: <a href="/uslugi">наши услуги</a>, <a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">SEO-услуги в Азербайджане</a>.</p>
+<p><strong>Хотите бесплатный экспресс-аудит сайта? <a href="/kontakty">Напишите нам</a></strong> — покажем 3–5 мест, где вы теряете больше всего заявок, и предложим решения. Подробнее: <a href="/uslugi">наши услуги</a>, <a href="/blog-details/seo-uslugi-azerbajdzhan-2027">SEO-услуги в Азербайджане</a>.</p>
 HTML;
 
         DB::table('blogs')->updateOrInsert(

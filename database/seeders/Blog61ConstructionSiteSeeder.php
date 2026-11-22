@@ -90,7 +90,7 @@ class Blog61ConstructionSiteSeeder extends Seeder
   <li><strong>Layihə səhifələrindən xidmət səhifələrinə daxili keçidlər</strong> — Google səhifələr arasındakı əlaqəni bu yolla anlayır.</li>
   <li><strong>Bloq</strong> — "anbar üçün metal konstruksiya necə seçilir" kimi praktik yazılar uzun sorğulardan trafik gətirir.</li>
 </ul>
-<p>Google Business Profile isə xəritədə və "yaxınlıqda" axtarışlarında görünmək üçündür. Ofis və ya anbar ünvanını, iş saatlarını, layihə şəkillərini əlavə edin və müştərilərdən rəy istəyin. Addım-addım təlimat: <a href="/blog-details/google-business-profile-nece-yaradilir-2026">Google Business Profile necə yaradılır</a>. SEO-nun ümumi məntiqi barədə: <a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO xidməti nə üçün lazımdır</a>.</p>
+<p>Google Business Profile isə xəritədə və "yaxınlıqda" axtarışlarında görünmək üçündür. Ofis və ya anbar ünvanını, iş saatlarını, layihə şəkillərini əlavə edin və müştərilərdən rəy istəyin. Addım-addım təlimat: <a href="/blog-details/google-business-profile-nece-yaradilir-2026">Google Business Profile necə yaradılır</a>. SEO-nun ümumi məntiqi barədə: <a href="/blog-details/seo-xidmeti-azerbaycan-2027">SEO xidməti nə üçün lazımdır</a>.</p>
 
 <h2>Real Nümunə: SO Supply (sosupply.az)</h2>
 <p>SO Supply tikinti, təchizat və metal konstruksiya sahəsində fəaliyyət göstərən şirkətdir. Onun üçün üç dilli korporativ sayt hazırlamışıq. Saytda yuxarıda danışdığımız strukturun əsas hissələri var:</p>
@@ -250,7 +250,7 @@ HTML;
   <li><strong>Internal links from project pages to service pages</strong> — this is how Google understands how pages relate.</li>
   <li><strong>A blog</strong> — practical posts like "how to choose a steel structure for a warehouse" bring traffic from long-tail queries.</li>
 </ul>
-<p>Google Business Profile is for showing up on the map and in "near me" searches. Add your office or warehouse address, working hours and project photos, and ask clients for reviews. Step-by-step guide: <a href="/blog-details/how-to-create-google-business-profile-2026">how to create a Google Business Profile</a>. On SEO in general: <a href="/blog-details/why-you-need-seo-services-2026">why you need SEO services</a>.</p>
+<p>Google Business Profile is for showing up on the map and in "near me" searches. Add your office or warehouse address, working hours and project photos, and ask clients for reviews. Step-by-step guide: <a href="/blog-details/how-to-create-google-business-profile-2026">how to create a Google Business Profile</a>. On SEO in general: <a href="/blog-details/seo-services-azerbaijan-2027">why you need SEO services</a>.</p>
 
 <h2>Real Example: SO Supply (sosupply.az)</h2>
 <p>SO Supply is a construction, supply and metal structures company. We built a trilingual corporate website for them. It has the core parts of the structure described above:</p>
@@ -410,7 +410,7 @@ HTML;
   <li><strong>Внутренние ссылки со страниц проектов на страницы услуг</strong> — так Google понимает связь между страницами.</li>
   <li><strong>Блог</strong> — практические статьи вроде «как выбрать металлоконструкцию для склада» приводят трафик по длинным запросам.</li>
 </ul>
-<p>Google Business Profile нужен, чтобы появляться на карте и в поиске «рядом». Добавьте адрес офиса или склада, часы работы и фото проектов, просите клиентов оставлять отзывы. Пошаговая инструкция: <a href="/blog-details/kak-sozdat-google-business-profile-2026">как создать Google Business Profile</a>. Об SEO в целом: <a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">зачем нужны SEO-услуги</a>.</p>
+<p>Google Business Profile нужен, чтобы появляться на карте и в поиске «рядом». Добавьте адрес офиса или склада, часы работы и фото проектов, просите клиентов оставлять отзывы. Пошаговая инструкция: <a href="/blog-details/kak-sozdat-google-business-profile-2026">как создать Google Business Profile</a>. Об SEO в целом: <a href="/blog-details/seo-uslugi-azerbajdzhan-2027">зачем нужны SEO-услуги</a>.</p>
 
 <h2>Реальный пример: SO Supply (sosupply.az)</h2>
 <p>SO Supply — компания, работающая в сфере строительства, поставок и металлоконструкций. Мы сделали для неё трёхъязычный корпоративный сайт. В нём есть основные элементы структуры, описанной выше:</p>

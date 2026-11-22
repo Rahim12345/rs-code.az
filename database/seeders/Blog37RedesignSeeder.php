@@ -22,7 +22,7 @@ class Blog37RedesignSeeder extends Seeder
 <p>Köhnə şriftlər, sıx mətn blokları, keyfiyyətsiz şəkillər və qarışıq menyu müştəridə "bu şirkət aktivdirmi?" sualı yaradır. Sayt çox vaxt biznesinizlə ilk təmasdır və ilk təəssürat etibara birbaşa təsir edir.</p>
 
 <h2>4. Google-dan Trafik Gəlmir</h2>
-<p>Search Console-da göstərmə və klik azdırsa, səbəb çox vaxt texniki SEO-dur: səhv başlıqlar, meta təsvirlərin olmaması, dublikat səhifələr, sitemap-in olmaması, yavaş sürət. Köhnə platformalarda bunları düzəltmək bəzən saytı yenidən qurmaqdan baha başa gəlir. Ətraflı: <a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO Xidməti 2026</a>.</p>
+<p>Search Console-da göstərmə və klik azdırsa, səbəb çox vaxt texniki SEO-dur: səhv başlıqlar, meta təsvirlərin olmaması, dublikat səhifələr, sitemap-in olmaması, yavaş sürət. Köhnə platformalarda bunları düzəltmək bəzən saytı yenidən qurmaqdan baha başa gəlir. Ətraflı: <a href="/blog-details/seo-xidmeti-azerbaycan-2027">SEO Xidməti 2027</a>.</p>
 
 <h2>5. Sayt Müraciət Gətirmir</h2>
 <p>Ziyarətçi var, amma zəng, sifariş və forma müraciəti yoxdur? Aydın CTA düymələrinin, WhatsApp/zəng düyməsinin, qiymət və ya xidmət təsvirinin olmaması saytı "vizit kart"a çevirir. Müasir sayt ziyarətçini addım-addım müraciətə aparmalıdır.</p>
@@ -112,7 +112,7 @@ HTML;
 <p>Old fonts, dense text blocks, low-quality images and a confusing menu make customers wonder "is this company still active?" Your site is often the first contact with your business, and first impressions directly affect trust.</p>
 
 <h2>4. No Traffic from Google</h2>
-<p>Low impressions and clicks in Search Console usually point to technical SEO: wrong titles, missing meta descriptions, duplicate pages, no sitemap, slow speed. On old platforms, fixing these sometimes costs more than rebuilding. More: <a href="/blog-details/why-you-need-seo-services-2026">Why You Need SEO Services in 2026</a>.</p>
+<p>Low impressions and clicks in Search Console usually point to technical SEO: wrong titles, missing meta descriptions, duplicate pages, no sitemap, slow speed. On old platforms, fixing these sometimes costs more than rebuilding. More: <a href="/blog-details/seo-services-azerbaijan-2027">Why You Need SEO Services in 2027</a>.</p>
 
 <h2>5. The Site Doesn't Generate Leads</h2>
 <p>Visitors but no calls, orders or form submissions? Without clear CTA buttons, a WhatsApp/call button and service or price details, a site becomes just a business card. A modern site should guide visitors step by step towards contacting you.</p>
@@ -201,7 +201,7 @@ HTML;
 <p>Старые шрифты, плотные блоки текста, некачественные фото и запутанное меню вызывают вопрос «эта компания вообще работает?». Сайт часто — первый контакт с вашим бизнесом, и первое впечатление напрямую влияет на доверие.</p>
 
 <h2>4. Нет трафика из Google</h2>
-<p>Мало показов и кликов в Search Console обычно говорит о проблемах технического SEO: неправильные заголовки, нет мета-описаний, дубли страниц, нет sitemap, низкая скорость. На старых платформах исправить это иногда дороже, чем сделать сайт заново. Подробнее: <a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">Зачем нужны SEO-услуги в 2026</a>.</p>
+<p>Мало показов и кликов в Search Console обычно говорит о проблемах технического SEO: неправильные заголовки, нет мета-описаний, дубли страниц, нет sitemap, низкая скорость. На старых платформах исправить это иногда дороже, чем сделать сайт заново. Подробнее: <a href="/blog-details/seo-uslugi-azerbajdzhan-2027">Зачем нужны SEO-услуги в 2027</a>.</p>
 
 <h2>5. Сайт не приносит заявок</h2>
 <p>Посетители есть, а звонков, заказов и заявок нет? Без понятных CTA-кнопок, кнопки WhatsApp/звонка и описания услуг или цен сайт превращается в визитку. Современный сайт должен шаг за шагом вести посетителя к обращению.</p>

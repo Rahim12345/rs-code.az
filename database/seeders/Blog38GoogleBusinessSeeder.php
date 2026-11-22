@@ -67,7 +67,7 @@ class Blog38GoogleBusinessSeeder extends Seeder
 </ol>
 
 <h2>Profil və Sayt Birlikdə</h2>
-<p>Google Business Profile müştərini sizə yönəldir, amma qərarı çox vaxt saytda verir: xidmətlər, qiymətlər, portfolio və əlaqə forması. Güclü profil + sürətli, mobil uyğun sayt + lokal SEO — bölgədə önə çıxmağın ən effektiv birləşməsidir. Ətraflı: <a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO Xidməti Azərbaycanda 2026</a>. Saytınız köhnəlibsə: <a href="/blog-details/sayti-yenileme-vaxti-7-elamet-2026">Saytı Yeniləmə Vaxtıdır: 7 Əlamət</a>.</p>
+<p>Google Business Profile müştərini sizə yönəldir, amma qərarı çox vaxt saytda verir: xidmətlər, qiymətlər, portfolio və əlaqə forması. Güclü profil + sürətli, mobil uyğun sayt + lokal SEO — bölgədə önə çıxmağın ən effektiv birləşməsidir. Ətraflı: <a href="/blog-details/seo-xidmeti-azerbaycan-2027">SEO Xidməti Azərbaycanda 2027</a>. Saytınız köhnəlibsə: <a href="/blog-details/sayti-yenileme-vaxti-7-elamet-2026">Saytı Yeniləmə Vaxtıdır: 7 Əlamət</a>.</p>
 
 <h2>Tez-tez Verilən Suallar</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -166,7 +166,7 @@ HTML;
 </ol>
 
 <h2>Profile and Website Together</h2>
-<p>Google Business Profile sends customers your way, but they often decide on your website: services, prices, portfolio and contact form. A strong profile + a fast, mobile-friendly site + local SEO is the most effective combination for standing out locally. More: <a href="/blog-details/why-you-need-seo-services-2026">Why You Need SEO Services in 2026</a>. If your site is outdated: <a href="/blog-details/signs-you-need-website-redesign-2026">7 Signs You Need a Redesign</a>.</p>
+<p>Google Business Profile sends customers your way, but they often decide on your website: services, prices, portfolio and contact form. A strong profile + a fast, mobile-friendly site + local SEO is the most effective combination for standing out locally. More: <a href="/blog-details/seo-services-azerbaijan-2027">Why You Need SEO Services in 2027</a>. If your site is outdated: <a href="/blog-details/signs-you-need-website-redesign-2026">7 Signs You Need a Redesign</a>.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -265,7 +265,7 @@ HTML;
 </ol>
 
 <h2>Профиль и сайт вместе</h2>
-<p>Google Business Profile приводит клиента, но решение он часто принимает на сайте: услуги, цены, портфолио и форма связи. Сильный профиль + быстрый адаптивный сайт + локальное SEO — самая эффективная комбинация, чтобы выделиться в регионе. Подробнее: <a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">Зачем нужны SEO-услуги в 2026</a>. Если сайт устарел: <a href="/blog-details/priznaki-chto-sajtu-nuzhen-redizajn-2026">7 признаков, что сайту нужен редизайн</a>.</p>
+<p>Google Business Profile приводит клиента, но решение он часто принимает на сайте: услуги, цены, портфолио и форма связи. Сильный профиль + быстрый адаптивный сайт + локальное SEO — самая эффективная комбинация, чтобы выделиться в регионе. Подробнее: <a href="/blog-details/seo-uslugi-azerbajdzhan-2027">Зачем нужны SEO-услуги в 2027</a>. Если сайт устарел: <a href="/blog-details/priznaki-chto-sajtu-nuzhen-redizajn-2026">7 признаков, что сайту нужен редизайн</a>.</p>
 
 <h2>Часто задаваемые вопросы</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">

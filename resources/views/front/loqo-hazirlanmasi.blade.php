@@ -48,6 +48,6 @@
     </div>
 </section>
 
-@include('front.partials.related-posts', ['slugs' => ['veb-sayt-qiymeti-azerbaycan-2027', 'sayt-sifarisinden-evvel-15-sual-2027', 'seo-xidmeti-azerbaycan-2026']])
+@include('front.partials.related-posts', ['slugs' => ['veb-sayt-qiymeti-azerbaycan-2027', 'sayt-sifarisinden-evvel-15-sual-2027', 'seo-xidmeti-azerbaycan-2027']])
 
 @endsection

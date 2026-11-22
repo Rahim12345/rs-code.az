@@ -54,7 +54,7 @@ class Blog50WebsiteSecuritySeeder extends Seeder
 </ol>
 <h3>Nəzarət</h3>
 <ol start="11">
-  <li><strong>Google Search Console:</strong> "Təhlükəsizlik problemləri" bölməsi Google-un saytınızda aşkar etdiyi zərərli məzmun barədə xəbər verir. Ətraflı: <a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO Xidməti Azərbaycanda</a>.</li>
+  <li><strong>Google Search Console:</strong> "Təhlükəsizlik problemləri" bölməsi Google-un saytınızda aşkar etdiyi zərərli məzmun barədə xəbər verir. Ətraflı: <a href="/blog-details/seo-xidmeti-azerbaycan-2027">SEO Xidməti Azərbaycanda</a>.</li>
   <li><strong>Xəta və giriş loglarının izlənməsi:</strong> Qəfil artan xətalar və şübhəli giriş cəhdləri problemin erkən əlamətidir.</li>
 </ol>
 
@@ -169,7 +169,7 @@ HTML;
 </ol>
 <h3>Monitoring</h3>
 <ol start="11">
-  <li><strong>Google Search Console:</strong> The "Security issues" section tells you about malicious content Google has found on your site. More: <a href="/blog-details/why-you-need-seo-services-2026">Why You Need SEO Services</a>.</li>
+  <li><strong>Google Search Console:</strong> The "Security issues" section tells you about malicious content Google has found on your site. More: <a href="/blog-details/seo-services-azerbaijan-2027">Why You Need SEO Services</a>.</li>
   <li><strong>Watch error and access logs:</strong> A sudden spike in errors or suspicious login attempts is an early warning sign.</li>
 </ol>
 
@@ -284,7 +284,7 @@ HTML;
 </ol>
 <h3>Контроль</h3>
 <ol start="11">
-  <li><strong>Google Search Console:</strong> Раздел «Проблемы безопасности» сообщает о вредоносном контенте, найденном Google на вашем сайте. Подробнее: <a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">Зачем нужны SEO-услуги</a>.</li>
+  <li><strong>Google Search Console:</strong> Раздел «Проблемы безопасности» сообщает о вредоносном контенте, найденном Google на вашем сайте. Подробнее: <a href="/blog-details/seo-uslugi-azerbajdzhan-2027">Зачем нужны SEO-услуги</a>.</li>
   <li><strong>Мониторинг логов ошибок и входов:</strong> Резкий рост ошибок и подозрительные попытки входа — ранний сигнал проблемы.</li>
 </ol>
 

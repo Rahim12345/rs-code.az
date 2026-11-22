@@ -92,7 +92,7 @@ class Blog57GoogleAdsSeeder extends Seeder
     <tr><td>Ən uyğun</td><td>Yeni biznes, kampaniya, mövsümi təklif</td><td>Uzunmüddətli, sabit müraciət axını</td></tr>
   </tbody>
 </table>
-<p>Ən səmərəli yanaşma ikisini birlikdə istifadə etməkdir. Əvvəlcə Google Ads ilə hansı açar sözlərin müraciət gətirdiyini öyrənirsiniz, sonra həmin sözlər üçün SEO-ya investisiya edirsiniz. SEO haqqında ətraflı: <a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO xidməti Azərbaycanda</a>. Lokal biznesdirsə, pulsuz <a href="/blog-details/google-business-profile-nece-yaradilir-2026">Google Business Profile</a> da mütləqdir.</p>
+<p>Ən səmərəli yanaşma ikisini birlikdə istifadə etməkdir. Əvvəlcə Google Ads ilə hansı açar sözlərin müraciət gətirdiyini öyrənirsiniz, sonra həmin sözlər üçün SEO-ya investisiya edirsiniz. SEO haqqında ətraflı: <a href="/blog-details/seo-xidmeti-azerbaycan-2027">SEO xidməti Azərbaycanda</a>. Lokal biznesdirsə, pulsuz <a href="/blog-details/google-business-profile-nece-yaradilir-2026">Google Business Profile</a> da mütləqdir.</p>
 
 <h2>Tez-tez Verilən Suallar</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -217,7 +217,7 @@ HTML;
     <tr><td>Best for</td><td>New businesses, campaigns, seasonal offers</td><td>Long-term, steady flow of enquiries</td></tr>
   </tbody>
 </table>
-<p>The most efficient approach is to use both. First, Google Ads shows which keywords bring enquiries; then you invest in SEO for those keywords. More on SEO: <a href="/blog-details/why-you-need-seo-services-2026">why you need SEO services</a>. For a local business, a free <a href="/blog-details/how-to-create-google-business-profile-2026">Google Business Profile</a> is a must too.</p>
+<p>The most efficient approach is to use both. First, Google Ads shows which keywords bring enquiries; then you invest in SEO for those keywords. More on SEO: <a href="/blog-details/seo-services-azerbaijan-2027">why you need SEO services</a>. For a local business, a free <a href="/blog-details/how-to-create-google-business-profile-2026">Google Business Profile</a> is a must too.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -342,7 +342,7 @@ HTML;
     <tr><td>Лучше всего для</td><td>Новый бизнес, акции, сезонные предложения</td><td>Долгосрочный стабильный поток заявок</td></tr>
   </tbody>
 </table>
-<p>Самый эффективный подход — использовать оба канала. Сначала Google Ads показывает, какие ключевые слова приносят заявки, затем вы вкладываетесь в SEO по этим словам. Подробнее о SEO: <a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">зачем нужны SEO-услуги</a>. Для локального бизнеса обязателен и бесплатный <a href="/blog-details/kak-sozdat-google-business-profile-2026">Google Business Profile</a>.</p>
+<p>Самый эффективный подход — использовать оба канала. Сначала Google Ads показывает, какие ключевые слова приносят заявки, затем вы вкладываетесь в SEO по этим словам. Подробнее о SEO: <a href="/blog-details/seo-uslugi-azerbajdzhan-2027">зачем нужны SEO-услуги</a>. Для локального бизнеса обязателен и бесплатный <a href="/blog-details/kak-sozdat-google-business-profile-2026">Google Business Profile</a>.</p>
 
 <h2>Часто задаваемые вопросы</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">

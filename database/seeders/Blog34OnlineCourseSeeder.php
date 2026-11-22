@@ -97,7 +97,7 @@ class Blog34OnlineCourseSeeder extends Seeder
   <li><strong>Pulsuz dəyərli kontent:</strong> Instagram, YouTube və TikTok-da qısa dərslər — ekspert imicinizi qurur.</li>
   <li><strong>Vebinar:</strong> Pulsuz canlı dərs sonunda kursu təqdim etmək ən effektiv satış üsullarındandır.</li>
   <li><strong>Hədəfli reklam:</strong> Kursu maraqlanan auditoriyaya göstərin — <a href="/facebook-ve-instagram-reklamlari">Facebook və Instagram reklamları</a>.</li>
-  <li><strong>SEO və bloq:</strong> "IELTS hazırlığı onlayn", "mühasibat kursu" kimi axtarışlarda görünün — <a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO bələdçisi</a>.</li>
+  <li><strong>SEO və bloq:</strong> "IELTS hazırlığı onlayn", "mühasibat kursu" kimi axtarışlarda görünün — <a href="/blog-details/seo-xidmeti-azerbaycan-2027">SEO bələdçisi</a>.</li>
   <li><strong>Tələbə rəyləri:</strong> Nəticə əldə edən tələbələrin video rəyləri ən güclü reklamdır.</li>
 </ul>
 
@@ -248,7 +248,7 @@ HTML;
   <li><strong>Free valuable content:</strong> Short lessons on Instagram, YouTube and TikTok build your expert image.</li>
   <li><strong>Webinars:</strong> Presenting the course at the end of a free live class is one of the most effective sales methods.</li>
   <li><strong>Targeted ads:</strong> Show your course to interested audiences — <a href="/facebook-instagram-ads">Facebook & Instagram ads</a>.</li>
-  <li><strong>SEO and blog:</strong> Appear in searches like "online IELTS prep" or "accounting course" — <a href="/blog-details/why-you-need-seo-services-2026">SEO guide</a>.</li>
+  <li><strong>SEO and blog:</strong> Appear in searches like "online IELTS prep" or "accounting course" — <a href="/blog-details/seo-services-azerbaijan-2027">SEO guide</a>.</li>
   <li><strong>Student reviews:</strong> Video testimonials from successful students are the strongest advertising.</li>
 </ul>
 
@@ -399,7 +399,7 @@ HTML;
   <li><strong>Бесплатный полезный контент:</strong> короткие уроки в Instagram, YouTube и TikTok формируют экспертный образ.</li>
   <li><strong>Вебинары:</strong> презентация курса в конце бесплатного живого урока — один из самых эффективных способов продаж.</li>
   <li><strong>Таргетированная реклама:</strong> покажите курс заинтересованной аудитории — <a href="/reklama-facebook-instagram">реклама в Facebook и Instagram</a>.</li>
-  <li><strong>SEO и блог:</strong> появляйтесь по запросам вроде «подготовка к IELTS онлайн» или «курс бухгалтерии» — <a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">гид по SEO</a>.</li>
+  <li><strong>SEO и блог:</strong> появляйтесь по запросам вроде «подготовка к IELTS онлайн» или «курс бухгалтерии» — <a href="/blog-details/seo-uslugi-azerbajdzhan-2027">гид по SEO</a>.</li>
   <li><strong>Отзывы студентов:</strong> видеоотзывы успешных студентов — самая сильная реклама.</li>
 </ul>
 

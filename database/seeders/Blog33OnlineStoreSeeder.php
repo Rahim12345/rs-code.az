@@ -101,7 +101,7 @@ class Blog33OnlineStoreSeeder extends Seeder
 <ul>
   <li><strong>Instagram və Facebook reklamı:</strong> Məhsul kataloqunu Meta-ya qoşub dinamik reklam qurun — <a href="/facebook-ve-instagram-reklamlari">Facebook və Instagram reklamları</a>.</li>
   <li><strong>Google Ads və Google Shopping:</strong> "almaq", "qiymət" axtaranlar satın almağa ən hazır müştərilərdir — <a href="/google-reklamlari">Google reklamları</a>.</li>
-  <li><strong>SEO:</strong> Kateqoriya və məhsul səhifələrini açar sözlərlə optimallaşdırın; uzunmüddətli pulsuz trafik gətirir — <a href="/blog-details/seo-xidmeti-azerbaycan-2026">SEO bələdçisi</a>.</li>
+  <li><strong>SEO:</strong> Kateqoriya və məhsul səhifələrini açar sözlərlə optimallaşdırın; uzunmüddətli pulsuz trafik gətirir — <a href="/blog-details/seo-xidmeti-azerbaycan-2027">SEO bələdçisi</a>.</li>
   <li><strong>Mövcud müştəriləriniz:</strong> Instagram izləyicilərinə və WhatsApp bazanıza sayt linkini və ilk sifariş endirimini göndərin.</li>
   <li><strong>Rəylər:</strong> Hər sifarişdən sonra rəy istəyin — yeni müştəri üçün ən güclü etibar siqnalıdır.</li>
 </ul>
@@ -248,7 +248,7 @@ HTML;
 <ul>
   <li><strong>Instagram and Facebook ads:</strong> Connect your catalogue to Meta and run dynamic ads — <a href="/facebook-instagram-ads">Facebook & Instagram ads</a>.</li>
   <li><strong>Google Ads and Google Shopping:</strong> People searching "buy" or "price" are the most ready to purchase — <a href="/google-ads">Google Ads</a>.</li>
-  <li><strong>SEO:</strong> Optimize category and product pages for keywords to earn long-term free traffic — <a href="/blog-details/why-you-need-seo-services-2026">SEO guide</a>.</li>
+  <li><strong>SEO:</strong> Optimize category and product pages for keywords to earn long-term free traffic — <a href="/blog-details/seo-services-azerbaijan-2027">SEO guide</a>.</li>
   <li><strong>Existing customers:</strong> Send your site link and a first-order discount to your Instagram followers and WhatsApp contacts.</li>
   <li><strong>Reviews:</strong> Ask for a review after every order — the strongest trust signal for new customers.</li>
 </ul>
@@ -395,7 +395,7 @@ HTML;
 <ul>
   <li><strong>Реклама в Instagram и Facebook:</strong> подключите каталог к Meta и запустите динамическую рекламу — <a href="/reklama-facebook-instagram">реклама в Facebook и Instagram</a>.</li>
   <li><strong>Google Ads и Google Shopping:</strong> ищущие «купить» и «цена» — самые готовые к покупке клиенты — <a href="/reklama-google">Google реклама</a>.</li>
-  <li><strong>SEO:</strong> оптимизируйте категории и карточки товаров под ключевые слова ради долгосрочного бесплатного трафика — <a href="/blog-details/zachem-nuzhny-seo-uslugi-2026">гид по SEO</a>.</li>
+  <li><strong>SEO:</strong> оптимизируйте категории и карточки товаров под ключевые слова ради долгосрочного бесплатного трафика — <a href="/blog-details/seo-uslugi-azerbajdzhan-2027">гид по SEO</a>.</li>
   <li><strong>Текущие клиенты:</strong> отправьте ссылку на сайт и скидку на первый заказ подписчикам Instagram и контактам в WhatsApp.</li>
   <li><strong>Отзывы:</strong> просите отзыв после каждого заказа — это сильнейший сигнал доверия для новых клиентов.</li>
 </ul>
