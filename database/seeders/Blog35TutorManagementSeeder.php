@@ -73,7 +73,7 @@ class Blog35TutorManagementSeeder extends Seeder
 
 <h2>Kursometr: Müəllimlər Üçün Hazır Həll</h2>
 <p>RS Code olaraq bu problemləri həll etmək üçün <a href="/mehsullar/kursometr">Kursometr</a> platformasını hazırlamışıq. Müəllim bir dəqiqəyə öz ünvanını açır və qruplar, dərs cədvəli, vaxtlı sınaqlar, ev tapşırıqları, ödəniş izləmə və valideyn kabinetini özü qurur — admin gözləmək lazım deyil. Qeydiyyat pulsuzdur.</p>
-<p>Videodərs satmaq və öz kurs platformasını qurmaq istəyirsinizsə, <a href="/blog-details/onlayn-kurs-nece-yaradilir-2026">Onlayn Kurs Necə Yaradılır</a> bələdçimizə, böyük tədris mərkəzləri üçün isə <a href="/blog-details/lms-sistemi-qiymeti-azerbaycanda-2026">LMS sistemi qiymətləri</a> yazımıza baxın.</p>
+<p>Videodərs satmaq və öz kurs platformasını qurmaq istəyirsinizsə, <a href="/blog-details/onlayn-kurs-nece-yaradilir-2026">Onlayn Kurs Necə Yaradılır</a> bələdçimizə, böyük tədris mərkəzləri üçün isə <a href="/blog-details/lms-sistemi-qiymeti-azerbaycan-2027">LMS sistemi qiymətləri</a> yazımıza baxın.</p>
 
 <h2>Tez-tez Verilən Suallar</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -186,7 +186,7 @@ HTML;
 
 <h2>Kursometr: A Ready Solution for Teachers</h2>
 <p>At RS Code we built <a href="/mehsullar/kursometr">Kursometr</a> to solve exactly these problems. A teacher opens their own address in a minute and sets up groups, schedules, timed tests, homework, payment tracking and a parent dashboard themselves — no waiting for an admin. Sign-up is free.</p>
-<p>If you want to sell video lessons and build your own course platform, see our <a href="/blog-details/how-to-create-and-sell-online-course-2026">How to Create an Online Course</a> guide; for larger training centres, see <a href="/blog-details/lms-system-cost-azerbaijan-2026">LMS system costs</a>.</p>
+<p>If you want to sell video lessons and build your own course platform, see our <a href="/blog-details/how-to-create-and-sell-online-course-2026">How to Create an Online Course</a> guide; for larger training centres, see <a href="/blog-details/lms-price-azerbaijan-2027">LMS system costs</a>.</p>
 
 <h2>Frequently Asked Questions</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">
@@ -299,7 +299,7 @@ HTML;
 
 <h2>Kursometr: готовое решение для преподавателей</h2>
 <p>В RS Code мы создали <a href="/mehsullar/kursometr">Kursometr</a> именно для решения этих задач. Преподаватель за минуту открывает свой адрес и сам настраивает группы, расписание, тесты на время, домашние задания, учёт оплат и кабинет родителя — без ожидания администратора. Регистрация бесплатна.</p>
-<p>Если вы хотите продавать видеоуроки и создать свою платформу курсов, читайте гид <a href="/blog-details/kak-sozdat-i-prodavat-onlajn-kurs-2026">Как создать онлайн-курс</a>; для крупных учебных центров — статью о <a href="/blog-details/stoimost-lms-sistemy-azerbajdzan-2026">стоимости LMS-систем</a>.</p>
+<p>Если вы хотите продавать видеоуроки и создать свою платформу курсов, читайте гид <a href="/blog-details/kak-sozdat-i-prodavat-onlajn-kurs-2026">Как создать онлайн-курс</a>; для крупных учебных центров — статью о <a href="/blog-details/stoimost-lms-sistemy-azerbaydzhan-2027">стоимости LMS-систем</a>.</p>
 
 <h2>Часто задаваемые вопросы</h2>
 <div itemscope itemtype="https://schema.org/FAQPage">

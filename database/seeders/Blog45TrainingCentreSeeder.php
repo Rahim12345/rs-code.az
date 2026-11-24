@@ -64,7 +64,7 @@ class Blog45TrainingCentreSeeder extends Seeder
     <tr><td>Məlumatların sahibi</td><td>Platforma</td><td>Siz</td></tr>
   </tbody>
 </table>
-<p>Fərdi müəllimlər və kiçik qruplar üçün hazır həll kifayətdir — məsələn, müəllimin öz səhifəsi, qruplar, sınaqlar və ödəniş izləməsi olan <a href="/mehsullar/kursometr">Kursometr</a>. Çox filiallı, özünəməxsus maliyyə və əməkhaqqı qaydaları olan mərkəz üçün isə fərdi sistem uzunmüddətli daha sərfəlidir. Fərdi müəllimlər üçün ayrıca bələdçi: <a href="/blog-details/repetitor-ders-idareetme-proqrami-2026">Repetitorlar üçün Dərs İdarəetməsi</a>. Onlayn tədris platformalarının qiymətləri: <a href="/blog-details/lms-sistemi-qiymeti-azerbaycanda-2026">LMS Sistemi Qiyməti 2026</a>.</p>
+<p>Fərdi müəllimlər və kiçik qruplar üçün hazır həll kifayətdir — məsələn, müəllimin öz səhifəsi, qruplar, sınaqlar və ödəniş izləməsi olan <a href="/mehsullar/kursometr">Kursometr</a>. Çox filiallı, özünəməxsus maliyyə və əməkhaqqı qaydaları olan mərkəz üçün isə fərdi sistem uzunmüddətli daha sərfəlidir. Fərdi müəllimlər üçün ayrıca bələdçi: <a href="/blog-details/repetitor-ders-idareetme-proqrami-2026">Repetitorlar üçün Dərs İdarəetməsi</a>. Onlayn tədris platformalarının qiymətləri: <a href="/blog-details/lms-sistemi-qiymeti-azerbaycan-2027">LMS Sistemi Qiyməti 2027</a>.</p>
 
 <h2>Proqrama Keçid: 5 Addım</h2>
 <ol>
@@ -178,7 +178,7 @@ HTML;
     <tr><td>Data ownership</td><td>The platform</td><td>You</td></tr>
   </tbody>
 </table>
-<p>For individual teachers and small groups a ready-made solution is enough — for example <a href="/mehsullar/kursometr">Kursometr</a>, with a teacher's own page, groups, tests and payment tracking. For a multi-branch centre with its own finance and pay rules, a custom system is more cost-effective in the long run. A separate guide for individual teachers: <a href="/blog-details/tutor-class-management-software-2026">Class Management for Tutors</a>. Online learning platform prices: <a href="/blog-details/lms-system-cost-azerbaijan-2026">LMS System Cost 2026</a>.</p>
+<p>For individual teachers and small groups a ready-made solution is enough — for example <a href="/mehsullar/kursometr">Kursometr</a>, with a teacher's own page, groups, tests and payment tracking. For a multi-branch centre with its own finance and pay rules, a custom system is more cost-effective in the long run. A separate guide for individual teachers: <a href="/blog-details/tutor-class-management-software-2026">Class Management for Tutors</a>. Online learning platform prices: <a href="/blog-details/lms-price-azerbaijan-2027">LMS System Cost 2027</a>.</p>
 
 <h2>Switching to Software: 5 Steps</h2>
 <ol>
@@ -292,7 +292,7 @@ HTML;
     <tr><td>Владелец данных</td><td>Платформа</td><td>Вы</td></tr>
   </tbody>
 </table>
-<p>Для частных преподавателей и небольших групп достаточно готового решения — например, <a href="/mehsullar/kursometr">Kursometr</a> с личной страницей преподавателя, группами, тестами и учётом оплат. Для центра с несколькими филиалами и собственными правилами финансов и зарплат в долгосрочной перспективе выгоднее индивидуальная система. Отдельный гид для частных преподавателей: <a href="/blog-details/programma-dlya-repetitorov-2026">Управление занятиями для репетиторов</a>. Цены на платформы онлайн-обучения: <a href="/blog-details/stoimost-lms-sistemy-azerbajdzan-2026">Стоимость LMS-системы 2026</a>.</p>
+<p>Для частных преподавателей и небольших групп достаточно готового решения — например, <a href="/mehsullar/kursometr">Kursometr</a> с личной страницей преподавателя, группами, тестами и учётом оплат. Для центра с несколькими филиалами и собственными правилами финансов и зарплат в долгосрочной перспективе выгоднее индивидуальная система. Отдельный гид для частных преподавателей: <a href="/blog-details/programma-dlya-repetitorov-2026">Управление занятиями для репетиторов</a>. Цены на платформы онлайн-обучения: <a href="/blog-details/stoimost-lms-sistemy-azerbaydzhan-2027">Стоимость LMS-системы 2027</a>.</p>
 
 <h2>Переход на программу: 5 шагов</h2>
 <ol>

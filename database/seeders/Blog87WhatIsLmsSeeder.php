@@ -75,7 +75,7 @@ class Blog87WhatIsLmsSeeder extends Seeder
     <tr><td>Sifarişlə hazırlanan</td><td>Təşkilat üçün xüsusi sistem</td><td>Tam sizin prosesinizə uyğun, inteqrasiya mümkündür</td><td>Ən baha və ən uzun yol</td></tr>
   </tbody>
 </table>
-<p>Kiçik və orta komandalar üçün adətən hazır bulud platforması ən sürətli və ucuz yoldur. Moodle "pulsuz" görünür, amma hostinq, quraşdırma və texniki dəstək xərcləri nəzərə alınanda həmişə ucuz olmur. Sifarişlə sistem isə hazır həllərin prosesinizi əhatə etmədiyi halda mənalıdır. Qiymətlərin ətraflı müqayisəsi: <a href="/blog-details/lms-sistemi-qiymeti-azerbaycanda-2026">LMS sistemi qiyməti Azərbaycanda</a>.</p>
+<p>Kiçik və orta komandalar üçün adətən hazır bulud platforması ən sürətli və ucuz yoldur. Moodle "pulsuz" görünür, amma hostinq, quraşdırma və texniki dəstək xərcləri nəzərə alınanda həmişə ucuz olmur. Sifarişlə sistem isə hazır həllərin prosesinizi əhatə etmədiyi halda mənalıdır. Qiymətlərin ətraflı müqayisəsi: <a href="/blog-details/lms-sistemi-qiymeti-azerbaycan-2027">LMS sistemi qiyməti Azərbaycanda</a>.</p>
 
 <h2>5. LMS, Google Classroom və WhatsApp Qrupu: Fərq Nədir</h2>
 <p>Bir çox müəllim LMS-ə keçməzdən əvvəl Google Classroom, WhatsApp qrupu və Excel ilə işləyir. Bu, başlanğıc üçün normaldır, amma qruplar və tələbələr artdıqca problemlər yaranır:</p>
@@ -162,7 +162,7 @@ class Blog87WhatIsLmsSeeder extends Seeder
 
 <h3>Bunları da oxuyun</h3>
 <ul>
-  <li><a href="/blog-details/lms-sistemi-qiymeti-azerbaycanda-2026">LMS sistemi qiyməti Azərbaycanda</a></li>
+  <li><a href="/blog-details/lms-sistemi-qiymeti-azerbaycan-2027">LMS sistemi qiyməti Azərbaycanda</a></li>
   <li><a href="/blog-details/google-classroom-whatsapp-excel-yoxsa-kursometr-2027">Google Classroom, WhatsApp, Excel, yoxsa Kursometr?</a></li>
   <li><a href="/blog-details/tedris-merkezi-idareetme-proqrami-2026">Tədris mərkəzi idarəetmə proqramı</a></li>
   <li><a href="/blog-details/korporativ-telim-ucun-platforma-2027">Korporativ təlim üçün platforma</a></li>
@@ -236,7 +236,7 @@ HTML;
     <tr><td>Custom-built</td><td>A bespoke system for the organisation</td><td>Fits your processes exactly, integration is possible</td><td>The most expensive and longest route</td></tr>
   </tbody>
 </table>
-<p>For small and medium-sized teams, a ready-made cloud platform is usually the quickest and cheapest route. Moodle looks "free", but once hosting, installation and technical support costs are taken into account it is not always cheap. A custom system makes sense when ready-made solutions do not cover your processes. A detailed price comparison: <a href="/blog-details/lms-system-cost-azerbaijan-2026">LMS system cost in Azerbaijan</a>.</p>
+<p>For small and medium-sized teams, a ready-made cloud platform is usually the quickest and cheapest route. Moodle looks "free", but once hosting, installation and technical support costs are taken into account it is not always cheap. A custom system makes sense when ready-made solutions do not cover your processes. A detailed price comparison: <a href="/blog-details/lms-price-azerbaijan-2027">LMS system cost in Azerbaijan</a>.</p>
 
 <h2>5. LMS vs Google Classroom vs a WhatsApp Group: What Is the Difference</h2>
 <p>Many teachers work with Google Classroom, a WhatsApp group and Excel before moving to an LMS. That is fine for getting started, but as groups and students grow, problems arise:</p>
@@ -323,7 +323,7 @@ HTML;
 
 <h3>Read also</h3>
 <ul>
-  <li><a href="/blog-details/lms-system-cost-azerbaijan-2026">LMS system cost in Azerbaijan</a></li>
+  <li><a href="/blog-details/lms-price-azerbaijan-2027">LMS system cost in Azerbaijan</a></li>
   <li><a href="/blog-details/google-classroom-vs-whatsapp-vs-excel-vs-kursometr-2027">Google Classroom, WhatsApp, Excel or Kursometr?</a></li>
   <li><a href="/blog-details/training-centre-management-software-2026">Training centre management software</a></li>
   <li><a href="/blog-details/corporate-training-platform-for-companies-2027">A platform for corporate training</a></li>
@@ -397,7 +397,7 @@ HTML;
     <tr><td>Разработанная на заказ</td><td>Специальная система для организации</td><td>Полностью соответствует вашим процессам, возможна интеграция</td><td>Самый дорогой и самый долгий путь</td></tr>
   </tbody>
 </table>
-<p>Для небольших и средних команд готовая облачная платформа обычно — самый быстрый и дешёвый путь. Moodle кажется «бесплатным», но с учётом расходов на хостинг, установку и техническую поддержку он не всегда выходит дешёвым. Система на заказ имеет смысл тогда, когда готовые решения не покрывают ваши процессы. Подробное сравнение цен: <a href="/blog-details/stoimost-lms-sistemy-azerbajdzan-2026">стоимость LMS-системы в Азербайджане</a>.</p>
+<p>Для небольших и средних команд готовая облачная платформа обычно — самый быстрый и дешёвый путь. Moodle кажется «бесплатным», но с учётом расходов на хостинг, установку и техническую поддержку он не всегда выходит дешёвым. Система на заказ имеет смысл тогда, когда готовые решения не покрывают ваши процессы. Подробное сравнение цен: <a href="/blog-details/stoimost-lms-sistemy-azerbaydzhan-2027">стоимость LMS-системы в Азербайджане</a>.</p>
 
 <h2>5. LMS, Google Classroom и группа в WhatsApp: в чём разница</h2>
 <p>Многие учителя до перехода на LMS работают с Google Classroom, группой в WhatsApp и Excel. Для начала это нормально, но с ростом числа групп и учеников возникают проблемы:</p>
@@ -484,7 +484,7 @@ HTML;
 
 <h3>Читайте также</h3>
 <ul>
-  <li><a href="/blog-details/stoimost-lms-sistemy-azerbajdzan-2026">Стоимость LMS-системы в Азербайджане</a></li>
+  <li><a href="/blog-details/stoimost-lms-sistemy-azerbaydzhan-2027">Стоимость LMS-системы в Азербайджане</a></li>
   <li><a href="/blog-details/google-classroom-whatsapp-excel-ili-kursometr-2027">Google Classroom, WhatsApp, Excel или Kursometr?</a></li>
   <li><a href="/blog-details/programma-dlya-uchebnogo-centra-2026">Программа для управления учебным центром</a></li>
   <li><a href="/blog-details/platforma-dlya-korporativnogo-obucheniya-2027">Платформа для корпоративного обучения</a></li>
@@ -536,7 +536,7 @@ HTML;
             'text_en' => '<p><em>New to the term? Start here: <a href="/blog-details/what-is-an-lms-2027">What is an LMS? A simple guide</a>.</em></p>',
             'text_ru' => '<p><em>Если вы ещё не знаете, что такое LMS, начните отсюда: <a href="/blog-details/chto-takoe-lms-2027">Что такое LMS? Простое объяснение</a>.</em></p>',
         ];
-        $price = DB::table('blogs')->where('slug_az', 'lms-sistemi-qiymeti-azerbaycanda-2026')->first();
+        $price = DB::table('blogs')->where('slug_az', 'lms-sistemi-qiymeti-azerbaycan-2027')->first();
         if ($price) {
             $upd = [];
             foreach ($intro as $col => $p) {

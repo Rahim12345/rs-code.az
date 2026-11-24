@@ -60,7 +60,7 @@ class Blog34OnlineCourseSeeder extends Seeder
     <tr><td>Öz LMS platformanız</td><td>Brend, tam nəzarət, yerli ödəniş, videonun qorunması</td><td>İlkin xərc</td></tr>
   </tbody>
 </table>
-<p>Tələbə sayı artdıqca və kurslar çoxaldıqca öz platforması ən sərfəli variantə çevrilir. Hazır və fərdi LMS-lərin qiymət müqayisəsi: <a href="/blog-details/lms-sistemi-qiymeti-azerbaycanda-2026">LMS Sistemi Qiyməti Azərbaycanda 2026</a>.</p>
+<p>Tələbə sayı artdıqca və kurslar çoxaldıqca öz platforması ən sərfəli variantə çevrilir. Hazır və fərdi LMS-lərin qiymət müqayisəsi: <a href="/blog-details/lms-sistemi-qiymeti-azerbaycan-2027">LMS Sistemi Qiyməti Azərbaycanda 2027</a>.</p>
 
 <h2>Addım 5: Öz Kurs Platformanızda Olmalı Funksiyalar</h2>
 <ul>
@@ -109,7 +109,7 @@ class Blog34OnlineCourseSeeder extends Seeder
   <tbody>
     <tr><td>Avadanlıq (mikrofon, işıq, ştativ)</td><td>100 – 500 AZN</td></tr>
     <tr><td>Montaj (özünüz və ya montajçı)</td><td>0 AZN – dərs başına ödəniş</td></tr>
-    <tr><td>Öz kurs platforması (sifarişlə)</td><td>Funksionallıqdan asılı — bax <a href="/blog-details/lms-sistemi-qiymeti-azerbaycanda-2026">LMS qiymətləri</a></td></tr>
+    <tr><td>Öz kurs platforması (sifarişlə)</td><td>Funksionallıqdan asılı — bax <a href="/blog-details/lms-sistemi-qiymeti-azerbaycan-2027">LMS qiymətləri</a></td></tr>
     <tr><td>Domen, hostinq, video saxlama</td><td>Tələbə və video həcmindən asılı illik xərc</td></tr>
     <tr><td>Reklam (başlanğıc)</td><td>200 – 800 AZN/ay</td></tr>
   </tbody>
@@ -212,7 +212,7 @@ HTML;
     <tr><td>Your own LMS platform</td><td>Brand, full control, local payments, video protection</td><td>Upfront cost</td></tr>
   </tbody>
 </table>
-<p>As students and courses grow, your own platform becomes the most cost-effective option. Ready-made vs custom LMS price comparison: <a href="/blog-details/lms-system-cost-azerbaijan-2026">LMS System Cost in Azerbaijan 2026</a>.</p>
+<p>As students and courses grow, your own platform becomes the most cost-effective option. Ready-made vs custom LMS price comparison: <a href="/blog-details/lms-price-azerbaijan-2027">LMS System Cost in Azerbaijan 2027</a>.</p>
 
 <h2>Step 5: Features Your Course Platform Needs</h2>
 <ul>
@@ -260,7 +260,7 @@ HTML;
   <tbody>
     <tr><td>Equipment (mic, light, tripod)</td><td>100 – 500 AZN</td></tr>
     <tr><td>Editing (yourself or an editor)</td><td>0 AZN – per-lesson fee</td></tr>
-    <tr><td>Your own course platform (custom)</td><td>Depends on features — see <a href="/blog-details/lms-system-cost-azerbaijan-2026">LMS prices</a></td></tr>
+    <tr><td>Your own course platform (custom)</td><td>Depends on features — see <a href="/blog-details/lms-price-azerbaijan-2027">LMS prices</a></td></tr>
     <tr><td>Domain, hosting, video storage</td><td>Annual cost depending on students and video volume</td></tr>
     <tr><td>Advertising (start)</td><td>200 – 800 AZN/month</td></tr>
   </tbody>
@@ -363,7 +363,7 @@ HTML;
     <tr><td>Собственная LMS-платформа</td><td>Бренд, полный контроль, местные платежи, защита видео</td><td>Стартовые затраты</td></tr>
   </tbody>
 </table>
-<p>С ростом числа студентов и курсов собственная платформа становится самым выгодным вариантом. Сравнение цен готовых и индивидуальных LMS: <a href="/blog-details/stoimost-lms-sistemy-azerbajdzan-2026">Стоимость LMS-системы в Азербайджане 2026</a>.</p>
+<p>С ростом числа студентов и курсов собственная платформа становится самым выгодным вариантом. Сравнение цен готовых и индивидуальных LMS: <a href="/blog-details/stoimost-lms-sistemy-azerbaydzhan-2027">Стоимость LMS-системы в Азербайджане 2027</a>.</p>
 
 <h2>Шаг 5: функции вашей платформы</h2>
 <ul>
@@ -411,7 +411,7 @@ HTML;
   <tbody>
     <tr><td>Оборудование (микрофон, свет, штатив)</td><td>100 – 500 AZN</td></tr>
     <tr><td>Монтаж (сами или монтажёр)</td><td>0 AZN – оплата за урок</td></tr>
-    <tr><td>Собственная платформа (на заказ)</td><td>Зависит от функций — см. <a href="/blog-details/stoimost-lms-sistemy-azerbajdzan-2026">цены на LMS</a></td></tr>
+    <tr><td>Собственная платформа (на заказ)</td><td>Зависит от функций — см. <a href="/blog-details/stoimost-lms-sistemy-azerbaydzhan-2027">цены на LMS</a></td></tr>
     <tr><td>Домен, хостинг, хранение видео</td><td>Годовые затраты зависят от числа студентов и объёма видео</td></tr>
     <tr><td>Реклама (старт)</td><td>200 – 800 AZN/мес</td></tr>
   </tbody>

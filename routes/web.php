@@ -195,6 +195,10 @@ Route::middleware('locale')->group(static function () {
     Route::get('/suallar',                    "App\Http\Controllers\Front\FaqController@index");
     Route::get('/faq',                        "App\Http\Controllers\Front\FaqController@index");
     Route::get('/chasto-zadavaemye-voprosy',  "App\Http\Controllers\Front\FaqController@index");
+    // #26 LMS sistemi qiyməti 2026 → 2027 (eyni DB sətri, yeni slug) — 301
+    Route::permanentRedirect('/blog-details/lms-sistemi-qiymeti-azerbaycanda-2026', '/blog-details/lms-sistemi-qiymeti-azerbaycan-2027');
+    Route::permanentRedirect('/blog-details/lms-system-cost-azerbaijan-2026', '/blog-details/lms-price-azerbaijan-2027');
+    Route::permanentRedirect('/blog-details/stoimost-lms-sistemy-azerbajdzan-2026', '/blog-details/stoimost-lms-sistemy-azerbaydzhan-2027');
     // #19 SEO xidməti 2026 → 2027 (eyni DB sətri, yeni slug) — 301
     Route::permanentRedirect('/blog-details/seo-xidmeti-azerbaycan-2026', '/blog-details/seo-xidmeti-azerbaycan-2027');
     Route::permanentRedirect('/blog-details/why-you-need-seo-services-2026', '/blog-details/seo-services-azerbaijan-2027');

@@ -110,6 +110,6 @@
     </div>
 </section>
 
-@include('front.partials.related-posts', ['slugs' => ['pos-sistemi-qiymeti-azerbaycan-2027', 'lms-sistemi-qiymeti-azerbaycanda-2026', 'crm-erp-sistemleri-azerbaycanda-2026']])
+@include('front.partials.related-posts', ['slugs' => ['pos-sistemi-qiymeti-azerbaycan-2027', 'lms-sistemi-qiymeti-azerbaycan-2027', 'crm-erp-sistemleri-azerbaycanda-2026']])
 
 @endsection
