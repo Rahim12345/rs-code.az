@@ -7,11 +7,11 @@
 @php $lang = session('lang','az'); @endphp
 
 {{-- Hero --}}
-<section class="relative pt-32 pb-16 overflow-hidden">
+<section class="relative pt-28 pb-6 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-violet-950/20 via-transparent to-transparent pointer-events-none"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div class="text-center max-w-3xl mx-auto">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6" style="font-family:'Bricolage Grotesque',sans-serif">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4" style="font-family:'Bricolage Grotesque',sans-serif">
                 <span class="gradient-text">{{ __('index.blog_hero_h1_span') }}</span> <br>{{ __('index.blog_hero_h1') }}
             </h1>
             <p class="text-zinc-400 text-lg">{{ __('index.blog_hero_desc') }}</p>
@@ -20,7 +20,7 @@
 </section>
 
 {{-- Blog Grid --}}
-<section class="py-16">
+<section class="pt-8 pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         @if($blogs->count() > 0)
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
