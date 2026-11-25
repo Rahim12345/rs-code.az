@@ -25,6 +25,7 @@
     // İstəyə görə: məhsulun 'faq' => [[sual, cavab], ...] və 'guides' => [[url, başlıq], ...] açarları
     $faqItems   = $product['faq'] ?? [];
     $guideItems = $product['guides'] ?? [];
+    $sectorItems = $product['sectors'] ?? [];
     $faqSchema  = $faqItems ? json_encode([
         '@context'   => 'https://schema.org',
         '@type'      => 'FAQPage',
@@ -105,6 +106,18 @@
                 </summary>
                 <p class="text-zinc-400 text-sm leading-relaxed mt-3">{{ $a }}</p>
             </details>
+            @endforeach
+        </div>
+        @endif
+
+        @if($sectorItems)
+        <h2 class="text-2xl font-bold text-white mt-16 mb-6" style="font-family:'Bricolage Grotesque',sans-serif">{{ __('products.sectors_title') }}</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            @foreach($sectorItems as [$sUrl, $sTitle])
+            <a href="{{ $sUrl }}" class="group flex items-center justify-between gap-3 bg-zinc-900/40 border border-zinc-800/50 rounded-2xl p-5 hover:border-violet-500/40 transition-colors">
+                <span class="text-zinc-200 text-sm font-medium group-hover:text-violet-300 transition-colors">{{ $sTitle }}</span>
+                <svg class="w-4 h-4 text-violet-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
             @endforeach
         </div>
         @endif
